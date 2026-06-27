@@ -1,0 +1,155 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-12T09:35:58Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Value Date",
+    "Post Date",
+    "Credit Amount",
+    "Debit Amount",
+    "Closing Balance",
+    "Description",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "value date|post date|credit amount|debit amount|closing balance|description|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 5,
+    "debit": 3,
+    "credit": 2,
+    "amount": 2,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Value Date",
+    "description": "Description",
+    "debit": "Debit Amount",
+    "credit": "Credit Amount",
+    "amount": "Credit Amount",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "",
+      "1600000",
+      "-116379203.5",
+      "WITHDRAWAL TRANSFER 51049 GOEL CARGO PVT LTD (GOEL ASHOK LEYLAND)",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "",
+      "2200058.41",
+      "-118579261.91",
+      "WITHDRAWAL TRANSFER RTGS/HDFC/IDIBR52025040244636 310/IOCXPP /. Txn Amt. 2200000.00 Charges. 58.41",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "737100",
+      "",
+      "-117842161.91",
+      "NO BOOK DEPOSIT TRANSFER RTGS/HDFC/HDFCR520250402571 30436/SATNA U//",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "",
+      "200028.91",
+      "-118042190.82",
+      "WITHDRAWAL TRANSFER RTGS/ICIC/IDIBR520250402446537 61/ECT POOL/. Txn Amt. 200000.00 Charges. 28.91",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "",
+      "2550",
+      "-118044740.82",
+      "WITHDRAWAL TRANSFER /IMPS/P2A/509218634811/ 050100669692119/HDFC/advan",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "",
+      "2.95",
+      "-118044743.77",
+      "WITHDRAWAL TRANSFER /IMPS COMMISSION CHARGES/509218634811/",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "",
+      "6400",
+      "-118051143.77",
+      "WITHDRAWAL TRANSFER NEFT/UTIB/IDIBN520250402548846 79/PRAMOD K/ Txn Amt. 6397.34 Charges. 2.66",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "",
+      "6000",
+      "-118057143.77",
+      "WITHDRAWAL TRANSFER NEFT/ICIC/IDIBN520250402548835 52/RAM LAKH/ Txn Amt. 5997.34 Charges. 2.66",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "",
+      "18000",
+      "-118075143.77",
+      "WITHDRAWAL TRANSFER NEFT/HDFC/IDIBN52025040254883 553/MOHIT HO/ Txn Amt. 17994.39 Charges. 5.61",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "",
+      "15550",
+      "-118090693.77",
+      "WITHDRAWAL TRANSFER NEFT/SBIN/IDIBN520250402548835 54/PRAJAPAT/ Txn Amt. 15544.39 Charges. 5.61",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

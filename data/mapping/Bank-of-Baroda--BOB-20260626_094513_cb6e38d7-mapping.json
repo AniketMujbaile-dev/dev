@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bank of Baroda (BOB)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-26T07:45:35Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRAN DATE",
+    "VALUE DATE",
+    "NARRATION",
+    "CHQ.NO.",
+    "WITHDRAWAL(DR)",
+    "DEPOSIT(CR)",
+    "BALANCE(INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|value date|narration|chq no|withdrawal dr|deposit cr|balance inr|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRAN DATE",
+    "description": "NARRATION",
+    "debit": "WITHDRAWAL(DR)",
+    "credit": "DEPOSIT(CR)",
+    "amount": null,
+    "balance": "BALANCE(INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2024",
+      "01/04/2024",
+      "UPI/409213062457/10:10:55/UPI/9806893751@paytm/NA",
+      "",
+      "2,000.00",
+      "",
+      "7,200.00Cr",
+      "16",
+      "1"
+    ],
+    [
+      "02/04/2024",
+      "02/04/2024",
+      "UPI/445965741155/10:40:54/UPI/8003985246@ybl/Paym",
+      "",
+      "300.00",
+      "",
+      "6,900.00Cr",
+      "16",
+      "1"
+    ],
+    [
+      "02/04/2024",
+      "02/04/2024",
+      "UPI/445950505512/16:04:00/UPI/9782948064@ybl/Paym",
+      "",
+      "500.00",
+      "",
+      "6,400.00Cr",
+      "16",
+      "1"
+    ],
+    [
+      "02/04/2024",
+      "02/04/2024",
+      "UPI/445999462468/16:31:24/UPI/9660813575@ybl/Paym",
+      "",
+      "500.00",
+      "",
+      "5,900.00Cr",
+      "16",
+      "1"
+    ],
+    [
+      "04/04/2024",
+      "04/04/2024",
+      "UPI/446139878880/08:01:45/UPI/8890261996@ybl/Paym",
+      "",
+      "500.00",
+      "",
+      "5,400.00Cr",
+      "16",
+      "1"
+    ],
+    [
+      "04/04/2024",
+      "04/04/2024",
+      "LEDGER FOLIO CHARGES - CA",
+      "",
+      "4.11",
+      "",
+      "5,395.89Cr",
+      "16",
+      "1"
+    ],
+    [
+      "04/04/2024",
+      "04/04/2024",
+      "UPI/446156705482/11:19:57/UPI/8890261996@ybl/Paym",
+      "",
+      "300.00",
+      "",
+      "5,095.89Cr",
+      "16",
+      "1"
+    ],
+    [
+      "04/04/2024",
+      "04/04/2024",
+      "UPI/446131991865/12:24:48/UPI/8890261996@ybl/Paym",
+      "",
+      "70.00",
+      "",
+      "5,025.89Cr",
+      "16",
+      "1"
+    ],
+    [
+      "04/04/2024",
+      "04/04/2024",
+      "UPI/409503187785/14:51:02/UPI/paytmqrbmmuk9qj13@p",
+      "",
+      "50.00",
+      "",
+      "4,975.89Cr",
+      "16",
+      "1"
+    ],
+    [
+      "04/04/2024",
+      "04/04/2024",
+      "UPI/446167744055/17:31:16/UPI/Q566303025@ybl/Paym",
+      "",
+      "370.00",
+      "",
+      "4,605.89Cr",
+      "16",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

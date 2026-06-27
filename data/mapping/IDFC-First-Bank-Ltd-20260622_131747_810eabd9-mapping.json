@@ -1,0 +1,166 @@
+{
+  "bank_name": "IDFC First Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T11:18:15Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Particulars",
+    "Cheque No",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|particulars|cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "04/07/2025",
+      "04-Jul-2025",
+      "NEFT/AXNPM18504359269/ONE 97COMMUNICATIONS LIMITE",
+      "",
+      "",
+      "200.00",
+      "1,419.42",
+      "1",
+      "1"
+    ],
+    [
+      "04/07/2025",
+      "04-Jul-2025",
+      "UPI/MOB/518575010145/NA",
+      "",
+      "800.00",
+      "",
+      "619.42",
+      "1",
+      "1"
+    ],
+    [
+      "04/07/2025",
+      "04-Jul-2025",
+      "UPI/MOB/518513448398/NA",
+      "",
+      "300.00",
+      "",
+      "319.42",
+      "1",
+      "1"
+    ],
+    [
+      "04/07/2025",
+      "04-Jul-2025",
+      "ATM/CASH DEPOSIT/3115/ROORKEEBRANCH ATM ROORK",
+      "",
+      "",
+      "15,600.00",
+      "15,919.42",
+      "1",
+      "1"
+    ],
+    [
+      "04/07/2025",
+      "04-Jul-2025",
+      "ATM/CASH DEPOSIT/3117/ROORKEEBRANCH ATM ROORK",
+      "",
+      "",
+      "1,000.00",
+      "16,919.42",
+      "1",
+      "1"
+    ],
+    [
+      "04/07/2025",
+      "04-Jul-2025",
+      "UPI/MOB/555100447044/UPI",
+      "",
+      "",
+      "3,000.00",
+      "19,919.42",
+      "1",
+      "1"
+    ],
+    [
+      "04/07/2025",
+      "04-Jul-2025",
+      "UPI/MOB/518535108468/Pay",
+      "",
+      "12,883.00",
+      "",
+      "7,036.42",
+      "1",
+      "1"
+    ],
+    [
+      "04/07/2025",
+      "04-Jul-2025",
+      "UPI/MOB/518545507698/Sentusing Paytm UPI",
+      "",
+      "160.00",
+      "",
+      "6,876.42",
+      "1",
+      "1"
+    ],
+    [
+      "04/07/2025",
+      "04-Jul-2025",
+      "UPI/MOB/518555977575/Sentusing Paytm UPI",
+      "",
+      "20.00",
+      "",
+      "6,856.42",
+      "1",
+      "1"
+    ],
+    [
+      "05/07/2025",
+      "05-Jul-2025",
+      "NEFT/YESAP51862312577/ONE 97COMMUNICATIONS LIMITEDSETTL/YESB0000001",
+      "",
+      "",
+      "4,800.00",
+      "11,656.42",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

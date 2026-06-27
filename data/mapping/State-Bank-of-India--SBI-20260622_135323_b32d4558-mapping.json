@@ -1,0 +1,166 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T11:53:44Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Value Date",
+    "Post Date",
+    "Details",
+    "Ref No/ Cheque No",
+    "\u20b9 Debit",
+    "\u20b9 Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "value date|post date|details|ref no cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Value Date",
+    "description": "Details",
+    "debit": "\u20b9 Debit",
+    "credit": "\u20b9 Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "WDL TFRUPI/DR/509137700721/Groww/ICIC/growwnbt.e/Paid Vi0097692162094 AT 00707ROORKEE",
+      "-",
+      "7,000.00",
+      "-",
+      "1,17,281.93",
+      "2",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "DEP TFRUPI/CR/509178333821/MANDEEP/ICIC/9557322221/NA0097734162099 AT 00707ROORKEE",
+      "-",
+      "-",
+      "7,000.00",
+      "1,24,281.93",
+      "2",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "WDL TFRUPI/DR/509148674662/Mandeep/IDFB/9557322221/NA0097692162094 AT 00707ROORKEE",
+      "-",
+      "50,000.00",
+      "-",
+      "74,281.93",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03/04/2025",
+      "WDL TFRUPI/DR/509380265229/airtel/UTIB/airtel.pay/Airtel0097694162092 AT 00707ROORKEE",
+      "-",
+      "3,768.92",
+      "-",
+      "70,513.01",
+      "3",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "04/04/2025",
+      "WDL TFRUPI/DR/509481714035/Sandeep/ICIC/9557392221/NA0097695162091 AT 00707ROORKEE",
+      "-",
+      "35,000.00",
+      "-",
+      "35,513.01",
+      "3",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "04/04/2025",
+      "WDL TFRUPI/DR/509490503583/RELIANCE/CITI/jio@citiba/JIO20097695162091 AT 00707ROORKEE",
+      "-",
+      "470.82",
+      "-",
+      "35,042.19",
+      "3",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "05/04/2025",
+      "DEP TFRNEFT*ICIC0099999*ICIN209503584422*NEXTBILLION TEC0099509044300 AT 00707ROORKEE",
+      "-",
+      "-",
+      "14.94",
+      "35,057.13",
+      "3",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "05/04/2025",
+      "WDL TFRUPI/DR/509506991076/YASHRA/IOBA/yashrathor/Sent0097696162090 AT 00707ROORKEE",
+      "-",
+      "1,020.00",
+      "-",
+      "34,037.13",
+      "3",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "06/04/2025",
+      "WDL TFRUPI/DR/509509429916/MrSANJA/YESB/paytmqr645/Sent0097696162090 AT 00707ROORKEE",
+      "-",
+      "120.00",
+      "-",
+      "33,917.13",
+      "3",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "06/04/2025",
+      "WDL TFRUPI/DR/509615123256/VANDANA/YESB/paytm.s1cy/Sent0097690162095 AT 00707ROORKEE",
+      "-",
+      "300.00",
+      "-",
+      "33,617.13",
+      "3",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

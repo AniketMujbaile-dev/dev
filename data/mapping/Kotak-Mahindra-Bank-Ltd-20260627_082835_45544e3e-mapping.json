@@ -1,0 +1,166 @@
+{
+  "bank_name": "Kotak Mahindra Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-27T06:28:50Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "#",
+    "Date",
+    "Description",
+    "Chq/Ref. No.",
+    "Withdrawal (Dr.)",
+    "Deposit (Cr.)",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "|date|description|chq ref no|withdrawal dr|deposit cr|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Description",
+    "debit": "Withdrawal (Dr.)",
+    "credit": "Deposit (Cr.)",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "12/04/2025",
+      "NEFT AXISCN0959074611 THE NEW INDIAASSURANCE COM",
+      "NEFTINW-1181481505",
+      "",
+      "75,000.00",
+      "1,14,931.00",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "12/04/2025",
+      "UPI/SUMIT ANAND AND/510295833494/Sentusing Payt",
+      "UPI-510204417659",
+      "70,000.00",
+      "",
+      "44,931.00",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "12/04/2025",
+      "UPI/SUNDERRAM CREAT/510204687197/Sentusing Payt",
+      "UPI-510243431304",
+      "3,500.00",
+      "",
+      "41,431.00",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "18/04/2025",
+      "eRupee/JAYA/510803326617/Redeem",
+      "UPI-510803084491",
+      "",
+      "1,000.00",
+      "42,431.00",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "18/04/2025",
+      "eRupee/JAYA/510803326623/Redeem",
+      "UPI-510803084497",
+      "",
+      "5,000.00",
+      "47,431.00",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "18/04/2025",
+      "eRupee/JAYA/510803326627/Redeem",
+      "UPI-510803084501",
+      "",
+      "5,000.00",
+      "52,431.00",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "18/04/2025",
+      "eRupee/JAYA/510803326631/Redeem",
+      "UPI-510803084505",
+      "",
+      "4,000.00",
+      "56,431.00",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "29/04/2025",
+      "EMPLOYEE SALARY FOR APR'25",
+      "",
+      "",
+      "33,059.00",
+      "89,490.00",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "06/05/2025",
+      "MB:RECEIVED MONEY FROM OWN 2646294324",
+      "MB-998485473403",
+      "",
+      "600.00",
+      "90,090.00",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "06/05/2025",
+      "FD BOOKED/9249855037/JAYA .",
+      "",
+      "90,000.00",
+      "",
+      "90.00",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

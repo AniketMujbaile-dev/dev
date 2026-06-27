@@ -1,0 +1,177 @@
+{
+  "bank_name": "ICICI Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-23T11:41:03Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Tran Date",
+    "Value Date",
+    "Particulars",
+    "Location",
+    "Chq.No",
+    "Withdrawals",
+    "Deposits",
+    "Balance (INR).",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|value date|particulars|location|chq no|withdrawals|deposits|balance inr|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Tran Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance (INR).",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/01/2026",
+      "02/01/2026",
+      "CMS/001858746551/BAJAJ_AUTO_CD__413BLFEI569325",
+      "POR",
+      "",
+      "22,900.00",
+      "",
+      "43,87,845.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "02/01/2026",
+      "02/01/2026",
+      "INF/NEFT/IN42600253154789/IOBA0001717/EMINENTCALIBRAT",
+      "POR",
+      "",
+      "23,600.00",
+      "",
+      "43,64,245.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "02/01/2026",
+      "02/01/2026",
+      "INF/NEFT/IN42600253258973/SBIN0001456/BRENT",
+      "POR",
+      "",
+      "11,452.00",
+      "",
+      "43,52,793.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "02/01/2026",
+      "02/01/2026",
+      "INF/NEFT/IN42600253364109/KKBK0000843/SHEETAL",
+      "POR",
+      "",
+      "2,000.00",
+      "",
+      "43,50,793.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "02/01/2026",
+      "02/01/2026",
+      "BIL/BPAY/001137088748/ICICI BANK CRED/noRemark/4375513022480017",
+      "POR",
+      "",
+      "48,423.00",
+      "",
+      "43,02,370.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "03/01/2026",
+      "03/01/2026",
+      "INF/NEFT/IN42600354019110/IOBA0002391/VIJAYTAXI",
+      "POR",
+      "",
+      "650.00",
+      "",
+      "43,01,720.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "03/01/2026",
+      "03/01/2026",
+      "SGB/2590798/SGBOFT2026010300005879/VOLTAMPTRANSFORMERS LIMITED/PAYMENT",
+      "CASH MANAGEMENT SERVICES",
+      "",
+      "",
+      "3,73,500.00",
+      "46,75,220.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "03/01/2026",
+      "03/01/2026",
+      "CLG/MAHESH ENTERPRISE/UTI",
+      "RPC MUMBAI",
+      "106006",
+      "11,949.00",
+      "",
+      "46,63,271.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "03/01/2026",
+      "03/01/2026",
+      "CLG/VIDYUTH CONTROLSYSTEMS/653769/SBI/31.12.2025030120266002290000150007001005630",
+      "POR",
+      "",
+      "",
+      "29,400.00",
+      "46,92,671.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "03/01/2026",
+      "03/01/2026",
+      "INF/NEFT/IN42600354410929/SBIN0015569/BHAVYASREEAES",
+      "POR",
+      "",
+      "40,000.00",
+      "",
+      "46,52,671.20 Cr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

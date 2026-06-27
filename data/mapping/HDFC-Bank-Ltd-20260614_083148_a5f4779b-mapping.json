@@ -1,0 +1,144 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-14T06:32:05Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Txn Date",
+    "Narration",
+    "Withdrawal",
+    "Deposit",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "txn date|narration|withdrawal|deposit|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 2,
+    "credit": 3,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Txn Date",
+    "description": "Narration",
+    "debit": "Withdrawal",
+    "credit": "Deposit",
+    "amount": null,
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2026",
+      "UPI-13471460004150-9266491071@ptyes-399932781729-Sent using Paytm UPIValue Dt 01/04/2026 Ref 399932781729",
+      "0.00",
+      "688.00",
+      "88,027.43",
+      "2",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "UPI-21750100011650-suri.tarun@ptaxis-609118001981-Sent using PaytmUPIValue Dt 01/04/2026 Ref 609118001981",
+      "0.00",
+      "93.00",
+      "88,120.43",
+      "2",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "UPI-03391000011983-9891859601@pthdfc-609168168089-Sent using PaytmUPIValue Dt 01/04/2026 Ref 609168168089",
+      "0.00",
+      "721.00",
+      "88,841.43",
+      "2",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "UPI-923010002704897-nitika14kapoor@okaxis-645776490972-UPI Value Dt01/04/2026 Ref 645776490972",
+      "0.00",
+      "314.00",
+      "89,155.43",
+      "2",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "UPI-65302900001010730004120232-8800708600-2@ybl-217807170780-Payment fromPhonePe Value Dt 01/04/2026 Ref217807170780",
+      "0.00",
+      "384.00",
+      "89,539.43",
+      "2",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "UPI-045722010000784-9934903330@axl-016426981671-Payment from PhonePeValue Dt 01/04/2026 Ref 016426981671",
+      "0.00",
+      "314.00",
+      "89,853.43",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "36672874 RUPAY MDR RCVRY-02/04/26Value Dt 02/04/2026",
+      "8.38",
+      "0.00",
+      "89,845.05",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "UPI-914010055532650-9910818091@ptaxis-609330724064-Sent using PaytmUPIValue Dt 03/04/2026 Ref 609330724064",
+      "0.00",
+      "628.00",
+      "90,473.05",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "UPI-9806000100002952-9810916549@ptyes-300094509022-Sent using Paytm UPIValue Dt 03/04/2026 Ref 300094509022",
+      "0.00",
+      "282.00",
+      "90,755.05",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "UPI-Amazon PayGroceries-amazonpaygrocery@rapl-RATN000RAPL-121034060491-You arepaying for Value Dt 03/04/2026 Ref121034060491",
+      "1,284.30",
+      "0.00",
+      "89,470.75",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

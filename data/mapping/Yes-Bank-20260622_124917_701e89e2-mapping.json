@@ -1,0 +1,166 @@
+{
+  "bank_name": "Yes Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T10:50:01Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Description",
+    "Reference Number",
+    "Withdrawals",
+    "Deposits",
+    "Running Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|description|reference number|withdrawals|deposits|running balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Description",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Running Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "2025-12-02",
+      "02/12/2025",
+      "IMPS/NA/XXXX8706/RRN:533678085759/PC219214655271590/BANK OF INDIA/Amrit Lal/salary",
+      "YESI65336001208600",
+      "20,000.00",
+      "",
+      "723,351.68",
+      "15",
+      "1"
+    ],
+    [
+      "2025-12-02",
+      "02/12/2025",
+      "IMPS/NA/XXXX3105/RRN:533678085900/PC2192147218112697/ICICI BANK LIMITED/SIDDHARATH CHATURVEDI/salary expanses",
+      "YESI65336001212400",
+      "85,000.00",
+      "",
+      "638,351.68",
+      "15",
+      "1"
+    ],
+    [
+      "2025-12-02",
+      "02/12/2025",
+      "IMPS/NA/XXXX4482/RRN:533678323146/PC219535860203397/BANK OF BARODA/Anurag Bharadwaj/IFB",
+      "YESI65336006754000",
+      "25,000.00",
+      "",
+      "613,351.68",
+      "15",
+      "1"
+    ],
+    [
+      "2025-12-02",
+      "02/12/2025",
+      "IMPS/NA/XXXX7578/RRN:533678427276/PC219730792556405/BANK OF BARODA/AKANKSHA MISHRA/salary",
+      "YESI65336010151000",
+      "20,000.00",
+      "",
+      "593,351.68",
+      "14",
+      "1"
+    ],
+    [
+      "2025-12-02",
+      "02/12/2025",
+      "IMPS/NA/XXXX1983/RRN:533678427782/PC2197321248192979/KOTAKMAHINDRA BANK LIMITED/Kahkasha Bano/salary",
+      "YESI65336009873700",
+      "25,000.00",
+      "",
+      "568,351.68",
+      "14",
+      "1"
+    ],
+    [
+      "2025-12-03",
+      "03/12/2025",
+      "IMPS/NA/XXXX6376/RRN:533778766648/PC2200882209514797/INDIAN BANK/Priyanshi soni/salary",
+      "YESI65337003284600",
+      "17,000.00",
+      "",
+      "551,351.68",
+      "14",
+      "1"
+    ],
+    [
+      "2025-12-03",
+      "03/12/2025",
+      "IMPS/NA/XXXX4482/RRN:533779062565/PC2205832266377604/BANK OF BARODA/Anurag Bharadwaj/air ticket",
+      "YESI65337011311800",
+      "15,000.00",
+      "",
+      "536,351.68",
+      "14",
+      "1"
+    ],
+    [
+      "2025-12-05",
+      "05/12/2025",
+      "IMPS/NA/XXXX4316/RRN:533979885155/PC221532588451374/PUNJAB NATIONAL BANK/Anushka Sharma/salary",
+      "YESI65339003776300",
+      "20,000.00",
+      "",
+      "516,351.68",
+      "13",
+      "1"
+    ],
+    [
+      "2025-12-05",
+      "05/12/2025",
+      "IMPS/NA/XXXX2540/RRN:533979886018/PC221533551738361/PUNJAB NATIONALBANK/NITIN KUMAR/salary",
+      "YESI65339003830300",
+      "15,000.00",
+      "",
+      "501,351.68",
+      "13",
+      "1"
+    ],
+    [
+      "2025-12-05",
+      "05/12/2025",
+      "IMPS/NA/XXXX2810/RRN:533979887165/PC221534680711982/AIRTEL PAYMENTS BANK LIMITED/Surendra kumar kasyap/salary",
+      "YESI65339004005400",
+      "30,000.00",
+      "",
+      "471,351.68",
+      "13",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

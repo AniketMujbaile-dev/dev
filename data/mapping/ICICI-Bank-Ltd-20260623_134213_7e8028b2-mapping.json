@@ -1,0 +1,177 @@
+{
+  "bank_name": "ICICI Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-23T11:42:57Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "S.no",
+    "Transaction ID",
+    "Transaction date",
+    "Cheque No",
+    "Description",
+    "Withdrawal(Dr)",
+    "Deposit(Cr)",
+    "Available Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "s no|transaction id|transaction date|cheque no|description|withdrawal dr|deposit cr|available balance|page number|minus",
+  "mapping": {
+    "date": 2,
+    "description": 4,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction date",
+    "description": "Description",
+    "debit": "Withdrawal(Dr)",
+    "credit": "Deposit(Cr)",
+    "amount": null,
+    "balance": "Available Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "S6916834",
+      "02/04/2025",
+      "",
+      "187005002256:Int.Coll:03-03-2025to 01-04-2025",
+      "37404.00",
+      "",
+      "-4683271.02",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "S8514917",
+      "03/04/2025",
+      "",
+      "RTGS-HDFCR52025040357349821-PUNAJCORP-99997777777",
+      "",
+      "3500000.00",
+      "-1183271.02",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "S1696172",
+      "06/04/2025",
+      "",
+      "penalcharges",
+      "0.28",
+      "",
+      "-1183271.30",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "S2232281",
+      "30/04/2025",
+      "",
+      "RENEWALFEE_SR269219435",
+      "5000.00",
+      "",
+      "-1188271.30",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "S2232281",
+      "30/04/2025",
+      "",
+      "SGST202504306088176954",
+      "450.00",
+      "",
+      "-1188721.30",
+      "1",
+      "1"
+    ],
+    [
+      "149",
+      "S28281",
+      "31/03/2026",
+      "",
+      "RTGS-HDFCR52026033190246692-PUNAJCORP-99997777777",
+      "",
+      "3000000.00",
+      "-559735.76",
+      "2",
+      "0"
+    ],
+    [
+      "150",
+      "S983547",
+      "01/04/2026",
+      "",
+      "RTGS-HDFCR52026040190461052-PUNAJCORP-99997777777",
+      "",
+      "4200000.00",
+      "3640264.24",
+      "2",
+      "0"
+    ],
+    [
+      "151",
+      "S1141486",
+      "01/04/2026",
+      "",
+      "187005002256:Int.Coll:02-03-2026to 31-03-2026",
+      "26110.00",
+      "",
+      "3614154.24",
+      "2",
+      "0"
+    ],
+    [
+      "152",
+      "S1845541",
+      "02/04/2026",
+      "",
+      "RTGS/ICICR42026040200533355/IBKL0001867/ASHWINIE",
+      "998237.00",
+      "",
+      "2615917.24",
+      "2",
+      "0"
+    ],
+    [
+      "153",
+      "S1902895",
+      "02/04/2026",
+      "",
+      "INF/INFT/043918309631/Self-XXX286",
+      "500000.00",
+      "",
+      "2115917.24",
+      "2",
+      "0"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

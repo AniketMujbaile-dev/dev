@@ -1,0 +1,144 @@
+{
+  "bank_name": "Union Bank of India (UBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-11T11:24:10Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Transaction Id",
+    "Remarks",
+    "Amount(\u20b9)",
+    "Balance(\u20b9)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|transaction id|remarks|amount|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": null,
+    "credit": null,
+    "amount": 3,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Remarks",
+    "debit": null,
+    "credit": null,
+    "amount": "Amount(\u20b9)",
+    "balance": "Balance(\u20b9)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "19/04/2025",
+      "S98076577",
+      "IMPSAR/510910220921/Sonu Patel/330901500581",
+      "20000.0(Dr)",
+      "11524.12(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "20/04/2025",
+      "T77621536",
+      "UPIAR/547683162810/DR/ CRED/UTIB/cred.club@axis",
+      "4747.9(Dr)",
+      "6776.26(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "24/04/2025",
+      "A571268",
+      "THAKUR BABA DEVELOPERS",
+      "25000.0(Cr)",
+      "31776.26(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "29/04/2025",
+      "Y71282089",
+      "UPIAR/548592931886/DR/ CRED/UTIB/cred.club@axis",
+      "298.0(Dr)",
+      "31478.26(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "30/04/2025",
+      "S61748983",
+      "Loan Recovery For669306440000091",
+      "11370.0(Dr)",
+      "20108.26(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "01/05/2025",
+      "T2291056",
+      "UPIAR/110009958928/DR/PALLAVI / /pallavicollect",
+      "5000.0(Dr)",
+      "15108.26(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "02/05/2025",
+      "A706291",
+      "THAKUR BABA DEVELOPERS",
+      "275000.0(Cr)",
+      "290108.26(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "02/05/2025",
+      "T80235188",
+      "UPIAR/110010001464/DR/PALLAVI / /pallavicollect",
+      "35000.0(Dr)",
+      "255108.26(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "03/05/2025",
+      "U11890443",
+      "IMPSAR/512312061196/Nitin Kumar Pate/3580100008547",
+      "5000.0(Dr)",
+      "250108.26(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "03/05/2025",
+      "U11898230",
+      "IMPSAR/512312061196/Nitin Kumar Pate/3580100008547",
+      "5000.0(Cr)",
+      "255108.26(Cr)",
+      "1",
+      "0"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

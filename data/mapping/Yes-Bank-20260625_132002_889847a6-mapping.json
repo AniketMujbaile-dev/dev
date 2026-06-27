@@ -1,0 +1,166 @@
+{
+  "bank_name": "Yes Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-25T11:20:21Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Description",
+    "Reference Number",
+    "Withdrawals",
+    "Deposits",
+    "Running Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|description|reference number|withdrawals|deposits|running balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Description",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Running Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "2026-03-01",
+      "01/03/2026",
+      "IMPS/NA/XXXX3105/RRN:606067712032/PC294032058680926/ICICI BANK LIMITED/SIDDHARATH CHATURVEDI/travel expenses",
+      "YESI66060001793800",
+      "9,000.00",
+      "",
+      "462,006.76",
+      "28",
+      "1"
+    ],
+    [
+      "2026-03-01",
+      "01/03/2026",
+      "PCA:2930:202206270027917:LULU INDIA SHOPPING MA LUCKNOWIND01-MAR-26 16:27:24",
+      "20260301162723518513",
+      "3,370.26",
+      "",
+      "458,636.50",
+      "28",
+      "1"
+    ],
+    [
+      "2026-03-01",
+      "01/03/2026",
+      "IMPS/NA/XXXX6376/RRN:606067998812/PC2942906265582368/INDIANBANK/Priyanshi soni/pay",
+      "YESI66060007052400",
+      "5,000.00",
+      "",
+      "453,636.50",
+      "28",
+      "1"
+    ],
+    [
+      "2026-03-02",
+      "02/03/2026",
+      "ATD:1035102930:S1BW012221058:SECTOR I JANKIPURAM 2N LUCKNOW UPIN 11:00:37",
+      "20260302110037588299",
+      "7,000.00",
+      "",
+      "446,636.50",
+      "28",
+      "1"
+    ],
+    [
+      "2026-03-02",
+      "02/03/2026",
+      "IMPS/NA/XXXX0032/RRN:606168837002/PC29522154986173/BANK OF INDIA/PREM KUMAR/SALARY",
+      "YESI66061012549400",
+      "14,000.00",
+      "",
+      "432,636.50",
+      "27",
+      "1"
+    ],
+    [
+      "2026-03-02",
+      "02/03/2026",
+      "IMPS/NA/XXX0032/REV/RRN:606168837002/PC29522154986173/BANK OF INDIA/PREM KUMAR/SALARY",
+      "REVYBP6061446975166",
+      "",
+      "14,000.00",
+      "446,636.50",
+      "27",
+      "1"
+    ],
+    [
+      "2026-03-02",
+      "02/03/2026",
+      "IMPS/NA/XXXX0834/RRN:606168840605/PC2952282223310234/BANK OF INDIA/RAKESH KUMAR/SALARY",
+      "YESI66061012643900",
+      "14,000.00",
+      "",
+      "432,636.50",
+      "27",
+      "1"
+    ],
+    [
+      "2026-03-02",
+      "02/03/2026",
+      "IMPS/NA/XXXX2184/RRN:606168843415/PC295233072856392/STATE BANK OF INDIA/RAMNARESH/SALARY",
+      "YESI66061012712000",
+      "14,000.00",
+      "",
+      "418,636.50",
+      "27",
+      "1"
+    ],
+    [
+      "2026-03-02",
+      "02/03/2026",
+      "IMPS/NA/XXXX0032/RRN:606168845885/PC2952382131100517/BANK OF INDIA/Prem/salary",
+      "YESI66061012779100",
+      "14,000.00",
+      "",
+      "404,636.50",
+      "26",
+      "1"
+    ],
+    [
+      "2026-03-02",
+      "02/03/2026",
+      "IMPS/NA/XXX0032/REV/RRN:606168845885/PC2952382131100517/BANK OF INDIA/Prem/salary",
+      "REVYBP6061446986681",
+      "",
+      "14,000.00",
+      "418,636.50",
+      "26",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

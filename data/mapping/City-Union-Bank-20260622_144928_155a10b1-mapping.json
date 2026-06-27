@@ -1,0 +1,155 @@
+{
+  "bank_name": "City Union Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T12:50:03Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Chq No",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|chq no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "TO ONL UPI/DR/509218259140/WWW FIRS/HDFC/FIRSTCRY.P/U::00003",
+      "",
+      "9,159.24",
+      "",
+      "37,15,160.34",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "BY CREDIT:PAYTM_50331705509251499017-31-MAR-2025_2473755:00655",
+      "",
+      "",
+      "67,710.00",
+      "37,82,870.34",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "TO ONL LIFECELL INTERNATIONAL PRIVATE LIMITED:PAYMENT::00003",
+      "",
+      "67,710.00",
+      "",
+      "37,15,160.34",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "BY NEFT TRF:KARTHIKEYAN S B HDFCH00161111332:",
+      "",
+      "",
+      "20,000.00",
+      "37,35,160.34",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "TO ONL UPI/DR/509569189794/AIRTEL P/INDB/AIRTELPAYM/U::00003",
+      "",
+      "3,999.00",
+      "",
+      "37,31,161.34",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "TO ONL UPI/DR/509699599518/SND DIGI/AIRP/SNDDIGITAL/S::00003",
+      "",
+      "300.00",
+      "",
+      "37,30,861.34",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "TO ONL UPI/DR/509759938622/APPLE SU/UTIB/7397001984/U::00003",
+      "",
+      "510.00",
+      "",
+      "37,30,351.34",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "BY ONLUPI/CR/102800543495/DHAKSHIN/HDFC/DINESHKSHV/U::00032",
+      "",
+      "",
+      "5,000.00",
+      "37,35,351.34",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "TO ONL UPI/DR/509894050672/MRKARTH/IDIB/POWERPKT08/U::00003",
+      "",
+      "3,300.00",
+      "",
+      "37,32,051.34",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2025",
+      "TO ONL UPI/DR/509919245565/MRSENTH/CIUB/JK1943902@/U::00003",
+      "",
+      "1,650.00",
+      "",
+      "37,30,401.34",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

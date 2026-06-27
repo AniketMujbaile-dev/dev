@@ -1,0 +1,155 @@
+{
+  "bank_name": "DCB Bank Limited",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-19T09:30:13Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date*",
+    "Transaction Details",
+    "Cheque Number",
+    "Withdrawals",
+    "Deposits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|transaction details|cheque number|withdrawals|deposits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date*",
+    "description": "Transaction Details",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "30/05/2025",
+      "UPI:PAY:551607180870/Shemaroo Entertain/Yes Bank L",
+      "",
+      "699.00",
+      "",
+      "97,347.19",
+      "1",
+      "1"
+    ],
+    [
+      "10/06/2025",
+      "UPI:PAY:516108461372/PARSHWANATH MEDICI/Axis Bank",
+      "",
+      "2,547.00",
+      "",
+      "94,800.19",
+      "1",
+      "1"
+    ],
+    [
+      "10/06/2025",
+      "UPI:PAY:516181954618/PARSHWANATH MEDICI/Axis Bank",
+      "",
+      "2,000.00",
+      "",
+      "92,800.19",
+      "1",
+      "1"
+    ],
+    [
+      "17/06/2025",
+      "UPI:PAY:516851061135/Vikalp Organic And/Axis Bank",
+      "",
+      "544.00",
+      "",
+      "92,256.19",
+      "1",
+      "1"
+    ],
+    [
+      "17/06/2025",
+      "UPI:PAY:516825550403/PARSHWANATH MEDICI/Axis Bank",
+      "",
+      "768.00",
+      "",
+      "91,488.19",
+      "1",
+      "1"
+    ],
+    [
+      "19/06/2025",
+      "UPI:PAY:553609214554/ZEE5 /Yes Bank L",
+      "",
+      "1,949.00",
+      "",
+      "89,539.19",
+      "1",
+      "1"
+    ],
+    [
+      "27/06/2025",
+      "UPI:PAY:554456026580/PARSHWANATH MEDICI/Axis Bank",
+      "",
+      "2,000.00",
+      "",
+      "87,539.19",
+      "1",
+      "1"
+    ],
+    [
+      "27/06/2025",
+      "UPI:PAY:554482217176/PARSHWANATH MEDICI/Axis Bank",
+      "",
+      "2,000.00",
+      "",
+      "85,539.19",
+      "1",
+      "1"
+    ],
+    [
+      "30/06/2025",
+      "UPI:PAY:554783612921/PARSHWANATH MEDICI/Axis Bank",
+      "",
+      "1,612.00",
+      "",
+      "83,927.19",
+      "1",
+      "1"
+    ],
+    [
+      "30/06/2025",
+      "SB Int.****05746:Pd:01-04-2025 to 30-06-2025",
+      "",
+      "",
+      "369.00",
+      "84,296.19",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

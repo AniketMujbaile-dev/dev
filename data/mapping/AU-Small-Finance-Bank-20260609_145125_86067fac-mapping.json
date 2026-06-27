@@ -1,0 +1,166 @@
+{
+  "bank_name": "AU Small Finance Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-09T12:51:49Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Description/Narration",
+    "Cheque/ Reference No.",
+    "Debit (\u20b9)",
+    "Credit (\u20b9)",
+    "Balance (\u20b9)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|description narration|cheque reference no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Description/Narration",
+    "debit": "Debit (\u20b9)",
+    "credit": "Credit (\u20b9)",
+    "amount": null,
+    "balance": "Balance (\u20b9)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "21/03/2026",
+      "21 Mar 2026",
+      "UPI/DR/458998403220/B ABULAL PRAJAPAT/YESB/0014250 00000051/KELA AU JAGATPURA",
+      "AXLb4ce496f16e24b 3fbcb2bbd72069da1 7",
+      "90.00",
+      "-",
+      "2,37,352.69",
+      "1",
+      "1"
+    ],
+    [
+      "21/03/2026",
+      "21 Mar 2026",
+      "UPI/DR/598375266992/RA JNEESH KUMAWAT/SBIN/000000 40050007815/FAN AU JAGATPURA",
+      "YBL9af56caf8e034d aab4347d6dbec755 c9",
+      "3,400.00",
+      "-",
+      "2,33,952.69",
+      "1",
+      "1"
+    ],
+    [
+      "21/03/2026",
+      "21 Mar 2026",
+      "UPI/CR/688847894459/S UJATA KUMAWAT/PUNB/167700 0100155832/PAYMENT FROM PHONEPE AU JAGATPURA",
+      "YBLa466aa38f2ec4 ef1bf80c2e18ec385d 8",
+      "-",
+      "200.00",
+      "2,34,152.69",
+      "1",
+      "1"
+    ],
+    [
+      "21/03/2026",
+      "21 Mar 2026",
+      "UPI/DR/487681584161/MA ZID KHAN/SBIN/000000611695 07729/KOMALI AUTO KIRAYA AU JAGATPURA",
+      "IBL6348ad7139e349 9daabab2286eb805 a1",
+      "200.00",
+      "-",
+      "2,33,952.69",
+      "1",
+      "1"
+    ],
+    [
+      "21/03/2026",
+      "21 Mar 2026",
+      "UPI/DR/517869673898/BH IWARAM GHASIL/YESB/0022611000 00025/PAANI MAHESH BHAI AU JAGATPURA",
+      "AXLc876db6180424 52aa9dd60233a769 61f",
+      "300.00",
+      "-",
+      "2,33,652.69",
+      "1",
+      "1"
+    ],
+    [
+      "21/03/2026",
+      "21 Mar 2026",
+      "UPI/DR/126089386629/MA HI JUICE CENTER/UTIB/9180201108 72063/PAYMENT FROM PHONEPE AU JAGATPURA",
+      "AXL56d4fc52b5544 c11a516ec2260c1997 2",
+      "40.00",
+      "-",
+      "2,33,612.69",
+      "1",
+      "1"
+    ],
+    [
+      "21/03/2026",
+      "21 Mar 2026",
+      "UPI/DR/772352680741/M S NAWAL BOOK AND STATIONERS/ICIC/0104SL EZPUPI/FILE AU JAGATPURA",
+      "IBLbf4ed1d4849d49 c2b880a06f375fd54 9",
+      "86.00",
+      "-",
+      "2,33,526.69",
+      "2",
+      "1"
+    ],
+    [
+      "21/03/2026",
+      "21 Mar 2026",
+      "MAKAN KA KHARCHA CR - 2501221064438248 - MAHENDRA KUMAR SESMA - AU BANK",
+      "",
+      "-",
+      "49,685.00",
+      "2,83,211.69",
+      "2",
+      "1"
+    ],
+    [
+      "22/03/2026",
+      "22 Mar 2026",
+      "UPI/DR/835502389860/S URGYAN KUMAWAT/AUBL/2401217 063322240/SAMAN KE PESE AU JAGATPURA",
+      "YBL4b5ca23c745a4 546b7e4bc14f115cb7 d",
+      "1,500.00",
+      "-",
+      "2,81,711.69",
+      "2",
+      "1"
+    ],
+    [
+      "22/03/2026",
+      "22 Mar 2026",
+      "UPI/DR/241217796665/MU KESH KUMAR SAINI/YESB/002261100000 025/DAHIBADE AU JAGATPURA",
+      "YBL23b7d43c69274 4058c3d6392ef50fb 53",
+      "80.00",
+      "-",
+      "2,81,631.69",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

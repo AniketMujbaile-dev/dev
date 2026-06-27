@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-17T08:41:19Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2026",
+      "50200115871114-TPT-HDFCA781AEAB8E2D-SHREE PARAMHANS LOGISTICS",
+      "0000000882602971",
+      "01/04/26",
+      "10,000.00",
+      "",
+      "545,461.22",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "50200016765061-TPT-ADV 7971 8160-SHREE SALASAR TRAILOR SERVICE",
+      "0000000847911873",
+      "01/04/26",
+      "139,000.00",
+      "",
+      "406,461.22",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "NEFT DR-AUBL0002134-SHREE KRISHNA TAILORSERVICE-NETBANK, MUM-HDFCH00903518463-ADV",
+      "HDFCH00903518463",
+      "01/04/26",
+      "124,000.00",
+      "",
+      "282,461.22",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "UPI-MISALE SANTOSH PARME-9922285584@IBL-HDFC0004893-177457890829-ADS",
+      "0000177457890829",
+      "01/04/26",
+      "17,800.00",
+      "",
+      "264,661.22",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "50200117375792-TPT-NBSCODMLLJYZ0IUI-PIYUSH ROAD LINE",
+      "0000000122809604",
+      "02/04/26",
+      "",
+      "400,000.00",
+      "664,661.22",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2026",
+      "NEFT DR-ICIC0006559-CHAITANYA CARGO MOVERS-NETBANK, MUM-HDFCH00910257933-ADV 6646",
+      "HDFCH00910257933",
+      "04/04/26",
+      "49,500.00",
+      "",
+      "615,161.22",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2026",
+      "NEFT DR-ICIC0000179-PILANIYA TRAILOR SERVICE-NETBANK, MUM-HDFCH00910398199-9950ADV",
+      "HDFCH00910398199",
+      "04/04/26",
+      "89,400.00",
+      "",
+      "525,761.22",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2026",
+      "IMPS-609415713784-CHAUHAN TRANSPORT CO-ICIC-XXXXXXXX0040-CHAUHANTCOMP",
+      "0000609415713784",
+      "04/04/26",
+      "",
+      "100,000.00",
+      "625,761.22",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2026",
+      "50200117375792-TPT-EMI-PIYUSH ROAD LINE",
+      "0000000912608097",
+      "04/04/26",
+      "",
+      "100,500.00",
+      "726,261.22",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2026",
+      "NEFT DR-SBIN0016566-JAI BHARAT KISAN SEWA KENDRA-NETBANK,MUM-HDFCH00911664025-NBMTWSGFKUUQNSKH",
+      "HDFCH00911664025",
+      "05/04/26",
+      "50,000.00",
+      "",
+      "676,261.22",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

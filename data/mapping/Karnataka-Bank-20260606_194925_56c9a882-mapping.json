@@ -1,0 +1,155 @@
+{
+  "bank_name": "Karnataka Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-06T17:49:40Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Description",
+    "Chq/Ref No",
+    "Withdrawals",
+    "Deposits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|description|chq ref no|withdrawals|deposits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Description",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "03/04/2025",
+      "IMPS/P2A-509314303717-VIVEK S SHANBHAG-919538332",
+      "",
+      "",
+      "100.00",
+      "5,235.20",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "IMPS/P2A-509314305614-VIVEK S SHANBHAG-919538332",
+      "",
+      "",
+      "24,000.00",
+      "29,235.20",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "MBS/To SATWIK SRIKANTH PAI/0699862/03-04-2025 14:",
+      "",
+      "24,000.00",
+      "",
+      "5,235.20",
+      "1",
+      "1"
+    ],
+    [
+      "10/04/2025",
+      "MBS/To SATWIK SRIKANTH PAI/0826356/10-04-2025 21:",
+      "",
+      "200.00",
+      "",
+      "5,035.20",
+      "1",
+      "1"
+    ],
+    [
+      "12/04/2025",
+      "Avg Bal chrg From 01-03-2025 To 31- 03-2025",
+      "",
+      "236.00",
+      "",
+      "4,799.20",
+      "1",
+      "1"
+    ],
+    [
+      "13/04/2025",
+      "MBS/To SATWIK SRIKANTH PAI/0366885/13-04-2025 13:",
+      "",
+      "4,799.00",
+      "",
+      "0.20",
+      "1",
+      "1"
+    ],
+    [
+      "21/04/2025",
+      "MBS/by SATWIK SRIKANTH PAI/0007731/21-04-2025 16:",
+      "",
+      "",
+      "6,000.00",
+      "6,000.20",
+      "1",
+      "1"
+    ],
+    [
+      "24/04/2025",
+      "MBS/To SATWIK SRIKANTH PAI/0910054/24-04-2025 10:",
+      "",
+      "2,500.00",
+      "",
+      "3,500.20",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2025",
+      "MBS/To SATWIK SRIKANTH PAI/0596319/01-05-2025 21:",
+      "",
+      "2,500.00",
+      "",
+      "1,000.20",
+      "1",
+      "1"
+    ],
+    [
+      "03/05/2025",
+      "MBS/To SATWIK SRIKANTH PAI/0525919/03-05-2025 22:",
+      "",
+      "1,000.00",
+      "",
+      "0.20",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

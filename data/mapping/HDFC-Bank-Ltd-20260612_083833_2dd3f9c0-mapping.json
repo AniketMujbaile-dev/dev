@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-12T06:39:25Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "03/04/2025",
+      "MONTHLY INTEREST CREDIT 50301046741172",
+      "3304220250403780",
+      "03/04/25",
+      "",
+      "5,731.00",
+      "5,769.00",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI-LSOPHIA-DOMAPPA1966-1@OKHDFCBANK-HDFC0000058-102503410268-UPI",
+      "0000102503410268",
+      "03/04/25",
+      "",
+      "1,000.00",
+      "6,769.00",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI-LSOPHIA-DOMAPPA1966-1@OKHDFCBANK-HDFC0000058-102503444754-UPI",
+      "0000102503444754",
+      "03/04/25",
+      "5,669.00",
+      "",
+      "1,100.00",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI-ZIYAD MP-PAYTM.S1ABWHY@PTY-YESB0MCHUPI-102544236712-UPI",
+      "0000102544236712",
+      "03/04/25",
+      "60.00",
+      "",
+      "1,040.00",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "UPI-MANISENTHILKUMAR-PAYTM.S1BS6E6@PTY-YESB0MCHUPI-102568092117-UPI",
+      "0000102568092117",
+      "04/04/25",
+      "150.00",
+      "",
+      "890.00",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-AJJU FOODS-AJJUFOODS@KBL-KARB0000716-102629781159-UPI",
+      "0000102629781159",
+      "05/04/25",
+      "30.00",
+      "",
+      "860.00",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-AJJU FOODS-AJJUFOODS@KBL-KARB0000716-102635011022-UPI",
+      "0000102635011022",
+      "05/04/25",
+      "40.00",
+      "",
+      "820.00",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-NIKHILVADAMALAYAN-NIK23HIL@OKHDFCBANK-TMBL0000509-102659067780-UPI",
+      "0000102659067780",
+      "05/04/25",
+      "",
+      "100.00",
+      "920.00",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-PRAKASPATHISEKAR-KARTHIKSSK321@OKHDFCBANK-BKID0008291-102660514396-UPI",
+      "0000102660514396",
+      "05/04/25",
+      "198.00",
+      "",
+      "722.00",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-ABDUL MANAFC-Q190328075@YBL-YESB0YBLUPI-102666620967-UPI",
+      "0000102666620967",
+      "05/04/25",
+      "25.00",
+      "",
+      "697.00",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "bank_name": "City Union Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T10:32:01Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "DESCRIPTION",
+    "CHEQUE NO",
+    "DEBIT",
+    "CREDIT",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|description|cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "DESCRIPTION",
+    "debit": "DEBIT",
+    "credit": "CREDIT",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "BY ONL UPI/CR/509142370289/MANIMEGA/BARB/MANIMEGALA/U::00032",
+      "",
+      "",
+      "3,000.00",
+      "8,63,490.81",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "BY ONL UPI/CR/509104894186/MRS SUDH/IDIB/SUDHASARAV/U::00032",
+      "",
+      "",
+      "1,200.00",
+      "8,64,690.81",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "BY ONL UPI/CR/545729459342/MR MAHAV/IDIB/PANTHABU-1/U::00032",
+      "",
+      "",
+      "1,200.00",
+      "8,65,890.81",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "BY ONL UPI/CR/545726760247/MRS BENA/IDIB/DEENAZIDEE/U::00032",
+      "",
+      "",
+      "1,200.00",
+      "8,67,090.81",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "BY ONL UPI/CR/752751272208/MR VIJAY/CIUB/9540661174/P::00032",
+      "",
+      "",
+      "600.00",
+      "8,67,690.81",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "TO ONL MARCH 25:: SB 500101011228571:00003",
+      "",
+      "50,000.00",
+      "",
+      "8,17,690.81",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "TO ONL NEFT:UTR:CIUBH25092005378:SBIN0000998:DR SINDH:: MARCH::00003",
+      "",
+      "10,750.00",
+      "",
+      "8,06,940.81",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "TO ONL NEFT:UTR:CIUBH25092005567:ICIC0006081:S GANDHI:: MARCH 25::00003",
+      "",
+      "63,000.00",
+      "",
+      "7,43,940.81",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "TO ONL NEFT:UTR:CIUBH25092005715:IDIB000M138:SASI KUM:: MARCH 25::00003",
+      "",
+      "10,000.00",
+      "",
+      "7,33,940.81",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "TO ONL NEFT:UTR:CIUBH25092012678:INDB0000931:NIVETHA:: MARCH 25::00003",
+      "",
+      "9,833.00",
+      "",
+      "7,24,107.81",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

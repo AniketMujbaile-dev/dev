@@ -1,0 +1,177 @@
+{
+  "bank_name": "Kerala Gramin Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T08:36:04Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Trans Dt",
+    "Value Dt",
+    "Transn ID",
+    "Transaction Particulars",
+    "Ins Number",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "trans dt|value dt|transn id|transaction particulars|ins number|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 3,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Value Dt",
+    "description": "Transaction Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "21/05/2025",
+      "21-05-25",
+      "S2058512/2",
+      "Cr.for UTR:FBPT251411229725 KERALA FINANCIAL COR",
+      "",
+      "",
+      "132680.00",
+      "1778553.74 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2025",
+      "22-05-25",
+      "S4459683/2",
+      "Cr.for UTR:RBI1432569592762 DIRECTOR OF TREASURI",
+      "",
+      "",
+      "481617.00",
+      "1296936.74 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2025",
+      "22-05-25",
+      "S4462069/2",
+      "Cr.for UTR:RBI1432569592765 DIRECTOR OF TREASURI",
+      "",
+      "",
+      "385024.00",
+      "911912.74 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "28/05/2025",
+      "28-05-25",
+      "MG70295/1",
+      "SELF",
+      "",
+      "50000.00",
+      "",
+      "961912.74 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "29/05/2025",
+      "29-05-25",
+      "S1180081/4",
+      "Charges for RTGS:KLGBH25149520788/000024457402",
+      "",
+      "4.50",
+      "",
+      "961917.24 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "29/05/2025",
+      "29-05-25",
+      "S1180081/2",
+      "Charges for RTGS:KLGBH25149520788/40544121000186",
+      "",
+      "24.50",
+      "",
+      "961941.74 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "29/05/2025",
+      "29-05-25",
+      "S1180081/5",
+      "RTGS/NEBUS SERVICE STATION/KLGBH25149520788/FEDER",
+      "",
+      "412195.00",
+      "",
+      "1374136.74 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "29/05/2025",
+      "29-05-25",
+      "MG52179/1",
+      "BY CASH",
+      "",
+      "",
+      "600000.00",
+      "774136.74 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "29/05/2025",
+      "29-05-25",
+      "MG82480/2",
+      "40544142200068 Int:93.00 and TAX:0.00.",
+      "",
+      "",
+      "93.00",
+      "774043.74 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "29/05/2025",
+      "29-05-25",
+      "MG82480/3",
+      "Repayment credit [40544142200068]",
+      "",
+      "",
+      "9911.00",
+      "764132.74 Dr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

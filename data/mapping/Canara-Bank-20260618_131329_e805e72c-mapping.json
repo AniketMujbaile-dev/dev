@@ -1,0 +1,177 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T11:14:06Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRANS DATE",
+    "VALUE DATE",
+    "BRANCH",
+    "REF/CHQ.NO",
+    "DESCRIPTION",
+    "WITHDRAWS",
+    "DEPOSIT",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "trans date|value date|branch|ref chq no|description|withdraws|deposit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 4,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRANS DATE",
+    "description": "DESCRIPTION",
+    "debit": "WITHDRAWS",
+    "credit": "DEPOSIT",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "01-APR-25",
+      "0",
+      "",
+      "B/F ...",
+      "391,949.28",
+      "0.00",
+      "-391,949.28",
+      "1",
+      "2"
+    ],
+    [
+      "01/04/2025",
+      "31-MAR-25",
+      "33",
+      "",
+      "NEFT CR-YESPH50910636556-YESB0000001-PHONEPE PRIVATE LIMI FOR PHONEPE PR-",
+      "0.00",
+      "530.00",
+      "-391,419.28",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02-APR-25",
+      "33",
+      "",
+      "NEFT CR-YESPH50921204599-YESB0000001-PHONEPE PRIVATE LIMI FOR PHONEPE PR-",
+      "0.00",
+      "92.00",
+      "-391,327.28",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03-APR-25",
+      "33",
+      "",
+      "NEFT CR-YESPH50931371538-YESB0000001-PHONEPE PRIVATE LIMI FOR PHONEPE PR-",
+      "0.00",
+      "1,280.00",
+      "-390,047.28",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "04-APR-25",
+      "33",
+      "",
+      "NEFT CR-YESPH50941240090-YESB0000001-PHONEPE PRIVATE LIMI FOR PHONEPE PR-",
+      "0.00",
+      "135.00",
+      "-389,912.28",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "05-APR-25",
+      "33",
+      "",
+      "NEFT CR-YESPH50951306816-YESB0000001-PHONEPE PRIVATE LIMI FOR PHONEPE PR-",
+      "0.00",
+      "453.00",
+      "-389,459.28",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "06-APR-25",
+      "33",
+      "",
+      "NEFT CR-YESPH50961222960-YESB0000001-PHONEPE PRIVATE LIMI FOR PHONEPE PR-",
+      "0.00",
+      "483.00",
+      "-388,976.28",
+      "2",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "07-APR-25",
+      "33",
+      "",
+      "NEFT CR-YESPH50971188338-YESB0000001-PHONEPE PRIVATE LIMI FOR PHONEPE PR-",
+      "0.00",
+      "2,215.00",
+      "-386,761.28",
+      "2",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "08-APR-25",
+      "33",
+      "",
+      "NEFT CR-YESPH50981274537-YESB0000001-PHONEPE PRIVATE LIMI FOR PHONEPE PR-",
+      "0.00",
+      "265.00",
+      "-386,496.28",
+      "2",
+      "1"
+    ],
+    [
+      "09/04/2025",
+      "09-APR-25",
+      "33",
+      "",
+      "NEFT CR-YESPH50991317458-YESB0000001-PHONEPE PRIVATE LIMI FOR PHONEPE PR-",
+      "0.00",
+      "595.00",
+      "-385,901.28",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

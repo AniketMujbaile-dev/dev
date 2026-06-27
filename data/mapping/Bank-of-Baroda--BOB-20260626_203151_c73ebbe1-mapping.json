@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bank of Baroda (BOB)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-26T18:32:16Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRAN DATE",
+    "VALUE DATE",
+    "NARRATION",
+    "CHQ.NO.",
+    "WITHDRAWAL(DR)",
+    "DEPOSIT(CR)",
+    "BALANCE(INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|value date|narration|chq no|withdrawal dr|deposit cr|balance inr|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRAN DATE",
+    "description": "NARRATION",
+    "debit": "WITHDRAWAL(DR)",
+    "credit": "DEPOSIT(CR)",
+    "amount": null,
+    "balance": "BALANCE(INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "06/05/2025",
+      "06/05/2025",
+      "IMPS/P2A/512617797118/XXXXXXXXXX0668/Raghavendra",
+      "",
+      "590.00",
+      "",
+      "6,24,181.63Dr",
+      "22",
+      "1"
+    ],
+    [
+      "06/05/2025",
+      "06/05/2025",
+      "CHARGES FOR:IMPS/P2A/512617797118/XXXXXXXX",
+      "",
+      "2.95",
+      "",
+      "6,24,184.58Dr",
+      "22",
+      "1"
+    ],
+    [
+      "09/05/2025",
+      "09/05/2025",
+      "NEFT-KARBN25129548670-SANJANAENTERPRISES",
+      "",
+      "",
+      "11,293.00",
+      "6,12,891.58Dr",
+      "22",
+      "1"
+    ],
+    [
+      "09/05/2025",
+      "09/05/2025",
+      "UPI/168008461759/11:56:07/UPI/9980163546@ybl/Paym",
+      "",
+      "",
+      "10,000.00",
+      "6,02,891.58Dr",
+      "22",
+      "1"
+    ],
+    [
+      "10/05/2025",
+      "10/05/2025",
+      "IMPS/P2A/513011564207/XXXXXXXXXX2434/Sidbi",
+      "",
+      "68,019.00",
+      "",
+      "6,70,910.58Dr",
+      "22",
+      "1"
+    ],
+    [
+      "10/05/2025",
+      "10/05/2025",
+      "CHARGES FOR:IMPS/P2A/513011564207/XXXXXXXX",
+      "",
+      "8.85",
+      "",
+      "6,70,919.43Dr",
+      "22",
+      "1"
+    ],
+    [
+      "12/05/2025",
+      "12/05/2025",
+      "TO SELF",
+      "481",
+      "85,000.00",
+      "",
+      "7,55,919.43Dr",
+      "22",
+      "1"
+    ],
+    [
+      "12/05/2025",
+      "12/05/2025",
+      "BY INST 73 : MICR CLG (CTS)",
+      "",
+      "",
+      "52,014.00",
+      "7,03,905.43Dr",
+      "22",
+      "1"
+    ],
+    [
+      "12/05/2025",
+      "12/05/2025",
+      "UPI/628144873901/15:58:08/UPI/8884547049@ybl/Paym",
+      "",
+      "",
+      "48,646.00",
+      "6,55,259.43Dr",
+      "22",
+      "1"
+    ],
+    [
+      "12/05/2025",
+      "12/05/2025",
+      "IMPS/P2A/513217455178/XXXXXXXXXX6806/SLRTradeing",
+      "",
+      "1,328.00",
+      "",
+      "6,56,587.43Dr",
+      "22",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "bank_name": "Kotak Mahindra Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T10:49:06Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq/Ref No",
+    "Withdrawal (Dr)/Deposit (Cr)",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|withdrawal dr deposit cr|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 3,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal (Dr)/Deposit (Cr)",
+    "credit": "Withdrawal (Dr)/Deposit (Cr)",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "UPI/NITESH KUMAR/545794224795/UPI",
+      "UPI-509196972709",
+      "15,000.00(Cr)",
+      "520,087.61(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "SWEEP TRANSFER TO [0284618934]",
+      "",
+      "20,000.00(Dr)",
+      "500,087.61(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "MB:SENT NEFT NAVEEN CERAMICS 50200102203782 HDF",
+      "000455122922",
+      "50,610.00(Dr)",
+      "449,477.61(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "Sweep Trf From: 0284618934",
+      "",
+      "20,000.00(Cr)",
+      "469,477.61(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "Sweep Trf From: 0283881955",
+      "",
+      "35,000.00(Cr)",
+      "504,477.61(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "FD PREMAT PROCEEDS: 0283881955",
+      "0283881955TO",
+      "4,704.00(Cr)",
+      "509,181.61(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "RTGS UTIBR52025040400368443 YOGAVANA UTIB000069",
+      "RTGSINW-0086737308",
+      "2,219,525.00(Cr)",
+      "2,728,706.61(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "MB:SENT RTGS SLN ENTERPRISES 64028741758 STATE",
+      "000455716663",
+      "210,000.00(Dr)",
+      "2,518,706.61(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI/SUDIP DAS/509535456253/UPI",
+      "UPI-509589067114",
+      "2,500.00(Dr)",
+      "2,516,206.61(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "SWEEP TRANSFER TO [0284941315]",
+      "",
+      "2,010,000.00(Dr)",
+      "506,206.61(Cr)",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

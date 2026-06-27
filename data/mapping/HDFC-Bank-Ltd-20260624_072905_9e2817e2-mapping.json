@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T05:29:51Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "14/06/2026",
+      "UPI-KAPIL KUMAR-8630986819@YBL-PUNB0165600-124719025647-SHOE SAMPLING PATT",
+      "0000124719025647",
+      "14/06/26",
+      "3,000.00",
+      "",
+      "8,669.64",
+      "1",
+      "1"
+    ],
+    [
+      "15/06/2026",
+      "NEFT CR-DEUT0797BGL-MYNTRA DESIGNSPRIVATE LIMITED-SAI DASS COMPANY-DEUTH02616675343",
+      "DEUTH02616675343",
+      "15/06/26",
+      "",
+      "8,992.50",
+      "17,662.14",
+      "1",
+      "1"
+    ],
+    [
+      "15/06/2026",
+      "NEFT CR-DEUT0797BGL-MYNTRA DESIGNSPRIVATE LIMITED-SAI DASS COMPANY-DEUTH02616693363",
+      "DEUTH02616693363",
+      "15/06/26",
+      "",
+      "5,893.70",
+      "23,555.84",
+      "1",
+      "1"
+    ],
+    [
+      "15/06/2026",
+      "NEFT CR-DEUT0797BGL-FLIPKART INTERNET PRIVATE LIMITED-SAI DASSCOMPANY-DEUTH026166A1C4B",
+      "DEUTH026166A1C4B",
+      "15/06/26",
+      "",
+      "34,689.69",
+      "58,245.53",
+      "1",
+      "1"
+    ],
+    [
+      "15/06/2026",
+      "NEFT CR-DEUT0797BGL-FLIPKART INTERNET PRIVATE LIMITED-SAI DASSCOMPANY-DEUTH026166A19P1",
+      "DEUTH026166A19P1",
+      "15/06/26",
+      "",
+      "27,989.53",
+      "86,235.06",
+      "1",
+      "1"
+    ],
+    [
+      "15/06/2026",
+      "FT - CR - 50200113077423 - NEW SHOES CENTRE",
+      "0000000000000007",
+      "15/06/26",
+      "",
+      "60,000.00",
+      "146,235.06",
+      "1",
+      "1"
+    ],
+    [
+      "15/06/2026",
+      "IMPS-616613266429-MSIVRAHCORPORATION-BARB-XXXXXXXXXX0062-DASSNDCO",
+      "0000616613266429",
+      "15/06/26",
+      "",
+      "50,000.00",
+      "196,235.06",
+      "1",
+      "1"
+    ],
+    [
+      "15/06/2026",
+      "UPI-SHYAM KAMAL FILLING-PAYTMQR719GR0@PTYS-YESB0PTMUPI-124772536500-PETROL ACTIVA",
+      "0000124772536500",
+      "15/06/26",
+      "200.00",
+      "",
+      "196,035.06",
+      "1",
+      "1"
+    ],
+    [
+      "15/06/2026",
+      "UPI-XXXXXXXX3337-CNRB0000193-124772943509-ALDO SOLES",
+      "0000124772943509",
+      "15/06/26",
+      "8,000.00",
+      "",
+      "188,035.06",
+      "1",
+      "1"
+    ],
+    [
+      "15/06/2026",
+      "FT- 11015049-00912560001809 - ACEVECTORLIMITED",
+      "0000001697326916",
+      "15/06/26",
+      "",
+      "522.56",
+      "188,557.62",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

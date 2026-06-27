@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-23T04:42:12Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "UPI-RUDRAY SERVICESPRIV-RUDRAY@YESBANK-YESB0000016-509173714136-PAY WITH UPI",
+      "0000509173714136",
+      "01/04/25",
+      "5,000.00",
+      "",
+      "43,372.78",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "IMPS-509116113344-PAY10 SERVICES PRIVA-IDFB-XXXXXXX0150-IMPSTXN",
+      "0000509116113344",
+      "01/04/25",
+      "",
+      "1,200.00",
+      "44,572.78",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI-SHIVAM SO DEVENDRAS-7817915090@MBK-PPIW0881822-509116913128-NA",
+      "0000509116913128",
+      "01/04/25",
+      "",
+      "5,000.00",
+      "49,572.78",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "IMPS-509116176236-PAY10 SERVICES PRIVA-IDFB-XXXXXXX0150-IMPSTXN",
+      "0000509116176236",
+      "01/04/25",
+      "",
+      "1,000.00",
+      "50,572.78",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "11000271199190/ATOMDELHIPUBLICSCHOO",
+      "0000250913032772",
+      "01/04/25",
+      "36,435.24",
+      "",
+      "14,137.54",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "50200035657968-TPT-PRASHANT SODHI-DASS AND COMPANY",
+      "0000000396348408",
+      "04/04/25",
+      "",
+      "75,000.00",
+      "89,137.54",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "UPI-XXXXXX2723-HDFC0000870-102574555366-SAI DASS CO",
+      "0000102574555366",
+      "04/04/25",
+      "75,000.00",
+      "",
+      "14,137.54",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "UPI-JYOTI ENTERPRISES-BOIM-508408990232@BOI-BKID0005084-102608263148-QUOTEX",
+      "0000102608263148",
+      "04/04/25",
+      "4,709.00",
+      "",
+      "9,428.54",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-SANJUSANTHAVAZHIYAN-8608159638@AXL-FDRL0002435-627817721633-PAYMENT FROM PHONE",
+      "0000627817721633",
+      "05/04/25",
+      "",
+      "4,742.00",
+      "14,170.54",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "UPI-XXXXXX6108-CNRB0018815-102701362579-FOOD",
+      "0000102701362579",
+      "06/04/25",
+      "100.00",
+      "",
+      "14,070.54",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

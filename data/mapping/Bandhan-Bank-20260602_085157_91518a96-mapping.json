@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bandhan Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-02T06:54:48Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRANS DATE",
+    "VALUE DATE",
+    "CHEQUE /INSTRUMENT",
+    "DESCRIPTION",
+    "DEBITS",
+    "CREDITS",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "trans date|value date|cheque instrument|description|debits|credits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 3,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRANS DATE",
+    "description": "DESCRIPTION",
+    "debit": "DEBITS",
+    "credit": "CREDITS",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2022",
+      "01-APR-2022",
+      "",
+      "B/F ...",
+      "0.00",
+      "30,821.97",
+      "30,821.97",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2022",
+      "01-APR-2022",
+      "",
+      "DEPOSIT,DEPOSIT- IMPS/209115401714/GO OGLEINDIADIGIT",
+      "0.00",
+      "3,000.00",
+      "33,821.97",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2022",
+      "01-APR-2022",
+      "",
+      "DEPOSIT, UPI/CR/209189041394/M R BIRESH DEBBARMA/OKH",
+      "0.00",
+      "5,000.00",
+      "38,821.97",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2022",
+      "01-APR-2022",
+      "",
+      "DEPOSIT,JIO",
+      "0.00",
+      "10,000.00",
+      "48,821.97",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2022",
+      "01-APR-2022",
+      "",
+      "WTHDRL,AUTOPAT COLLECTION TRANSAFER TO LOAN- 69210",
+      "28,922.00",
+      "0.00",
+      "19,899.97",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2022",
+      "02-APR-2022",
+      "",
+      "DEPOSIT,DEPOSIT- IMPS/209210765336/RA ZORPAY COMPOSI",
+      "0.00",
+      "10,000.00",
+      "29,899.97",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2022",
+      "02-APR-2022",
+      "",
+      "NEFT OUT,WTHDRL NEFT/BDBLH226120908 61/STATE BANK O",
+      "29,500.00",
+      "0.00",
+      "399.97",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2022",
+      "02-APR-2022",
+      "",
+      "DEPOSIT,DEPOSIT- IMPS/209221187989/SU BHASHISH DAS/P",
+      "0.00",
+      "32,000.00",
+      "32,399.97",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2022",
+      "02-APR-2022",
+      "",
+      "DEPOSIT,DEPOSIT- IMPS/209221516540/NE ARBY TECHNOLOG",
+      "0.00",
+      "31,323.00",
+      "63,722.97",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2022",
+      "02-APR-2022",
+      "",
+      "WITHDRAWAL,WDL- IMPS/209221022721/UM A SANKAR SAHA/I",
+      "30,000.00",
+      "0.00",
+      "33,722.97",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

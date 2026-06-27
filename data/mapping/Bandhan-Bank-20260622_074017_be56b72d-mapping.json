@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bandhan Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T05:41:08Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRANS DATE",
+    "VALUE DATE",
+    "CHEQUE /INSTRUMENT",
+    "DESCRIPTION",
+    "DEBITS",
+    "CREDITS",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "trans date|value date|cheque instrument|description|debits|credits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 3,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRANS DATE",
+    "description": "DESCRIPTION",
+    "debit": "DEBITS",
+    "credit": "CREDITS",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "01-APR-2025",
+      "",
+      "B/F ...",
+      "0.00",
+      "92,864.00",
+      "92,864.00",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-2025",
+      "",
+      "UPI/CR/C102391156612/MR SANJAY/OKHD/SAH38157@OKHD",
+      "0.00",
+      "2,830.00",
+      "95,694.00",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-2025",
+      "",
+      "UPI/CR/C509101852722/MAYADEVI/OKAX/PARMOPAREMI8@",
+      "0.00",
+      "100.00",
+      "95,794.00",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-2025",
+      "",
+      "UPI/CR/C127457171513/ARMANALI/YBL/7461906628-2@Y",
+      "0.00",
+      "1,400.00",
+      "97,194.00",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-2025",
+      "",
+      "UPI/CR/C588225202011/MASRAFSHA/IBL/8603947104@IBL",
+      "0.00",
+      "3,000.00",
+      "1,00,194.00",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-2025",
+      "",
+      "UPI/CR/C387933214781/ARMANALI/YBL/7461906628-2@Y",
+      "0.00",
+      "100.00",
+      "1,00,294.00",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02-APR-2025",
+      "",
+      "UPI/CR/C655260183266/DIPENDRAK/IBL/DKGUPTA9262@IB",
+      "0.00",
+      "10.00",
+      "1,00,304.00",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03-APR-2025",
+      "",
+      "UPI/CR/C102502626734/MR SANJAY/OKHD/SAH38157@OKHD",
+      "0.00",
+      "620.00",
+      "1,00,924.00",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03-APR-2025",
+      "",
+      "UPI/CR/C944100741867/RAJKISHOR/YBL/8873268100@YBL",
+      "0.00",
+      "5,250.00",
+      "1,06,174.00",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03-APR-2025",
+      "",
+      "UPI/CR/C176513094567/SIMENDRA/YBL/8507578179@YBL",
+      "0.00",
+      "2,600.00",
+      "1,08,774.00",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

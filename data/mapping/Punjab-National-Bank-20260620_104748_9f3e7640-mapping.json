@@ -1,0 +1,177 @@
+{
+  "bank_name": "Punjab National Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-20T08:48:37Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Tran Date",
+    "Withdrawal",
+    "Deposit",
+    "Balance",
+    "Alpha",
+    "CHQ. NO.",
+    "Narration",
+    "Additional Info",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|withdrawal|deposit|balance|alpha|chq no|narration|additional info|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 6,
+    "debit": 1,
+    "credit": 2,
+    "amount": null,
+    "balance": 3,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Tran Date",
+    "description": "Narration",
+    "debit": "Withdrawal",
+    "credit": "Deposit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "",
+      "3100.00",
+      "4753.68 Cr.",
+      "",
+      "",
+      "From:XXXX6668:S A DHANDAPANI",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "3150.00",
+      "",
+      "1603.68 Cr.",
+      "",
+      "",
+      "UPI/825433953517/P2V/9159795299@ybl/Mr CHINNADURAI",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "",
+      "10000.00",
+      "11603.68 Cr.",
+      "",
+      "",
+      "From:XXXX9601:VISAKA INDANE NDNE RETAILER",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "10000.00",
+      "",
+      "1603.68 Cr.",
+      "",
+      "",
+      "UPI/035401553912/P2V/9791171422@ybl/BALASUBRAMANI",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "170.00",
+      "",
+      "1433.68 Cr.",
+      "",
+      "",
+      "UPI/666105931320/P2M/gpay-11176317937@okbizaxis/Sr",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "800.00",
+      "",
+      "633.68 Cr.",
+      "",
+      "",
+      "UPI/575763208315/P2A/0388053000014811@SIBL0000388/",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "",
+      "12000.00",
+      "12633.68 Cr.",
+      "",
+      "",
+      "From:XXXX6668:S A DHANDAPANI",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "10000.00",
+      "",
+      "2633.68 Cr.",
+      "",
+      "",
+      "UPI/199804085960/P2V/9047714209@ybl/S NAKKEERAN",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "1260.00",
+      "",
+      "1373.68 Cr.",
+      "",
+      "",
+      "UPI/915711955869/P2M/paytm.d19061488441@pty/Seakin",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "180.00",
+      "",
+      "1193.68 Cr.",
+      "",
+      "",
+      "UPI/417993180865/P2M/paytmqr281005050101zd10f6jlq/",
+      "",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

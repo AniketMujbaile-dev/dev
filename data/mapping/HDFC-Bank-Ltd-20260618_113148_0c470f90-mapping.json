@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T09:32:05Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "07/03/2026",
+      "IMPS-606658322357-SHREESHYAMENTERPRISESCOMPANY-UTIB-XXXXXXXXXXX9799-IMPS",
+      "0000606658322357",
+      "07/03/26",
+      "",
+      "80,000.00",
+      "80,023.26",
+      "1",
+      "1"
+    ],
+    [
+      "07/03/2026",
+      "UPI-XXXXXXX1506-SBIN0050135-119628352286-UPI",
+      "0000119628352286",
+      "07/03/26",
+      "1.00",
+      "",
+      "80,022.26",
+      "1",
+      "1"
+    ],
+    [
+      "07/03/2026",
+      "REV-UPI-50200066884410-KULDEEPKUMAR23500-1@OKHDFCBANK-119628352286-UPI",
+      "0000119628352286",
+      "07/03/26",
+      "",
+      "1.00",
+      "80,023.26",
+      "1",
+      "1"
+    ],
+    [
+      "07/03/2026",
+      "UPI-XXXXXXX1506-SBIN0050135-119628374740-UPI",
+      "0000119628374740",
+      "07/03/26",
+      "1.00",
+      "",
+      "80,022.26",
+      "1",
+      "1"
+    ],
+    [
+      "07/03/2026",
+      "REV-UPI-50200066884410-KULDEEPKUMAR23500-1@OKHDFCBANK-119628374740-UPI",
+      "0000119628374740",
+      "07/03/26",
+      "",
+      "1.00",
+      "80,023.26",
+      "1",
+      "1"
+    ],
+    [
+      "07/03/2026",
+      "NEFTDR-SBIN0050135-DUSHIYANT-MEHAM-HDFCH00849576059",
+      "0000000000000377",
+      "07/03/26",
+      "75,300.00",
+      "",
+      "4,723.26",
+      "1",
+      "1"
+    ],
+    [
+      "07/03/2026",
+      "UPI-KULDEEPKUMAR-SHREESHYAMENTERPRISESCOMPANY7-4@OKAXIS-UTIB0003036-606680503581-UPI SEND MONEY",
+      "0000606680503581",
+      "07/03/26",
+      "1,000.00",
+      "",
+      "3,723.26",
+      "1",
+      "1"
+    ],
+    [
+      "16/03/2026",
+      "STMT CHGS NET/MBL INCL GST 10-03-2026-EPR2607564765053",
+      "EPR2607564765053",
+      "16/03/26",
+      "177.00",
+      "",
+      "3,546.26",
+      "1",
+      "1"
+    ],
+    [
+      "28/03/2026",
+      "A2AINT01--00600310016848-HDBFS MUMBAI DISB A/C-TWDS AL LOAN AMT - A2A DEBIT",
+      "0000001545087126",
+      "28/03/26",
+      "",
+      "231,101.00",
+      "234,647.26",
+      "1",
+      "1"
+    ],
+    [
+      "30/03/2026",
+      "IMPS-608941267863-SHREE SHYAM AXIS-UTIB-XXXXXXXXXXX9799-IMPS TRANSACTION",
+      "0000608941267863",
+      "30/03/26",
+      "45,000.00",
+      "",
+      "189,647.26",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

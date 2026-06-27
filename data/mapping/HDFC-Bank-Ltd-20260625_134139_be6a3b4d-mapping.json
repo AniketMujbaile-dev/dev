@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-25T11:42:26Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "UPI-SEJALYADAV-PAYTMQR57SM4J@PAYTM-YESB0PTMUPI-545881996462-UPI",
+      "0000545881996462",
+      "02/04/25",
+      "48.00",
+      "",
+      "17,301.20",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "NEFT CR-UTIB0005113-ANUPAM STATIONERY LIMITED-SANDEEPCHANDIWADE-UTIBN62025040359126534",
+      "UTIBN62025040359126534",
+      "03/04/25",
+      "",
+      "58,500.00",
+      "75,801.20",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "NEFT CR-YESB0000001-LINC LIMITED-SANDEEPCHANDIWADE-YESBN12025040306732051",
+      "YESBN12025040306732051",
+      "03/04/25",
+      "",
+      "45,000.00",
+      "120,801.20",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI-PRITIPETROLEUM-PAYTMQR5ZSEAN@PTYS-YESB0PTMUPI-102539138893-UPI",
+      "0000102539138893",
+      "03/04/25",
+      "374.00",
+      "",
+      "120,427.20",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI-GOOGLE INDIA SERVICE-GPAYUTILITY@ICICI-ICIC0DC0099-102552160760-UPI",
+      "0000102552160760",
+      "03/04/25",
+      "1,650.00",
+      "",
+      "118,777.20",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI-SHAILA SANDEEPCHAND-1986SHAILA@OKHDFCBANK-HDFC0001808-102552296899-LIC ANDEXPERIENCE",
+      "0000102552296899",
+      "03/04/25",
+      "15,000.00",
+      "",
+      "103,777.20",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "50100312780641-TPT-BALANCE-ARCHANA KETANVAJA",
+      "0000000484926786",
+      "03/04/25",
+      "6,000.00",
+      "",
+      "97,777.20",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "UPI-LENSKART LKST867-PAYTM-64923324@PTYS-YESB0PTMUPI-102572090184-UPI",
+      "0000102572090184",
+      "04/04/25",
+      "60.00",
+      "",
+      "97,717.20",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "UPI-SAMRAT SWEET ANDFAR-PAYTMQR5CBHZ4@PTYS-YESB0PTMUPI-102590999251-UPI",
+      "0000102590999251",
+      "04/04/25",
+      "65.00",
+      "",
+      "97,652.20",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "UPI-HANSA BROADBANDSERV-PAYTMQR1F4W6TU5YU@PAYTM-YESB0PTMUPI-102591442759-INTERNET YEARLY SU",
+      "0000102591442759",
+      "04/04/25",
+      "4,499.00",
+      "",
+      "93,153.20",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-17T07:52:35Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "10/02/2026",
+      "UPI-JOGENDER SO SATYWAN-7082636534@YBL-IBKL0001996-034747983575-PAYMENT FROM PHONE",
+      "0000034747983575",
+      "10/02/26",
+      "10,000.00",
+      "",
+      "280,844.51",
+      "1",
+      "1"
+    ],
+    [
+      "10/02/2026",
+      "UPI-AJIT SINGH-SGAHLOT038@OKAXIS-UTIB0004149-653819077472-PAYMENT FROM PHONE",
+      "0000653819077472",
+      "10/02/26",
+      "5,000.00",
+      "",
+      "275,844.51",
+      "1",
+      "1"
+    ],
+    [
+      "10/02/2026",
+      "UPI-AIRTELRECHARGE-AIRTELPREDIRECT1@YBL-YESB0YBLUPI-533464163820-PAYMENT FROM PHONE",
+      "0000533464163820",
+      "10/02/26",
+      "302.00",
+      "",
+      "275,542.51",
+      "1",
+      "1"
+    ],
+    [
+      "10/02/2026",
+      "UPI-ADHOC DAKSHA KISANS-PAYTM.S16R0YG@PTY-YESB0MCHUPI-389703679515-4473 DIESEL",
+      "0000389703679515",
+      "10/02/26",
+      "30,152.00",
+      "",
+      "245,390.51",
+      "1",
+      "1"
+    ],
+    [
+      "10/02/2026",
+      "UPI-MOHIT-8470075647@YBL-SBIN0010456-277228625478-PAYMENT FROM PHONE",
+      "0000277228625478",
+      "10/02/26",
+      "28,800.00",
+      "",
+      "216,590.51",
+      "1",
+      "1"
+    ],
+    [
+      "11/02/2026",
+      "UPI-HARI MOHAN SHARMA S-HARIMOHANJOSHI999@OKICICI-BARB0TRIPOL-604238967662-UPI",
+      "0000604238967662",
+      "11/02/26",
+      "",
+      "80,000.00",
+      "296,590.51",
+      "1",
+      "1"
+    ],
+    [
+      "11/02/2026",
+      "UPI-HARI MOHAN SHARMA S-HARIMOHANJOSHI999@OKICICI-BARB0TRIPOL-604298637207-UPI",
+      "0000604298637207",
+      "11/02/26",
+      "",
+      "7,000.00",
+      "303,590.51",
+      "1",
+      "1"
+    ],
+    [
+      "11/02/2026",
+      "RTGS DR-SBIN0016566-JAI BHARAT KSK-NETBANK, MUM-HDFCR52026021168418074-OM BANNA",
+      "HDFCR52026021168",
+      "11/02/26",
+      "250,000.00",
+      "",
+      "53,590.51",
+      "1",
+      "1"
+    ],
+    [
+      "11/02/2026",
+      "NEFT CR-ICIC0SF0002-KOMAL ENTERPRISES-PAWANKUMAR-IN42604252182340",
+      "IN42604252182340",
+      "11/02/26",
+      "",
+      "12,290.00",
+      "65,880.51",
+      "1",
+      "1"
+    ],
+    [
+      "11/02/2026",
+      "NEFT CR-ICIC0SF0002-SANT GREEB DASS TRANSPORT CO-OM BANNA TRANS LOGISTIC-IN42604252713265",
+      "IN42604252713265",
+      "12/02/26",
+      "",
+      "45,720.00",
+      "111,600.51",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

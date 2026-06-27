@@ -1,0 +1,177 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-15T13:16:56Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRANS DATE",
+    "VALUE DATE",
+    "BRANCH",
+    "REF/CHQ.NO",
+    "DESCRIPTION",
+    "WITHDRAWS",
+    "DEPOSIT",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "trans date|value date|branch|ref chq no|description|withdraws|deposit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 4,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRANS DATE",
+    "description": "DESCRIPTION",
+    "debit": "WITHDRAWS",
+    "credit": "DEPOSIT",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/06/2026",
+      "01-JUN-26",
+      "0",
+      "",
+      "B/F ...",
+      "3,604,320.42",
+      "0.00",
+      "-3,604,320.42",
+      "1",
+      "2"
+    ],
+    [
+      "01/06/2026",
+      "01-JUN-26",
+      "33",
+      "123992374547",
+      "UPI/CR/123992374547/PRASAD LA/HDFC/**E2001@OKHDFCBANK/UPI//HDFCB6B0E8C7C604F3B8921BA0BA7C08C5E/31/05/2026 19:03:30",
+      "0.00",
+      "5,000.00",
+      "-3,599,320.42",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-JUN-26",
+      "33",
+      "123993294491",
+      "UPI/CR/123993294491/PRASAD LA/HDFC/**E2001@OKHDFCBANK/UPI//HDF10816F9C977146C9B7872BED61F32ADB/31/05/2026 19:15:08",
+      "0.00",
+      "5,000.00",
+      "-3,594,320.42",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-JUN-26",
+      "33",
+      "123994516744",
+      "UPI/CR/123994516744/OMKAR VIJ/HDCC/**KAR-4@OKHDFCBANK/UPI//HDF5B7E05BBCF7C4F08837597C28AB2B20B/31/05/2026 19:30:13",
+      "0.00",
+      "9,000.00",
+      "-3,585,320.42",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-JUN-26",
+      "33",
+      "651880448371",
+      "UPI/CR/651880448371/SARMALKAR/SIDC/**728-1@OKICICI/UPI//ICI75A98BCFFEE747E1AA4DF47405D8FFA2/01/06/2026 09:15:57",
+      "0.00",
+      "18,000.00",
+      "-3,567,320.42",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-JUN-26",
+      "15375",
+      "000000000000",
+      "FUNDS TRANSFER DEBIT - VETOBA PETROLEUM",
+      "182,000.00",
+      "0.00",
+      "-3,749,320.42",
+      "2",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-JUN-26",
+      "15375",
+      "000000000000",
+      "FUNDS TRANSFER DEBIT 125008762477 - VETOBA PETROLEUM",
+      "0.00",
+      "182,000.00",
+      "-3,567,320.42",
+      "2",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-JUN-26",
+      "33",
+      "489642592273",
+      "UPI/CR/489642592273/RAJJAK HA/BKID/**26016@YBL/PAYMENT //YBLB19248936AD54CB3965D00227DFEE728/01/06/2026 17:13:20",
+      "0.00",
+      "1,875.00",
+      "-3,565,445.42",
+      "2",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-JUN-26",
+      "33",
+      "615222095677",
+      "UPI/CR/615222095677/ASHOK GAN/RATN/**43049@RBL/KUDAL ME//RNB0220326152173432788B615222095673/01/06/2026 17:34:33",
+      "0.00",
+      "10,500.00",
+      "-3,554,945.42",
+      "2",
+      "1"
+    ],
+    [
+      "02/06/2026",
+      "02-JUN-26",
+      "33",
+      "124064303713",
+      "UPI/CR/124064303713/VILAS VAS/BKID/**I3132@OKHDFCBANK/UPI//HDF38ABEE78066F455691F5AFAEE85B78DE/02/06/2026 07:14:05",
+      "0.00",
+      "6,000.00",
+      "-3,548,945.42",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

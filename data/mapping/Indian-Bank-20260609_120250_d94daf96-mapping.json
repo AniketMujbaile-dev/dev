@@ -1,0 +1,155 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-09T10:03:12Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Value Date",
+    "Post Date",
+    "Credit Amount",
+    "Debit Amount",
+    "Closing Balance",
+    "Description",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "value date|post date|credit amount|debit amount|closing balance|description|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 5,
+    "debit": 3,
+    "credit": 2,
+    "amount": 2,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Value Date",
+    "description": "Description",
+    "debit": "Debit Amount",
+    "credit": "Credit Amount",
+    "amount": "Credit Amount",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "11/04/2026",
+      "11/04/2026",
+      "",
+      "500029.21",
+      "-106800806.65",
+      "WITHDRAWAL TRANSFER ONLINE B ULULK NEFT TRF - P032 / NEFT/ICIC/IDIBN520260411378658 36/ETC POOL/ Txn Amt. 500000.00 Charges. 29.21",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2026",
+      "11/04/2026",
+      "",
+      "500029.21",
+      "-107300835.86",
+      "WITHDRAWAL TRANSFER ONLINE B ULULK NEFT TRF - P276 / NEFT/ICIC/IDIBN520260411378658 38/HPCL / Txn Amt. 500000.00 Charges. 29.21",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2026",
+      "11/04/2026",
+      "",
+      "36247.61",
+      "-107337083.47",
+      "WITHDRAWAL TRANSFER ONLINE B ULULK NEFT TRF - P248 / NEFT/BARB/IDIBN52026041137865 841/Gautam a/ Txn Amt. 36242.00 Charges. 5.61",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2026",
+      "11/04/2026",
+      "",
+      "500029.21",
+      "-107837112.68",
+      "WITHDRAWAL TRANSFER ONLINE B ULULK NEFT TRF - P043 / NEFT/HDFC/IDIBN52026041137866 844/INDIAN O/ Txn Amt. 500000.00 Charges. 29.21",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2026",
+      "11/04/2026",
+      "",
+      "21285.61",
+      "-107858398.29",
+      "WITHDRAWAL TRANSFER ONLINE B ULULK NEFT TRF - 1 / NEFT/UTIB/IDIBN520260411379039 14/PRASHANT/ Txn Amt. 21280.00 Charges. 5.61",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2026",
+      "11/04/2026",
+      "",
+      "11059.61",
+      "-107869457.9",
+      "WITHDRAWAL TRANSFER ONLINE B ULULK NEFT TRF - 9 / NEFT/PUNB/IDIBN52026041137903 270/ANOOP KU/ Txn Amt. 11054.00 Charges. 5.61",
+      "2",
+      "1"
+    ],
+    [
+      "11/04/2026",
+      "11/04/2026",
+      "",
+      "9602.66",
+      "-107879060.56",
+      "WITHDRAWAL TRANSFER ONLINE B ULULK NEFT TRF - 11 / NEFT/UCBA/IDIBN52026041137904 127/RAHUL MI/ Txn Amt. 9600.00 Charges. 2.66",
+      "2",
+      "1"
+    ],
+    [
+      "11/04/2026",
+      "11/04/2026",
+      "",
+      "9602.66",
+      "-107888663.22",
+      "WITHDRAWAL TRANSFER ONLINE B ULULK NEFT TRF - 12 / NEFT/UTIB/IDIBN520260411379041 28/ANIL TIW/ Txn Amt. 9600.00 Charges. 2.66",
+      "2",
+      "1"
+    ],
+    [
+      "11/04/2026",
+      "11/04/2026",
+      "",
+      "5002.66",
+      "-107893665.88",
+      "WITHDRAWAL TRANSFER ONLINE B ULULK NEFT TRF - 14 / NEFT/UBIN/IDIBN520260411379039 28/VASKAR M/ Txn Amt. 5000.00 Charges. 2.66",
+      "2",
+      "1"
+    ],
+    [
+      "11/04/2026",
+      "11/04/2026",
+      "",
+      "10002.66",
+      "-107903668.54",
+      "WITHDRAWAL TRANSFER ONLINE B ULULK NEFT TRF - 15 / NEFT/UTIB/IDIBN520260411379041 29/BASANT P/ Txn Amt. 10000.00 Charges. 2.66",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

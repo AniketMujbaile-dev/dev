@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-19T12:19:00Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "28/02/2026",
+      "UPI-00000041209386141-8295974302-3@AXL-280255824259-PAYMENT FROM PHONEPE",
+      "0000280255824259",
+      "28/02/26",
+      "",
+      "650.00",
+      "132,590.18",
+      "1",
+      "1"
+    ],
+    [
+      "28/02/2026",
+      "UPI-2535001700342592-ER.RAJNARAYANSHAH1@AXL-269894793066-PAYMENT FROM PHONEPE",
+      "0000269894793066",
+      "28/02/26",
+      "",
+      "200.00",
+      "132,790.18",
+      "1",
+      "1"
+    ],
+    [
+      "28/02/2026",
+      "63987053TERMINAL 1 CARDS SETTL. 28/02/26",
+      "000000000000000",
+      "28/02/26",
+      "",
+      "1,873.40",
+      "134,663.58",
+      "1",
+      "1"
+    ],
+    [
+      "28/02/2026",
+      "63987055TERMINAL 1 CARDS SETTL. 28/02/26",
+      "000000000000000",
+      "28/02/26",
+      "",
+      "2,116.00",
+      "136,779.58",
+      "1",
+      "1"
+    ],
+    [
+      "28/02/2026",
+      "63987056TERMINAL 1 CARDS SETTL. 28/02/26",
+      "000000000000000",
+      "28/02/26",
+      "",
+      "335.24",
+      "137,114.82",
+      "1",
+      "1"
+    ],
+    [
+      "28/02/2026",
+      "63987057TERMINAL 1 CARDS SETTL. 28/02/26",
+      "000000000000000",
+      "28/02/26",
+      "",
+      "2,267.37",
+      "139,382.19",
+      "1",
+      "1"
+    ],
+    [
+      "28/02/2026",
+      "63987058TERMINAL 1 CARDS SETTL. 28/02/26",
+      "000000000000000",
+      "28/02/26",
+      "",
+      "850.56",
+      "140,232.75",
+      "1",
+      "1"
+    ],
+    [
+      "28/02/2026",
+      "63987059TERMINAL 1 CARDS SETTL. 28/02/26",
+      "000000000000000",
+      "28/02/26",
+      "",
+      "711.60",
+      "140,944.35",
+      "1",
+      "1"
+    ],
+    [
+      "28/02/2026",
+      "63987060TERMINAL 1 CARDS SETTL. 28/02/26",
+      "000000000000000",
+      "28/02/26",
+      "",
+      "1,641.46",
+      "142,585.81",
+      "1",
+      "1"
+    ],
+    [
+      "28/02/2026",
+      "63987061TERMINAL 1 CARDS SETTL. 28/02/26",
+      "000000000000000",
+      "28/02/26",
+      "",
+      "443.70",
+      "143,029.51",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

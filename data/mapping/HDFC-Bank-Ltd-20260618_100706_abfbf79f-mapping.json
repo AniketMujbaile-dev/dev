@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T08:07:20Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "EMI 125370720 CHQ S1253707200152 0526125370720",
+      "0000000125370720",
+      "01/05/26",
+      "43,567.00",
+      "",
+      "-5,685,417.01",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "EMI 125370720 CHQ S1253707200152 0526125370720",
+      "0000000125370720",
+      "01/05/26",
+      "",
+      "43,567.00",
+      "-5,641,850.01",
+      "1",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "O/S INTEREST TRANSFER FROM A/CXXXXXXXXXX9271",
+      "000000000000000",
+      "04/05/26",
+      "",
+      "19,637.20",
+      "-5,622,212.81",
+      "1",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "NEFT CR-PUNB0329700-BHAWANI GASSEWA-BHAWANI GAS SEWA-PUNBQ26124858375",
+      "PUNBQ26124858375",
+      "04/05/26",
+      "",
+      "100,000.00",
+      "-5,522,212.81",
+      "1",
+      "1"
+    ],
+    [
+      "05/05/2026",
+      "I/W CHQ RETURN-CTS S1-RK SALAI BRA",
+      "0000000000000259",
+      "05/05/26",
+      "180,203.00",
+      "",
+      "-5,702,415.81",
+      "1",
+      "1"
+    ],
+    [
+      "05/05/2026",
+      "I/W CHQ RETURN-CTS S1-RK SALAI BRA",
+      "0000000000000259",
+      "05/05/26",
+      "",
+      "180,203.00",
+      "-5,522,212.81",
+      "1",
+      "1"
+    ],
+    [
+      "05/05/2026",
+      "NEFT DR-PUNB0329700-CHANIGA FILLING STATION-NETBANK,MUM-HDFCH00975324474-NBISLRTPMTKXUGJO",
+      "HDFCH00975324474",
+      "05/05/26",
+      "180,203.00",
+      "",
+      "-5,702,415.81",
+      "1",
+      "1"
+    ],
+    [
+      "06/05/2026",
+      "PENAL CHARGES",
+      "000000000000000",
+      "06/05/26",
+      "9,017.49",
+      "",
+      "-5,711,433.30",
+      "1",
+      "1"
+    ],
+    [
+      "06/05/2026",
+      "EMI 125370720 CHQ S1253707200152 0526125370720-125370720",
+      "000000000000000",
+      "06/05/26",
+      "43,567.00",
+      "",
+      "-5,755,000.30",
+      "1",
+      "1"
+    ],
+    [
+      "06/05/2026",
+      "CGST-SERVICECHARGE-STAXUPLOAD-NCB2712694541907",
+      "NCB2712694541907",
+      "06/05/26",
+      "559.91",
+      "",
+      "-5,755,560.21",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "bank_name": "Punjab National Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-13T10:40:52Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Tran Date",
+    "Withdrawal",
+    "Deposit",
+    "Balance",
+    "Alpha",
+    "CHQ. NO.",
+    "Narration",
+    "Additional Info",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|withdrawal|deposit|balance|alpha|chq no|narration|additional info|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 6,
+    "debit": 1,
+    "credit": 2,
+    "amount": null,
+    "balance": 3,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Tran Date",
+    "description": "Narration",
+    "debit": "Withdrawal",
+    "credit": "Deposit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "",
+      "100000.00",
+      "100161.22 Cr.",
+      "",
+      "",
+      "IMPS-IN/509213560036/8654879010/bananaco",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "",
+      "50000.00",
+      "150161.22 Cr.",
+      "",
+      "",
+      "Cash Deposit At : DAMOH",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "",
+      "16000.00",
+      "166161.22 Cr.",
+      "",
+      "",
+      "UPI/545808999940/P2V/asifasif9553@okaxis/MOHAMMAD",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "10000.00",
+      "",
+      "156161.22 Cr.",
+      "",
+      "",
+      "To:XXXX1499:JAY MAA LAXMI KELA GROUP",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "30000.00",
+      "",
+      "126161.22 Cr.",
+      "",
+      "",
+      "UPI/138339366533/P2V/9630282372-5@axl/GYANESWAR BH",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "9999.00",
+      "",
+      "116162.22 Cr.",
+      "",
+      "",
+      "UPI/478058488600/P2V/9630282372-5@axl/GYANESWAR BH",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "100000.00",
+      "",
+      "16162.22 Cr.",
+      "IPT",
+      "303060",
+      "MAHAVIR KELA GROUP",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "",
+      "3200.00",
+      "19362.22 Cr.",
+      "",
+      "",
+      "UPI/704702364150/P2V/79996949@axl/Ramchandra",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "380.00",
+      "",
+      "18982.22 Cr.",
+      "",
+      "",
+      "UPI/486755938089/P2M/paytmqr1u8x91wwv0@paytm/JAYSH",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "1180.00",
+      "",
+      "17802.22 Cr.",
+      "",
+      "",
+      "INCIDENTAL CHARGES",
+      "",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

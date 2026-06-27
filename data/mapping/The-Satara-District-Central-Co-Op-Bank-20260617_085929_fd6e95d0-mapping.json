@@ -1,0 +1,166 @@
+{
+  "bank_name": "The Satara District Central Co-Op Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-17T06:59:47Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "PARTICULARS",
+    "CHQ.NO",
+    "VALUE DATE",
+    "WITHDRAWALS(DR.)",
+    "DEPOSITS(CR.)",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|chq no|value date|withdrawals dr|deposits cr|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "PARTICULARS",
+    "debit": "WITHDRAWALS(DR.)",
+    "credit": "DEPOSITS(CR.)",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02-APR-25",
+      "BY TR KOYANA EDU SOC TALDEV",
+      "-",
+      "02/04/2025",
+      "0.00",
+      "132,365.00",
+      "344,090.00 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "04-APR-25",
+      "BY CASH",
+      "18151",
+      "04/04/2025",
+      "100,000.00",
+      "0.00",
+      "244,090.00 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "05-APR-25",
+      "ADHIKSHAK KOYANAMAI VASTIGRUH TALDEV",
+      "-",
+      "05/04/2025",
+      "0.00",
+      "260,260.00",
+      "504,350.00 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "08-APR-25",
+      "TO SELF",
+      "18152",
+      "08/04/2025",
+      "150,000.00",
+      "0.00",
+      "354,350.00 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "16-APR-25",
+      "Charges for NEFT Customer Payment:000001221909",
+      "-",
+      "16/04/2025",
+      "5.90",
+      "0.00",
+      "354,344.10 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "16-APR-25",
+      "Dr.for PORD:NEFT/HDFC0000790/SDCEQ25106272169/SHRE",
+      "18153",
+      "16/04/2025",
+      "60,310.00",
+      "0.00",
+      "294,034.10 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "21-APR-25",
+      "By Clearing/18154/K R ZAREKAR AND COMPANY TAPOLA",
+      "18154",
+      "21/04/2025",
+      "12,706.00",
+      "0.00",
+      "281,328.10 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "22-APR-25",
+      "Charges for NEFT Customer Payment:000001261870",
+      "-",
+      "22/04/2025",
+      "5.90",
+      "0.00",
+      "281,322.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "22-APR-25",
+      "Dr.for PORD:NEFT/KUCB0488003/SDCEQ25112315376/AJIT",
+      "18155",
+      "22/04/2025",
+      "15,232.00",
+      "0.00",
+      "266,090.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "23-APR-25",
+      "Charges for RTGS:SDCEH25113047705/000001276717",
+      "-",
+      "23/04/2025",
+      "29.50",
+      "0.00",
+      "266,060.70 Cr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

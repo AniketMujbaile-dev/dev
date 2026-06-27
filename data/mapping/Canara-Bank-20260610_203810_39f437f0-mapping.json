@@ -1,0 +1,144 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-10T18:38:35Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Deposits",
+    "Withdrawals",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 2,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "07/05/2026",
+      "UPI/CR/612795265724/BASANTKU/SBIN/**ANT53@OKSBI/UPI//SBI436D741297024B9C88A603BAE41073A5/07/05/202620:51:48Chq: 612795265724",
+      "200.00",
+      "",
+      "-7,11,810.90",
+      "1",
+      "1"
+    ],
+    [
+      "07/05/2026",
+      "UPI/CR/737797780063/ANANDYAD/HDFC/**VHDFC@AXL/PAYMENT//AXL4F0B6B43428C4D6E8101C4D4F10F7CCF/07/05/202620:57:19Chq: 737797780063",
+      "160.00",
+      "",
+      "-7,11,650.90",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "UPI/CR/370892252586/RAMKUMAR/SBIN/**HU908@YBL/PAYMENT//YBL1CB5B79242D7408B9F07515FD58B678F/08/05/202611:03:04Chq: 370892252586",
+      "80.00",
+      "",
+      "-7,11,570.90",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "UPI/CR/527674030243/SWETAEK/SBIN/**78763@AXL/PAYMENT//AXLD92ECDE45F8E4DFC9A569A1B00AEA285/08/05/202618:17:08Chq: 527674030243",
+      "10.00",
+      "",
+      "-7,11,560.90",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "UPI/CR/708739820898/SANSHKAR /BARB/**123-3@AXL/PAYMENT//AXLE1ED648F3A614E4F84D6FCE62EE35E5A/08/05/202618:42:04Chq: 708739820898",
+      "40.00",
+      "",
+      "-7,11,520.90",
+      "2",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "UPI/CR/440618499383/RANJEET K/AIRP/**047-2@AXL/PAYMENT//AXLFC5E3CBEFBE0451D9F29EC003FE9414F/08/05/202618:48:09Chq: 440618499383",
+      "1,440.00",
+      "",
+      "-7,10,080.90",
+      "2",
+      "1"
+    ],
+    [
+      "09/05/2026",
+      "UPI/CR/612910834040/SANDHYAS /KKBK/**28705@KOTAK/NA//KOT31194797RR93L5YPGOSV6OY75RJVCCXU/09/05/202610:34:13Chq: 612910834040",
+      "1,980.00",
+      "",
+      "-7,08,100.90",
+      "2",
+      "1"
+    ],
+    [
+      "09/05/2026",
+      "UPI/CR/649517044130/RAKESHKU/IDCC/**AHU-2@OKAXIS/UPI//AXI566D73459DAE471D8866E9C1A516670B/09/05/2026 12:47:02Chq: 649517044130",
+      "140.00",
+      "",
+      "-7,07,960.90",
+      "2",
+      "1"
+    ],
+    [
+      "09/05/2026",
+      "UPI/CR/676705358497/CHANDRMANI/SBIN/**66581@AXL/PAYMENT//AXLD53B91897C5B496092D3588EB344E10B/09/05/202613:56:30Chq: 676705358497",
+      "430.00",
+      "",
+      "-7,07,530.90",
+      "2",
+      "1"
+    ],
+    [
+      "09/05/2026",
+      "UPI/CR/612997418182/BHUNESHWA/HDFC/**19097@RAPL/UPI//RBAAPFDF8DFC82D91C9781498B1242658F2/09/05/202617:39:49Chq: 612997418182",
+      "13,000.00",
+      "",
+      "-6,94,530.90",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

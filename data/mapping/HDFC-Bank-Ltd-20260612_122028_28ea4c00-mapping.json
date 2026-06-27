@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-12T10:21:12Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "23/07/2025",
+      "FT -ZADE AGRO WORKS CR - 99908888588627- LOKESH RANGRAOJI ZADE",
+      "0000000000000001",
+      "23/07/25",
+      "",
+      "50,000.00",
+      "50,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "27/07/2025",
+      "UPI-LOKESH RANGRAOZADE-8888588627@YBL-PUNB0547300-866231467025-PAYMENT FROM PHONE",
+      "0000866231467025",
+      "27/07/25",
+      "",
+      "1.00",
+      "50,001.00",
+      "1",
+      "1"
+    ],
+    [
+      "28/07/2025",
+      "UPI-RAJESH RAMCHANDRADH-8999276982@AXL-UTIB0001654-108844758887-UPI",
+      "0000108844758887",
+      "28/07/25",
+      "1,900.00",
+      "",
+      "48,101.00",
+      "1",
+      "1"
+    ],
+    [
+      "31/07/2025",
+      "UPI-MUDHADA CL-MSWIPE.1420040425000523@AXISBANK-UTIB0000100-108985925583-UPI",
+      "0000108985925583",
+      "31/07/25",
+      "590.00",
+      "",
+      "47,511.00",
+      "1",
+      "1"
+    ],
+    [
+      "31/07/2025",
+      "UPI-KASWA GENERALSTORE-Q509134189@YBL-YESB0YBLUPI-108986454157-UPI",
+      "0000108986454157",
+      "31/07/25",
+      "205.00",
+      "",
+      "47,306.00",
+      "1",
+      "1"
+    ],
+    [
+      "31/07/2025",
+      "UPI-KASWA GENERALSTORE-Q509134189@YBL-YESB0YBLUPI-108986521325-UPI",
+      "0000108986521325",
+      "31/07/25",
+      "10.00",
+      "",
+      "47,296.00",
+      "1",
+      "1"
+    ],
+    [
+      "31/07/2025",
+      "UPI-HDFC SECURITIESLTD-YESPAY.BTTSHL1RVNBKQ@YESBANKLTD-YESB0YESUPI-10899701856-ACCOUNT VERIFICATI",
+      "0000108997018566",
+      "31/07/25",
+      "1.00",
+      "",
+      "47,295.00",
+      "1",
+      "1"
+    ],
+    [
+      "31/07/2025",
+      "UPI-HDFC SECURITIESLTD-YESPAY.BTTSHL1RVNBKQ@YESBANKLTD-YESB0YESUPI-10899924743-ACCOUNT VERIFICATI",
+      "0000108999247437",
+      "31/07/25",
+      "1.00",
+      "",
+      "47,294.00",
+      "1",
+      "1"
+    ],
+    [
+      "31/07/2025",
+      "UPI-HDFC SECURITIESLTD-YESPAY.BTTSHL1RVNBKQ@YESBANKLTD-YESB0YESUPI-10899935798-ACCOUNT VERIFICATI",
+      "0000108999357982",
+      "31/07/25",
+      "1.00",
+      "",
+      "47,293.00",
+      "1",
+      "1"
+    ],
+    [
+      "31/07/2025",
+      "NEFT CR-IBKL0510WUC-CHAMBHARE VEDIKASUNILRAO-ZADE AGROWORKS-IBKLN62025073101087939",
+      "IBKLN62025073101",
+      "31/07/25",
+      "",
+      "200,000.00",
+      "247,293.00",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

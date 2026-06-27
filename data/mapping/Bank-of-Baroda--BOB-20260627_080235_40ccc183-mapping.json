@@ -1,0 +1,155 @@
+{
+  "bank_name": "Bank of Baroda (BOB)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-27T06:03:10Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "NARRATION",
+    "CHQ.NO.",
+    "WITHDRAWAL (DR)",
+    "DEPOSIT (CR)",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq no|withdrawal dr|deposit cr|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "NARRATION",
+    "debit": "WITHDRAWAL (DR)",
+    "credit": "DEPOSIT (CR)",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/10/2022",
+      "UPI/227471551004/11:26:53/UPI/9766434975@ybl/Paym",
+      "",
+      "",
+      "5000.00",
+      "12376.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "01/10/2022",
+      "UPI/227449287245/16:08:32/UPI/strikeraadi@okicici",
+      "",
+      "",
+      "10000.00",
+      "22376.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "01/10/2022",
+      "UPI/227456724224/17:03:08/UPI/milinds448@okhdfcba",
+      "",
+      "",
+      "5200.00",
+      "27576.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "01/10/2022",
+      "NEFT-IBKL221001381985-CHANDRAKALAKHAWA CENTRE AND",
+      "",
+      "",
+      "40000.00",
+      "67576.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "01/10/2022",
+      "UPI/227470882711/19:14:02/UPI/imdadaghariya5@oksb",
+      "",
+      "",
+      "18000.00",
+      "85576.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "01/10/2022",
+      "UPI/227461340178/19:32:08/UPI/mahordinesh912@okhd",
+      "",
+      "9500.00",
+      "",
+      "76076.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "01/10/2022",
+      "UPI/227461425186/19:34:24/UPI/ranjitt814@okaxis/U",
+      "",
+      "10000.00",
+      "",
+      "66076.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "01/10/2022",
+      "UPI/227463574452/20:41:18/UPI/ranjitt814@okaxis/U",
+      "",
+      "20000.00",
+      "",
+      "46076.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "03/10/2022",
+      "UPI/227590725713/15:24:13/UPI/ranjitt814@okaxis/U",
+      "",
+      "500.00",
+      "",
+      "45576.20 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "03/10/2022",
+      "UPI/227500350749/21:17:41/UPI/pkinjal624@oksbi/UP",
+      "",
+      "",
+      "1540.00",
+      "47116.20 Cr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-03T11:21:10Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRANS DATE",
+    "VALUE DATE",
+    "BRANCH",
+    "REF/CHQ.NO",
+    "DESCRIPTION",
+    "WITHDRAWS",
+    "DEPOSIT",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "trans date|value date|branch|ref chq no|description|withdraws|deposit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 4,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRANS DATE",
+    "description": "DESCRIPTION",
+    "debit": "WITHDRAWS",
+    "credit": "DEPOSIT",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "01-MAY-26",
+      "0",
+      "",
+      "B/F ...",
+      "3,739,642.48",
+      "0.00",
+      "-3,739,642.48",
+      "1",
+      "2"
+    ],
+    [
+      "01/05/2026",
+      "30-APR-26",
+      "33",
+      "",
+      "NEFT CR-R001261209957719-SRCB0000001-ZANTYEAGRO INDUSTRIES--NA-NA-NA",
+      "0.00",
+      "118,650.00",
+      "-3,620,992.48",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01-MAY-26",
+      "33",
+      "122409302201",
+      "UPI/CR/122409302201/VILAS VAS/BKID/**I3132@OKHDFCBANK/UPI//HDFA95E9B762B2649FC8A8AFD57094C946F/01/05/2026 06:22:59",
+      "0.00",
+      "6,000.00",
+      "-3,614,992.48",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01-MAY-26",
+      "33",
+      "648798592548",
+      "UPI/CR/648798592548/ABHISHEK /HDFC/**AVADE@OKAXIS/UPI//AXI3CB1583382614132BB8A4F7085966FED/01/05/2026 06:51:52",
+      "0.00",
+      "5,400.00",
+      "-3,609,592.48",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01-MAY-26",
+      "33",
+      "612132955112",
+      "UPI/CR/612132955112/SACHIN SI/HDFC/**999-2@OKICICI/UPI//ICI0B7E296A443B46DD9002A8EBB5E98A8F/01/05/2026 08:28:05",
+      "0.00",
+      "6,000.00",
+      "-3,603,592.48",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01-MAY-26",
+      "33",
+      "612165143710",
+      "UPI/CR/612165143710/SAWANT SH/SIDC/**NA899@OKICICI/UPI//ICIF6F96D94B2B8451C9BCFB5F7798DA1FD/01/05/2026 09:53:03",
+      "0.00",
+      "2,000.00",
+      "-3,601,592.48",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01-MAY-26",
+      "33",
+      "612169969020",
+      "UPI/CR/612169969020/SAWANT SH/SIDC/**NA899@OKICICI/UPI//ICIB30CA05639BC47559A61F9CBF52EDC7A/01/05/2026 09:53:21",
+      "0.00",
+      "5,000.00",
+      "-3,596,592.48",
+      "2",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01-MAY-26",
+      "33",
+      "660129857622",
+      "UPI/CR/660129857622/ADITI NAR/BKID/**68342@AXL/PAYMENT //AXLAF72A47F839847ACA4BA8985A0830512/01/05/2026 09:55:20",
+      "0.00",
+      "24,000.00",
+      "-3,572,592.48",
+      "2",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01-MAY-26",
+      "33",
+      "612100256214",
+      "UPI/CR/612100256214/SAWANT SH/SIDC/**NA899@OKICICI/UPI//ICIBBC33A21DB39416D8245E0DDF425F70B/01/05/2026 09:56:27",
+      "0.00",
+      "1.00",
+      "-3,572,591.48",
+      "2",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01-MAY-26",
+      "33",
+      "122415425828",
+      "UPI/CR/122415425828/NARAYAN G/HDFC/**KAR-3@OKHDFCBANK/UPI//HDF5B38243CA44441FE90ADB97BC65528B0/01/05/2026 09:56:56",
+      "0.00",
+      "6,000.00",
+      "-3,566,591.48",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-09T09:59:37Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Value Date",
+    "Post Date",
+    "Remitter Branch",
+    "Description",
+    "Cheque No",
+    "DR",
+    "CR",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "value date|post date|remitter branch|description|cheque no|dr|cr|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 3,
+    "debit": null,
+    "credit": null,
+    "amount": 8,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Value Date",
+    "description": "Description",
+    "debit": null,
+    "credit": null,
+    "amount": "Page Number",
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "UMARI (M.P.)",
+      "/ONLINE B ULULK NEFT TRF P011 NEFT HSBC IDIBN520260406368 67441 MONTBLAN Txn Amt. 39,100.00 Charges. 5.61 TRANSFER TO 89634047856",
+      "",
+      "39105.61",
+      "",
+      "147098728.11 DR",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "ONLINE TRANSFER",
+      "BY TRANSFER Transfer 50056GOEL CARGO PVT Goel Cargo TRANSFER FROM 8145613072 KALYANI MINERALS LLP",
+      "",
+      "",
+      "5000000.00",
+      "142098728.11 DR",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "UMARI (M.P.)",
+      "/ONLINE B ULULK NEFT TRF P001 NEFT UBIN IDIBN520260406368 78896 JEETLAL Txn Amt. 1,20,320.00 Charges. 17.41 TRANSFER TO 89634047856",
+      "",
+      "120337.41",
+      "",
+      "142219065.52 DR",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "UMARI (M.P.)",
+      "/ONLINE B ULULK NEFT TRF P021 NEFT HDFC IDIBN520260406368 78901 BPCL ECM Txn Amt. 5,00,000.00 Charges. 29.21 TRANSFER TO 89634047856",
+      "",
+      "500029.21",
+      "",
+      "142719094.73 DR",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "UMARI (M.P.)",
+      "/ONLINE B ULULK NEFT TRF P032 NEFT ICIC IDIBN520260406368 78535 ETC POOL Txn Amt. 5,00,000.00 Charges. 29.21 TRANSFER TO 89634047856",
+      "",
+      "500029.21",
+      "",
+      "143219123.94 DR",
+      "2",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "UMARI (M.P.)",
+      "/ONLINE B ULULK NEFT TRF P802 NEFT UBIN IDIBN520260406368 78109 PRAMOD Y Txn Amt. 50,000.00 Charges. 5.61 TRANSFER TO 89634047856",
+      "",
+      "50005.61",
+      "",
+      "143269129.55 DR",
+      "2",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "UMARI (M.P.)",
+      "/ONLINE B ULULK NEFT TRF P276 NEFT ICIC IDIBN520260406368 78118 HPCL Txn Amt. 5,00,000.00 Charges. 29.21 TRANSFER TO 89634047856",
+      "",
+      "500029.21",
+      "",
+      "143769158.76 DR",
+      "2",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "UMARI (M.P.)",
+      "/ONLINE B ULULK NEFT TRF P378 NEFT HDFC IDIBN520260406368 78914 NIRANKAR Txn Amt. 18,880.00 Charges. 5.61 TRANSFER TO 89634047856",
+      "",
+      "18885.61",
+      "",
+      "143788044.37 DR",
+      "2",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "UMARI (M.P.)",
+      "/ONLINE B ULULK NEFT TRF P043 NEFT HDFC IDIBN520260406368 78119 INDIAN O Txn Amt. 23,00,000.00 Charges. 29.21 TRANSFER TO 89634047856",
+      "",
+      "2300029.21",
+      "",
+      "146088073.58 DR",
+      "2",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "UMARI (M.P.)",
+      "/ONLINE B ULULK NEFT TRF P538 NEFT UBIN IDIBN520260406369 52971 KULWANT Txn Amt. 26,501.00 Charges. 5.61 TRANSFER TO 89634047856",
+      "",
+      "26506.61",
+      "",
+      "146114580.19 DR",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

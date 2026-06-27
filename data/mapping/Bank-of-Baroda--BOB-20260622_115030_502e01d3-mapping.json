@@ -1,0 +1,177 @@
+{
+  "bank_name": "Bank of Baroda (BOB)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T09:51:07Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Serial No",
+    "Transaction Date",
+    "Value Date",
+    "Description",
+    "Cheque Number",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "serial no|transaction date|value date|description|cheque number|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 3,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "01/10/2025",
+      "",
+      "Opening Balance",
+      "",
+      "-",
+      "-",
+      "2,180.46",
+      "1",
+      "2"
+    ],
+    [
+      "2",
+      "01/10/2025",
+      "01/10/2025",
+      "ACHRE/BARB7020202230013421/HRETCHARGE/111048250168",
+      "",
+      "295.00",
+      "-",
+      "1,885.46",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "01/10/2025",
+      "01/10/2025",
+      "UPI/384246691512/17:06:42/UPI/9960667108-3@axl/Pa",
+      "",
+      "-",
+      "8,800.00",
+      "10,685.46",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "01/10/2025",
+      "01/10/2025",
+      "UPI/766932944323/18:59:24/UPI/7487019538@ybl/Paym",
+      "",
+      "-",
+      "6,480.00",
+      "17,165.46",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "01/10/2025",
+      "01/10/2025",
+      "UPI/112035928962/19:15:08/UPI/inudodhiya20-3@okhd",
+      "",
+      "-",
+      "20,000.00",
+      "37,165.46",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "01/10/2025",
+      "01/10/2025",
+      "UPI/564016641336/19:17:42/UPI/9904374047@axl/UPI",
+      "",
+      "35,000.00",
+      "-",
+      "2,165.46",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "01/10/2025",
+      "01/10/2025",
+      "UPI/193509596320/19:19:27/UPI/9766434975@ybl/Paym",
+      "",
+      "-",
+      "49,000.00",
+      "51,165.46",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "01/10/2025",
+      "01/10/2025",
+      "UPI/564021356679/19:22:20/UPI/9904374047@axl/UPI",
+      "",
+      "40,000.00",
+      "-",
+      "11,165.46",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "01/10/2025",
+      "01/10/2025",
+      "UPI/192012704992/20:55:20/UPI/7487019538@axl/Paym",
+      "",
+      "-",
+      "5,000.00",
+      "16,165.46",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "02/10/2025",
+      "02/10/2025",
+      "UPI/564112709344/06:47:47/UPI/9978977860@yescred/",
+      "",
+      "-",
+      "2,500.00",
+      "18,665.46",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

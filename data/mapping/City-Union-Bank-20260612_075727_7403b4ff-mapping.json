@@ -1,0 +1,155 @@
+{
+  "bank_name": "City Union Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-12T05:57:48Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "DESCRIPTION",
+    "CHEQUE NO",
+    "DEBIT",
+    "CREDIT",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|description|cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "DESCRIPTION",
+    "debit": "DEBIT",
+    "credit": "CREDIT",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "03/04/2025",
+      "BY INT TRANSFER:INT TRF FRM 00500707120192306TO 00500101012081239: FD500707120192306:00263",
+      "",
+      "",
+      "25,313.00",
+      "15,46,745.35",
+      "1",
+      "1"
+    ],
+    [
+      "17/04/2025",
+      "TO CLEARING:0341032PAUL PRINTERES AND PUBLI:00121: - 0341032PAUL PRINTERESAND PUBLI -CHQ NO 93",
+      "93",
+      "3,000.00",
+      "",
+      "15,43,745.35",
+      "1",
+      "1"
+    ],
+    [
+      "23/04/2025",
+      "TO CLEARING:0139002L SOPHI G DOMIN:00121: - 0139002L SOPHI G DOMIN -CHQ NO95",
+      "95",
+      "40,000.00",
+      "",
+      "15,03,745.35",
+      "1",
+      "1"
+    ],
+    [
+      "23/04/2025",
+      "TO ONL DEP OPEN:FD 500707120205532:FDR - GENERAL@ 7 25::00263",
+      "",
+      "10,00,000.00",
+      "",
+      "5,03,745.35",
+      "1",
+      "1"
+    ],
+    [
+      "27/04/2025",
+      "TO POS:RR NO:511714845679:42223973-LIFE STYLE INTERNATION TRICHY IN:",
+      "",
+      "6,560.00",
+      "",
+      "4,97,185.35",
+      "1",
+      "1"
+    ],
+    [
+      "29/04/2025",
+      "TO ONL NEFT:UTR:CIUBH25119052050:HDFC0000058:SOPHIA:: TYRES KIA::00263",
+      "",
+      "50,000.00",
+      "",
+      "4,47,185.35",
+      "1",
+      "1"
+    ],
+    [
+      "30/04/2025",
+      "BY NEFT TRF:HAMSA MEDICAL SE HDFCH00209865969:",
+      "",
+      "",
+      "725.00",
+      "4,47,910.35",
+      "1",
+      "1"
+    ],
+    [
+      "30/04/2025",
+      "BY NEFT TRF:SRI KAUVERY MEDI SBIN225120904039:",
+      "",
+      "",
+      "3,712.00",
+      "4,51,622.35",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2025",
+      "BY NEFT TRF:SRI KAUVERY MEDI SBIN325121618170:",
+      "",
+      "",
+      "2,99,959.00",
+      "7,51,581.35",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2025",
+      "BY NEFT TRF:KMC SPECIALITY H SBIN525122339068:",
+      "",
+      "",
+      "1,210.00",
+      "7,52,791.35",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

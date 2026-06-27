@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-03T12:28:42Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/03/2026",
+      "50200105333057-TPT-INVOICE NO 10348-WINBELL COMPRESSORS PRIVATE LIMITED",
+      "0000000320449122",
+      "01/03/26",
+      "3,127.00",
+      "",
+      "68,091.73",
+      "1",
+      "1"
+    ],
+    [
+      "04/03/2026",
+      "O/S INTEREST TRANSFER FOR A/CXXXXXXXXXX6541",
+      "000000000000000",
+      "04/03/26",
+      "3,501.00",
+      "",
+      "64,590.73",
+      "1",
+      "1"
+    ],
+    [
+      "04/03/2026",
+      "CC 000457704XXXXXX2678 AUTOPAY SI-TAD",
+      "0000000725777018",
+      "04/03/26",
+      "8,292.00",
+      "",
+      "56,298.73",
+      "1",
+      "1"
+    ],
+    [
+      "04/03/2026",
+      "UPI-RADHAKANHAIYAPETROL-GPAY-12193887989@OKBIZAXIS-UTIB0000553-119473839842-UPI",
+      "0000119473839842",
+      "04/03/26",
+      "4,000.00",
+      "",
+      "52,298.73",
+      "1",
+      "1"
+    ],
+    [
+      "06/03/2026",
+      "UPI-VICKY BABASO SHINDE-VICKYSHINDE9552@OKSBI-SBIN0000270-119573855890-UPI",
+      "0000119573855890",
+      "06/03/26",
+      "23,000.00",
+      "",
+      "29,298.73",
+      "1",
+      "1"
+    ],
+    [
+      "07/03/2026",
+      "A2AINT01 - NIMBARK CLOTHING CO - SALARY- SALARY",
+      "0000001500767549",
+      "07/03/26",
+      "",
+      "7,080.00",
+      "36,378.73",
+      "1",
+      "1"
+    ],
+    [
+      "09/03/2026",
+      "NEFT CR-ICIC0SF0002-PRIYA FABCOM-SVINDUSTRIALSOLUTION-IN42606850057115",
+      "IN42606850057115",
+      "09/03/26",
+      "",
+      "7,080.00",
+      "43,458.73",
+      "1",
+      "1"
+    ],
+    [
+      "09/03/2026",
+      "NEFT CR-ICIC0SF0002-MOHSIN FABTEX-SVINDUSTRIALSOLUTION-IN42606850134570",
+      "IN42606850134570",
+      "09/03/26",
+      "",
+      "5,900.00",
+      "49,358.73",
+      "1",
+      "1"
+    ],
+    [
+      "09/03/2026",
+      "NEFT CR-ICIC0SF0002-IMRAN FABTEX-SVINDUSTRIALSOLUTION-IN42606850131234",
+      "IN42606850131234",
+      "09/03/26",
+      "",
+      "5,900.00",
+      "55,258.73",
+      "1",
+      "1"
+    ],
+    [
+      "10/03/2026",
+      "UPI-S V INDUSTRIAL SOLUT-SANDEEPPISHTE53@OKAXIS-KAIJ0000024-119785791714-UPI",
+      "0000119785791714",
+      "10/03/26",
+      "20,000.00",
+      "",
+      "35,258.73",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

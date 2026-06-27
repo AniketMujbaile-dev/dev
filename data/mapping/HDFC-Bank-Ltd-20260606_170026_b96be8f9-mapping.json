@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-06T15:00:45Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "UPI-AKSHAY LAXMANCHELE-9325235189@YBL-IPOS0000001-448813298923-PAYMENT FROM PHONE",
+      "0000448813298923",
+      "01/05/26",
+      "",
+      "50.00",
+      "129,414.15",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-AKSHAY E SEVA KENDRA-GPAY-12199037366@OKBIZAXIS-UTIB0000553-205908162740-PAYMENT FROM PHONE",
+      "0000205908162740",
+      "01/05/26",
+      "30.00",
+      "",
+      "129,384.15",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "UPI-PRAVIN SUDHAKARDUMM-9657127699-2@YBL-HDFC0002018-559689537992-PAYMENT FROMPHONE",
+      "0000559689537992",
+      "02/05/26",
+      "",
+      "50.00",
+      "129,434.15",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "UPI-ABHISHEK D KHUPSARE-7499799171@CNRB-CNRB0000033-612265336173--",
+      "0000612265336173",
+      "02/05/26",
+      "",
+      "63,281.00",
+      "192,715.15",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "UPI-YASH ANILRAOKADU-KADU.YASH10@AXL-SBIN0000382-867666953831-PAYMENT FROM PHONE",
+      "0000867666953831",
+      "02/05/26",
+      "",
+      "3,200.00",
+      "195,915.15",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "NEFT CR-UTIB0001654-OM SAI ENGINEERING WORK SHOP-MAA BHAVANITRADERS-AXOMB12202161526",
+      "AXOMB12202161526",
+      "02/05/26",
+      "",
+      "131,250.00",
+      "327,165.15",
+      "1",
+      "1"
+    ],
+    [
+      "03/05/2026",
+      "UPI-JIO RECHARGE-JIOINAPPDIRECT1@AXL-UTIB0AXLUPI-564577548544-PAYMENT FROMPHONE",
+      "0000564577548544",
+      "03/05/26",
+      "904.00",
+      "",
+      "326,261.15",
+      "1",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "UPI-VIDARBHA NAGARI SAH -9764649696@UPI-YESB0VMUB01-122581445186-PAY BYWHATSAPP",
+      "0000122581445186",
+      "04/05/26",
+      "2,000.00",
+      "",
+      "324,261.15",
+      "1",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "UPI-VIDARBHA NAGARI SAH -9764649696@UPI-YESB0VMUB01-122581467316-PAY BYWHATSAPP",
+      "0000122581467316",
+      "04/05/26",
+      "2,000.00",
+      "",
+      "322,261.15",
+      "1",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "UPI-VIDARBHA NAGARI SAH -9764649696@UPI-YESB0VMUB01-122581475799-PAY BYWHATSAPP",
+      "0000122581475799",
+      "04/05/26",
+      "325.00",
+      "",
+      "321,936.15",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T08:01:22Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Txn Date",
+    "Value Date",
+    "Description",
+    "Ref No./Cheque No.",
+    "Branch Code",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "txn date|value date|description|ref no cheque no|branch code|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Txn Date",
+    "description": "Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2026",
+      "02/04/2026",
+      "BY TRANSFER-UPI/CR/609214193212/SANDEEP /SBIN/sandeepjud/UPI-",
+      "TRANSFER FROM 4897735162098 /",
+      "51123",
+      "",
+      "60.00",
+      "16,462.33",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02/04/2026",
+      "BY TRANSFER-UPI/CR/609259743835/SEEMAW /PUNB/rajenderve/UPI-",
+      "TRANSFER FROM 4897735162098 /",
+      "51123",
+      "",
+      "59.00",
+      "16,521.33",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02/04/2026",
+      "BY TRANSFER-UPI/CR/609245818967/PURANP/SBIN/puarnsingh/UPI-",
+      "TRANSFER FROM 4897735162098 /",
+      "51123",
+      "",
+      "190.00",
+      "16,711.33",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02/04/2026",
+      "BY TRANSFER-UPI/CR/609248720459/KARAMBIR/SBIN/karmbirgur/UPI-",
+      "TRANSFER FROM 4897735162098 /",
+      "51123",
+      "",
+      "2,796.00",
+      "19,507.33",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02/04/2026",
+      "BY TRANSFER-UPI/CR/417023693443/PARDEEP/HDFC/9812412057/Paymen-",
+      "TRANSFER FROM 4897735162098 /",
+      "51123",
+      "",
+      "16,776.00",
+      "36,283.33",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "03/04/2026",
+      "CHEQUE DEPOSIT--79255",
+      "TRANSFER TO 55117363760 Mr. HEAD MASTER G P S / 79255",
+      "51123",
+      "",
+      "931.50",
+      "37,214.83",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "03/04/2026",
+      "BY TRANSFER-UPI/CR/564893835212/AMITKUMAR/UTIB/amitjarwal/Pay-",
+      "TRANSFER FROM 4897736162097 /",
+      "51123",
+      "",
+      "60.00",
+      "37,274.83",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "03/04/2026",
+      "BY TRANSFER-UPI/CR/078963664664/BANSILAL/HDFC/211121suni/Paym-",
+      "TRANSFER FROM 4897736162097 /",
+      "51123",
+      "",
+      "27,246.00",
+      "64,520.83",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "03/04/2026",
+      "BY TRANSFER-UPI/CR/437039608592/MANISH /SBIN/9350863005/Payme-",
+      "TRANSFER FROM 4897736162097 /",
+      "51123",
+      "",
+      "2,796.00",
+      "67,316.83",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "03/04/2026",
+      "BY TRANSFER-UPI/CR/609311678227/KARAMBIR/SBIN/karmbirgur/UPI-",
+      "TRANSFER FROM 4897736162097 /",
+      "51123",
+      "",
+      "932.00",
+      "68,248.83",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

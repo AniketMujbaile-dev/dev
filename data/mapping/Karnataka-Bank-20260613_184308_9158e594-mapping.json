@@ -1,0 +1,155 @@
+{
+  "bank_name": "Karnataka Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-13T16:43:48Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Instrument No",
+    "Withdrawals",
+    "Deposits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|instrument no|withdrawals|deposits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "UPI:102416647493:bhagyashree6@okaxis(BHAGYASHREE",
+      "",
+      "40.00",
+      "",
+      "12,530.76",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI:102426238340:paytmqr6b0cev@ptys(M Purushotham",
+      "",
+      "95.00",
+      "",
+      "12,435.76",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "ACHInwDr-BAJAJ FINANCE LTD/02-04-2025",
+      "",
+      "8,616.00",
+      "",
+      "3,819.76",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "UPI:102460717072:bajajpay.6879729.06211320@indus(",
+      "",
+      "40.00",
+      "",
+      "3,779.76",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI:102513787554:vanithaashok999-2@okicici(Vanith",
+      "",
+      "40.00",
+      "",
+      "3,739.76",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI:509311866532:AirtelPrepaidRecharge.payu@mairt",
+      "",
+      "299.00",
+      "",
+      "3,440.76",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "MBS/by GLOWTECH POWER SOLUT/0598890/03-04-2025",
+      "",
+      "",
+      "1,000.00",
+      "4,440.76",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI:102532152129:q227865416@ybl(SAGAR SONKAR):",
+      "",
+      "40.00",
+      "",
+      "4,400.76",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI:102544408694:vyapar.171174089563@hdfcbank(G2",
+      "",
+      "330.00",
+      "",
+      "4,070.76",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI:102549635145:q107651523@ybl(SRINIVAS SHENOY):",
+      "",
+      "64.00",
+      "",
+      "4,006.76",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

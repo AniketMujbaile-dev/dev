@@ -1,0 +1,155 @@
+{
+  "bank_name": "Bank of Baroda (BOB)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-02T06:48:28Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "PARTICULARS",
+    "CHQ.NO.",
+    "WITHDRAWALS",
+    "DEPOSITS",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|chq no|withdrawals|deposits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "PARTICULARS",
+    "debit": "WITHDRAWALS",
+    "credit": "DEPOSITS",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "B/F",
+      "",
+      "",
+      "",
+      "25,000.00Cr",
+      "1",
+      "2"
+    ],
+    [
+      "23/04/2025",
+      "UPI/4113294754UPI/411329475489/12:35:37/UPI/9767025011@axl/UPI",
+      "29475489",
+      "",
+      "1.00",
+      "25,001.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "23/04/2025",
+      "UPI/2919691813UPI/291969181342/12:46:05/UPI/prashantyxi@axl/UPI",
+      "69181342",
+      "",
+      "330.00",
+      "25,331.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "23/04/2025",
+      "UPI/1099407073UPI/109940707305/12:54:33/UPI/9021405511@ibl/UPI",
+      "40707305",
+      "",
+      "2.00",
+      "25,333.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "23/04/2025",
+      "UPI/4769291305UPI/476929130540/15:20:43/UPI/ahitesham@ibl/UPI",
+      "29130540",
+      "",
+      "800.00",
+      "26,133.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "23/04/2025",
+      "UPI/5479343776UPI/547934377679/20:01:14/UPI/darshanughade152003",
+      "34377679",
+      "",
+      "380.00",
+      "26,513.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "23/04/2025",
+      "UPI/5479968658UPI/547996865856/20:05:04/UPI/yatharthparate18@ok",
+      "96865856",
+      "",
+      "280.00",
+      "26,793.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "23/04/2025",
+      "UPI/2028506383UPI/202850638348/20:28:52/UPI/9923451767@upi/UPI",
+      "50638348",
+      "",
+      "780.00",
+      "27,573.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "23/04/2025",
+      "UPI/5479608093UPI/547960809300/21:05:09/UPI/chawaresubhash80-1@",
+      "60809300",
+      "",
+      "880.00",
+      "28,453.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "25/04/2025",
+      "UPI/6157412444UPI/615741244459/17:05:22/UPI/8956333762@ybl/UPI",
+      "41244459",
+      "",
+      "130.00",
+      "28,583.00Cr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "bank_name": "ICICI Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-26T10:21:39Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "MODE**",
+    "PARTICULARS",
+    "DEPOSITS",
+    "WITHDRAWALS",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|mode|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 3,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "PARTICULARS",
+    "debit": "WITHDRAWALS",
+    "credit": "DEPOSITS",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "27/03/2025",
+      "",
+      "B/F",
+      "",
+      "",
+      "1,409.86",
+      "1",
+      "2"
+    ],
+    [
+      "28/03/2025",
+      "",
+      "UPI/q408334552@ybl/FT/YES BANKLIMITE/508725065941/ICI328cb47db22647328dcac1611cd63523",
+      "",
+      "170.00",
+      "1,239.86",
+      "1",
+      "1"
+    ],
+    [
+      "28/03/2025",
+      "ICICI CRM",
+      "CAM/62401SRY/CASH DEP-Other/28-03-25/1571",
+      "98,000.00",
+      "",
+      "99,239.86",
+      "1",
+      "1"
+    ],
+    [
+      "28/03/2025",
+      "ICICI CRM",
+      "CAM/62401SRY/CASH DEP-Other/28-03-25/1573",
+      "1,000.00",
+      "",
+      "1,00,239.86",
+      "1",
+      "1"
+    ],
+    [
+      "28/03/2025",
+      "MOBILE BANKING",
+      "MMT/IMPS/508710898363/WamanSune/COSB0000019/chgRs15.00GSTRs2.70",
+      "",
+      "26,017.70",
+      "74,222.16",
+      "1",
+      "1"
+    ],
+    [
+      "28/03/2025",
+      "MOBILE BANKING",
+      "MMT/IMPS/508710903137/WamanSune/COSB0000019/chgRs15.00GSTRs2.70",
+      "",
+      "74,017.70",
+      "204.46",
+      "1",
+      "1"
+    ],
+    [
+      "28/03/2025",
+      "MOBILE BANKING",
+      "MMT/IMPS/508714252174/samunnatiFinanc/PERFIOS SO/IDFC bank",
+      "1.00",
+      "",
+      "205.46",
+      "1",
+      "1"
+    ],
+    [
+      "28/03/2025",
+      "",
+      "UPI/musaleshruti.26/UPI/BANK OFMAHARAS/508785297303/ICI4c1a7e98392c4b76ab71dac4f04f7f1b",
+      "",
+      "121.00",
+      "84.46",
+      "1",
+      "1"
+    ],
+    [
+      "28/03/2025",
+      "",
+      "NEFT-IDFBN52025032887058353-SAMUNNATIFINANCE PRIVATE LIMITED-/ATTN/-00000010002309524-IDFB0010201",
+      "1,50,000.00",
+      "",
+      "1,50,084.46",
+      "1",
+      "1"
+    ],
+    [
+      "28/03/2025",
+      "",
+      "NEFT-MAHBN62025032808469725-SHARADORGANIC FOOD-TRF -00000060365215641-MAHB0001750",
+      "30,000.00",
+      "",
+      "1,80,084.46",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

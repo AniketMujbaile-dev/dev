@@ -1,0 +1,144 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-25T11:32:02Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Withdrawal",
+    "Deposit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|withdrawal|deposit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 2,
+    "credit": 3,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawal",
+    "credit": "Deposit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "UPI/CR/937623939090/AMIR KHAN/INDB/**3HBCC@AXL/PAYMENT //AXL18CA7CE6401C421FB428F0FC958AF2BC/01/04/ 2025 09:04:48",
+      "",
+      "1,500.00",
+      "-9,98,954.68",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI/CR/714267499948/AMIR KHAN/INDB/**3HBCC@AXL/PAYMENT //AXLD86EBCF021DF413BB84C9FD8A2E492C1/01/04/ 2025 09:07:16",
+      "",
+      "20.00",
+      "-9,98,934.68",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI/CR/509142040418/MOHD ALIS/UTIB/**83155@PTSBI/NA//PTMC2E1C01038BE46 A9865EAFCEC6EBD02E/01/04/2025 09:54:59",
+      "",
+      "2,850.00",
+      "-9,96,084.68",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI/CR/509142182661/ASMA BEGAM/AIRP/**53012@PTSBI/NA//PTMF5131950CFA2 4D26B236C96FC8CAEF23/01/04/2025 10:07:57",
+      "",
+      "20.00",
+      "-9,96,064.68",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI/CR/472418815553/YASHEEN/INDB/**300- 2@IBL/PAYMENT //IBL37D1DF6F9A2F4FF8879067FA3341EB3E/01/04/20 25 11:52:27",
+      "",
+      "500.00",
+      "-9,95,564.68",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI/CR/825178349567/AAS MUHAM/PUNB/**1NDXN@YBL/PAYMENT //YBL8F001B6AD14E481B9D27F4BE3EBDA453/01/04/ 2025 13:05:14",
+      "",
+      "2,000.00",
+      "-9,93,564.68",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI/CR/902565748124/GAURAV YA/INDB/**338- 2@YBL/PAYMENT //YBL0E776F75BB2547D4A9E03EDBBC7B11E2/01/04/ 2025 14:16:15",
+      "",
+      "1,300.00",
+      "-9,92,264.68",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI/CR/509139879711/SACHIN KU/BARB/**07363@SUPERYES/PAID VIA//SMY2504011449SL3JT876Z9JACFPSL6XINS/01/0 4/2025 14:49:04",
+      "",
+      "180.00",
+      "-9,92,084.68",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI/CR/729715002364/PARVEZ K/UTKS/**00452@AXL/PAYMENT //AXLEF9C16D0FD7145F59F4C462481D56CEA/01/04/ 2025 16:03:57",
+      "",
+      "700.00",
+      "-9,91,384.68",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI/CR/480548894824/SALIM SO /IBKL/**72083@AXL/PAYMENT //AXLAD09809086484E03A5DB6CFDA2181DB5/01/04/ 2025 18:22:37",
+      "",
+      "1,140.00",
+      "-9,90,244.68",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

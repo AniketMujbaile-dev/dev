@@ -1,0 +1,166 @@
+{
+  "bank_name": "ICICI Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-06T07:25:38Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "S No.",
+    "Transaction Date",
+    "Cheque Number",
+    "Transaction Remarks",
+    "Withdrawal Amount (INR)",
+    "Deposit Amount (INR)",
+    "Balance (INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "s no|transaction date|cheque number|transaction remarks|withdrawal amount inr|deposit amount inr|balance inr|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 3,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Transaction Remarks",
+    "debit": "Withdrawal Amount (INR)",
+    "credit": "Deposit Amount (INR)",
+    "amount": "Withdrawal Amount (INR)",
+    "balance": "Balance (INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "01/04/2025",
+      "",
+      "INF/INFT/039797073061/loan /BALKISHOR PRASA",
+      "",
+      "100000.00",
+      "105245.71",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "01/04/2025",
+      "",
+      "INF/INFT/039797090781/loan /BALKISHOR PRASA",
+      "",
+      "50000.00",
+      "155245.71",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "01/04/2025",
+      "",
+      "MMT/IMPS/509116950359/Kashmir package/Happy jour/UTIB0001380",
+      "150000.00",
+      "",
+      "5245.71",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "01/04/2025",
+      "",
+      "EBA/FNOUPSTRM01-Apr-2025/20250401162847",
+      "5100.50",
+      "",
+      "145.21",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "01/04/2025",
+      "",
+      "NEFT-HDFCN52025040151299107-SHREE BALAJI ROADLINES-0001-15782840000016- HDFC0000240",
+      "",
+      "13055.00",
+      "13200.21",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "02/04/2025",
+      "",
+      "ECSRTN1_0104257020301251012189",
+      "25.20",
+      "",
+      "13175.01",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "02/04/2025",
+      "",
+      "EBA/NSE M 2025063/20250402153402",
+      "",
+      "40443.81",
+      "53618.82",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "02/04/2025",
+      "",
+      "EBA/Upstreamed Payin/20250402171111",
+      "11100.00",
+      "",
+      "42518.82",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "02/04/2025",
+      "",
+      "EBA/FNOUPSTRM02-Apr-2025/20250402172125",
+      "12425.00",
+      "",
+      "30093.82",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "02/04/2025",
+      "",
+      "TRFR FROM:ALOK ROADWAYS",
+      "",
+      "7184.00",
+      "37277.82",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

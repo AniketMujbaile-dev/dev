@@ -1,0 +1,155 @@
+{
+  "bank_name": "Karnataka Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-06T17:26:36Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Description",
+    "Chq/Ref No",
+    "Withdrawals",
+    "Deposits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|description|chq ref no|withdrawals|deposits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Description",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "UPI:509193974214:paytmqr28100505 01011czwgf83bgml@",
+      "",
+      "90.00",
+      "",
+      "7,485.96",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "UPI:509107784623:paytmqr6axgw8@ ptys(Dipen Pradhan",
+      "",
+      "710.00",
+      "",
+      "6,775.96",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "UPI:509218074449:paytmqr6b0bz4@ ptys(Hotel Hanuman",
+      "",
+      "126.00",
+      "",
+      "6,649.96",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "UPI:509229542266:q428644374@ybl( AGATYA RETAIL PRI",
+      "",
+      "120.00",
+      "",
+      "6,529.96",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "UPI:509254223923:msrikanthpai7- 1@oksbi(M SHRIKANT",
+      "",
+      "",
+      "20,000.00",
+      "26,529.96",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "UPI:509214566951:7349150124@yes cred(VRISHANK):Pai",
+      "",
+      "",
+      "6,000.00",
+      "32,529.96",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "UPI:509257916961:zomato- order@ptybl(Zomato Ltd):Z",
+      "",
+      "231.00",
+      "",
+      "32,298.96",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "Loan Recovery For4797001600069701",
+      "",
+      "19,224.00",
+      "",
+      "13,074.96",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI:509368891700:paytmqr28100505 01011czwgf83bgml@",
+      "",
+      "480.00",
+      "",
+      "12,594.96",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI:509383603337:srinidhisolutionsb2 b-1@oksbi(S R",
+      "",
+      "3,550.00",
+      "",
+      "9,044.96",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

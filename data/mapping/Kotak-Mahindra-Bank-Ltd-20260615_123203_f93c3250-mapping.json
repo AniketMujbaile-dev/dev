@@ -1,0 +1,166 @@
+{
+  "bank_name": "Kotak Mahindra Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-15T10:32:32Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "#",
+    "Date",
+    "Description",
+    "Chq/Ref. No.",
+    "Withdrawal (Dr.)",
+    "Deposit (Cr.)",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "|date|description|chq ref no|withdrawal dr|deposit cr|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Description",
+    "debit": "Withdrawal (Dr.)",
+    "credit": "Deposit (Cr.)",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "01/04/2025",
+      "UPI/UBER INDIA SYST/100269851583/charge",
+      "UPI-509197190349",
+      "126.29",
+      "",
+      "95,555.72",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "03/04/2025",
+      "Salary of Mar25",
+      "271841",
+      "",
+      "69,800.00",
+      "1,65,355.72",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "03/04/2025",
+      "UPI/Zomato Online O/102551648038/ZomatoOnlineOrd",
+      "UPI-509373468885",
+      "406.26",
+      "",
+      "1,64,949.46",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "03/04/2025",
+      "UPI/Razorpay/913814120935/ZomatoORefund QE",
+      "UPI-509374759241",
+      "",
+      "113.75",
+      "1,65,063.21",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "05/04/2025",
+      "UPI/AZAAN KHAN/102656805913/UPI",
+      "UPI-509588320303",
+      "1,880.00",
+      "",
+      "1,63,183.21",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "06/04/2025",
+      "UPI/Google Play/276397940965/MandateExecute",
+      "UPI-509633639799",
+      "690.00",
+      "",
+      "1,62,493.21",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "06/04/2025",
+      "PCD/8491/FINAL TOUCH BEAUTY AND/AHMEDA060425/18:03",
+      "509612108013",
+      "4,350.00",
+      "",
+      "1,58,143.21",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "07/04/2025",
+      "UPI/Zoho/102756706143/PaymentToZOHOCO",
+      "UPI-509700627747",
+      "283.20",
+      "",
+      "1,57,860.01",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "08/04/2025",
+      "UPI/Amazon India/102845239338/You are paying",
+      "UPI-509801147774",
+      "4,478.00",
+      "",
+      "1,53,382.01",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "12/04/2025",
+      "UPI/MOHANI CATERERS/103019957385/UPI",
+      "UPI-510203083366",
+      "40.00",
+      "",
+      "1,53,342.01",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

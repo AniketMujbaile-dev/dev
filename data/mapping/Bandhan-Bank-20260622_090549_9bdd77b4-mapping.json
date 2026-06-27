@@ -1,0 +1,155 @@
+{
+  "bank_name": "Bandhan Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T07:06:27Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Description",
+    "Amount",
+    "Dr / Cr",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|description|amount|dr cr|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": null,
+    "credit": null,
+    "amount": 3,
+    "balance": 5,
+    "direction": 4
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Description",
+    "debit": null,
+    "credit": null,
+    "amount": "Amount",
+    "balance": "Balance",
+    "direction": "Dr / Cr"
+  },
+  "sample_rows": [
+    [
+      "July05, 2025",
+      "01/07/2025",
+      "Initial Funding Deposit for 20100052658860 Kuchaikote",
+      "INR6,000.00",
+      "Cr",
+      "INR6,000.00",
+      "61",
+      "1"
+    ],
+    [
+      "July05, 2025",
+      "05/07/2025",
+      "GST 1820-GST",
+      "INR27.00",
+      "Dr",
+      "INR5,973.00",
+      "61",
+      "1"
+    ],
+    [
+      "July05, 2025",
+      "05/07/2025",
+      "Debit Card Issuance Fees exclusive of GST",
+      "INR150.00",
+      "Dr",
+      "INR5,823.00",
+      "61",
+      "1"
+    ],
+    [
+      "July09, 2025",
+      "09/07/2025",
+      "Installment Pay Transfer To RD - 20100052658860 - JAI MAA LAXMI TRADER",
+      "INR2,000.00",
+      "Dr",
+      "INR3,823.00",
+      "61",
+      "1"
+    ],
+    [
+      "July10, 2025",
+      "10/07/2025",
+      "NEFT-N191250764825012- BHARAT ENTERPRISES -STATE BANK OF INDIA- DAHIBHAT",
+      "INR10.00",
+      "Dr",
+      "INR3,813.00",
+      "61",
+      "1"
+    ],
+    [
+      "July15, 2025",
+      "15/07/2025",
+      "NEFT Cr-SBIN0002961-SHIV SHAKTI GALLA BHANDAR- SBINN52025071583226175",
+      "INR50,000.00",
+      "Cr",
+      "INR53,813.00",
+      "61",
+      "1"
+    ],
+    [
+      "July30, 2025",
+      "30/07/2025",
+      "NEFT Cr-CBIN0R10001- JAI MAHAVIR TRADERS- CBINN52025073011022596",
+      "INR750,000.00",
+      "Cr",
+      "INR803,813.00",
+      "61",
+      "1"
+    ],
+    [
+      "July30, 2025",
+      "30/07/2025",
+      "NEFT-N211250753100009- Sankar rice mill -HDFC BANK- PADRAUNA",
+      "INR25,000.00",
+      "Dr",
+      "INR778,813.00",
+      "61",
+      "1"
+    ],
+    [
+      "July31, 2025",
+      "31/07/2025",
+      "IMPS-521210332598-Sankar rice mill -HDFC0001906- **********7417-Chawal",
+      "INR181,560.00",
+      "Dr",
+      "INR597,253.00",
+      "61",
+      "1"
+    ],
+    [
+      "July31, 2025",
+      "31/07/2025",
+      "UPI/DR/D591407010575/ Pallavi G/oksb/ ias.pgupta@oksbi/Payment fr/ AXLab0d17952bf74eee98a67eebf1c88a92",
+      "INR12,000.00",
+      "Dr",
+      "INR585,253.00",
+      "61",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

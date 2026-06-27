@@ -1,0 +1,155 @@
+{
+  "bank_name": "Bandhan Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-06T04:43:32Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Description",
+    "Amount",
+    "Dr / Cr",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|description|amount|dr cr|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": null,
+    "credit": null,
+    "amount": 3,
+    "balance": 5,
+    "direction": 4
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Description",
+    "debit": null,
+    "credit": null,
+    "amount": "Amount",
+    "balance": "Balance",
+    "direction": "Dr / Cr"
+  },
+  "sample_rows": [
+    [
+      "April01, 2025",
+      "01/04/2025",
+      "UPI/DR/D509112592646/ AMIT/okic/ amitluna92-1@okicici/amit/ AXI91c4f4226c7745cfba89b688c50840b4",
+      "INR1,000.00",
+      "Dr",
+      "INR16,161.28",
+      "80",
+      "1"
+    ],
+    [
+      "April01, 2025",
+      "01/04/2025",
+      "UPI/DR/D509124188499/ RADHESHYAM/okhd/ rs9344830@okhdfcbank/UPI/ AXIc5e3f339b8ac4bd695615a4e75523a87",
+      "INR500.00",
+      "Dr",
+      "INR15,661.28",
+      "80",
+      "1"
+    ],
+    [
+      "April04, 2025",
+      "04/04/2025",
+      "CHQ DEP - AXIS BANK LTD - AXIS BANK LTD - - Dated 04- APR-2025 171590",
+      "INR35,640.00",
+      "Cr",
+      "INR51,301.28",
+      "80",
+      "1"
+    ],
+    [
+      "April04, 2025",
+      "04/04/2025",
+      "NEFT Cr-UBIN0534439- SURAJ JEWELLERS- UBINN52025040421173292",
+      "INR15,836.00",
+      "Cr",
+      "INR67,137.28",
+      "80",
+      "1"
+    ],
+    [
+      "April05, 2025",
+      "05/04/2025",
+      "IMPS-509513103986- JINDAL COATINGS PRIVATE LIMITED-AUBL0002617- ************0819-PAYMENT Head Office",
+      "INR15,340.00",
+      "Cr",
+      "INR82,477.28",
+      "80",
+      "1"
+    ],
+    [
+      "April06, 2025",
+      "06/04/2025",
+      "IMPS-509612125042-SAN SPARE-ICIC0006616- ********1039-duhansecurit Head Office",
+      "INR622.00",
+      "Cr",
+      "INR83,099.28",
+      "80",
+      "1"
+    ],
+    [
+      "April06, 2025",
+      "06/04/2025",
+      "IMPS-509612128403-SAN SPARE-ICIC0006616- ********1039-duhansecurit Head Office",
+      "INR17,000.00",
+      "Cr",
+      "INR100,099.28",
+      "80",
+      "1"
+    ],
+    [
+      "April06, 2025",
+      "06/04/2025",
+      "UPI/CR/C509663099161/ SEHRAWAT S/okic/ sanjaysehrawat940-2@okici/ UPI/ ICIe679c6b6b9b149089fb548bce8deb8df",
+      "INR2,000.00",
+      "Cr",
+      "INR102,099.28",
+      "80",
+      "1"
+    ],
+    [
+      "April06, 2025",
+      "06/04/2025",
+      "UPI/CR/C509627294468/ SEHRAWAT S/okic/ sanjaysehrawat940-2@okici/ UPI/ ICIabcb8c3e348b4140acb8b64504a9f057",
+      "INR2,000.00",
+      "Cr",
+      "INR104,099.28",
+      "79",
+      "1"
+    ],
+    [
+      "April06, 2025",
+      "06/04/2025",
+      "UPI/CR/C509640188679/ SEHRAWAT S/okic/ sanjaysehrawat940-2@okici/ UPI/ ICIee45b2d53a474f5880492a45dedada8d",
+      "INR1,000.00",
+      "Cr",
+      "INR105,099.28",
+      "79",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

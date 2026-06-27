@@ -1,0 +1,155 @@
+{
+  "bank_name": "Karnataka Gramin Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T17:42:55Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Instrument No",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|instrument no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "06/04/2026",
+      "BY CASH",
+      "",
+      "",
+      "5000.00",
+      "5000.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2026",
+      "CARD ISSUED CHARGE For: 8175860109486414",
+      "",
+      "236.00",
+      "",
+      "4764.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "16/04/2026",
+      "UPI/835943665384/Cr/Najirahm/SBIN/9986532752@axl",
+      "",
+      "",
+      "1.00",
+      "4765.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "16/04/2026",
+      "UPI/028500641528/Cr/Najirahm/SBIN/9986532752@ybl",
+      "",
+      "",
+      "5000.00",
+      "9765.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "16/04/2026",
+      "UPI/747918778104/Cr/SHAFIAH/UTIB/hanchinalshafi@",
+      "",
+      "",
+      "3000.00",
+      "12765.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "16/04/2026",
+      "UPI/810104535621/Cr/VISHNUKA/SBIN/8970793907@axl",
+      "",
+      "",
+      "3000.00",
+      "15765.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "17/04/2026",
+      "UPI/988061983321/Cr/MOHAMMED/SBIN/8971362897@ybl",
+      "",
+      "",
+      "7685.00",
+      "23450.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "18/04/2026",
+      "UPI/910770494443/Cr/ALLAUDDI/CNRB/9481519085@axl",
+      "",
+      "",
+      "18000.00",
+      "41450.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "18/04/2026",
+      "UPI/015392779497/Cr/Allavudd/SBIN/9481519085-2@ax",
+      "",
+      "",
+      "2000.00",
+      "43450.00 CR",
+      "2",
+      "1"
+    ],
+    [
+      "18/04/2026",
+      "UPI/347418172267/Cr/ASIFBE/SBIN/www.asifbepari.",
+      "",
+      "",
+      "440.00",
+      "43890.00 CR",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

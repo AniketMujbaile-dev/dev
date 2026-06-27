@@ -1,0 +1,177 @@
+{
+  "bank_name": "Central Bank of India (CBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T08:23:32Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Value Date",
+    "CHQ",
+    "Remarks",
+    "COD",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|value date|chq|remarks|cod|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 3,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Remarks",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "08/05/2026",
+      "08/05/2026",
+      "",
+      "RTGS-BARB-BARBR52026050800763779-VIJAYLAXM-",
+      "TRF",
+      "",
+      "322954.00",
+      "337409.94",
+      "2",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "08/05/2026",
+      "",
+      "SHAKTI TRADERS-SHAKTI TRADERS-TRF-NET@202828",
+      "TRF",
+      "325000.00",
+      "",
+      "12409.94",
+      "2",
+      "1"
+    ],
+    [
+      "11/05/2026",
+      "11/05/2026",
+      "",
+      "By SHAKTI TRADERS-NET@311541",
+      "TRF",
+      "",
+      "280000.00",
+      "292409.94",
+      "2",
+      "1"
+    ],
+    [
+      "11/05/2026",
+      "11/05/2026",
+      "",
+      "NBC/IMPS/613114706545/AMBICA/NNSB/XXXXXX3207/TRF",
+      "TRF",
+      "277850.00",
+      "",
+      "14559.94",
+      "2",
+      "1"
+    ],
+    [
+      "11/05/2026",
+      "11/05/2026",
+      "",
+      "RTGS-GSCB-GSCBR52026051117773634-SATNAMLUC",
+      "TRF",
+      "",
+      "432918.00",
+      "447477.94",
+      "2",
+      "1"
+    ],
+    [
+      "11/05/2026",
+      "11/05/2026",
+      "",
+      "SHAKTI TRADERS-SHAKTI TRADERS-TRF-NET@323420",
+      "TRF",
+      "440000.00",
+      "",
+      "7477.94",
+      "2",
+      "1"
+    ],
+    [
+      "15/05/2026",
+      "15/05/2026",
+      "",
+      "IMPS/613514261207/SHAKTI/AUBL/XXXXXX2608/Money",
+      "TRF",
+      "",
+      "470000.00",
+      "477477.94",
+      "2",
+      "1"
+    ],
+    [
+      "15/05/2026",
+      "15/05/2026",
+      "",
+      "NBC/IMPS/613514929334/SHREE/CBIN/XXXXXX3836/VINOD",
+      "TRF",
+      "467815.00",
+      "",
+      "9662.94",
+      "2",
+      "1"
+    ],
+    [
+      "15/05/2026",
+      "15/05/2026",
+      "",
+      "RTGS-AUBL-AUBLR62026051524201622-SHAKTITRA",
+      "TRF",
+      "",
+      "1000000.00",
+      "1009662.94",
+      "2",
+      "1"
+    ],
+    [
+      "15/05/2026",
+      "15/05/2026",
+      "",
+      "NBC/IMPS/613515931788/DAYAL/HDFC/XXXXXX5100/VINOD",
+      "TRF",
+      "500000.00",
+      "",
+      "509662.94",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

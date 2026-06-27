@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bank of Baroda (BOB)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-26T07:43:42Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRAN DATE",
+    "VALUE DATE",
+    "NARRATION",
+    "CHQ.NO.",
+    "WITHDRAWAL(DR)",
+    "DEPOSIT(CR)",
+    "BALANCE(INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|value date|narration|chq no|withdrawal dr|deposit cr|balance inr|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRAN DATE",
+    "description": "NARRATION",
+    "debit": "WITHDRAWAL(DR)",
+    "credit": "DEPOSIT(CR)",
+    "amount": null,
+    "balance": "BALANCE(INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "05/04/2025",
+      "05/04/2025",
+      "UPI/142111958359/14:33:38/UPI/Q875331096@ybl/Paym",
+      "",
+      "100.00",
+      "",
+      "28.10Cr",
+      "15",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "05/04/2025",
+      "UPI/471313114309/19:14:48/UPI/umeshkumardaroli@ax",
+      "",
+      "",
+      "900.00",
+      "928.10Cr",
+      "15",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "05/04/2025",
+      "MBK/509573438854/19:16:03/RECHARGE[MOBILE]",
+      "",
+      "899.00",
+      "",
+      "29.10Cr",
+      "15",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "11/04/2025",
+      "RTGS-SBINR12025041181891063-LOKSHAIL ENTERPRISES",
+      "",
+      "",
+      "7,00,000.00",
+      "7,00,029.10Cr",
+      "15",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "11/04/2025",
+      "UPI/229281286634/13:10:01/UPI/83091882975@RMGB000",
+      "",
+      "75,000.00",
+      "",
+      "6,25,029.10Cr",
+      "15",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "11/04/2025",
+      "IMPS/P2A/510117860863/XXXXXXXXXX3279/ForRent",
+      "",
+      "1,00,000.00",
+      "",
+      "5,25,029.10Cr",
+      "15",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "11/04/2025",
+      "CHARGES FOR:IMPS/P2A/510117860863/XXXXXXXX",
+      "",
+      "8.85",
+      "",
+      "5,25,020.25Cr",
+      "15",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "11/04/2025",
+      "MBK/510145113114/18:02:45/for fuel billairport",
+      "",
+      "1,50,000.00",
+      "",
+      "3,75,020.25Cr",
+      "15",
+      "1"
+    ],
+    [
+      "12/04/2025",
+      "12/04/2025",
+      "UPI/597799877911/20:23:22/UPI/61227841771@SBIN000",
+      "",
+      "30,000.00",
+      "",
+      "3,45,020.25Cr",
+      "15",
+      "1"
+    ],
+    [
+      "14/04/2025",
+      "14/04/2025",
+      "UPI/507177871339/17:01:29/UPI/9784766247@axl/dump",
+      "",
+      "10,000.00",
+      "",
+      "3,35,020.25Cr",
+      "15",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

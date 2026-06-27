@@ -1,0 +1,177 @@
+{
+  "bank_name": "Central Bank of India (CBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-21T11:27:23Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Post Date",
+    "Value Date",
+    "Branch Code",
+    "Cheque Number",
+    "Transaction Description",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "post date|value date|branch code|cheque number|transaction description|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 4,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Post Date",
+    "description": "Transaction Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "2348",
+      "",
+      "UPI/RRN391522931411/Paymentfrom PhonePe_SHEKH IM",
+      "",
+      "5,000.00",
+      "58,896.86 CR",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "2348",
+      "",
+      "UPI/RRN080493597075/Paymentfrom PhonePe_SHEKH IM",
+      "",
+      "1.00",
+      "58,897.86 CR",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "2348",
+      "",
+      "UPI/RRN718292561392/Paymentfrom PhonePe_Master A",
+      "",
+      "3,290.00",
+      "62,187.86 CR",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "2348",
+      "",
+      "UPI/RRN906344854288/Paymentfrom PhonePe_Mr JITEN",
+      "",
+      "450.00",
+      "62,637.86 CR",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "2348",
+      "",
+      "UPI/RRN509136470920/PaymenttoHappyInvites",
+      "118.00",
+      "",
+      "62,519.86 CR",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "2348",
+      "",
+      "UPI/RRN545724670551/UPI_TARUNA KUNDNANI TARUNA",
+      "",
+      "30,000.00",
+      "92,519.86 CR",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "2348",
+      "",
+      "UPI/RRN545797137243/UPI",
+      "19.00",
+      "",
+      "92,500.86 CR",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "2348",
+      "",
+      "UPI/RRN100284116439/AULTUPI_GROWW INVESTTECH PV",
+      "",
+      "2,615.62",
+      "95,116.48 CR",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "2348",
+      "",
+      "UPI/RRN091647142840/Paymentfrom PhonePe_Mr RAJEN",
+      "",
+      "4,450.00",
+      "99,566.48 CR",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "2348",
+      "",
+      "UPI/RRN509230030673/na_MissNIKITA VAIBHAV THORAT",
+      "",
+      "1,600.00",
+      "1,01,166.48 CR",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

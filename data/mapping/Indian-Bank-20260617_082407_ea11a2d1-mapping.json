@@ -1,0 +1,166 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-17T06:24:27Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Post Date",
+    "Value Date",
+    "Details",
+    "Chq.No.",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "post date|value date|details|chq no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Post Date",
+    "description": "Details",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "",
+      "",
+      "Brought Forward",
+      "",
+      "",
+      "",
+      "-9009272.00",
+      "1",
+      "2"
+    ],
+    [
+      "03/04/2025",
+      "03/04/25",
+      "HDFC0008591/SANJEEV MISHRA /XXXXX42156/8423542156@ptaxis /U PI/509371270946/Sent using Paytm UPI /BRANCH : ATM SERVICE B RANCH",
+      "",
+      "",
+      "60000.00",
+      "-8949272.00",
+      "1",
+      "1"
+    ],
+    [
+      "29/04/2025",
+      "29/04/25",
+      "UNIVERSAL SOMPO GENERAL INSURANCE COMPANY LIMITED/TRANSFER TO 50006087382 STOCK INSURANCE KATRA(4086) /BRANCH : ALLAHAB AD KATRA",
+      "",
+      "22650.00",
+      "",
+      "-8971922.00",
+      "1",
+      "1"
+    ],
+    [
+      "30/04/2025",
+      "30/04/25",
+      "DEBIT INTEREST",
+      "",
+      "87831.00",
+      "",
+      "-9059753.00",
+      "1",
+      "1"
+    ],
+    [
+      "30/04/2025",
+      "30/04/25",
+      "OD PENAL CHARGES",
+      "",
+      "1.00",
+      "",
+      "-9059754.00",
+      "1",
+      "1"
+    ],
+    [
+      "05/05/2025",
+      "05/05/25",
+      "TRANSFER FROM 94958000127 NEFT/BKID/BKIDN62025050511823147/ H NARESH I/ /BRANCH : MUMBAI FORT",
+      "",
+      "",
+      "65000.00",
+      "-8994754.00",
+      "1",
+      "1"
+    ],
+    [
+      "06/05/2025",
+      "06/05/25",
+      "TRANSFER FROM 97168000124 NEFT/BKID/BKIDN62025050611949430/ H NARESH I/ /BRANCH : MUMBAI FORT",
+      "",
+      "",
+      "70000.00",
+      "-8924754.00",
+      "2",
+      "1"
+    ],
+    [
+      "08/05/2025",
+      "08/05/25",
+      "SHRISHTI FOODS AND BEVERAGES /TRANSFER TO 7995811711 BRANCH : ALLAHABAD KATRA",
+      "",
+      "29000.00",
+      "",
+      "-8953754.00",
+      "2",
+      "1"
+    ],
+    [
+      "08/05/2025",
+      "08/05/25",
+      "SHRISHTI FOODS AND BEVERAGES /TRANSFER TO 7992211149 BRANCH : ALLAHABAD KATRA",
+      "",
+      "17500.00",
+      "",
+      "-8971254.00",
+      "2",
+      "1"
+    ],
+    [
+      "13/05/2025",
+      "13/05/25",
+      "TRANSFER FROM 94957000128 RTGS/YESB/YESBR12025051300014998/ INSIDE T/ /BRANCH : MUMBAI FORT",
+      "",
+      "",
+      "500000.00",
+      "-8471254.00",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

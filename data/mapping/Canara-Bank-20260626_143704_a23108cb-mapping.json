@@ -1,0 +1,144 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-26T12:37:27Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Deposits",
+    "Withdrawals",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 2,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2026",
+      "UPI/DR/399941015612/MRSHAILE/BDBL/**ASEN1@IBL/SENTUSI//PTMABD7ED59BC1845DC91055101C678012E/01/04/202610:00:20Chq: 399941015612",
+      "",
+      "5,050.00",
+      "72,605.07",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "UPI/DR/399968151243/KISHORS/SBIN/**NE423@OKSBI/SENTUSI//PTMAF9118B170DF4B38972393B21E9C5033/01/04/202618:13:54Chq: 399968151243",
+      "",
+      "2,500.00",
+      "70,105.07",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "UPI/DR/399980604035/RAMAVATI /CNRB/**36512@IBL/SENTUSI//PTM2CCD18368846499F8C1C485C7A7EE8C5/01/04/202620:20:52Chq: 399980604035",
+      "",
+      "20,000.00",
+      "50,105.07",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "UPI/DR/203110965153/SAROJJA/ESMF/**10753@PTYES/NA//PTM8CFBF518A09C41069D620D145C1C6D65/01/04/202623:13:35Chq: 203110965153",
+      "",
+      "3,000.00",
+      "47,105.07",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "UPI/DR/300028942634/SHAILENDR/FDRL/**74904@FBPE/PAYTOB//PTM411361DED54B4761BA3A3654AE157D16/02/04/202618:11:43Chq: 300028942634",
+      "",
+      "7,000.00",
+      "40,105.07",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "UPI/CR/748657421048/MUSKANJ/CNRB/**ALRJ1@AXL/PAYMENT//AXLF1FB28C5E2A6441E8EA66DAA27DFA885/02/04/202619:03:04Chq: 748657421048",
+      "20,000.00",
+      "",
+      "60,105.07",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "MB-IMPS-DR/TOFIQKHAN/HDFC/**2720/GADIBHADA/02/04/202620:02:30/609220471081Chq: 609220471081",
+      "",
+      "20,000.00",
+      "40,105.07",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "IMPS SCChq: 609220471081",
+      "",
+      "5.90",
+      "40,099.17",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "UPI/DR/300046648442/BHARATSI/SBIN/**97610@YBL/SENTUSI//PTM29F2E6C3728D451D86B2A65963503CC3/02/04/202621:24:04Chq: 300046648442",
+      "",
+      "6,000.00",
+      "34,099.17",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "UPI/DR/609270624128/SAROJJA/ESMF/**10753@PTAXIS/NA//PTM23E609FB90B24ACCAF3836DDFC54B606/02/04/202621:31:50Chq: 609270624128",
+      "",
+      "4,000.00",
+      "30,099.17",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

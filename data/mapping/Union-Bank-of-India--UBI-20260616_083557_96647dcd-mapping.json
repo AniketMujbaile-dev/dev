@@ -1,0 +1,166 @@
+{
+  "bank_name": "Union Bank of India (UBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-16T06:36:16Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Tran",
+    "Ref Num",
+    "Particulars",
+    "Debit Amt.",
+    "Credit Amt.",
+    "Balance Amt.",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|tran|ref num|particulars|debit amt|credit amt|balance amt|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 3,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Debit Amt.",
+    "credit": "Credit Amt.",
+    "amount": "Debit Amt.",
+    "balance": "Balance Amt.",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "09/04/2025",
+      "U43599176",
+      "ff70dU3",
+      "UPIAB/549763991418/CR/VIN",
+      "",
+      "6,000.00",
+      "4,91,411.73DR",
+      "1",
+      "1"
+    ],
+    [
+      "30/04/2025",
+      "S10537596",
+      "",
+      "287915080000006:Int.Coll:",
+      "4,694.00",
+      "",
+      "4,96,105.73DR",
+      "1",
+      "1"
+    ],
+    [
+      "30/04/2025",
+      "S10537596",
+      "",
+      "287915080000006:P Charge:",
+      "810.00",
+      "",
+      "4,96,915.73DR",
+      "1",
+      "1"
+    ],
+    [
+      "30/04/2025",
+      "S26736700",
+      "a4889U3",
+      "UPIAB/145029488538/CR/VIN",
+      "",
+      "6,000.00",
+      "4,90,915.73DR",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2025",
+      "A865054",
+      "",
+      "INWARD RET CHQ No",
+      "295.00",
+      "",
+      "4,91,210.73DR",
+      "1",
+      "1"
+    ],
+    [
+      "17/05/2025",
+      "A709912",
+      "",
+      "INWARD RET CHQ No",
+      "295.00",
+      "",
+      "4,91,505.73DR",
+      "1",
+      "1"
+    ],
+    [
+      "31/05/2025",
+      "W45485570",
+      "",
+      "287915080000006:Int.Coll:",
+      "4,797.00",
+      "",
+      "4,96,302.73DR",
+      "1",
+      "1"
+    ],
+    [
+      "31/05/2025",
+      "W45485570",
+      "",
+      "287915080000006:P Charge:",
+      "834.00",
+      "",
+      "4,97,136.73DR",
+      "1",
+      "1"
+    ],
+    [
+      "05/06/2025",
+      "S76312082",
+      "ca9b9U3",
+      "UPIAB/011228088520/CR/VIN",
+      "",
+      "6,000.00",
+      "4,91,136.73DR",
+      "1",
+      "1"
+    ],
+    [
+      "30/06/2025",
+      "T53164259",
+      "",
+      "287915080000006:Int.Coll:",
+      "4,516.00",
+      "",
+      "4,95,652.73DR",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

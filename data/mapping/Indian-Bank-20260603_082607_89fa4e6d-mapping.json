@@ -1,0 +1,166 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-03T06:26:35Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Post Date",
+    "Value Date",
+    "Details",
+    "Chq.No.",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "post date|value date|details|chq no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Post Date",
+    "description": "Details",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "",
+      "",
+      "Brought Forward",
+      "",
+      "",
+      "",
+      "204224.19",
+      "1",
+      "2"
+    ],
+    [
+      "01/04/2025",
+      "01/04/25",
+      "Ankesh Kumar Shukla /TRANSFER TO 6701608191 Mobile/17434866 65/Fund Transfer /BRANCH : CORE BANKING DATA CENTRE",
+      "",
+      "50000.00",
+      "",
+      "154224.19",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/25",
+      "Ankesh Kumar Shukla /TRANSFER TO 6701608191 Mobile/17435171 41/Fund Transfer /BRANCH : CORE BANKING DATA CENTRE",
+      "",
+      "50000.00",
+      "",
+      "104224.19",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/25",
+      "GAURI ENTERPRISES /TRANSFER TO 7623704249 INT TRF FRM 00000 050537687466TO 00000007623704249 /BRANCH : ALLAHABAD CIVIL L INES",
+      "",
+      "24548.00",
+      "",
+      "79676.19",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01/04/25",
+      "Ankesh Kumar Shukla /TRANSFER TO 7928366575 BRANCH : ALLAHA BAD HINDI SAHITYA SAMMELAN MARG",
+      "",
+      "24230.00",
+      "",
+      "55446.19",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/25",
+      "SHUKLA IRON STORE /TRANSFER FROM 7719086449 Transfer 50537 gayat0275 /BRANCH : CORE BANKING DATA CENTRE",
+      "",
+      "",
+      "100000.00",
+      "155446.19",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/25",
+      "Txn Amt. 77,000.00 Charges. 5.61 /NEFT/SBIN/IDIBN5202504025 4790062/MAYANK S/GAURI EN/BRANCH : ALLAHABAD CIVIL LINES",
+      "843562",
+      "77005.61",
+      "",
+      "78440.58",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03/04/25",
+      "BRANCH : ALLAHABAD CIVIL LINES",
+      "",
+      "",
+      "1800000.00",
+      "1878440.58",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03/04/25",
+      "DIVYANSHI ENTERP /BRANCH : ALLAHABAD CIVIL LINES",
+      "843563",
+      "1800000.00",
+      "",
+      "78440.58",
+      "2",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "04/04/25",
+      "Ankesh Kumar Shukla /TRANSFER TO 6701608191 Mobile/17437363 91/Fund Transfer /BRANCH : CORE BANKING DATA CENTRE",
+      "",
+      "50000.00",
+      "",
+      "28440.58",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

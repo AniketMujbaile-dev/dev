@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-19T10:06:47Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "31/01/2026",
+      "UPI-7736115198-8375994080-2@YBL-166534223636-PAYMENT FROM PHONEPE",
+      "0000166534223636",
+      "31/01/26",
+      "",
+      "70.00",
+      "15,710.59",
+      "1",
+      "1"
+    ],
+    [
+      "31/01/2026",
+      "UPI-00000002277192930-SUDHIRKUMAR7081134077@OKAXIS-603133881847-UPI",
+      "0000603133881847",
+      "31/01/26",
+      "",
+      "120.00",
+      "15,830.59",
+      "1",
+      "1"
+    ],
+    [
+      "31/01/2026",
+      "63987053TERMINAL 1 CARDS SETTL. 31/01/26",
+      "000000000000000",
+      "31/01/26",
+      "",
+      "759.92",
+      "16,590.51",
+      "1",
+      "1"
+    ],
+    [
+      "31/01/2026",
+      "63987055TERMINAL 1 CARDS SETTL. 31/01/26",
+      "000000000000000",
+      "31/01/26",
+      "",
+      "737.68",
+      "17,328.19",
+      "1",
+      "1"
+    ],
+    [
+      "31/01/2026",
+      "63987056TERMINAL 1 CARDS SETTL. 31/01/26",
+      "000000000000000",
+      "31/01/26",
+      "",
+      "280.00",
+      "17,608.19",
+      "1",
+      "1"
+    ],
+    [
+      "31/01/2026",
+      "63987058TERMINAL 1 CARDS SETTL. 31/01/26",
+      "000000000000000",
+      "31/01/26",
+      "",
+      "295.80",
+      "17,903.99",
+      "1",
+      "1"
+    ],
+    [
+      "31/01/2026",
+      "63987059TERMINAL 1 CARDS SETTL. 31/01/26",
+      "000000000000000",
+      "31/01/26",
+      "",
+      "896.40",
+      "18,800.39",
+      "1",
+      "1"
+    ],
+    [
+      "31/01/2026",
+      "63987060TERMINAL 1 CARDS SETTL. 31/01/26",
+      "000000000000000",
+      "31/01/26",
+      "",
+      "1,196.64",
+      "19,997.03",
+      "1",
+      "1"
+    ],
+    [
+      "31/01/2026",
+      "63987059 RUPAY MDR RCVRY-31/01/26",
+      "000000000000000",
+      "31/01/26",
+      "33.04",
+      "",
+      "19,963.99",
+      "1",
+      "1"
+    ],
+    [
+      "31/01/2026",
+      "UPI-65301800000008602384-9639212481@IDFCFIRST-603171775675-PAY REQUEST",
+      "0000603171775675",
+      "31/01/26",
+      "",
+      "330.00",
+      "20,293.99",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

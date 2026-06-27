@@ -1,0 +1,166 @@
+{
+  "bank_name": "Axis Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T09:44:34Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Tran Date",
+    "Chq No",
+    "Particulars",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Init. Br",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|chq no|particulars|debit|credit|balance|init br|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Tran Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "18/12/2025",
+      "55267",
+      "NEFT/SK/AXSK253520017837/3036/AU SMALL FINANCE BAN/AU SMALL FINANCE BANK LIMITE",
+      "1266.00",
+      "",
+      "385514.94",
+      "3036",
+      "1",
+      "1"
+    ],
+    [
+      "19/12/2025",
+      "",
+      "NEFT/AUBLH35333266345/Emi Refundable Against Forec/AU SMALL FINANCE BAN/EX AMT REF L9001060143842218",
+      "",
+      "1266.00",
+      "386780.94",
+      "248",
+      "1",
+      "1"
+    ],
+    [
+      "19/12/2025",
+      "",
+      "NEFT/AUBLH35333266346/Emi Refundable Against Forec/AU SMALL FINANCE BAN/EX AMT REF L9001060143842218",
+      "",
+      "4345.00",
+      "391125.94",
+      "248",
+      "1",
+      "1"
+    ],
+    [
+      "20/12/2025",
+      "",
+      "ATM-CASH- AXIS/BPRH303601/9086/201225/ROHTAK",
+      "3000.00",
+      "",
+      "388125.94",
+      "3036",
+      "1",
+      "1"
+    ],
+    [
+      "20/12/2025",
+      "",
+      "NEFT/AUBLH35433273882/Emi Refundable Against Forec/AU SMALL FINANCE BAN/EX AMT REF L9001060840641167",
+      "",
+      "587.00",
+      "388712.94",
+      "248",
+      "1",
+      "1"
+    ],
+    [
+      "21/12/2025",
+      "",
+      "UPI/P2M/886685179175/PhonePe /Paymen/AXIS BANK",
+      "135000.00",
+      "",
+      "253712.94",
+      "3036",
+      "1",
+      "1"
+    ],
+    [
+      "24/12/2025",
+      "",
+      "EDC/00002-00002-/M037214030360103",
+      "",
+      "131654.70",
+      "385367.64",
+      "100",
+      "1",
+      "1"
+    ],
+    [
+      "24/12/2025",
+      "",
+      "UPI/P2A/535838062137/RAMESH SO/PUNB/UPI/",
+      "",
+      "95000.00",
+      "480367.64",
+      "3036",
+      "1",
+      "1"
+    ],
+    [
+      "24/12/2025",
+      "",
+      "SAK/CASH DEP/SAK466107349/3036/SELF",
+      "",
+      "800000.00",
+      "1280367.64",
+      "3036",
+      "1",
+      "1"
+    ],
+    [
+      "25/12/2025",
+      "",
+      "UPI/P2A/535993015063/RAMESH SO/PUNB/UPI/",
+      "",
+      "5000.00",
+      "1285367.64",
+      "3036",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

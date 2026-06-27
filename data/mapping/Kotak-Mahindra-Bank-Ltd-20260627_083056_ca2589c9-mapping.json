@@ -1,0 +1,166 @@
+{
+  "bank_name": "Kotak Mahindra Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-27T06:31:11Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "#",
+    "Date",
+    "Description",
+    "Chq/Ref. No.",
+    "Withdrawal (Dr.)",
+    "Deposit (Cr.)",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "|date|description|chq ref no|withdrawal dr|deposit cr|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Description",
+    "debit": "Withdrawal (Dr.)",
+    "credit": "Deposit (Cr.)",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "11/04/2025",
+      "Chrg: Weekly Bal Alerts charges for Mar-25",
+      "TBMS-1676461056",
+      "2.95",
+      "",
+      "65,675.20",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "18/04/2025",
+      "UPI/MR INDER KASHYA/510881333167/Sentusing Payt",
+      "UPI-510801536481",
+      "20,000.00",
+      "",
+      "45,675.20",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "06/05/2025",
+      "MB:SENT MONEY TO OWN 9212175506",
+      "MB-998485473403",
+      "600.00",
+      "",
+      "45,075.20",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "07/05/2025",
+      "MB:SENT MONEY TO OWN 9212175506",
+      "MB-998485019608",
+      "5,000.00",
+      "",
+      "40,075.20",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "07/05/2025",
+      "MB:SENT MONEY TO OWN 9212175506",
+      "MB-998485015487",
+      "5,000.00",
+      "",
+      "35,075.20",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "09/05/2025",
+      "Chrg: Weekly Bal Alerts charges for Apr-25",
+      "TBMS-1693071555",
+      "2.36",
+      "",
+      "35,072.84",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "14/06/2025",
+      "Chrg: Weekly Bal Alerts charges for May-25",
+      "TBMS-1709368733",
+      "2.36",
+      "",
+      "35,070.48",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "21/06/2025",
+      "Cash Deposit at/BDLOH178/Om Vihar, UttamNagarDelh",
+      "517213754234",
+      "",
+      "19,000.00",
+      "54,070.48",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "21/06/2025",
+      "Cash Deposit at/BDLOH178/Om Vihar, UttamNagarDelh",
+      "517213754236",
+      "",
+      "5,000.00",
+      "59,070.48",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "30/06/2025",
+      "Int.Pd:2646294324:01-04-2025 to 30-06-2025",
+      "",
+      "",
+      "323.00",
+      "59,393.48",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

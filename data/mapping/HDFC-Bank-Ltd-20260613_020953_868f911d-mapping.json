@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-13T00:10:07Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/05/2026",
+      "UPI-SHAHIN-ASHRAFKHAN38571@AXL-UTIB0001370-709333599551-PAYMENT FROM PHONE",
+      "0000709333599551",
+      "02/05/26",
+      "",
+      "40,000.00",
+      "42,657.94",
+      "1",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "O/S INTEREST TRANSFER FOR A/CXXXXXXXXXX0017",
+      "000000000000000",
+      "04/05/26",
+      "3,356.00",
+      "",
+      "39,301.94",
+      "1",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "EMI 144891005 CHQ S1448910050321 0526144891005",
+      "000000000000000",
+      "04/05/26",
+      "36,278.00",
+      "",
+      "3,023.94",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "CASH DEPOSIT CHARGES 30-04-2026-EPR2712810731236",
+      "EPR2712810731236",
+      "08/05/26",
+      "649.00",
+      "",
+      "2,374.94",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "NEFT CR-SBIN0011647-ABHISHEK ENTERPRISES-A A ENTERPRISES-SBIN226128645024",
+      "SBIN226128645024",
+      "08/05/26",
+      "",
+      "100,000.00",
+      "102,374.94",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "UPI-XXXXXXXX0684-ICIC0001233-620650157260-PAYMENT FROM PHONE",
+      "0000620650157260",
+      "08/05/26",
+      "50,000.00",
+      "",
+      "52,374.94",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "UPI-XXXXXXXXXX7000-HDFC0000001-235369554036-PAYMENT FROM PHONE",
+      "0000235369554036",
+      "08/05/26",
+      "50,000.00",
+      "",
+      "2,374.94",
+      "1",
+      "1"
+    ],
+    [
+      "09/05/2026",
+      "UPI-AKASH VIJAYTELORE-AKASHVIJAY14@YBL-BKID0000659-137208044836-PAYMENT FROM PHONE",
+      "0000137208044836",
+      "09/05/26",
+      "",
+      "50,000.00",
+      "52,374.94",
+      "1",
+      "1"
+    ],
+    [
+      "09/05/2026",
+      "UPI-BHAGYESH SHAMLALLOK-9511776777@AXL-HDFC0000966-965172852293-PAYMENT FROM PHONE",
+      "0000965172852293",
+      "09/05/26",
+      "",
+      "1.00",
+      "52,375.94",
+      "1",
+      "1"
+    ],
+    [
+      "09/05/2026",
+      "UPI-BHAGYESH SHAMLALLOK-9511776777@YBL-HDFC0000966-263678149182-PAYMENT FROM PHONE",
+      "0000263678149182",
+      "09/05/26",
+      "",
+      "20,000.00",
+      "72,375.94",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

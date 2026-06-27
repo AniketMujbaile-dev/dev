@@ -1,0 +1,155 @@
+{
+  "bank_name": "City Union Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T07:31:47Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "DESCRIPTION",
+    "CHEQUE NO",
+    "DEBIT",
+    "CREDIT",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|description|cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "DESCRIPTION",
+    "debit": "DEBIT",
+    "credit": "CREDIT",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "BY ONL MARCH 25:: CA 510909010244873:00003",
+      "",
+      "",
+      "50,000.00",
+      "25,08,888.73",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "TO ONL UPI/DR/509218208467/RAMYASRE/KKBK/RAMYASREEC/U::00003",
+      "",
+      "3,500.00",
+      "",
+      "25,05,388.73",
+      "1",
+      "1"
+    ],
+    [
+      "17/04/2025",
+      "TO ONL UPI/DR/510704572814/NETFLIX /ICIC/NETFLIX2 P/U::00003",
+      "",
+      "649.00",
+      "",
+      "25,04,739.73",
+      "1",
+      "1"
+    ],
+    [
+      "18/04/2025",
+      "TO ONL UPI/DR/547487327935/PREETHI /NSPB/CF PREETHI/O::00003",
+      "",
+      "1,977.90",
+      "",
+      "25,02,761.83",
+      "1",
+      "1"
+    ],
+    [
+      "19/04/2025",
+      "TO ONL UPI/DR/283455966032/JIO PREP/YESB/PAYTM-JIOM/O::00003",
+      "",
+      "123.00",
+      "",
+      "25,02,638.83",
+      "1",
+      "1"
+    ],
+    [
+      "19/04/2025",
+      "TO ONL UPI/DR/510959849024/MRS S TA/IDIB/TAMILSELVI/U::00003",
+      "",
+      "1,600.00",
+      "",
+      "25,01,038.83",
+      "1",
+      "1"
+    ],
+    [
+      "20/04/2025",
+      "TO ONL UPI/DR/511094846364/MRS S TA/IDIB/TAMILSELVI/U::00003",
+      "",
+      "200.00",
+      "",
+      "25,00,838.83",
+      "1",
+      "1"
+    ],
+    [
+      "21/04/2025",
+      "TO ONL NACH DR/CIUB7011007244000041/BD-MF UTILITIES L::00003",
+      "",
+      "10,000.00",
+      "",
+      "24,90,838.83",
+      "1",
+      "1"
+    ],
+    [
+      "21/04/2025",
+      "TO ONL NACH DR/CIUB7011007244000041/BD-MF UTILITIES L::00003",
+      "",
+      "10,000.00",
+      "",
+      "24,80,838.83",
+      "1",
+      "1"
+    ],
+    [
+      "21/04/2025",
+      "TO ONL NACH DR/CIUB7011007244000041/BD-MF UTILITIES L::00003",
+      "",
+      "10,000.00",
+      "",
+      "24,70,838.83",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

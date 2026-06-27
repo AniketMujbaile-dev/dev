@@ -1,0 +1,144 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-26T12:04:43Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Deposits",
+    "Withdrawals",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 2,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "MB/120002059572/RMDENTERPRISE/110208652763/RAJKUMAR/CANARA//14966444425/02/04/2025 12:21:37Chq: 0",
+      "",
+      "16,000.00",
+      "14,714.32",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "MB/110208652763/RAJKUMAR/120002059572/RMDENTERPRISES/CANARA//14983158806/03/04/2025 08:51:32Chq: 0",
+      "95,000.00",
+      "",
+      "1,09,714.32",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI/CR/992358230698/RAHULJA/IDFB/**L5025@YBL/PAYMENT//YBL43D3E18ADCEA4895B71823FED5884755/03/04/202508:57:15Chq: 992358230698",
+      "1,00,000.00",
+      "",
+      "2,09,714.32",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "RTGS CR-HDFCR52025040357479848-HDFC0003693-MISBAHTRADERS--/FAST/FASTChq: 0",
+      "9,00,000.00",
+      "",
+      "11,09,714.32",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "MB/110208652763/RAJKUMAR/120002059572/RMDENTERPRISES/CANARA//14988990377/03/04/2025 03:34:07Chq: 0",
+      "30,000.00",
+      "",
+      "11,39,714.32",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "MB/110208652763/RAJKUMAR/120002059572/RMDENTERPRISES/CANARA//14989306926/03/04/2025 03:56:20Chq: 0",
+      "99,000.00",
+      "",
+      "12,38,714.32",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "CASH DEPOSIT SELF AMLAChq:",
+      "1,02,000.00",
+      "",
+      "13,40,714.32",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "MOB-IMPS-CR/NEWINDIAGO/UOB/746601010050071/LODING/9893903157/03/04/202516:00:47/509316937991Chq: 509316937991",
+      "50,000.00",
+      "",
+      "13,90,714.32",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UPI/CR/607906543703/MUSKANJ/CNRB/**ALRJ1@IBL/PAYMENT//IBL69193B7C14E149FC94A9701BEBEDAB11/03/04/202516:04:33Chq: 607906543703",
+      "99,000.00",
+      "",
+      "14,89,714.32",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "RTGS DR-CNRBR52025040353824472-SBIN0006676-JD MPPGCLSARNI-/FAST/FASTChq: 000632622188",
+      "",
+      "14,86,336.00",
+      "3,378.32",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

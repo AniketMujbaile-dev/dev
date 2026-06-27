@@ -1,0 +1,155 @@
+{
+  "bank_name": "Rajasthan Gramin Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-25T04:45:32Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "DESCRIPTION",
+    "INSTR.NO",
+    "DEBIT",
+    "CREDIT",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|description|instr no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "DESCRIPTION",
+    "debit": "DEBIT",
+    "credit": "CREDIT",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/05/2023",
+      "BY CASH",
+      "",
+      "",
+      "1000.00",
+      "1,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "04/05/2023",
+      "UPI/312473233519/17:16:58/CREDIT 312473233519",
+      "",
+      "",
+      "51.00",
+      "1,051.00",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2023",
+      "IMPS/P2A/312712641008/7737648691/3152240 M",
+      "",
+      "",
+      "1.00",
+      "1,052.00",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2023",
+      "UPI/349312642783/12:47:58/CREDIT 349312642783",
+      "",
+      "",
+      "1.00",
+      "1,053.00",
+      "1",
+      "1"
+    ],
+    [
+      "10/05/2023",
+      "IMPS/P2A/313013150249/0000000000/05500543 B",
+      "",
+      "",
+      "1.00",
+      "1,054.00",
+      "1",
+      "1"
+    ],
+    [
+      "11/05/2023",
+      "NEFT-YESB31311266097-RESILIENT INNOVATION",
+      "",
+      "",
+      "101.00",
+      "1,155.00",
+      "1",
+      "1"
+    ],
+    [
+      "15/05/2023",
+      "NEFT-YESB31333637105-RESILIENT INNOVATION",
+      "",
+      "",
+      "1100.00",
+      "2,255.00",
+      "1",
+      "1"
+    ],
+    [
+      "15/05/2023",
+      "NEFT-YESB31355044183-RESILIENT INNOVATION",
+      "",
+      "",
+      "1000.00",
+      "3,255.00",
+      "1",
+      "1"
+    ],
+    [
+      "16/05/2023",
+      "NEFT-YESB31366647906-RESILIENT INNOVATION",
+      "",
+      "",
+      "9100.00",
+      "12,355.00",
+      "1",
+      "1"
+    ],
+    [
+      "19/05/2023",
+      "UPI/350502638407/08:23:52/CREDIT 350502638407",
+      "",
+      "",
+      "1100.00",
+      "13,455.00",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

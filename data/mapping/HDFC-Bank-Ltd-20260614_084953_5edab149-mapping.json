@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-14T06:50:20Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "30/04/2026",
+      "UPI-165110100046896-8828236031@SUPERYES-648619229724-PAID VIA SUPERMONEY UPI",
+      "0000648619229724",
+      "01/05/26",
+      "",
+      "752.00",
+      "322,028.19",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-01211500004503-ASJADKAZI@OKAXIS-648797084380-UPI",
+      "0000648797084380",
+      "01/05/26",
+      "",
+      "1,951.00",
+      "323,979.19",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "36626834 CARDS SETTL. 01/05/26",
+      "000000000000000",
+      "01/05/26",
+      "",
+      "2,538.35",
+      "326,517.54",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-SWARNA GANGAJEWELLE-0790961A0245057.BQR@KOTAK-KKBK0000961-612175360376-UPI",
+      "0000612175360376",
+      "01/05/26",
+      "39,640.00",
+      "",
+      "286,877.54",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-00000005350422664-SAIFSAYED403-2@OKICICI-648736803762-UPI",
+      "0000648736803762",
+      "01/05/26",
+      "",
+      "408.00",
+      "287,285.54",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-50100504080766-SISTLADHEERAJ@OKHDFCBANK-122449362651-UPI",
+      "0000122449362651",
+      "01/05/26",
+      "",
+      "303.00",
+      "287,588.54",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-577910110012057-QAMRUZZAMA636@OKAXIS-612116162228-UPI",
+      "0000612116162228",
+      "01/05/26",
+      "",
+      "617.00",
+      "288,205.54",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "82126768 RUPAY MDR RCVRY-01/05/26",
+      "000000000000000",
+      "01/05/26",
+      "6.85",
+      "",
+      "288,198.69",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-653047000039817664-9049923366@PTYES-301787352073-SENT USING PAYTM UPI",
+      "0000301787352073",
+      "01/05/26",
+      "",
+      "524.00",
+      "288,722.69",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-056401520231-PRASADPATIL85@OKICICI-648787805455-UPI",
+      "0000648787805455",
+      "01/05/26",
+      "",
+      "1,639.00",
+      "290,361.69",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

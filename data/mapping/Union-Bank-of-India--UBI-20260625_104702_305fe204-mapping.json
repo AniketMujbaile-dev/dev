@@ -1,0 +1,177 @@
+{
+  "bank_name": "Union Bank of India (UBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-25T08:47:30Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Tran Id",
+    "Remarks",
+    "UTR Number",
+    "Instr. Id",
+    "Withdrawals",
+    "Deposits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|tran id|remarks|utr number|instr id|withdrawals|deposits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Remarks",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "09/04/2025",
+      "U33535167",
+      "ChargesforPORDCustomerPayment:UBINK25099079881",
+      "'-",
+      "",
+      "5.61",
+      "",
+      "18198.56",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2025",
+      "U33535167",
+      "NEFTO-MEENA SUTHAR 001999510267",
+      "'-",
+      "",
+      "13550.00",
+      "",
+      "4648.56",
+      "1",
+      "1"
+    ],
+    [
+      "12/04/2025",
+      "W26276907",
+      "UPIAB/103060446326/CR/KRITI DE/ESFB/detha.kriti-4@",
+      "'-",
+      "",
+      "",
+      "12000.00",
+      "16648.56",
+      "1",
+      "1"
+    ],
+    [
+      "14/04/2025",
+      "W97264366",
+      "RTGS:SIMBUS SOURCING LLP ICIC140425858280",
+      "'-",
+      "",
+      "",
+      "836399.16",
+      "853047.72",
+      "1",
+      "1"
+    ],
+    [
+      "14/04/2025",
+      "W97168946",
+      "RTGS:SIMBUS SOURCING LLP ICIC140425858297",
+      "'-",
+      "",
+      "",
+      "921126.37",
+      "1774174.09",
+      "1",
+      "1"
+    ],
+    [
+      "14/04/2025",
+      "X13716781",
+      "ChargesforPORDCustomerPayment:UBINJ25104628591",
+      "'-",
+      "",
+      "5.61",
+      "",
+      "1774168.48",
+      "1",
+      "1"
+    ],
+    [
+      "14/04/2025",
+      "X13716781",
+      "NEFTO-NEETU LOHAR 002007668532",
+      "'-",
+      "",
+      "10295.00",
+      "",
+      "1763873.48",
+      "1",
+      "1"
+    ],
+    [
+      "14/04/2025",
+      "X14108079",
+      "ChargesforPORDCustomerPayment:UBINJ25104629336",
+      "'-",
+      "",
+      "2.66",
+      "",
+      "1763870.82",
+      "1",
+      "1"
+    ],
+    [
+      "14/04/2025",
+      "X14108079",
+      "NEFTO-ANCHAI 002007669505",
+      "'-",
+      "",
+      "4900.00",
+      "",
+      "1758970.82",
+      "1",
+      "1"
+    ],
+    [
+      "14/04/2025",
+      "X14196454",
+      "ChargesforPORDCustomerPayment:UBINJ25104629494",
+      "'-",
+      "",
+      "2.66",
+      "",
+      "1758968.16",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

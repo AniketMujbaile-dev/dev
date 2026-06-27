@@ -1,0 +1,155 @@
+{
+  "bank_name": "Bank of India (BOI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-15T11:36:23Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Sr No",
+    "Date",
+    "Remarks",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "sr no|date|remarks|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Remarks",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "382",
+      "02/04/2026",
+      "NACH CR INW - ANGEL Int2 2025 26 2112513109 PARM",
+      "",
+      "171.50",
+      "\u20b9 180.55",
+      "18",
+      "1"
+    ],
+    [
+      "381",
+      "02/04/2026",
+      "UPI/645827457234/DR/JAYKUM/KKBK/760094 207/Paid v",
+      "100.00",
+      "",
+      "\u20b9 80.55",
+      "18",
+      "1"
+    ],
+    [
+      "380",
+      "02/04/2026",
+      "UPI/394169794585/CR/JAYKUM/KKBK/760094 207/Paymen",
+      "",
+      "100.00",
+      "\u20b9 180.55",
+      "18",
+      "1"
+    ],
+    [
+      "379",
+      "02/04/2026",
+      "UPI/609242723383/DR/BOL E /YESB/paytmqr5z/UPI",
+      "30.00",
+      "",
+      "\u20b9 150.55",
+      "17",
+      "1"
+    ],
+    [
+      "378",
+      "02/04/2026",
+      "UPI/645828503088/DR/PANKAJ/BARB/pkumar9 21/Paid v",
+      "100.00",
+      "",
+      "\u20b9 50.55",
+      "17",
+      "1"
+    ],
+    [
+      "377",
+      "02/04/2026",
+      "UPI/120964536225/CR/PANKAJ/BARB/pkumar9 21/UPI",
+      "",
+      "100.00",
+      "\u20b9 150.55",
+      "17",
+      "1"
+    ],
+    [
+      "376",
+      "02/04/2026",
+      "UPI/645831516368/DR/PANKAJ/KKBK/pkumar9 21/Paid v",
+      "100.00",
+      "",
+      "\u20b9 50.55",
+      "17",
+      "1"
+    ],
+    [
+      "375",
+      "02/04/2026",
+      "UPI/120964588941/CR/PANKAJ/KKBK/pkumar9 21/UPI",
+      "",
+      "100.00",
+      "\u20b9 150.55",
+      "17",
+      "1"
+    ],
+    [
+      "374",
+      "02/04/2026",
+      "UPI/645811521278/DR/PARMAR/KKBK/parmar. pr/Paid v",
+      "100.00",
+      "",
+      "\u20b9 50.55",
+      "17",
+      "1"
+    ],
+    [
+      "373",
+      "02/04/2026",
+      "UPI/303001216167/CR/JAYKUM/BKID/7600942 07/Paymen",
+      "",
+      "100.00",
+      "\u20b9 150.55",
+      "17",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

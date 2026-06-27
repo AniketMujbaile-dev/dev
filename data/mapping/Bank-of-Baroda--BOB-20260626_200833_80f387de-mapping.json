@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bank of Baroda (BOB)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-26T18:09:31Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRAN DATE",
+    "VALUE DATE",
+    "NARRATION",
+    "CHQ.NO.",
+    "WITHDRAWAL(DR)",
+    "DEPOSIT(CR)",
+    "BALANCE(INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|value date|narration|chq no|withdrawal dr|deposit cr|balance inr|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRAN DATE",
+    "description": "NARRATION",
+    "debit": "WITHDRAWAL(DR)",
+    "credit": "DEPOSIT(CR)",
+    "amount": null,
+    "balance": "BALANCE(INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "IMPS/P2A/509212625551/XXXXXXXXXX1187/SriVaru",
+      "",
+      "1,536.00",
+      "",
+      "2,33,167.78Dr",
+      "24",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "CHARGES FOR:IMPS/P2A/509212625551/XXXXXXXX",
+      "",
+      "5.90",
+      "",
+      "2,33,173.68Dr",
+      "24",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "IMPS/P2A/509212808920/XXXXXXXXXX8984/SriVivekanan",
+      "",
+      "590.00",
+      "",
+      "2,33,763.68Dr",
+      "24",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "CHARGES FOR:IMPS/P2A/509212808920/XXXXXXXX",
+      "",
+      "2.95",
+      "",
+      "2,33,766.63Dr",
+      "24",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "IMPS/P2A/509212570454/XXXXXXXXXX8990/KLSEnterpris",
+      "",
+      "51,920.00",
+      "",
+      "2,85,686.63Dr",
+      "24",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "CHARGES FOR:IMPS/P2A/509212570454/XXXXXXXX",
+      "",
+      "8.85",
+      "",
+      "2,85,695.48Dr",
+      "24",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "EBANK:WIB/1449301317/BharaniIndustries",
+      "",
+      "2,90,000.00",
+      "",
+      "5,75,695.48Dr",
+      "24",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "IMPS/P2A/509217467537/XXXXXXXXXX0668/RaghavendraS",
+      "",
+      "590.00",
+      "",
+      "5,76,285.48Dr",
+      "24",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "CHARGES FOR:IMPS/P2A/509217467537/XXXXXXXX",
+      "",
+      "2.95",
+      "",
+      "5,76,288.43Dr",
+      "24",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "08/04/2025",
+      "IMPS/P2A/509812673627/XXXXXXXXXX9397/ModernEngine",
+      "",
+      "68,640.00",
+      "",
+      "6,44,928.43Dr",
+      "24",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

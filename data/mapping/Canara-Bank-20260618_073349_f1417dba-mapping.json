@@ -1,0 +1,177 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T05:34:07Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRANS DATE",
+    "VALUE DATE",
+    "BRANCH",
+    "REF/CHQ.NO",
+    "DESCRIPTION",
+    "WITHDRAWS",
+    "DEPOSIT",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "trans date|value date|branch|ref chq no|description|withdraws|deposit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 4,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRANS DATE",
+    "description": "DESCRIPTION",
+    "debit": "WITHDRAWS",
+    "credit": "DEPOSIT",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2026",
+      "01-APR-26",
+      "0",
+      "",
+      "B/F ...",
+      "0.00",
+      "2,020,979.53",
+      "2,020,979.53",
+      "1",
+      "2"
+    ],
+    [
+      "01/04/2026",
+      "31-MAR-26",
+      "33",
+      "",
+      "NEFT CR-YESAP60913559736-YESB0000001-PAYTM PAYMENTS SERVICESLIMITED PA --AWSPG202603310001216820000833742603 175",
+      "0.00",
+      "156,836.10",
+      "2,177,815.63",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02-APR-26",
+      "33",
+      "",
+      "NEFT CR-YESAP60922511748-YESB0000001-PAYTM PAYMENTS SERVICESLIMITED PA --AWSPG202604010001216820000833742603 175",
+      "0.00",
+      "109,167.03",
+      "2,286,982.66",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02-APR-26",
+      "10257",
+      "003033698970",
+      "AMBIKA D SHETTY - AMBIKA D SHETTY",
+      "48,000.00",
+      "0.00",
+      "2,238,982.66",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02-APR-26",
+      "10257",
+      "003033698969",
+      "MANJUNATHA R - MANJUNATHA R",
+      "74,000.00",
+      "0.00",
+      "2,164,982.66",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02-APR-26",
+      "10257",
+      "003033698971",
+      "NEFT DR-CNRBH00121921730-IOBA0000185-SUBRAHMANYA ENTERPRISES-",
+      "73,593.00",
+      "0.00",
+      "2,091,389.66",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02-APR-26",
+      "10257",
+      "",
+      "NEFT SC",
+      "6.00",
+      "0.00",
+      "2,091,383.66",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02-APR-26",
+      "10257",
+      "003033698974",
+      "NEFT DR-CNRBH00121966181-SBIN0009051-B RAVIRAJ-",
+      "73,553.00",
+      "0.00",
+      "2,017,830.66",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02-APR-26",
+      "10257",
+      "",
+      "NEFT SC",
+      "6.00",
+      "0.00",
+      "2,017,824.66",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02-APR-26",
+      "10257",
+      "003033698975",
+      "NEFT DR-CNRBH00121963234-BARB0VJNADA-ASHWINI-",
+      "20,000.00",
+      "0.00",
+      "1,997,824.66",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bandhan Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-20T12:50:41Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Effective Date",
+    "Cheque/Reference No",
+    "Transaction Detail",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|effective date|cheque reference no|transaction detail|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 3,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Transaction Detail",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "",
+      "IMPS-612111104354-GOOGLEINDIADIGITALSERVICESPRIVATELIMITEDNODA-UTIB0003567-***********2063-IMPS Head Office",
+      "0.00",
+      "41000.00",
+      "2873585.28",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "",
+      "IMPS-612114519734-GOOGLEINDIADIGITALSERVICESPRIVATELIMITEDNODA-UTIB0003567-***********2063-IMPS Head Office",
+      "0.00",
+      "1000.00",
+      "2874585.28",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "",
+      "IMPS-612115710309-GOOGLEINDIADIGITALSERVICESPRIVATELIMITEDNODA-UTIB0003567-***********2063-IMPS Head Office",
+      "0.00",
+      "30000.00",
+      "2904585.28",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "",
+      "IMPS-612116784145-GOOGLEINDIADIGITALSERVICESPRIVATELIMITEDNODA-UTIB0003567-***********2063-IMPS Head Office",
+      "0.00",
+      "23800.00",
+      "2928385.28",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "",
+      "IMPS-612117905055-GOOGLEINDIADIGITALSERVICESPRIVATELIMITEDNODA-UTIB0003567-***********2063-IMPS Head Office",
+      "0.00",
+      "4923.00",
+      "2933308.28",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "",
+      "IMPS-612117028604-GOOGLEINDIADIGITALSERVICESPRIVATELIMITEDNODA-UTIB0003567-***********2063-IMPS Head Office",
+      "0.00",
+      "32000.00",
+      "2965308.28",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "",
+      "IMPS-612118166979-GOOGLEINDIADIGITALSERVICESPRIVATELIMITEDNODA-UTIB0003567-***********2063-IMPS Head Office",
+      "0.00",
+      "3300.00",
+      "2968608.28",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "",
+      "IMPS-612119283861-GOOGLEINDIADIGITALSERVICESPRIVATELIMITEDNODA-UTIB0003567-***********2063-IMPS Head Office",
+      "0.00",
+      "1650.00",
+      "2970258.28",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "",
+      "IMPS-612121847675-GOOGLEINDIADIGITALSERVICESPRIVATELIMITEDNODA-UTIB0003567-***********2063-IMPS Head Office",
+      "0.00",
+      "11000.00",
+      "2981258.28",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "",
+      "IMPS-612121849780-GOOGLEINDIADIGITALSERVICESPRIVATELIMITEDNODA-UTIB0003567-***********2063-IMPS Head Office",
+      "0.00",
+      "21949.00",
+      "3003207.28",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

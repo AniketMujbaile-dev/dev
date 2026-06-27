@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-14T06:34:39Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "UPI-629601105343-ASHUORABHISHEK-1@OKICICI-612156489168-UPI",
+      "0000612156489168",
+      "01/05/26",
+      "",
+      "596.00",
+      "119,801.16",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-50100131818631-9899228604@PTYES-301782179544-SENT USING PAYTM UPI",
+      "0000301782179544",
+      "01/05/26",
+      "",
+      "490.00",
+      "120,291.16",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-112601001360-9899708046@PTYES-301790221534-SENT USING PAYTM UPI",
+      "0000301790221534",
+      "01/05/26",
+      "",
+      "773.00",
+      "121,064.16",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "UPI-50100566225952-LAKSHIT007@PTYES-603792368878-SENT USING PAYTM UPI",
+      "0000603792368878",
+      "02/05/26",
+      "",
+      "40.00",
+      "121,104.16",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "UPI-50100602151142-7827231932@PTHDFC-612296110310-SENT USING PAYTM UPI",
+      "0000612296110310",
+      "02/05/26",
+      "",
+      "40.00",
+      "121,144.16",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "UPI-50100449812648-RUCHIBAJAJ55@OKHDFCBANK-122514046941-UPI",
+      "0000122514046941",
+      "03/05/26",
+      "",
+      "314.00",
+      "121,458.16",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "UPI-00842193000098-KYANCHHABRA2202@OKICICI-612288505525-UPI",
+      "0000612288505525",
+      "03/05/26",
+      "",
+      "423.00",
+      "121,881.16",
+      "1",
+      "1"
+    ],
+    [
+      "03/05/2026",
+      "UPI-65301900000014515812-8920968184@PTYES-301897220658-SENT USING PAYTM UPI",
+      "0000301897220658",
+      "03/05/26",
+      "",
+      "282.00",
+      "122,163.16",
+      "1",
+      "1"
+    ],
+    [
+      "03/05/2026",
+      "UPI-8111700208-ISHA.YOGI02@OKSBI-612321530359-UPI",
+      "0000612321530359",
+      "03/05/26",
+      "",
+      "387.00",
+      "122,550.16",
+      "1",
+      "1"
+    ],
+    [
+      "03/05/2026",
+      "UPI-10059153818-FARHEENAXIAN-1@OKICICI-612338761121-UPI",
+      "0000612338761121",
+      "03/05/26",
+      "",
+      "942.00",
+      "123,492.16",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T06:46:14Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Txn Date",
+    "Value Date",
+    "Description",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "txn date|value date|description|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Txn Date",
+    "description": "Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "03/04/2025",
+      "03/04/2025",
+      "Chq No. 240564 CBI NCL AC A",
+      "99000.00",
+      "",
+      "352719.34",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03/04/2025",
+      "CHEQUE TRANSFER TO",
+      "150000.00",
+      "",
+      "202719.34",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "04/04/2025",
+      "NEFT*HDFC0000240*HDFCH00161499517*CANARA ROBECO MU",
+      "",
+      "10249.22",
+      "212968.56",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "04/04/2025",
+      "NEFT*HDFC0000240*HDFCH00163390580*ACML CAPITAL MAR",
+      "",
+      "351.00",
+      "213319.56",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "06/04/2025",
+      "LOCKER CHARGES",
+      "2360.00",
+      "",
+      "210959.56",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "07/04/2025",
+      "NEFT*HDFC0000240*HDFCH00168675460*TMF DIVIDEND A",
+      "",
+      "2215.68",
+      "213175.24",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2025",
+      "09/04/2025",
+      "ACHCr NACH00000000056540 RAILTEL-2INT",
+      "",
+      "155.00",
+      "213330.24",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "11/04/2025",
+      "C25946558969 43930428643TVS MOTORCOMPANY LTD",
+      "",
+      "5000.00",
+      "218330.24",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "11/04/2025",
+      "ACHCr NACH00000000023497 VARUNBEVERAGE",
+      "",
+      "5.00",
+      "218335.24",
+      "1",
+      "1"
+    ],
+    [
+      "16/04/2025",
+      "16/04/2025",
+      "ACHCr HDFC00790000009647 RECLIMITED",
+      "",
+      "3240.00",
+      "221575.24",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

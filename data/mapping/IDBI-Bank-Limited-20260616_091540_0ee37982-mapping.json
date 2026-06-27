@@ -1,0 +1,177 @@
+{
+  "bank_name": "IDBI Bank Limited",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-16T07:15:59Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "S.No",
+    "Txn Date",
+    "Value Date",
+    "Description",
+    "Cheque No",
+    "Withdrawals(Dr)",
+    "Deposits(Cr)",
+    "Balance(INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "s no|txn date|value date|description|cheque no|withdrawals dr|deposits cr|balance inr|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 3,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Txn Date",
+    "description": "Description",
+    "debit": "Withdrawals(Dr)",
+    "credit": "Deposits(Cr)",
+    "amount": null,
+    "balance": "Balance(INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "237",
+      "03/04/2024 18:26:43",
+      "03/04/2024",
+      "NEFT-OUTWARD-DR-AMARNATH ROADL",
+      "333993",
+      "2752708.00",
+      "",
+      "1889516.00",
+      "7",
+      "1"
+    ],
+    [
+      "236",
+      "04/04/2024 09:58:39",
+      "04/04/2024",
+      "YOURSELF TAX",
+      "333994",
+      "2500.00",
+      "",
+      "1887016.00",
+      "7",
+      "1"
+    ],
+    [
+      "235",
+      "05/04/2024 10:45:53",
+      "05/04/2024",
+      "ACH-TP ACH ICICI BA- 1407067067",
+      "",
+      "53227.00",
+      "",
+      "1833789.00",
+      "6",
+      "1"
+    ],
+    [
+      "234",
+      "09/04/2024 12:58:10",
+      "09/04/2024",
+      "NEFT-HDFC0004369-AMARNATH M",
+      "336397",
+      "100000.00",
+      "",
+      "1733789.00",
+      "6",
+      "1"
+    ],
+    [
+      "233",
+      "10/04/2024 12:01:07",
+      "10/04/2024",
+      "NEFT-ICIC0001603-ASIT KUMAR",
+      "336396",
+      "200000.00",
+      "",
+      "1533789.00",
+      "6",
+      "1"
+    ],
+    [
+      "232",
+      "10/04/2024 12:24:29",
+      "10/04/2024",
+      "RTGS/IBKLR92024041000088594/ ASIT KUMAR MOULIK AND",
+      "336398",
+      "200000.00",
+      "",
+      "1333789.00",
+      "6",
+      "1"
+    ],
+    [
+      "231",
+      "10/04/2024 15:16:05",
+      "10/04/2024",
+      "SMS_CHARGE_FOR_JAN24_TO_ MAR24",
+      "",
+      "20.95",
+      "",
+      "1333768.05",
+      "6",
+      "1"
+    ],
+    [
+      "230",
+      "10/04/2024 16:39:12",
+      "10/04/2024",
+      "SUKHENDU DAWN",
+      "336401",
+      "15030.00",
+      "",
+      "1318738.05",
+      "6",
+      "1"
+    ],
+    [
+      "229",
+      "12/04/2024 15:11:40",
+      "12/04/2024",
+      "/12-04-24 15:11:40 /000007773678",
+      "336402",
+      "40336.00",
+      "",
+      "1278402.05",
+      "6",
+      "1"
+    ],
+    [
+      "228",
+      "12/04/2024 17:28:36",
+      "12/04/2024",
+      "ACHTRE-RFU240410054174- SELCR13",
+      "",
+      "",
+      "4680714.00",
+      "5959116.05",
+      "6",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "bank_name": "IDFC First Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-08T05:46:55Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Particulars",
+    "Cheque No",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|particulars|cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "16/02/2026",
+      "16-Feb-2026",
+      "CMS_IFT CARD PMT MID-50616519SETDT-15022026IDFC",
+      "",
+      "",
+      "17,807.82",
+      "59,877.70",
+      "1",
+      "1"
+    ],
+    [
+      "16/02/2026",
+      "16-Feb-2026",
+      "IMPS-OPM/604711057107/SATYANARAYAMKHATUA/BARB0VJBHAD/1485/Jan26salaryofbhagwat",
+      "",
+      "25,984.00",
+      "",
+      "33,893.70",
+      "1",
+      "1"
+    ],
+    [
+      "16/02/2026",
+      "16-Feb-2026",
+      "UPI/CR/763844428779/TULIKAB/FDRL/tulikab/Payment",
+      "",
+      "",
+      "556.00",
+      "34,449.70",
+      "1",
+      "1"
+    ],
+    [
+      "16/02/2026",
+      "16-Feb-2026",
+      "NEFT/CITIN26621606778/ETERNALLIMITED/CITI0000002/GF 12A, 94MEGHDOOT,NEHRU PLACE,NEW DELH-110019",
+      "I",
+      "",
+      "16,416.64",
+      "50,866.34",
+      "1",
+      "1"
+    ],
+    [
+      "16/02/2026",
+      "16-Feb-2026",
+      "IMPS/604719856118/ENERGIQUEREALIN/ICIC0000982/1526/trftoredbox",
+      "",
+      "",
+      "73,100.00",
+      "1,23,966.34",
+      "1",
+      "1"
+    ],
+    [
+      "16/02/2026",
+      "16-Feb-2026",
+      "BLKIFT/OnscreenPayment/Mr. SkAbdur Rajjak Hossai",
+      "",
+      "8,434.00",
+      "",
+      "1,15,532.34",
+      "1",
+      "1"
+    ],
+    [
+      "16/02/2026",
+      "16-Feb-2026",
+      "NEFT/IDFB604765641574/Bikrammondal/BARB0BONGAO",
+      "",
+      "3,575.00",
+      "",
+      "1,11,957.34",
+      "1",
+      "1"
+    ],
+    [
+      "16/02/2026",
+      "16-Feb-2026",
+      "NEFT/IDFB604765641571/MADANKUMAR BHAR/PUNB0157400",
+      "",
+      "8,604.00",
+      "",
+      "1,03,353.34",
+      "1",
+      "1"
+    ],
+    [
+      "16/02/2026",
+      "16-Feb-2026",
+      "NEFT/IDFB604765639925/RitamMondal/SBIN0007484",
+      "",
+      "6,364.00",
+      "",
+      "96,989.34",
+      "1",
+      "1"
+    ],
+    [
+      "16/02/2026",
+      "16-Feb-2026",
+      "NEFT/IDFB604765641564/Hemantdas/UCBA0002399",
+      "",
+      "13,318.00",
+      "",
+      "83,671.34",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

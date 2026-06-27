@@ -1,0 +1,144 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T11:42:02Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Transaction Details",
+    "Debits",
+    "Credits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|transaction details|debits|credits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 2,
+    "credit": 3,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Transaction Details",
+    "debit": "Debits",
+    "credit": "Credits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "03/04/2025",
+      "TRANSFER TO 89634012131 Txn Amt. 1,83,210.00 Charges. 17.41/NEFT/TMBL/IDIBN52 025040355133657/RIDDHI S/. /BRANCH : MUMBAI FORT",
+      "INR 183,227.41",
+      "-",
+      "INR 1,456,597.31 DR",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "1213 CTS-CHQ:006864 - HBL /CLEARING- 03/04/2025 240/BRANCH : SERVICE BRANCH (MUMBAI)/Chq No:000006864",
+      "-",
+      "INR 120,346.00",
+      "INR 1,336,251.31 DR",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "1213 CTS-CHQ:006132 - HBL /CLEARING- 07/04/2025 240/BRANCH : SERVICE BRANCH (MUMBAI)/Chq No:000006132",
+      "-",
+      "INR 168,450.00",
+      "INR 1,167,801.31 DR",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2025",
+      "TRANSFER TO 89634012131 Txn Amt. 1,01,160.00 Charges. 17.41 /NEFT/TMBL/IDIBN520250 40956288070/RIDDHI S/. /BRANCH : MUMBAI FORT",
+      "INR 101,177.41",
+      "-",
+      "INR 1,268,978.72 DR",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2025",
+      "ISSUE OF MICR CA",
+      "INR 590.00",
+      "-",
+      "INR 1,269,568.72 DR",
+      "2",
+      "1"
+    ],
+    [
+      "16/04/2025",
+      "1213 CTS-CHQ:131368 - MSBL/CLEARING- 15/04/2025 175/BRANCH : SERVICE BRANCH (MUMBAI)/Chq No:000131368",
+      "-",
+      "INR 121,021.00",
+      "INR 1,148,547.72 DR",
+      "2",
+      "1"
+    ],
+    [
+      "16/04/2025",
+      "TRANSFER FROM 94961000123 NEFT/HDFC/HDFCN52025 041681837764/SHREE BALA//BRANCH : MUMBAI FORT",
+      "-",
+      "INR 148,554.00",
+      "INR 999,993.72 DR",
+      "2",
+      "1"
+    ],
+    [
+      "16/04/2025",
+      "TRANSFER TO 89634012131 Txn Amt. 1,09,872.00 Charges. 17.41/NEFT/TMBL/IDIBN52 025041657601994/RIDDHI S/. /BRANCH : MUMBAI FORT",
+      "INR 109,889.41",
+      "-",
+      "INR 1,109,883.13 DR",
+      "2",
+      "1"
+    ],
+    [
+      "22/04/2025",
+      "1213 CTS-CHQ:001362 - HBL /CLEARING- 21/04/2025 240/BRANCH : SERVICE BRANCH (MUMBAI)/Chq No:000001362",
+      "-",
+      "INR 61,896.00",
+      "INR 1,047,987.13 DR",
+      "2",
+      "1"
+    ],
+    [
+      "24/04/2025",
+      "TRANSFER TO 89634012131 Txn Amt.27,624.00 Charges. 5.61/NEFT/BARB/IDIBN520 25042458594444/JOTIRAM /. /BRANCH : MUMBAI FORT",
+      "INR 27,629.61",
+      "-",
+      "INR 1,075,616.74 DR",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-10T06:16:11Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Txn Date",
+    "Value Date",
+    "Description",
+    "Ref No./Cheque No.",
+    "Branch Code",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "txn date|value date|description|ref no cheque no|branch code|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Txn Date",
+    "description": "Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "1 May 2026",
+      "BYTRANSFER-NEFT*UTIB0000022*AXNPM12143322910*PAYTMPAYMENTSS-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "491.25",
+      "-8,99,455.31",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "1 May 2026",
+      "BYTRANSFER-UPI/CR/648793508220/RahulM/SBIN/rahulmajum/UPI-",
+      "TRANSFER FROM 48977361620 97 /",
+      "50744",
+      "",
+      "15,000.00",
+      "-8,84,455.31",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "1 May 2026",
+      "BYTRANSFER-UPI/CR/612147375188/ALOKMAJ/UBIN/alokmajumd/UPI-",
+      "TRANSFER FROM 48977361620 97 /",
+      "50744",
+      "",
+      "25,000.00",
+      "-8,59,455.31",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "2 May 2026",
+      "DEBIT-CMPMANDATEDEBIT BajajFinance Ltd. -DD-",
+      "/",
+      "4266",
+      "43,132.00",
+      "",
+      "-9,02,587.31",
+      "2",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "2 May 2026",
+      "CREDIT-Chq 002058BOB PrBr50744-",
+      "/",
+      "10395",
+      "",
+      "40,000.00",
+      "-8,62,587.31",
+      "2",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "2 May 2026",
+      "TOTRANSFER-INB NEFTUTR NO:SBIN426122613975-Electronicshouse",
+      "NEFT INB: CNAFCUUTD 4 TRANSFER TO 46981370443 03 / Electronics house",
+      "99922",
+      "50,000.00",
+      "",
+      "-9,12,587.31",
+      "2",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "2 May 2026",
+      "BYTRANSFER-UPI/CR/612243906734/ALOKMAJ/UBIN/alokmajumd/UPI-",
+      "TRANSFER FROM 48977371620 96 /",
+      "50744",
+      "",
+      "19,000.00",
+      "-8,93,587.31",
+      "2",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "4 May 2026",
+      "TOTRANSFER-INB NEFTUTR NO:SBIN526124919014-n aelectrical",
+      "NEFT INB: CNAFCWNF Q6 TRANSFER TO 46981450443 03 / n a electrical",
+      "99922",
+      "40,000.00",
+      "",
+      "-9,33,587.31",
+      "2",
+      "1"
+    ],
+    [
+      "05/05/2026",
+      "5 May 2026",
+      "CHEQUEDEPOSIT--774500",
+      "TRANSFER TO 30513501398 Patni Electronics (Pro / 774500",
+      "50744",
+      "",
+      "1,92,400.0 0",
+      "-7,41,187.31",
+      "2",
+      "1"
+    ],
+    [
+      "05/05/2026",
+      "5 May 2026",
+      "CREDIT-Chq 000056BOB PrBr50744-",
+      "/",
+      "10395",
+      "",
+      "1,80,000.0 0",
+      "-5,61,187.31",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

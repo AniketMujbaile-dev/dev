@@ -1,0 +1,155 @@
+{
+  "bank_name": "Bandhan Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-15T10:37:40Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Description",
+    "Amount",
+    "Dr / Cr",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|description|amount|dr cr|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": null,
+    "credit": null,
+    "amount": 3,
+    "balance": 5,
+    "direction": 4
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Description",
+    "debit": null,
+    "credit": null,
+    "amount": "Amount",
+    "balance": "Balance",
+    "direction": "Dr / Cr"
+  },
+  "sample_rows": [
+    [
+      "April01, 2025",
+      "01/04/2025",
+      "IMPS-509104816175- PHONEPEPRIVATELIMI- UTIB0003567-***********8715- F09M5oxngnklRedemption Head Office",
+      "INR4,302.16",
+      "Cr",
+      "INR98,034.00",
+      "32",
+      "1"
+    ],
+    [
+      "April02, 2025",
+      "02/04/2025",
+      "NEFT Cr-UTIB0001506- PHONEPE PRIVATE LIMITED-PAYMENT AGGREGATOR ESCROW ACCOUNT- UTIBN62025040241940312",
+      "INR2,990.61",
+      "Cr",
+      "INR101,024.61",
+      "32",
+      "1"
+    ],
+    [
+      "April03, 2025",
+      "03/04/2025",
+      "NEFT Cr-UTIB0001506- PHONEPE PRIVATE LIMITED-PAYMENT AGGREGATOR ESCROW ACCOUNT- UTIBN62025040353225393",
+      "INR319.00",
+      "Cr",
+      "INR101,343.61",
+      "32",
+      "1"
+    ],
+    [
+      "April04, 2025",
+      "04/04/2025",
+      "NEFT Cr-UTIB0001506- PHONEPE PRIVATE LIMITED-PAYMENT AGGREGATOR ESCROW ACCOUNT- UTIBN62025040464178362",
+      "INR16,847.16",
+      "Cr",
+      "INR118,190.77",
+      "32",
+      "1"
+    ],
+    [
+      "April05, 2025",
+      "05/04/2025",
+      "NEFT Cr-UTIB0001506- PHONEPE PRIVATE LIMITED-PAYMENT AGGREGATOR ESCROW ACCOUNT- UTIBN62025040576097440",
+      "INR17,496.36",
+      "Cr",
+      "INR135,687.13",
+      "32",
+      "1"
+    ],
+    [
+      "April05, 2025",
+      "05/04/2025",
+      "UPI/CR/C408679513191/ AMIT KUMAR/axl/ amitchoudhary98125@axl/ Payment fr/ AXLba33693f43c7431cae7a1fb91ed7e66c",
+      "INR65,000.00",
+      "Cr",
+      "INR200,687.13",
+      "32",
+      "1"
+    ],
+    [
+      "April05, 2025",
+      "05/04/2025",
+      "NEFT-N095250275231006- DONEAR INDUSTRIES LTD- BANK OF BARODA-ANDHERI BRANCH",
+      "INR191,509.00",
+      "Dr",
+      "INR9,178.13",
+      "32",
+      "1"
+    ],
+    [
+      "April06, 2025",
+      "06/04/2025",
+      "NEFT Cr-UTIB0001506- PHONEPE PRIVATE LIMITED-PAYMENT AGGREGATOR ESCROW ACCOUNT- UTIBN62025040687709816",
+      "INR6,856.97",
+      "Cr",
+      "INR16,035.10",
+      "32",
+      "1"
+    ],
+    [
+      "April07, 2025",
+      "07/04/2025",
+      "RTN-ACH Debit- FEDBANK FINANCIAL SE- BDBL7012702252000290-6977591418-8250970424549505 Insufficient Funds",
+      "INR35,850.00",
+      "Cr",
+      "INR51,885.10",
+      "32",
+      "1"
+    ],
+    [
+      "April07, 2025",
+      "07/04/2025",
+      "RTN-ACH Debit- FEDBANK FINANCIAL SE- BDBL7012702252000290-6977591418-8250970424549505 Insufficient Funds",
+      "INR35,850.00",
+      "Dr",
+      "INR16,035.10",
+      "32",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

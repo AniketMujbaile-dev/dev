@@ -1,0 +1,166 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-17T06:43:55Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Value Date",
+    "Post Date",
+    "Details",
+    "Ref No/ Cheque No",
+    "\u20b9 Debit",
+    "\u20b9 Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "value date|post date|details|ref no cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Value Date",
+    "description": "Details",
+    "debit": "\u20b9 Debit",
+    "credit": "\u20b9 Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "06/04/2025",
+      "06/04/2025",
+      "WDL TFR LOCKER CHARGES0098324074874 AT 07487RAMALINGANAGAR (TIRUCHII)",
+      "-",
+      "1,180.00",
+      "-",
+      "57,176.21",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "06/04/2025",
+      "CEMTEX DEP ACHCr 1113001CHENNAI GPO",
+      "-",
+      "-",
+      "4,79,050.00",
+      "5,36,226.21",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "06/04/2025",
+      "CEMTEX DEP ACHCr 1113001CHENNAI GPO",
+      "-",
+      "-",
+      "7,25,550.00",
+      "12,61,776.21",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "06/04/2025",
+      "WDL TFR INB NEFT UTR NO:SBIN5250968581370099301044303 AT 07487RAMALINGANAGAR (TIRUCHII)",
+      "-",
+      "10,00,000.00",
+      "-",
+      "2,61,776.21",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "07/04/2025",
+      "CHQ TRFR FROM0010233989628 OF Mr. PETERSAMSON RAJAN AT 07487RAMALINGANAGAR (TIRUCHII)",
+      "605867",
+      "-",
+      "10,000.00",
+      "2,71,776.21",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "08/04/2025",
+      "BY CLEARING / CHEQUE INB620019019-997438 620002008",
+      "997438",
+      "-",
+      "10,000.00",
+      "2,81,776.21",
+      "1",
+      "1"
+    ],
+    [
+      "15/04/2025",
+      "15/04/2025",
+      "DEBIT CMP SBIMF SIP-39467139-346G",
+      "-",
+      "10,000.00",
+      "-",
+      "2,71,776.21",
+      "2",
+      "1"
+    ],
+    [
+      "15/04/2025",
+      "15/04/2025",
+      "DEBIT CMP SBIMF SIP-39467139-017G",
+      "-",
+      "10,000.00",
+      "-",
+      "2,61,776.21",
+      "2",
+      "1"
+    ],
+    [
+      "09/05/2025",
+      "09/05/2025",
+      "CHQ TRFR FROM0010233989628 OF Mr. PETERSAMSON RAJAN AT 07487RAMALINGANAGAR (TIRUCHII)",
+      "605869",
+      "-",
+      "10,000.00",
+      "2,71,776.21",
+      "2",
+      "1"
+    ],
+    [
+      "12/05/2025",
+      "12/05/2025",
+      "BY CLEARING / CHEQUE INB620019019-997462 620002008",
+      "997462",
+      "-",
+      "10,000.00",
+      "2,81,776.21",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

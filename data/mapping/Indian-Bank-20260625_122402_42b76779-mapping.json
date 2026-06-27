@@ -1,0 +1,166 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-25T10:24:21Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Post Date",
+    "Value Date",
+    "Details",
+    "Chq.No.",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "post date|value date|details|chq no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Post Date",
+    "description": "Details",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "",
+      "",
+      "Brought Forward",
+      "",
+      "",
+      "",
+      "1045264.85",
+      "1",
+      "2"
+    ],
+    [
+      "02/02/2026",
+      "02/02/26",
+      "CASH DEP/MUTT STREET (KBM) /Deposit by SELF /BRANCH : MUTT STREET (KBM)",
+      "",
+      "",
+      "10440.00",
+      "1055704.85",
+      "1",
+      "1"
+    ],
+    [
+      "02/02/2026",
+      "02/02/26",
+      "CASH DEP/MUTT STREET (KBM) /Deposit by SELF /BRANCH : MUTT STREET (KBM)",
+      "",
+      "",
+      "23950.00",
+      "1079654.85",
+      "1",
+      "1"
+    ],
+    [
+      "02/02/2026",
+      "02/02/26",
+      "PoS_Settlement_3237087A_02022026 /BRANCH : ATM SERVICE BRAN CH",
+      "",
+      "",
+      "3688.15",
+      "1083343.00",
+      "1",
+      "1"
+    ],
+    [
+      "02/02/2026",
+      "02/02/26",
+      "PoS_Settlement_3237087A_01022026 /BRANCH : ATM SERVICE BRAN CH",
+      "",
+      "",
+      "5073.83",
+      "1088416.83",
+      "1",
+      "1"
+    ],
+    [
+      "03/02/2026",
+      "03/02/26",
+      "PoS_Settlement_3237087A_03022026 /BRANCH : ATM SERVICE BRAN CH",
+      "",
+      "",
+      "6553.83",
+      "1094970.66",
+      "1",
+      "1"
+    ],
+    [
+      "03/02/2026",
+      "03/02/26",
+      "CASH DEP/MUTT STREET (KBM) /Deposit by SELF /BRANCH : MUTT STREET (KBM)",
+      "",
+      "",
+      "19485.00",
+      "1114455.66",
+      "2",
+      "1"
+    ],
+    [
+      "04/02/2026",
+      "04/02/26",
+      "PoS_Settlement_3237087A_04022026 /BRANCH : ATM SERVICE BRAN CH",
+      "",
+      "",
+      "3792.75",
+      "1118248.41",
+      "2",
+      "1"
+    ],
+    [
+      "04/02/2026",
+      "04/02/26",
+      "CASH DEP/MUTT STREET (KBM) /Deposit by SELF /BRANCH : MUTT STREET (KBM)",
+      "",
+      "",
+      "21245.00",
+      "1139493.41",
+      "2",
+      "1"
+    ],
+    [
+      "05/02/2026",
+      "05/02/26",
+      "PoS_Settlement_3237087A_05022026 /BRANCH : ATM SERVICE BRAN CH",
+      "",
+      "",
+      "7052.06",
+      "1146545.47",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

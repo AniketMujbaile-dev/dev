@@ -1,0 +1,177 @@
+{
+  "bank_name": "Indian Overseas Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-12T06:24:41Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Value Date",
+    "CHQ No",
+    "Remarks",
+    "COD",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|value date|chq no|remarks|cod|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 3,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Remarks",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "03/04/2025",
+      "03/04/2025",
+      "",
+      "NEFT-BKID- IOBAN25093350902- KALAIYARAS- 9443379919",
+      "TRF",
+      "15000.0",
+      "",
+      "554473.74",
+      "15",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "04/04/2025",
+      "",
+      "ECOM-AMAZON MUMBAI IN-V547887O- 78001863-040425x46",
+      "TRF",
+      "280.01",
+      "",
+      "554193.73",
+      "15",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "04/04/2025",
+      "",
+      "ECOM-AMAZON MUMBAI IN-V625391O- 78001863-040425x46",
+      "TRF",
+      "280.01",
+      "",
+      "553913.72",
+      "15",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "06/04/2025",
+      "",
+      "ECOM-WWW AMAZON IN 1243054000 IN- V561023O-8905163",
+      "TRF",
+      "2198.0",
+      "",
+      "551715.72",
+      "15",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "07/04/2025",
+      "",
+      "ECOM-WWW AMAZON IN 1243054000 IN- V250511O-8905163",
+      "TRF",
+      "515.0",
+      "",
+      "551200.72",
+      "15",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "08/04/2025",
+      "",
+      "ECOM-WWW AMAZON IN 1243054000 IN- V707803O-8905163",
+      "TRF",
+      "8249.0",
+      "",
+      "542951.72",
+      "15",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "08/04/2025",
+      "",
+      "ECOM-AMAZON MUMBAI IN-V931381O- 78001863-080425x46",
+      "TRF",
+      "1489.03",
+      "",
+      "541462.69",
+      "15",
+      "1"
+    ],
+    [
+      "13/04/2025",
+      "13/04/2025",
+      "",
+      "ECOM-WWW AMAZON IN 1243054000 IN- V337704O-8905163",
+      "TRF",
+      "459.0",
+      "",
+      "541003.69",
+      "15",
+      "1"
+    ],
+    [
+      "17/04/2025",
+      "17/04/2025",
+      "",
+      "POS-DOBBEL STEIN TiruchirapallIN- V182614O-PR90232",
+      "TRF",
+      "1640.0",
+      "",
+      "539363.69",
+      "15",
+      "1"
+    ],
+    [
+      "17/04/2025",
+      "17/04/2025",
+      "",
+      "ECOM-WWW AMAZON IN 1243054000 IN- V212233O-8905163",
+      "TRF",
+      "393.04",
+      "",
+      "538970.65",
+      "15",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

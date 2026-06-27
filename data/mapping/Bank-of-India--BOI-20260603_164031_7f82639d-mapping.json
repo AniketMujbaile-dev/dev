@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bank of India (BOI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-03T14:41:07Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Tran Id",
+    "Ref Num",
+    "Particulars",
+    "Debit Amt.",
+    "Credit Amt.",
+    "Balance Amt.",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|tran id|ref num|particulars|debit amt|credit amt|balance amt|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 3,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Debit Amt.",
+    "credit": "Credit Amt.",
+    "amount": "Debit Amt.",
+    "balance": "Balance Amt.",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "03/04/2025",
+      "S58822441",
+      "5093012698",
+      "NEFT/HDFCH00159165767/HDF",
+      "",
+      "1,460.15",
+      "12,851.98CR",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "S66298543",
+      "",
+      "UPI/771581479674/DR/SHITA",
+      "10,000.00",
+      "",
+      "2,851.98CR",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "S9647313",
+      "",
+      "UPI/938862361296/DR/ANANT",
+      "870.00",
+      "",
+      "1,981.98CR",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "S94270106",
+      "",
+      "UPI/896974422327/DR/GANES",
+      "40.00",
+      "",
+      "1,941.98CR",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "S62289780",
+      "",
+      "UPI/137133586343/DR/HOTEL",
+      "161.00",
+      "",
+      "1,780.98CR",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "S74806111",
+      "",
+      "UPI/324421551137/DR/MAJES",
+      "488.00",
+      "",
+      "1,292.98CR",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "S80459990",
+      "",
+      "UPI/514341706828/DR/TUSHA",
+      "100.00",
+      "",
+      "1,192.98CR",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "BI694845",
+      "",
+      "BY CASH-0813-MALEGAON",
+      "",
+      "8,000.00",
+      "9,192.98CR",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "S30624586",
+      "",
+      "UPI/303746365203/DR/DIPAK",
+      "1,400.00",
+      "",
+      "7,792.98CR",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "S25996994",
+      "",
+      "UPI/532892405721/DR/Zomat",
+      "9.00",
+      "",
+      "7,783.98CR",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T07:29:14Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2026",
+      "PENAL CHARGES",
+      "000000000000000",
+      "01/04/26",
+      "9,628.03",
+      "",
+      "-8,191,450.01",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "HGAKP181661031104494-IDFCFIRSTBA-BILLPAY-50200026202917",
+      "0000000408561282",
+      "01/04/26",
+      "10,000.00",
+      "",
+      "-8,201,450.01",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "EMI 125370720 CHQ S1253707200151 0426125370720",
+      "000000000000000",
+      "01/04/26",
+      "43,567.00",
+      "",
+      "-8,245,017.01",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "RTGS DR-SBIN0009995-BPCLMUMBAI-NETBANK,MUM-HDFCR52026033190413833-BPCL",
+      "HDFCR52026033190",
+      "01/04/26",
+      "800,000.00",
+      "",
+      "-9,045,017.01",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "BHAWANI GAS SEWA CR - 50200081899271 - BHAWANI GAS SEWA",
+      "0000000000000002",
+      "02/04/26",
+      "",
+      "2,000,000.00",
+      "-7,045,017.01",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "RTGS CR-UTIB0BHIW01-BHAWANI GASSEWA-BHAWANI GAS SEWA-UTIBR72026040200428648",
+      "UTIBR72026040200",
+      "02/04/26",
+      "",
+      "800,000.00",
+      "-6,245,017.01",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "HGAKP064AF1048560057-IDFCFIRSTBA-BILLPAY-50200026202917",
+      "0000000408651855",
+      "02/04/26",
+      "10,000.00",
+      "",
+      "-6,255,017.01",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2026",
+      "EMI 154052977 CHQ S1540529770122 0426154052977",
+      "000000000000000",
+      "07/04/26",
+      "12,616.00",
+      "",
+      "-6,267,633.01",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2026",
+      "HGAKP113AD1110570295-IDFCFIRSTBA-BILLPAY-50200026202917",
+      "0000000409046020",
+      "08/04/26",
+      "10,000.00",
+      "",
+      "-6,277,633.01",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2026",
+      "M G MOTORS DR - 50200116864251 - M G MOTORS",
+      "0000000000000258",
+      "08/04/26",
+      "41,570.00",
+      "",
+      "-6,319,203.01",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

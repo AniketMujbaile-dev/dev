@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-05T06:48:28Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "RTGS CR-UTIB0000482-SADANANDBHAVAN-MADHU TRADERS-UTIBR62026050174056662",
+      "UTIBR62026050174",
+      "01/05/26",
+      "",
+      "325,400.00",
+      "427,423.30",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-CREDCLUB-CRED.CLUB@AXISB-UTIB0000114-648715350774-PAYMENT ON CRED",
+      "0000648715350774",
+      "01/05/26",
+      "17,201.98",
+      "",
+      "410,221.32",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "50200116939990-TPT-HDFC5F589FD6E5C1-MADHU TRADERS",
+      "0000000211008940",
+      "01/05/26",
+      "388,000.00",
+      "",
+      "22,221.32",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "UPI-LAZYPAY-LAZYPAY.PAYU@AXISBANK-UTIB03156-897769674389-LAZYPAY REPAYMENT",
+      "00 0000897769674389",
+      "01/05/26",
+      "2,552.00",
+      "",
+      "19,669.32",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "CC 000653016XXXXXX2963 AUTOPAY SI-TAD",
+      "0000000737839890",
+      "02/05/26",
+      "19,068.00",
+      "",
+      "601.32",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "UPI-0000007002000054-7760974217@YBL-754250795531-PAYMENT FROM PHONEPE",
+      "0000754250795531",
+      "02/05/26",
+      "",
+      "14,900.00",
+      "15,501.32",
+      "1",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "CASH DEPOSIT BY - VIVEK - HUBLI KARNATAKA",
+      "000000000000000",
+      "04/05/26",
+      "",
+      "290,000.00",
+      "305,501.32",
+      "1",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "50200116939990-TPT-HDFC76A7175E6625-MADHU TRADERS",
+      "0000000753455107",
+      "04/05/26",
+      "300,000.00",
+      "",
+      "5,501.32",
+      "1",
+      "1"
+    ],
+    [
+      "05/05/2026",
+      "UPI-89051114676-YALAVATTIDEVARAJ-1@OKAXIS-649148546452-PAY",
+      "0000649148546452",
+      "05/05/26",
+      "",
+      "10,200.00",
+      "15,701.32",
+      "1",
+      "1"
+    ],
+    [
+      "05/05/2026",
+      "NEFT CR-KKBK0000958-SREE SIDDESHWARATRADERS-MADHU TRADERS-KKBKH26125906979",
+      "KKBKH26125906979",
+      "05/05/26",
+      "",
+      "71,700.00",
+      "87,401.32",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

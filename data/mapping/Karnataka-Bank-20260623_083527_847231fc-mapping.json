@@ -1,0 +1,155 @@
+{
+  "bank_name": "Karnataka Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-23T06:35:55Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Instrument No",
+    "Withdrawals",
+    "Deposits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|instrument no|withdrawals|deposits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/03/2026",
+      "UPI:401438261191:7204496632@ybl(BHOOMIKA R):",
+      "",
+      "",
+      "7,530.00",
+      "37,395.89",
+      "1",
+      "1"
+    ],
+    [
+      "01/03/2026",
+      "UPI:176655058660:7204496632@axl(BHOOMIKA R):",
+      "",
+      "",
+      "4,480.00",
+      "41,875.89",
+      "1",
+      "1"
+    ],
+    [
+      "01/03/2026",
+      "UPI:252129349789:8951458152@axl(SUSHMA G):Paymen",
+      "",
+      "",
+      "13,200.00",
+      "55,075.89",
+      "1",
+      "1"
+    ],
+    [
+      "01/03/2026",
+      "UPI:894797683258:9844641933@ybl(SUMITHRA BAI):Pa",
+      "",
+      "",
+      "3,550.00",
+      "58,625.89",
+      "1",
+      "1"
+    ],
+    [
+      "01/03/2026",
+      "UPI:318157806908:rajmuthuraj717@oksbi(MUTTURAJU G",
+      "",
+      "21,800.00",
+      "",
+      "36,825.89",
+      "1",
+      "1"
+    ],
+    [
+      "01/03/2026",
+      "UPI:214454281734:7411559656-2@ibl(NAVEEN H V):Pa",
+      "",
+      "6,000.00",
+      "",
+      "30,825.89",
+      "1",
+      "1"
+    ],
+    [
+      "01/03/2026",
+      "UPI:674727157063:9738469230@kbl(MANU A C):Payment",
+      "",
+      "700.00",
+      "",
+      "30,125.89",
+      "1",
+      "1"
+    ],
+    [
+      "02/03/2026",
+      "SB Int 6762500100450901 From 01-12-25 To 28-02-26",
+      "",
+      "",
+      "188.00",
+      "30,313.89",
+      "1",
+      "1"
+    ],
+    [
+      "02/03/2026",
+      "UPI:102812852719:bflautopay@hdfcbank(BAJAJ FINANC",
+      "",
+      "2,278.00",
+      "",
+      "28,035.89",
+      "1",
+      "1"
+    ],
+    [
+      "02/03/2026",
+      "UPI:593266132063:paytm.s21i6oi@pty(Devaraju T N):",
+      "",
+      "75.00",
+      "",
+      "27,960.89",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

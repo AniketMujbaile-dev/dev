@@ -1,0 +1,144 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-25T12:59:14Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Deposits",
+    "Withdrawals",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 2,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "UPI/DR/509256922212/RASTOGIG/YESB/**Y7SVY@PAYTM/NA//PTMC8DA08EE07364FFC9783BA005E1905D8/02/04/202512:56:26Chq: 509256922212",
+      "",
+      "1,760.00",
+      "48,247.82",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "UPI/CR/509432790902/SUMITANA/UTIB/**20460@PTAXIS/NA//PTM356A38BB43AE4A78B897BF68BEB258B0/04/04/202522:02:44Chq: 509432790902",
+      "3,000.00",
+      "",
+      "51,247.82",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI/CR/102676210813/MRINDER /SCBL/**P59-1@OKHDFCBANK/KANJAK//HDF712AA957FC94486F93B9C772161E9271/05/04/2025 23:20:41Chq: 102676210813",
+      "500.00",
+      "",
+      "51,747.82",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2025",
+      "UPI/DR/509966452944/AMAZONIN/RATN/**MAZON@RAPL/YOUARE//RBA4BACA59CCC6143E5BF70FE0C78C2D57F/09/04/202523:03:21Chq: 509966452944",
+      "",
+      "5,979.00",
+      "45,768.82",
+      "1",
+      "1"
+    ],
+    [
+      "10/04/2025",
+      "UPI/DR/510073807582/SWAYAMVOR/YESB/**67945@YBL/SENTUSI//PTM121521F98B4341128F2EBAB7A66B25C3/10/04/202516:05:56Chq: 510073807582",
+      "",
+      "2,000.00",
+      "43,768.82",
+      "2",
+      "1"
+    ],
+    [
+      "10/04/2025",
+      "UPI/DR/510073830984/SWAYAMVOR/YESB/**67945@YBL/SENTUSI//PTM1AE424082F484C9F914047AE78040570/10/04/202516:06:50Chq: 510073830984",
+      "",
+      "17,834.00",
+      "25,934.82",
+      "2",
+      "1"
+    ],
+    [
+      "10/04/2025",
+      "UPI/CR/102938563467/INDERKA/KKBK/**YAP59@OKHDFCBANK/UPI//HDF307A61A78F69420E905AF6FE7E0910A0/10/04/2025 17:45:26Chq: 102938563467",
+      "20,000.00",
+      "",
+      "45,934.82",
+      "2",
+      "1"
+    ],
+    [
+      "10/04/2025",
+      "UPI/DR/510080138430/WWWFIRST/HDFC/**.PAYU@HDFCBANK/UPIINTENT//PPPL2312315834810042522502967F7FDDD/10/04/2025 22:50:37Chq: 510080138430",
+      "",
+      "549.00",
+      "45,385.82",
+      "2",
+      "1"
+    ],
+    [
+      "12/04/2025",
+      "UPI/DR/510207877480/COUNTRYD/YESB/**57153@PTYBL/COUNTRY//PYTM50412806548762484749XXXXXXXXXXX/12/04/202523:52:59Chq: 510207877480",
+      "",
+      "3,000.00",
+      "42,385.82",
+      "2",
+      "1"
+    ],
+    [
+      "13/04/2025",
+      "UPI/DR/510313932434/AMITANAND/HDFC/**D1555@OKHDFCBANK/SENTUSI//PTMD2ACBF6ED34549B480EBA61E2FBC368F/13/04/202514:34:53Chq: 510313932434",
+      "",
+      "1,000.00",
+      "41,385.82",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

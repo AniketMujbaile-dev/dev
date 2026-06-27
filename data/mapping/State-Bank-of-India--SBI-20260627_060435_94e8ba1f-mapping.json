@@ -1,0 +1,166 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-27T04:05:03Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Post Date",
+    "Value Date",
+    "Description",
+    "Cheque No/Reference",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "post date|value date|description|cheque no reference|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Post Date",
+    "description": "Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "",
+      "",
+      "BROUGHT FORWARD",
+      "",
+      "",
+      "",
+      "3,231.97CR",
+      "1",
+      "2"
+    ],
+    [
+      "01-04-2025",
+      "01/04/2025",
+      "WDL TFRUPI/DR/661878325766/SOHAN",
+      "",
+      "2,500.00",
+      "",
+      "731.96CR",
+      "1",
+      "1"
+    ],
+    [
+      "01-04-2025",
+      "01/04/2025",
+      "WDL TFRUPI/DR/550634689156/Madhura",
+      "",
+      "129.00",
+      "",
+      "602.96CR",
+      "1",
+      "1"
+    ],
+    [
+      "02-04-2025",
+      "02/04/2025",
+      "DEP TFRUPI/CR/561731496735/HIMANSH",
+      "",
+      "",
+      "10,000.00",
+      "10,602.96CR",
+      "1",
+      "1"
+    ],
+    [
+      "02-04-2025",
+      "02/04/2025",
+      "CAS CHQ XFER WDCHEQUE TRANSFER TO",
+      "646136",
+      "7,818.00",
+      "",
+      "2,784.96CR",
+      "1",
+      "1"
+    ],
+    [
+      "03-04-2025",
+      "03/04/2025",
+      "WDL TFRUPI/DR/648490188315/SANGEET",
+      "",
+      "900.00",
+      "",
+      "1,884.96CR",
+      "1",
+      "1"
+    ],
+    [
+      "03-04-2025",
+      "03/04/2025",
+      "WDL TFRUPI/DR/445942555192/Sharma",
+      "",
+      "500.00",
+      "",
+      "1,384.96CR",
+      "1",
+      "1"
+    ],
+    [
+      "06-04-2025",
+      "06/04/2025",
+      "DEP TFRUPI/CR/955206400236/HIMANSH",
+      "",
+      "",
+      "10,000.00",
+      "11,384.96CR",
+      "1",
+      "1"
+    ],
+    [
+      "06-04-2025",
+      "06/04/2025",
+      "DEP TFRUPI/CR/615846817066/HIMANSH",
+      "",
+      "",
+      "20,000.00",
+      "31,384.96CR",
+      "1",
+      "1"
+    ],
+    [
+      "07-04-2025",
+      "07/04/2025",
+      "DEBITACHDr IDIB00290000026898",
+      "",
+      "25,000.00",
+      "",
+      "6,384.96CR",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

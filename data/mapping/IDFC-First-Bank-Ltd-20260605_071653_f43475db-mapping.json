@@ -1,0 +1,166 @@
+{
+  "bank_name": "IDFC First Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-05T05:17:09Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Particulars",
+    "Cheque No",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|particulars|cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "09/04/2025",
+      "09-Apr-2025",
+      "UPI/MOB/260884930716/RentApril",
+      "",
+      "",
+      "10,000.00",
+      "11,965.51",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "11-Apr-2025",
+      "NACH/TVS MOTORIDIV25/TVS1203320000098901",
+      "",
+      "",
+      "10.00",
+      "11,975.51",
+      "1",
+      "1"
+    ],
+    [
+      "15/04/2025",
+      "15-Apr-2025",
+      "IFT/10183882534/Ms. NehalJatin Bhat/25631386",
+      "",
+      "5,000.00",
+      "",
+      "6,975.51",
+      "1",
+      "1"
+    ],
+    [
+      "25/04/2025",
+      "25-Apr-2025",
+      "NEFT/IBKL250425963905/IBHFLLENDER REPAYMENTTRUST/IBKL0NEFT01",
+      "",
+      "",
+      "9,250.00",
+      "16,225.51",
+      "1",
+      "1"
+    ],
+    [
+      "30/04/2025",
+      "30-Apr-2025",
+      "MONTHLY SAVINGS INTERESTCREDIT",
+      "",
+      "",
+      "21.00",
+      "16,246.51",
+      "1",
+      "1"
+    ],
+    [
+      "05/05/2025",
+      "05-May-2025",
+      "NEFT/AXISP00660889373/MUTHOOTFINANCE LTD NCD XXVI INTAN/UTIB0000081",
+      "",
+      "",
+      "7,500.00",
+      "23,746.51",
+      "1",
+      "1"
+    ],
+    [
+      "13/05/2025",
+      "13-May-2025",
+      "UPI/MOB/438351780078/Paymentfrom PhonePe",
+      "",
+      "",
+      "10,000.00",
+      "33,746.51",
+      "1",
+      "1"
+    ],
+    [
+      "16/05/2025",
+      "16-May-2025",
+      "IFT/10183882534/Ms. NehalJatin Bhat/2636276",
+      "",
+      "5,000.00",
+      "",
+      "28,746.51",
+      "1",
+      "1"
+    ],
+    [
+      "20/05/2025",
+      "20-May-2025",
+      "NEFT/ICIN214045910768/ANGELONE LIMITED/ICIC0099999",
+      "",
+      "",
+      "2,00,000.00",
+      "2,28,746.51",
+      "1",
+      "1"
+    ],
+    [
+      "30/05/2025",
+      "30-May-2025",
+      "IPO/AEGISVOPAK/OPAE1206514/63",
+      "",
+      "14,805.00",
+      "",
+      "2,13,941.51",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

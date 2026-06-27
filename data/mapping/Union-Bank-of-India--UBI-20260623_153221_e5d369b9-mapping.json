@@ -1,0 +1,166 @@
+{
+  "bank_name": "Union Bank of India (UBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-23T13:32:51Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "SI",
+    "Date",
+    "Particulars",
+    "Chq Num",
+    "Withdrawal",
+    "Deposit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "si|date|particulars|chq num|withdrawal|deposit|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawal",
+    "credit": "Deposit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "2",
+      "01/06/2026",
+      "UPIAR/651882528616/DR/CHANDRIK/UBIN/qr916394982721",
+      "",
+      "30.00",
+      "",
+      "15,900.16 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "02/06/2026",
+      "UPIAR/651988901063/DR/RANJHAS/UTIB/6909677268@okb",
+      "",
+      "15,059.00",
+      "",
+      "841.16 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "02/06/2026",
+      "UPIAR/651996330807/DR/MonuCha/YESB/paytm.s1vrns4@",
+      "",
+      "40.00",
+      "",
+      "801.16 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "03/06/2026",
+      "UPIAR/615403916392/DR/VatsalY/PPIW/ 9001273235@fa",
+      "",
+      "10.00",
+      "",
+      "791.16 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "03/06/2026",
+      "IMPSAB/615413814185/AMOGHSOLANKI/8103984810",
+      "",
+      "",
+      "23,494.00",
+      "24,285.16 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "03/06/2026",
+      "UPIAR/615411842595/DR/Luckygu/YESB/ q216882020@yb",
+      "",
+      "20.00",
+      "",
+      "24,265.16 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "03/06/2026",
+      "UPIAR/615414155966/DR/Luckygu/YESB/ q216882020@yb",
+      "",
+      "50.00",
+      "",
+      "24,215.16 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "04/06/2026",
+      "UPIAR/615518863402/DR/SARAS/AIRP/5886227001903j",
+      "",
+      "15,060.00",
+      "",
+      "9,155.16 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "05/06/2026",
+      "UPIAR/615632254392/DR/KIRANKU/UBIN/dg428322-2@okh",
+      "",
+      "2,000.00",
+      "",
+      "7,155.16 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "11",
+      "05/06/2026",
+      "UPIAR/615634707587/DR/SHUBHAM /YESB/ q895873283@yb",
+      "",
+      "20.00",
+      "",
+      "7,135.16 Cr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

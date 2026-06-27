@@ -1,0 +1,166 @@
+{
+  "bank_name": "Kotak Mahindra Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-15T11:31:22Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "#",
+    "Date",
+    "Description",
+    "Chq/Ref. No.",
+    "Withdrawal (Dr.)",
+    "Deposit (Cr.)",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "|date|description|chq ref no|withdrawal dr|deposit cr|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Description",
+    "debit": "Withdrawal (Dr.)",
+    "credit": "Deposit (Cr.)",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "02/04/2026",
+      "UPI/ABHISHEKBHAI PR/645811521278/Paid via CRED",
+      "UPI-609202148505",
+      "",
+      "100.00",
+      "177.71",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "02/04/2026",
+      "UPI/JAYKUMAR RAJEND/609217768905/PaidViaKotakApp",
+      "UPI-609202244878",
+      "100.00",
+      "",
+      "77.71",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "04/04/2026",
+      "Salary of Mar26",
+      "4222",
+      "",
+      "25,845.00",
+      "25,922.71",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "04/04/2026",
+      "SentIMPS609420965900/BKIDX3980/KKBKTra ns",
+      "IMPS-609420810746",
+      "2,731.00",
+      "",
+      "23,191.71",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "04/04/2026",
+      "SentIMPS609420967769/BKIDX3980/KKBKTra ns",
+      "IMPS-609420814778",
+      "12,500.00",
+      "",
+      "10,691.71",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "05/04/2026",
+      "SentIMPS609515265871/BKIDX3980/KKBKTra ns",
+      "IMPS-609515453558",
+      "2,500.00",
+      "",
+      "8,191.71",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "06/04/2026",
+      "UPI/ABHISHEKBHAI PR/609629111912/UPI",
+      "UPI-609693655180",
+      "",
+      "600.00",
+      "8,791.71",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "06/04/2026",
+      "SentIMPS609613673027/BKIDX3980/KKBKTra ns",
+      "IMPS-609613256923",
+      "2,050.00",
+      "",
+      "6,741.71",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "08/04/2026",
+      "UPI/MARVADI GANESHB/609815503687/PaidViaKotakApp",
+      "UPI-609853612164",
+      "1,000.00",
+      "",
+      "5,741.71",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "08/04/2026",
+      "SentIMPS609900253487/BKIDX3980/KKBKTra ns(Value Date: 09-04-2026)",
+      "IMPS-609900983698",
+      "750.00",
+      "",
+      "4,991.71",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

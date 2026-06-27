@@ -1,0 +1,166 @@
+{
+  "bank_name": "Kotak Mahindra Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-15T10:38:32Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "#",
+    "Date",
+    "Description",
+    "Chq/Ref. No.",
+    "Withdrawal (Dr.)",
+    "Deposit (Cr.)",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "|date|description|chq ref no|withdrawal dr|deposit cr|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Description",
+    "debit": "Withdrawal (Dr.)",
+    "credit": "Deposit (Cr.)",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "02/04/2026",
+      "UPI/ZOMATO LIMITED/645893640101/UPI",
+      "UPI-609275883713",
+      "560.52",
+      "",
+      "4,54,453.82",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "02/04/2026",
+      "UPI/ZOMATO LIMITED/609209005590/UPI",
+      "UPI-609228700141",
+      "623.03",
+      "",
+      "4,53,830.79",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "02/04/2026",
+      "UPI/Amazon India/609282145759/PrimeVideoAddOn",
+      "UPI-609233114065",
+      "129.00",
+      "",
+      "4,53,701.79",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "03/04/2026",
+      "UPI/Blinkit/609370220142/Blinkit Payment",
+      "UPI-609359092476",
+      "372.00",
+      "",
+      "4,53,329.79",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "03/04/2026",
+      "UPI/Borosil/609334925748/UPI",
+      "UPI-609368383833",
+      "1,031.00",
+      "",
+      "4,52,298.79",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "04/04/2026",
+      "Salary of MAR26",
+      "4222",
+      "",
+      "93,300.00",
+      "5,45,598.79",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "04/04/2026",
+      "UPI/PVR INOX Limite/646026037840/UPI",
+      "UPI-609469738531",
+      "370.00",
+      "",
+      "5,45,228.79",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "04/04/2026",
+      "UPI/ZOMATO LIMITED/646095955641/UPI",
+      "UPI-609488002032",
+      "973.68",
+      "",
+      "5,44,255.11",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "05/04/2026",
+      "UPI/MARIA SALIM DAL/646159586674/UPI",
+      "UPI-609521281131",
+      "1,822.00",
+      "",
+      "5,42,433.11",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "05/04/2026",
+      "UPI/ZOMATO LIMITED/609563017728/UPI",
+      "UPI-609556131850",
+      "1,624.03",
+      "",
+      "5,40,809.08",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

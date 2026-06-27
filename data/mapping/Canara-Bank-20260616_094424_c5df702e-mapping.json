@@ -1,0 +1,177 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-16T07:46:43Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRANS DATE",
+    "VALUE DATE",
+    "BRANCH",
+    "REF/CHQ.NO",
+    "DESCRIPTION",
+    "WITHDRAWS",
+    "DEPOSIT",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "trans date|value date|branch|ref chq no|description|withdraws|deposit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 4,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRANS DATE",
+    "description": "DESCRIPTION",
+    "debit": "WITHDRAWS",
+    "credit": "DEPOSIT",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "01-APR-25",
+      "0",
+      "",
+      "B/F ...",
+      "1,731,746.01",
+      "0.00",
+      "-1,731,746.01",
+      "1",
+      "2"
+    ],
+    [
+      "02/04/2025",
+      "02-APR-25",
+      "33",
+      "",
+      "NEFT CR-HSBCN09232817275-HSBC0600002-TUBE INVESTMENTS OF INDIA LIMITED-",
+      "0.00",
+      "19,890.00",
+      "-1,711,856.01",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03-APR-25",
+      "61",
+      "",
+      "COM:NESL FEE INV NESL2425FA6464 CASA",
+      "136.25",
+      "0.00",
+      "-1,711,992.26",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03-APR-25",
+      "61",
+      "",
+      "GST:NESL FEE INV NESL2425FA6464 CASA",
+      "24.53",
+      "0.00",
+      "-1,712,016.79",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "04-APR-25",
+      "931",
+      "000961220489",
+      "RTGS DR-CNRBR52025040453911372-IDIB000P162-A NITHYANANDAN-/FAST/FAST",
+      "300,000.00",
+      "0.00",
+      "-2,012,016.79",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "04-APR-25",
+      "931",
+      "",
+      "RTGS 00.00 TO 11.00 UPTO 5L SC",
+      "29.00",
+      "0.00",
+      "-2,012,045.79",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "07-APR-25",
+      "931",
+      "000961220492",
+      "SELF - CHN TONDIARP",
+      "12,000.00",
+      "0.00",
+      "-2,024,045.79",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "07-APR-25",
+      "931",
+      "000961220493",
+      "NEFT DR-CNRBH00038603870-HDFC0001038-GROUP 7 SECURITY BUREAU-",
+      "34,650.00",
+      "0.00",
+      "-2,058,695.79",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "07-APR-25",
+      "931",
+      "",
+      "NEFT SC",
+      "6.00",
+      "0.00",
+      "-2,058,701.79",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "07-APR-25",
+      "1953",
+      "000961220491",
+      "25040700133450-TIN-CHEQUE NGP LINKCELL",
+      "3,631.00",
+      "0.00",
+      "-2,062,332.79",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

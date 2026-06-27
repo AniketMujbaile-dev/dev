@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-12T06:54:10Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "07/04/2025",
+      "00581000098659-TPT-GIFT-L SOPHIA",
+      "0000000424085074",
+      "07/04/25",
+      "",
+      "500,000.00",
+      "548,242.15",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "FD THROUGH NET-50301141505481:D JESU DAVID SANJAY",
+      "NB07200425566006",
+      "07/04/25",
+      "500,000.00",
+      "",
+      "48,242.15",
+      "1",
+      "1"
+    ],
+    [
+      "15/04/2025",
+      "POS 526099XXXXXX1133 VODAFONE IDEA LI",
+      "0000000000020674",
+      "15/04/25",
+      "908.60",
+      "",
+      "47,333.55",
+      "1",
+      "1"
+    ],
+    [
+      "22/04/2025",
+      "ME DC SI 526099XXXXXX1133 GOOGLEPLAY",
+      "0000000000852286",
+      "22/04/25",
+      "130.00",
+      "",
+      "47,203.55",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2025",
+      "POS 526099XXXXXX1133 PAY*VI",
+      "0000000000816762",
+      "01/05/25",
+      "908.60",
+      "",
+      "46,294.95",
+      "1",
+      "1"
+    ],
+    [
+      "18/05/2025",
+      "UPI-MUGGFOODS-DQRBP.27978143@AXISBANK-UTIB0000006-104992130268-UPI",
+      "0000104992130268",
+      "18/05/25",
+      "289.00",
+      "",
+      "46,005.95",
+      "1",
+      "1"
+    ],
+    [
+      "21/05/2025",
+      "UPI-ZOMATO ONLINEORDER-ZOMATOONLINEORD384743.RZP@RXAIRTEL-AIRP0000011-105178976337-ZOMATOONLINEORDER",
+      "0000105178976337",
+      "21/05/25",
+      "543.55",
+      "",
+      "45,462.40",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2025",
+      "UPI-PARK MULTI CUISINE R-PAYTMQR2810050501011CYZBK2SVVJV@PAYTM-YESB0PTMUPI-10524300559-UPI",
+      "0000105214300559",
+      "22/05/25",
+      "225.00",
+      "",
+      "45,237.40",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2025",
+      "ME DC SI 526099XXXXXX1133 GOOGLEPLAY",
+      "0000000000299814",
+      "22/05/25",
+      "130.00",
+      "",
+      "45,107.40",
+      "1",
+      "1"
+    ],
+    [
+      "28/05/2025",
+      "UPI-ZOMATO-PAYZOMATO@HDFCBANK-HDFC0MI-105543769670-UPI",
+      "ERUP 0000105543769670",
+      "28/05/25",
+      "663.20",
+      "",
+      "44,444.20",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

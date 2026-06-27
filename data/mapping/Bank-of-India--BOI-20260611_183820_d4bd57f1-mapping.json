@@ -1,0 +1,155 @@
+{
+  "bank_name": "Bank of India (BOI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-11T16:39:24Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Sr No",
+    "Date",
+    "Remarks",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "sr no|date|remarks|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Remarks",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1901",
+      "01/01/2025",
+      "UPI/842405759217/DR/SANDEE/BKID/sandeep na/Paymen",
+      "500.00",
+      "",
+      "\u20b9 13,552.94",
+      "85",
+      "1"
+    ],
+    [
+      "1900",
+      "01/01/2025",
+      "UPI/104061708631/DR/Manu /SBIN/747056585/Paymen",
+      "1000.00",
+      "",
+      "\u20b9 12,552.94",
+      "85",
+      "1"
+    ],
+    [
+      "1899",
+      "01/01/2025",
+      "UPI/188274108621/DR/RAJ SO/HDFC/rtiwari08/Paymen",
+      "2000.00",
+      "",
+      "\u20b9 10,552.94",
+      "85",
+      "1"
+    ],
+    [
+      "1898",
+      "02/01/2025",
+      "UPI/137552806341/DR/SHRUTI/YESB/Q034538 70/Paymen",
+      "2000.00",
+      "",
+      "\u20b9 8,552.94",
+      "85",
+      "1"
+    ],
+    [
+      "1897",
+      "02/01/2025",
+      "Cash dep at R9409030",
+      "",
+      "4000.00",
+      "\u20b9 12,552.94",
+      "85",
+      "1"
+    ],
+    [
+      "1896",
+      "02/01/2025",
+      "UPI/424302663688/DR/BRAJEN/BARB/brajendr a/Paymen",
+      "5000.00",
+      "",
+      "\u20b9 7,552.94",
+      "85",
+      "1"
+    ],
+    [
+      "1895",
+      "03/01/2025",
+      "UPI/042753850800/DR/ANAMIK/UBIN/8269941 90/Paymen",
+      "1000.00",
+      "",
+      "\u20b9 6,552.94",
+      "85",
+      "1"
+    ],
+    [
+      "1894",
+      "03/01/2025",
+      "UPI/780038295089/CR/ARUNA/INDB/62671485 7/Paymen",
+      "",
+      "700.00",
+      "\u20b9 7,252.94",
+      "85",
+      "1"
+    ],
+    [
+      "1893",
+      "04/01/2025",
+      "UPI/857654106391/DR/ANSHIK/YESB/paytmqr 5v/Paymen",
+      "370.00",
+      "",
+      "\u20b9 6,882.94",
+      "85",
+      "1"
+    ],
+    [
+      "1892",
+      "05/01/2025",
+      "NACH DR INW - TP ACH TATACAPITAL 2998203553 Awad",
+      "5965.00",
+      "",
+      "\u20b9 917.94",
+      "85",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

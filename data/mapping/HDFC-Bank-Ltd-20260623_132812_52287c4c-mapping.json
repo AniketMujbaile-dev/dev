@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-23T11:28:32Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "10/04/2025",
+      "CHQ PAID-MICR CTS-MU-TATA AIG GIC LTD",
+      "0000000000000365",
+      "10/04/25",
+      "15,683.00",
+      "",
+      "418,909.99",
+      "1",
+      "1"
+    ],
+    [
+      "12/04/2025",
+      "UPI-XXXXXX0135-PUNB0497700-103052596529-UPI",
+      "0000103052596529",
+      "12/04/25",
+      "33,000.00",
+      "",
+      "385,909.99",
+      "1",
+      "1"
+    ],
+    [
+      "18/04/2025",
+      "50200075909436-TPT-PMY-VEDANT MOTORS",
+      "0000000191353595",
+      "18/04/25",
+      "",
+      "1.00",
+      "385,910.99",
+      "1",
+      "1"
+    ],
+    [
+      "18/04/2025",
+      "UPI-VODAFONEIDEALIMITED-VODAFONE1.PAYU@HDFCBANK-HDFC0MERUPI-103370874248-UPI",
+      "0000103370874248",
+      "18/04/25",
+      "524.36",
+      "",
+      "385,386.63",
+      "1",
+      "1"
+    ],
+    [
+      "18/04/2025",
+      "UPI-GOOGLE INDIADIGITAL-GPAY-UTILITY@OKPAYAXIS-UTIB0000553-103370909128-UPI",
+      "0000103370909128",
+      "18/04/25",
+      "10,078.04",
+      "",
+      "375,308.59",
+      "1",
+      "1"
+    ],
+    [
+      "21/04/2025",
+      "50200075909436-TPT-USEDCARPMT-VEDANTMOTORS",
+      "0000000124938618",
+      "21/04/25",
+      "",
+      "122,000.00",
+      "497,308.59",
+      "1",
+      "1"
+    ],
+    [
+      "23/04/2025",
+      "SELF - CHQ PAID - BOPAL, AHMED",
+      "0000000000000367",
+      "23/04/25",
+      "75,000.00",
+      "",
+      "422,308.59",
+      "1",
+      "1"
+    ],
+    [
+      "24/04/2025",
+      "UPI-GOOGLE INDIADIGITAL-GPAY-UTILITY@OKPAYAXIS-UTIB0000553-103680128986-UPI",
+      "0000103680128986",
+      "24/04/25",
+      "1,847.00",
+      "",
+      "420,461.59",
+      "1",
+      "1"
+    ],
+    [
+      "25/04/2025",
+      "SELF - CHQ PAID - BOPAL, AHMED",
+      "0000000000000368",
+      "25/04/25",
+      "47,000.00",
+      "",
+      "373,461.59",
+      "1",
+      "1"
+    ],
+    [
+      "25/04/2025",
+      "50200007478098-TPT-COMMITION24TO25-AMBICA ASSOCIATES",
+      "0000000584791054",
+      "25/04/25",
+      "",
+      "252,484.00",
+      "625,945.59",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

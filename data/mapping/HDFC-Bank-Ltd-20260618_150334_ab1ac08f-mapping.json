@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T13:04:07Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "10/04/2025",
+      "SOUND BOX RENTAL APR25 FDS185",
+      "000000000000000",
+      "10/04/25",
+      "116.82",
+      "",
+      "52,213.02",
+      "1",
+      "1"
+    ],
+    [
+      "10/05/2025",
+      "SOUND BOX RENTAL MAY25 FDS185",
+      "000000000000000",
+      "10/05/25",
+      "116.82",
+      "",
+      "52,096.20",
+      "1",
+      "1"
+    ],
+    [
+      "09/06/2025",
+      "42748685TERMINAL 1 CARDS SETTL. 09/06/25",
+      "000000000000000",
+      "09/06/25",
+      "",
+      "53,107.92",
+      "105,204.12",
+      "1",
+      "1"
+    ],
+    [
+      "09/06/2025",
+      "UPI-105901506865-SHRUTHIGR2015@OKICICI-516053201166-UPI",
+      "0000516053201166",
+      "09/06/25",
+      "",
+      "15,800.00",
+      "121,004.12",
+      "1",
+      "1"
+    ],
+    [
+      "10/06/2025",
+      "SOUND BOX RENTAL JUN25 FDS185",
+      "000000000000000",
+      "10/06/25",
+      "116.82",
+      "",
+      "120,887.30",
+      "1",
+      "1"
+    ],
+    [
+      "10/06/2025",
+      "PINELABS PVT L-AUTH HDFCPINELABS",
+      "0000506108226444",
+      "10/06/25",
+      "",
+      "3,952.80",
+      "124,840.10",
+      "1",
+      "1"
+    ],
+    [
+      "10/06/2025",
+      "UPI-3042500103100701-8453945326@YBL-760173553449-PAYMENT FROM PHONEPE",
+      "0000760173553449",
+      "10/06/25",
+      "",
+      "6,000.00",
+      "130,840.10",
+      "1",
+      "1"
+    ],
+    [
+      "11/06/2025",
+      "UPI-00000041282991128-8951273650@YBL-520319170114-PAYMENT FROM PHONEPE",
+      "0000520319170114",
+      "11/06/25",
+      "",
+      "400.00",
+      "131,240.10",
+      "1",
+      "1"
+    ],
+    [
+      "11/06/2025",
+      "UPI-30590100028689-HEMAHPUTTARAJU@OKHDFBANK-106287939376-UPI",
+      "C 0000106287939376",
+      "11/06/25",
+      "",
+      "500.00",
+      "131,740.10",
+      "1",
+      "1"
+    ],
+    [
+      "11/06/2025",
+      "UPI-30590100009597-8618254608@AXL-162283022407-PAYMENT FROM PHONEPE",
+      "0000162283022407",
+      "11/06/25",
+      "",
+      "22,000.00",
+      "153,740.10",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

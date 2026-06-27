@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bank of Baroda (BOB)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-16T18:26:11Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRAN DATE",
+    "VALUE DATE",
+    "NARRATION",
+    "CHQ.NO.",
+    "WITHDRAWAL(DR)",
+    "DEPOSIT(CR)",
+    "BALANCE(INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|value date|narration|chq no|withdrawal dr|deposit cr|balance inr|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRAN DATE",
+    "description": "NARRATION",
+    "debit": "WITHDRAWAL(DR)",
+    "credit": "DEPOSIT(CR)",
+    "amount": null,
+    "balance": "BALANCE(INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "30/04/2026",
+      "30/04/2026",
+      "NEFT-YESAP61205373416-PAYTM PAYMENTS SERVICES LIMI",
+      "",
+      "",
+      "91,546.52",
+      "95,613.40Cr",
+      "3",
+      "1"
+    ],
+    [
+      "30/04/2026",
+      "30/04/2026",
+      "UTKARSHSONKAR-MICR INWARD CLG (CTS)",
+      "000100",
+      "20,000.00",
+      "",
+      "75,613.40Cr",
+      "3",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "NEFT-YESAP61215324112-PAYTM PAYMENTS SERVICES LIMI",
+      "",
+      "",
+      "49,823.51",
+      "1,25,436.91Cr",
+      "3",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "02/05/2026",
+      "NEFT-YESAP61225424453-PAYTM PAYMENTS SERVICES LIMI",
+      "",
+      "",
+      "1,30,372.95",
+      "2,55,809.86Cr",
+      "3",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "02/05/2026",
+      "BY CASH",
+      "",
+      "",
+      "3,49,900.00",
+      "6,05,709.86Cr",
+      "3",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "02/05/2026",
+      "EBANK:WIB/1506482539/Rajat Bhaiya For Machine Bil",
+      "",
+      "32,000.00",
+      "",
+      "5,73,709.86Cr",
+      "3",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "02/05/2026",
+      "IMPS/P2A/612213539574/XXXXXXXXXX1 676/SiddhiKhanna",
+      "",
+      "1,23,647.00",
+      "",
+      "4,50,062.86Cr",
+      "3",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "02/05/2026",
+      "CHARGES FOR :IMPS/P2A/612213539574/XXXXXXXX",
+      "",
+      "17.70",
+      "",
+      "4,50,045.16Cr",
+      "3",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "02/05/2026",
+      "REJECT:000099:70:Advice not received",
+      "",
+      "4,15,102.00",
+      "",
+      "34,943.16Cr",
+      "3",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "02/05/2026",
+      "REJECT:000099:70:Advice not received",
+      "",
+      "",
+      "4,15,102.00",
+      "4,50,045.16Cr",
+      "3",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

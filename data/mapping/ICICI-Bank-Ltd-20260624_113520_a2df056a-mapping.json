@@ -1,0 +1,155 @@
+{
+  "bank_name": "ICICI Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T09:35:43Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "MODE",
+    "PARTICULARS",
+    "DEPOSITS",
+    "WITHDRAWALS",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|mode|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 3,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "PARTICULARS",
+    "debit": "WITHDRAWALS",
+    "credit": "DEPOSITS",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2026",
+      "",
+      "B/F",
+      "",
+      "",
+      "-20,95,910.42",
+      "3",
+      "2"
+    ],
+    [
+      "01/04/2026",
+      "",
+      "NEFT-HDFCH00902869981-SERRATUS HEALTH PVTLTD-0001HDFC1CC25D1F8287-50200028035692-HDFC0000001",
+      "1,01,677.00",
+      "",
+      "-19,94,233.42",
+      "3",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "MOBILE BANKING",
+      "MMT/IMPS/609200484014/payment/Gokulsuren/IDFB0080151",
+      "",
+      "40,000.00",
+      "-20,34,233.42",
+      "3",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "NET BANKING",
+      "INF/INFT/043912568021/rajdocumentsexp/MenonsBMW520d",
+      "",
+      "10,00,000.00",
+      "-30,34,233.42",
+      "3",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "MOBILE BANKING",
+      "MMT/IMPS/609200497850/legalstamppaper/muni/SBIN0016295",
+      "",
+      "66,520.00",
+      "-31,00,753.42",
+      "3",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "MOBILE BANKING",
+      "MMT/IMPS/609200499213/payoutforloanwo/muni/SBIN0016295",
+      "",
+      "50,000.00",
+      "-31,50,753.42",
+      "3",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "",
+      "UPI/109502162179/food/q894491635@ybl//ICIe38e36f73a924cc49806702621aa4f1e",
+      "",
+      "831.00",
+      "-31,51,584.42",
+      "3",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "CMS TRANSACTION",
+      "CMS/001917926410/BAJAJ_AUTO_CD__404DHF65413399",
+      "",
+      "59,758.00",
+      "-32,11,342.42",
+      "3",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "",
+      "025205003953:Int.Coll:02-03-2026 to 01-04-2026",
+      "",
+      "77,766.00",
+      "-32,89,108.42",
+      "3",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "",
+      "NEFT-HDFCH00903818963-LOUNGE HOSPITALITY LLPBLVDCLUB-0001-50200036895301-HDFC0000240",
+      "2,71,596.00",
+      "",
+      "-30,17,512.42",
+      "3",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "bank_name": "Tamilnad Mercantile Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-11T15:29:18Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Withdrawals",
+    "Deposits",
+    "Balance(INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|withdrawals|deposits|balance inr|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 2,
+    "credit": 3,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance(INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2026",
+      "IMPS/GOOGLEINDIADIGI/609150700263/UTIB/IMPS",
+      "",
+      "1,375.00",
+      "6,28,274.68",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "UPI/609220008806/RAVI PONNUSAMY/UTIB/Sent using P",
+      "",
+      "1.00",
+      "6,28,275.68",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "BNA/CASH/929885/609215929885",
+      "",
+      "19,800.00",
+      "6,48,075.68",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "UPI/300021167406/RAVI PONNUSAMY/UTIB/2426",
+      "",
+      "50,000.00",
+      "6,98,075.68",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "INDUSIND CMS ACCOU",
+      "30,037.00",
+      "",
+      "6,68,038.68",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "NEFT/PRM TRANSPORT/KVBLH00258572550",
+      "",
+      "30,000.00",
+      "6,98,038.68",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "SRM AUTO AAGENCY",
+      "16,497.00",
+      "",
+      "6,81,541.68",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "JULLUNDUR MOTOR AG",
+      "18,282.00",
+      "",
+      "6,63,259.68",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2026",
+      "JAGADAMBAAUTOPRIVA",
+      "19,391.00",
+      "",
+      "6,43,868.68",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2026",
+      "TVS VEHICLE MOBILI",
+      "1,93,656.00",
+      "",
+      "4,50,212.68",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

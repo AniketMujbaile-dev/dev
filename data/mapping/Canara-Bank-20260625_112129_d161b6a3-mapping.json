@@ -1,0 +1,144 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-25T09:22:13Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Deposits",
+    "Withdrawals",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 2,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "21/05/2026",
+      "MB/2194261005246/STARINDUSTRIES/2194101009145/MOHDASHRAF/CANARA/ASHRAF/20525407444/21/05/2026 06:14:15Chq: 0",
+      "",
+      "25,000.00",
+      "-10,17,700.57",
+      "1",
+      "1"
+    ],
+    [
+      "21/05/2026",
+      "MB/2194261005246/STARINDUSTRIES/2194101020191/SAMAD/CANARA/SAMAD/20526012470/21/05/2026 07:09:04Chq: 0",
+      "",
+      "10,000.00",
+      "-10,27,700.57",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2026",
+      "2194603001539 -ASHRAFDRAWDOWN FROM CASA.Chq: 0",
+      "",
+      "12,818.00",
+      "-10,40,518.57",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2026",
+      "170002618448 -STARINDUSTRIES DRAWDOWNFROM CASA.Chq: 0",
+      "",
+      "5,870.00",
+      "-10,46,388.57",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2026",
+      "DRAWDOWN FAILURECHARGES:2194603001539DUEDT:18-MAY-26Chq: 0",
+      "",
+      "118.00",
+      "-10,46,506.57",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2026",
+      "MB/2194261005246/STARINDUSTRIES/3306201007519/STARTACHMACHINERY/CANARA/STAR/20533670665/22/05/2026 02:17:41Chq: 0",
+      "",
+      "30,000.00",
+      "-10,76,506.57",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2026",
+      "MB-IMPS-DR/UP SCRAPTRA/PSIB/**2301/UP SCRAPT/22/05/202614:19:32/614214612056Chq: 614214612056",
+      "",
+      "1,50,000.00",
+      "-12,26,506.57",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2026",
+      "IMPS SCChq: 614214612056",
+      "",
+      "17.70",
+      "-12,26,524.27",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2026",
+      "MB/2194261005246/STARINDUSTRIES/2194101009145/MOHDASHRAF/CANARA/ASHRAF/20533702212/22/05/2026 02:20:30Chq: 0",
+      "",
+      "20,000.00",
+      "-12,46,524.27",
+      "1",
+      "1"
+    ],
+    [
+      "23/05/2026",
+      "MB/2194261005246/STARINDUSTRIES/2194101009145/MOHDASHRAF/CANARA/ASHRAF/20544835299/23/05/2026 06:12:02Chq: 0",
+      "",
+      "5,000.00",
+      "-12,51,524.27",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "bank_name": "Kotak Mahindra Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-21T17:41:04Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Tran Id",
+    "Ref Num",
+    "Particulars",
+    "Debit Amt.",
+    "Credit Amt.",
+    "Balance Amt.",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|tran id|ref num|particulars|debit amt|credit amt|balance amt|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 3,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Debit Amt.",
+    "credit": "Credit Amt.",
+    "amount": "Debit Amt.",
+    "balance": "Balance Amt.",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "C34979336",
+      "5091001126",
+      "NEFT/IDFBH25091918385/IDF",
+      "",
+      "1,00,000.00",
+      "1,10,922.89CR",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "C35226711",
+      "",
+      "UPI/509287536322/DR/AutoP",
+      "7,006.00",
+      "",
+      "1,03,916.89CR",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "S22220052",
+      "",
+      "UPI/545825949755/CR/Mr SA",
+      "",
+      "35,300.00",
+      "1,39,216.89CR",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "S84322185",
+      "0404228892",
+      "NACH DR INW - BD-DCB Loan",
+      "79,342.00",
+      "",
+      "59,874.89CR",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "S33440655",
+      "",
+      "UPI/509579803202/CR/VGM E",
+      "",
+      "60,000.00",
+      "1,19,874.89CR",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "S46579897",
+      "",
+      "UPI/509535243104/CR/VGM E",
+      "",
+      "10,000.00",
+      "1,29,874.89CR",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "S68148831",
+      "",
+      "UPI/546251100736/CR/VGM E",
+      "",
+      "50,000.00",
+      "1,79,874.89CR",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "S68196948",
+      "",
+      "UPI/509690590393/CR/VGM E",
+      "",
+      "30,000.00",
+      "2,09,874.89CR",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "S4103769",
+      "",
+      "UPI/102777680611/CR/VINAY",
+      "",
+      "32,000.00",
+      "2,41,874.89CR",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "S6145960",
+      "",
+      "UPI/546393683632/CR/VGM E",
+      "",
+      "1,00,000.00",
+      "3,41,874.89CR",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

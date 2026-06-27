@@ -1,0 +1,144 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T17:42:02Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Deposits",
+    "Withdrawals",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 2,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "19/12/2025",
+      "NEFT CR-HDFCH00683650100-HDFC0000240-A.J. SHRINKWRAP PRIVATE LIMITED--0001-NEFT - MODERN GLASS-57500000830417Chq: 0",
+      "1,00,000.00",
+      "",
+      "4,67,025.65",
+      "1",
+      "1"
+    ],
+    [
+      "20/12/2025",
+      "MB/94533070000511/MODERNGLASS ANDALU/4165261000045/VISHALTIMBER ANDPLY/CANARA/BOARD/18267182627/20/12/2025 10:46:35Chq: 0",
+      "",
+      "80,000.00",
+      "3,87,025.65",
+      "1",
+      "1"
+    ],
+    [
+      "20/12/2025",
+      "MB-IMPS-DR/SAVITRIENTERPR/YESB/**0534/BOARD/20/12/202513:42:58/535413602502Chq: 535413602502",
+      "",
+      "33,613.00",
+      "3,53,412.65",
+      "1",
+      "1"
+    ],
+    [
+      "20/12/2025",
+      "IMPS SCChq: 535413602502",
+      "",
+      "9.44",
+      "3,53,403.21",
+      "1",
+      "1"
+    ],
+    [
+      "23/12/2025",
+      "MB-IMPS-DR/SHREE RAMALUMI/UBIN/**0252/ALUMINIUM/23/12/202511:26:52/535711250231Chq: 535711250231",
+      "",
+      "50,000.00",
+      "3,03,403.21",
+      "1",
+      "1"
+    ],
+    [
+      "23/12/2025",
+      "IMPS SCChq: 535711250231",
+      "",
+      "9.44",
+      "3,03,393.77",
+      "2",
+      "1"
+    ],
+    [
+      "24/12/2025",
+      "161003048847 -ZAHID KHANDRAWDOWN FROM CASA.Chq: 0",
+      "",
+      "17,235.00",
+      "2,86,158.77",
+      "2",
+      "1"
+    ],
+    [
+      "24/12/2025",
+      "MB-IMPS-DR/SAVITRIENTERPR/YESB/**0534/ALUMINIUM /24/12/202509:56:47/535809480450Chq: 535809480450",
+      "",
+      "96,400.00",
+      "1,89,758.77",
+      "2",
+      "1"
+    ],
+    [
+      "24/12/2025",
+      "IMPS SCChq: 535809480450",
+      "",
+      "9.44",
+      "1,89,749.33",
+      "2",
+      "1"
+    ],
+    [
+      "24/12/2025",
+      "MB-IMPS-DR/SAVITRIENTERPR/YESB/**0534/PVC/24/12/202510:01:23/535810480954Chq: 535810480954",
+      "",
+      "3,900.00",
+      "1,85,849.33",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

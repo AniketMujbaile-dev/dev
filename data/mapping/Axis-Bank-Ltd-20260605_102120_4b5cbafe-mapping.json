@@ -1,0 +1,166 @@
+{
+  "bank_name": "Axis Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-05T08:21:43Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Tran Date",
+    "Chq No",
+    "Particulars",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Init. Br",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|chq no|particulars|debit|credit|balance|init br|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Tran Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "",
+      "UPI/P2A/122422864180/ARIHANT T/NNSB/UPI/",
+      "",
+      "100.00",
+      "19054.03",
+      "453",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "",
+      "UPI/P2A/122432159646/ARIHANT T/NNSB/UPI/",
+      "",
+      "11228.00",
+      "30282.03",
+      "453",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "",
+      "NEFT/HDFCH00968096660/VIJAY TRADERS/HDFC BANK/0001NAVDEEP",
+      "",
+      "24072.00",
+      "54354.03",
+      "248",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "",
+      "SELF CASH DEP- BNA/CERO45311/3544/020526/AHMEDAB",
+      "",
+      "40500.00",
+      "94854.03",
+      "453",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "",
+      "IMPS/P2A/612212600814/HBANSIDHARCO/X0 16573/HDFCBANKLTD/",
+      "48910.90",
+      "",
+      "45943.13",
+      "453",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "",
+      "IMPS/P2A/612212605800/SHUBHINDUSTRIES/ X108872/CENTRALBANKOFINDIA/",
+      "33234.90",
+      "",
+      "12708.23",
+      "453",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "",
+      "NEFT/NNSBH00000044152/M S KALAPI HARDWARE/NUTAN NAGARIK SAHAKA/012138230001320M S KALAPI HAR",
+      "",
+      "7080.00",
+      "19788.23",
+      "248",
+      "1",
+      "1"
+    ],
+    [
+      "07/05/2026",
+      "",
+      "NEFT/IN22612740926095/AVANTECLAD MODULAR SOLUTIONS/ICICI BANK LIMITED/AVANTECLAD MODULAR SOLUTIONS",
+      "",
+      "55292.00",
+      "75080.23",
+      "248",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "",
+      "NEFT/SKNBH26128001035/RAMKRUSHNA ENTERPRISE/SHREE KADI NAGARIK S/URGENT",
+      "",
+      "5192.00",
+      "80272.23",
+      "248",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "",
+      "IMPS/P2A/612818422968/SHUBHINDUSTRIES/ X108872/CENTRALBANKOFINDIA/",
+      "26437.90",
+      "",
+      "53834.33",
+      "453",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "bank_name": "IDFC First Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-07T18:28:28Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Particulars",
+    "Cheque No",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|particulars|cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "24/07/2025",
+      "24-Jul-2025",
+      "Processing fees 6550635576BHARATI SHIPPING SERVIC",
+      "",
+      "27,081.00",
+      "",
+      "(27,081.00)",
+      "1",
+      "1"
+    ],
+    [
+      "24/07/2025",
+      "24-Jul-2025",
+      "Documentation Fees 6550635576BHARATI SHIPPING SER",
+      "",
+      "2,708.00",
+      "",
+      "(29,789.00)",
+      "1",
+      "1"
+    ],
+    [
+      "24/07/2025",
+      "24-Jul-2025",
+      "IFT/10000059335/HDFC LIFECREDIT PRO/6563325/Insurancefees 6550635576 BHARATISHIPPING SERVICES",
+      "",
+      "22,460.00",
+      "",
+      "(52,249.00)",
+      "1",
+      "1"
+    ],
+    [
+      "24/07/2025",
+      "24-Jul-2025",
+      "Stamp Duty fees 6550635576BHARATI SHIPPING SERVICES",
+      "",
+      "3,200.00",
+      "",
+      "(55,449.00)",
+      "1",
+      "1"
+    ],
+    [
+      "29/07/2025",
+      "29-Jul-2025",
+      "IFT/52302197623/BHARATISHIPPING SER/10693554",
+      "",
+      "50.00",
+      "",
+      "(55,499.00)",
+      "1",
+      "1"
+    ],
+    [
+      "31/07/2025",
+      "31-Jul-2025",
+      "IFT/52302197623/BHARATISHIPPING SER/11581056",
+      "",
+      "14,74,501.00",
+      "",
+      "(15,30,000.00)",
+      "1",
+      "1"
+    ],
+    [
+      "01/08/2025",
+      "01-Aug-2025",
+      "IFT/52302197623/BHARATISHIPPING SER/18493593",
+      "",
+      "",
+      "13,74,501.00",
+      "(1,55,499.00)",
+      "1",
+      "1"
+    ],
+    [
+      "05/08/2025",
+      "05-Aug-2025",
+      "IFT/52302197623/BHARATISHIPPING SER/24786758",
+      "",
+      "3,74,000.00",
+      "",
+      "(5,29,499.00)",
+      "1",
+      "1"
+    ],
+    [
+      "05/08/2025",
+      "05-Aug-2025",
+      "DEBIT INTEREST TRANS",
+      "",
+      "1,346.00",
+      "",
+      "(5,30,845.00)",
+      "1",
+      "1"
+    ],
+    [
+      "06/08/2025",
+      "06-Aug-2025",
+      "Loan Repay52302197623-10239349434",
+      "",
+      "",
+      "1,346.00",
+      "(5,29,499.00)",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

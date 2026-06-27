@@ -1,0 +1,177 @@
+{
+  "bank_name": "IDBI Bank Limited",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-27T06:32:39Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "S.No",
+    "Txn Date",
+    "Value Date",
+    "Description",
+    "Cheque No",
+    "Withdrawals(Dr)",
+    "Deposits(Cr)",
+    "Balance(INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "s no|txn date|value date|description|cheque no|withdrawals dr|deposits cr|balance inr|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 3,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Txn Date",
+    "description": "Description",
+    "debit": "Withdrawals(Dr)",
+    "credit": "Deposits(Cr)",
+    "amount": null,
+    "balance": "Balance(INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "69",
+      "16/04/2026 12:06:15",
+      "16/04/2026",
+      "ACCOUNT OPEN FUND",
+      "",
+      "",
+      "25000.00",
+      "25000.00",
+      "3",
+      "1"
+    ],
+    [
+      "68",
+      "20/04/2026 14:21:25",
+      "20/04/2026",
+      "ID198001/20-04-26 14:21:25/000000697499",
+      "",
+      "100.00",
+      "",
+      "24900.00",
+      "3",
+      "1"
+    ],
+    [
+      "67",
+      "20/04/2026 15:01:06",
+      "20/04/2026",
+      "UPI/301116596197/JASCONSULTANCY",
+      "",
+      "",
+      "2000.00",
+      "26900.00",
+      "3",
+      "1"
+    ],
+    [
+      "66",
+      "20/04/2026 16:17:26",
+      "20/04/2026",
+      "UPI/301120121697/SUMANCHAUHAN",
+      "",
+      "",
+      "6000.00",
+      "32900.00",
+      "3",
+      "1"
+    ],
+    [
+      "65",
+      "20/04/2026 16:55:39",
+      "20/04/2026",
+      "UPI/611016889336/EM TRADER",
+      "",
+      "",
+      "2000.00",
+      "34900.00",
+      "3",
+      "1"
+    ],
+    [
+      "64",
+      "20/04/2026 20:51:39",
+      "20/04/2026",
+      "UPI/611001531836/DR GARGCHILD CLINIC",
+      "",
+      "3000.00",
+      "",
+      "31900.00",
+      "3",
+      "1"
+    ],
+    [
+      "63",
+      "22/04/2026 12:47:34",
+      "22/04/2026",
+      "UPI/301226467883/JAYA",
+      "",
+      "",
+      "100000.00",
+      "131900.00",
+      "2",
+      "1"
+    ],
+    [
+      "62",
+      "23/04/2026 12:51:56",
+      "23/04/2026",
+      "UPI/611307402864/JASCONSULTANCY",
+      "",
+      "",
+      "1000.00",
+      "132900.00",
+      "2",
+      "1"
+    ],
+    [
+      "61",
+      "24/04/2026 02:05:59",
+      "24/04/2026",
+      "UPI/301325468802/NEELAM",
+      "",
+      "",
+      "2000.00",
+      "134900.00",
+      "2",
+      "1"
+    ],
+    [
+      "60",
+      "24/04/2026 02:06:00",
+      "24/04/2026",
+      "UPI/301325473843/NEELAM",
+      "",
+      "",
+      "2000.00",
+      "136900.00",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

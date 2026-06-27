@@ -1,0 +1,166 @@
+{
+  "bank_name": "ICICI Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T11:10:28Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "S No.",
+    "Transaction Date",
+    "Cheque Number",
+    "Transaction Remarks",
+    "Withdrawal Amount (INR)",
+    "Deposit Amount (INR)",
+    "Balance (INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "s no|transaction date|cheque number|transaction remarks|withdrawal amount inr|deposit amount inr|balance inr|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 3,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Transaction Remarks",
+    "debit": "Withdrawal Amount (INR)",
+    "credit": "Deposit Amount (INR)",
+    "amount": "Withdrawal Amount (INR)",
+    "balance": "Balance (INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "01/04/2025",
+      "",
+      "9557322221@ptaxUPI/9557322221@ptax/NA/IDFC FIRSTBANK/509128142556/PTM2105D0B565D14C1586F68ECAD42A2479",
+      "",
+      "22600.00",
+      "22885.65",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "01/04/2025",
+      "",
+      "Fund transferINF/INFT/20250401093404/Pay Later expen/Self",
+      "4500.00",
+      "",
+      "18385.65",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "01/04/2025",
+      "",
+      "9557322221@ptaxUPI/9557322221@ptax/NA/IDFC FIRSTBANK/509178204305/PTM565A1189B3884DF9A5DE06377F732012/",
+      "5000.00",
+      "",
+      "13385.65",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "01/04/2025",
+      "",
+      "sharify.payu@icUPI/sharify.payu@ic/Sent using Payt/ICICI Bank LTD/509118219482/PPPL2300675944001042510175367eb6ff9",
+      "500.00",
+      "",
+      "12885.65",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "01/04/2025",
+      "",
+      "9557322221@ptaxUPI/9557322221@ptax/NA/IDFC FIRSTBANK/509128304940/PTM81D58C1A46004C7DA38B0132F773D85E",
+      "",
+      "1500.00",
+      "14385.65",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "01/04/2025",
+      "",
+      "9557322221@ptaxUPI/9557322221@ptax/NA/IDFC FIRSTBANK/509118332339/PTM1BDD0A9C84F74C22B046CB083715802A",
+      "",
+      "5500.00",
+      "19885.65",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "01/04/2025",
+      "",
+      "9557322221@ptaxUPI/9557322221@ptax/NA/State Bank OfI/509178333821/PTM557B3ADAD61747B8B2AE1336D469F6F3/",
+      "7000.00",
+      "",
+      "12885.65",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "01/04/2025",
+      "",
+      "mpc399.sd11utk@UPI/mpc399.sd11utk@/Sent using Payt/YES BANKLIMITE/509144632941/PTM7EBCC4602C864582A6BA89D4E26C0013",
+      "1680.00",
+      "",
+      "11205.65",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "01/04/2025",
+      "",
+      "paytm-delhiveryUPI/paytm-delhivery/Sent using Payt/YES BANKLIMITE/509158568045/PTM24FEE9FA11804394BDF70A1610BA4F30",
+      "1080.00",
+      "",
+      "10125.65",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "02/04/2025",
+      "",
+      "9557322221@ptaxUPI/9557322221@ptax/NA/IDFC FIRSTBANK/509269633872/PTMA2A44B823C8F431197471F91347B8298",
+      "",
+      "1900.00",
+      "12025.65",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

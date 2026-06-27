@@ -1,0 +1,177 @@
+{
+  "bank_name": "Punjab National Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-27T07:44:28Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Tran Date",
+    "Withdrawal",
+    "Deposit",
+    "Balance",
+    "Alpha",
+    "CHQ. NO.",
+    "Narration",
+    "Additional Info",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|withdrawal|deposit|balance|alpha|chq no|narration|additional info|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 6,
+    "debit": 1,
+    "credit": 2,
+    "amount": null,
+    "balance": 3,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Tran Date",
+    "description": "Narration",
+    "debit": "Withdrawal",
+    "credit": "Deposit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "21/09/2023",
+      "",
+      "10000.00",
+      "10000.00 Cr.",
+      "",
+      "",
+      "Cash Deposit At : THANE, SHIVAJI PATH",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "30/09/2023",
+      "236.00",
+      "",
+      "9764.00 Cr.",
+      "",
+      "",
+      "Change in mode of operation",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "08/10/2023",
+      "118.00",
+      "",
+      "9646.00 Cr.",
+      "",
+      "",
+      "INCIDENTAL CHARGES",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "23/10/2023",
+      "",
+      "200000.00",
+      "209646.00 Cr.",
+      "",
+      "",
+      "RTGS IN: FDRLR52023102333372693:JOY THOMASENGINEERIN",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "24/10/2023",
+      "1000.00",
+      "",
+      "208646.00 Cr.",
+      "",
+      "",
+      "ATM WDR 9678 PNB \\+ 71 SWAGAT NEHRU RD \\ MUMBA",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "25/10/2023",
+      "5000.00",
+      "",
+      "203646.00 Cr.",
+      "",
+      "",
+      "ATM WDR 329818566023 JAI MAA GANGA CHAWL",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "25/10/2023",
+      "24.78",
+      "",
+      "203621.22 Cr.",
+      "",
+      "",
+      "ATM WDR 329818566023 JAI MAA GANGA CHAWL",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "26/10/2023",
+      "",
+      "1.00",
+      "203622.22 Cr.",
+      "",
+      "",
+      "UPI/329965802433/P2A/8691800171/PRAMOD RAMKISHUN J",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "27/10/2023",
+      "10000.00",
+      "",
+      "193622.22 Cr.",
+      "",
+      "",
+      "ATM WDR 330011022305 +SHIVNERI CHAWL KALWA",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "27/10/2023",
+      "24.78",
+      "",
+      "193597.44 Cr.",
+      "",
+      "",
+      "ATM WDR 330011022305 +SHIVNERI CHAWL KALWA",
+      "",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

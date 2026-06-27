@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-16T08:12:54Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/06/2026",
+      "UPI-00000033020763941-KAPLESHWARKUMAR3@AXL-623690991886-CT PATNA",
+      "0000623690991886",
+      "01/06/26",
+      "",
+      "3,500.00",
+      "-571,027.10",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "UPI-3693119000780-9709712925-2@YBL-484761873306-PAYMENT FROM PHONEPE",
+      "0000484761873306",
+      "01/06/26",
+      "",
+      "1,000.00",
+      "-570,027.10",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "UPI-3693119000780-9709712925-2@AXL-538886725026-PAYMENT FROM PHONEPE",
+      "0000538886725026",
+      "01/06/26",
+      "",
+      "500.00",
+      "-569,527.10",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "UPI-133901509364-HARINANDAN.GUPTA@IBL-314319575547-PAYMENT FROM PHONEPE",
+      "0000314319575547",
+      "01/06/26",
+      "",
+      "7,500.00",
+      "-562,027.10",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "UPI-1929000100061261-9525003800-3@YBL-857121650661-PAYMENT FROM PHONEPE",
+      "0000857121650661",
+      "01/06/26",
+      "",
+      "8,500.00",
+      "-553,527.10",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "UPI-00000001523842753-ANSHUMANKRSINGH91265@AXL-715984302802-PAYMENT FROMPHONEPE",
+      "0000715984302802",
+      "01/06/26",
+      "",
+      "7,200.00",
+      "-546,327.10",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "UPI-00000033063674326-7004809766@PTYES-207422380402-SENT USING PAYTM UPI",
+      "0000207422380402",
+      "01/06/26",
+      "",
+      "200.00",
+      "-546,127.10",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "UPI-02351370000290-SINGHUJJWAL2008@OKHDFCBANK-124024358189-UPI",
+      "0000124024358189",
+      "01/06/26",
+      "",
+      "5,700.00",
+      "-540,427.10",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "UPI-1929000100061261-9525003800-3@YBL-992116391340-PAYMENT FROM PHONEPE",
+      "0000992116391340",
+      "01/06/26",
+      "",
+      "150.00",
+      "-540,277.10",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "UPI-00000001695460301-6204203978@YBL-308965312385-PAYMENT FROM PHONEPE",
+      "0000308965312385",
+      "01/06/26",
+      "",
+      "2,800.00",
+      "-537,477.10",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

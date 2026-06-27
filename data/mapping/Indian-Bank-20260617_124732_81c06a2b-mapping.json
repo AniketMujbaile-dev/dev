@@ -1,0 +1,166 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-17T10:47:47Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Post Date",
+    "Value Date",
+    "Details",
+    "Chq.No.",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "post date|value date|details|chq no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Post Date",
+    "description": "Details",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "17/09/2025",
+      "17/09/25",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "17/09/2025",
+      "17/09/25",
+      "CHARGESCIC REPORT CHARG",
+      "",
+      "30.00",
+      "",
+      "30.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "17/09/2025",
+      "17/09/25",
+      "RT 10.450 TO 8.40%",
+      "",
+      "",
+      "",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "18/09/2025",
+      "18/09/25",
+      "REPAYMENT RECEIVEDTRANSFER FROMSI LOAN OVERDUE AMTTRANSFER FROM 81346",
+      "",
+      "",
+      "30.00",
+      "0.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "18/09/2025",
+      "18/09/25",
+      "ADVANCE:LOAN TO GLrtgsIDIBH26147566932 /",
+      "",
+      "8,00,000.00",
+      "",
+      "8,00,000.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "30/09/2025",
+      "30/09/25",
+      "O.S. PRINCIPAL REPATRANSFER FROMSITRANSFER FROM 81346",
+      "",
+      "",
+      "30,000.00",
+      "7,70,000.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "30/09/2025",
+      "30/09/25",
+      "INTEREST",
+      "",
+      "2,387.00",
+      "",
+      "7,72,387.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "30/10/2025",
+      "30/10/25",
+      "O.S. PRINCIPAL REPATRANSFER FROMSITRANSFER FROM 81346",
+      "",
+      "",
+      "30,000.00",
+      "7,42,387.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "31/10/2025",
+      "31/10/25",
+      "INTEREST",
+      "",
+      "5,496.00",
+      "",
+      "7,47,883.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "06/11/2025",
+      "06/11/25",
+      "ADVANCE:LOAN TO GLSOFTENBAKETRF BANK-UTIB /IDIB",
+      "",
+      "2,00,000.00",
+      "",
+      "9,47,883.00Dr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "bank_name": "DCB Bank Limited",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-19T09:27:31Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date*",
+    "Transaction Details",
+    "Cheque Number",
+    "Withdrawals",
+    "Deposits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|transaction details|cheque number|withdrawals|deposits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date*",
+    "description": "Transaction Details",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "17/09/2024",
+      "INRTGS:BKIDR52024091700302069/SAMIR RAMESHCHANDRA",
+      "",
+      "",
+      "2,50,000.00",
+      "2,50,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "18/09/2024",
+      "POS VS/426202995586/08:27:10/RAZ*FINNEW /OLUTIONS",
+      "",
+      "93.55",
+      "",
+      "2,49,906.45",
+      "1",
+      "1"
+    ],
+    [
+      "20/09/2024",
+      "190924 Cr. VCHR RAZ*FINNEW SO",
+      "",
+      "",
+      "93.55",
+      "2,50,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "23/09/2024",
+      "POS VS/426703273414/08:45:44/% ARABICA /",
+      "",
+      "2,983.80",
+      "",
+      "2,47,016.20",
+      "1",
+      "1"
+    ],
+    [
+      "23/09/2024",
+      "POS VS/426703273306/08:46:37/% ARABICA /",
+      "",
+      "455.54",
+      "",
+      "2,46,560.66",
+      "1",
+      "1"
+    ],
+    [
+      "23/09/2024",
+      "POS VS/426704088614/09:39:35/WHSMITH /",
+      "",
+      "227.77",
+      "",
+      "2,46,332.89",
+      "1",
+      "1"
+    ],
+    [
+      "23/09/2024",
+      "POS VS/426718798342/16:18:05/IYZICO*APSH/vaalaniBa",
+      "",
+      "86.18",
+      "",
+      "2,46,246.71",
+      "1",
+      "1"
+    ],
+    [
+      "23/09/2024",
+      "POS VS/426718807568/16:19:02/IYZICO*APSH/vaalaniBa",
+      "",
+      "86.18",
+      "",
+      "2,46,160.53",
+      "1",
+      "1"
+    ],
+    [
+      "23/09/2024",
+      "VISACWD ATM GE000005/426714733001/16:31:23/BAGAJ-4",
+      "",
+      "2,708.49",
+      "",
+      "2,43,452.04",
+      "1",
+      "1"
+    ],
+    [
+      "23/09/2024",
+      "POS VS/426720041198/22:50:24/DESTERECI F/RINI 194",
+      "",
+      "1,940.26",
+      "",
+      "2,41,511.78",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

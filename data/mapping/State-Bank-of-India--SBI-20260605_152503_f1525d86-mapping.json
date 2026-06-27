@@ -1,0 +1,177 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-05T13:25:21Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Txn Date",
+    "Value Date",
+    "Description",
+    "Ref No./Cheque No.",
+    "Branch Code",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "txn date|value date|description|ref no cheque no|branch code|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Txn Date",
+    "description": "Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "BY TRANSFER-NEFT*UTIB0000553*AXNGG12149226333*GOOGLE INDIADIG-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "150.00",
+      "18,51,875.23",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "BY TRANSFER-NEFT*UTIB0000553*AXNGG12149354596*GOOGLE INDIADIG-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "200.00",
+      "18,52,075.23",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "BY TRANSFER-NEFT*UTIB0000553*AXNGG12149778927*GOOGLE INDIADIG-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "600.00",
+      "18,52,675.23",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "BY TRANSFER-NEFT*UTIB0000553*AXNGG12149805073*GOOGLE INDIADIG-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "2,500.00",
+      "18,55,175.23",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "BY TRANSFER-NEFT*UTIB0000553*AXNGG12149864471*GOOGLE INDIADIG-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "10,000.00",
+      "18,65,175.23",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "BY TRANSFER-NEFT*UTIB0000553*AXNGG12149925494*GOOGLE INDIADIG-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "1,750.00",
+      "18,66,925.23",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "BY TRANSFER-NEFT*UTIB0000553*AXNGG12149960670*GOOGLE INDIADIG-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "3,000.00",
+      "18,69,925.23",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "BY TRANSFER-NEFT*UTIB0000553*AXNGG12150006623*GOOGLE INDIADIG-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "450.00",
+      "18,70,375.23",
+      "2",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "BY TRANSFER-NEFT*UTIB0000553*AXNGG12150109821*GOOGLE INDIADIG-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "3,800.00",
+      "18,74,175.23",
+      "2",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "01/05/2026",
+      "BY TRANSFER-NEFT*UTIB0000553*AXNGG12150168216*GOOGLE INDIADIG-",
+      "TRANSFER FROM 99509044300 /",
+      "4430",
+      "",
+      "800.00",
+      "18,74,975.23",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

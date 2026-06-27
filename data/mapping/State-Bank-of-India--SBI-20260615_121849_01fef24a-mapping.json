@@ -1,0 +1,166 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-15T10:20:21Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Value Date",
+    "Post Date",
+    "Details",
+    "Ref No/ Cheque No",
+    "\u20b9 Debit",
+    "\u20b9 Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "value date|post date|details|ref no cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Value Date",
+    "description": "Details",
+    "debit": "\u20b9 Debit",
+    "credit": "\u20b9 Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "01/04/2025",
+      "WDL TFRUPI/DR/509105062702/RAJIVCH/BARB/9825407178/UPI0097692162094 AT 60195BARODA GOTRI ROAD",
+      "-",
+      "1,500.00",
+      "-",
+      "7,25,409.82",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "WDL TFRUPI/DR/509214953876/MADHAVM/ICIC/madhav.pan/UPI0097693162093 AT 60195BARODA GOTRI ROAD",
+      "-",
+      "15,000.00",
+      "-",
+      "7,10,409.82",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "WDL TFRUPI/DR/509215089576/MrDarba/sbin/4345095454/UPI0097693162093 AT 60195BARODA GOTRI ROAD",
+      "-",
+      "17,000.00",
+      "-",
+      "6,93,409.82",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "DEP TFRUPI/CR/102459561625/KHUSHBOO/INDB/pavu.khush/UPI0097735162098 AT 60195BARODA GOTRI ROAD",
+      "-",
+      "-",
+      "5,200.00",
+      "6,98,609.82",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02/04/2025",
+      "DEP TFRNEFT*IDFB0010201*IDFBH25092054393*Mr PRAJESH RAJN0099509044300 AT 60195BARODA GOTRI ROAD",
+      "-",
+      "-",
+      "5,000.00",
+      "7,03,609.82",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03/04/2025",
+      "WDL TFRUPI/DR/509363063148/RUSHABH/DCBL/goturushab/UPI0097694162092 AT 60195BARODA GOTRI ROAD",
+      "-",
+      "2,400.00",
+      "-",
+      "7,01,209.82",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03/04/2025",
+      "WDL TFRUPI/DR/509365310949/Blinkit/HDFC/blinkit.pa/UPIIn0097694162092 AT 60195BARODA GOTRI ROAD",
+      "-",
+      "206.00",
+      "-",
+      "7,01,003.82",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03/04/2025",
+      "DEP TFRNEFT*IDFB0010201*IDFBH25093395394*Mr PRAJESH RAJN0099509044300 AT 60195BARODA GOTRI ROAD",
+      "-",
+      "-",
+      "15,000.00",
+      "7,16,003.82",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "03/04/2025",
+      "DEP TFRNEFT*HDFC0000240*HDFCH00160731281*ALOIS TECHNOLOG0099509044300 AT 60195BARODA GOTRI ROAD",
+      "-",
+      "-",
+      "4,166.00",
+      "7,20,169.82",
+      "2",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "05/04/2025",
+      "WDL TFRUPI/DR/102638788882/CYGNUSW/KKBK/cygnus.all/UPIQ0097696162090 AT 60195BARODA GOTRI ROAD",
+      "-",
+      "8,000.00",
+      "-",
+      "7,12,169.82",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

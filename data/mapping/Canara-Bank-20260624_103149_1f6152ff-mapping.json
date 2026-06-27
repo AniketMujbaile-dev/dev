@@ -1,0 +1,177 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T08:33:31Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRANS DATE",
+    "VALUE DATE",
+    "BRANCH",
+    "REF/CHQ.NO",
+    "DESCRIPTION",
+    "WITHDRAWS",
+    "DEPOSIT",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "trans date|value date|branch|ref chq no|description|withdraws|deposit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 4,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRANS DATE",
+    "description": "DESCRIPTION",
+    "debit": "WITHDRAWS",
+    "credit": "DEPOSIT",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "01-APR-25",
+      "0",
+      "",
+      "B/F ...",
+      "0.00",
+      "173,342.90",
+      "173,342.90",
+      "1",
+      "2"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-25",
+      "33",
+      "118051368443",
+      "UPI/CR/118051368443/MUJAHID /BARB/**82592@YBL/PAY TO M//YBL7BE910C0F17B477E8D633D2A5BA4FF4B/01/04/2025 12:39:14",
+      "0.00",
+      "1,400.00",
+      "174,742.90",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-25",
+      "33",
+      "509115794643",
+      "MB-IMPS-DR/PREETHAM SHETTY/UBIN/**3594/INVOICE /01/04/2025 15:25:45/509115794643",
+      "5,000.00",
+      "0.00",
+      "169,742.90",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-25",
+      "33",
+      "509115794643",
+      "ATM / IMPS TRANSACTION CHARGES",
+      "3.54",
+      "0.00",
+      "169,739.36",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-25",
+      "33",
+      "421436846668",
+      "UPI/CR/421436846668/MAHESWARA/PUNB/**50738@YBL/PAY TO M//YBL13B8AE0ADBC74836AD1C2C1B83F60F2F/01/04/2025 15:35:05",
+      "0.00",
+      "1,840.00",
+      "171,579.36",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-25",
+      "33",
+      "682748115124",
+      "UPI/CR/682748115124/BHARATH M/KARB/**43135@AXL/PAY TO M//AXLA3B2ED8870C24AC3B4DF9EB8EF17553A/01/04/2025 16:01:39",
+      "0.00",
+      "13,200.00",
+      "184,779.36",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-25",
+      "33",
+      "791321943818",
+      "UPI/CR/791321943818/HEMA R/BKID/**62841@YBL/PAY TO M//YBL3FE6DAD7A15847D7A6DC29E10129514B/01/04/2025 19:39:26",
+      "0.00",
+      "13,000.00",
+      "197,779.36",
+      "2",
+      "1"
+    ],
+    [
+      "01/04/2025",
+      "01-APR-25",
+      "33",
+      "102438285741",
+      "UPI/CR/102438285741/BABU RAM/IDFB/**12345@OKHDFCBANK/PAY TO M//HDF7D905616B160459CA2A3C1E241516528/01/04/2025 20:40:41",
+      "0.00",
+      "20,000.00",
+      "217,779.36",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02-APR-25",
+      "33",
+      "496094366330",
+      "UPI/CR/496094366330/ANIL KUM/SBIN/**78606@AXL/PAY TO M//AXL5DA2E196CBB64A1E98A14744FA618F6A/02/04/2025 11:19:40",
+      "0.00",
+      "2,000.00",
+      "219,779.36",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "02-APR-25",
+      "33",
+      "410606137826",
+      "UPI/CR/410606137826/APSAR/CNRB/**.2952@AXL/PAY TO M//AXL4C49258ECEDE4666B058D8D29C158E97/02/04/2025 14:25:58",
+      "0.00",
+      "50,000.00",
+      "269,779.36",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

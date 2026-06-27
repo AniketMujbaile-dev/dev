@@ -1,0 +1,166 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-03T07:58:50Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Post Date",
+    "Value Date",
+    "Details",
+    "Chq.No.",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "post date|value date|details|chq no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Post Date",
+    "description": "Details",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "07/12/2024",
+      "07/12/24",
+      "CHARGESCIC REPORT CHARG",
+      "",
+      "30.00",
+      "",
+      "30.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "07/12/2024",
+      "07/12/24",
+      "ADVANCE:LOAN TO GLA AUTOMOVERS PVT LIDIBH34242547661 /",
+      "",
+      "15,00,000.00",
+      "",
+      "15,00,030.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "08/12/2024",
+      "08/12/24",
+      "REPAYMENT RECEIVEDTRANSFER FROMSI LOAN OVERDUE AMTTRANSFER FROM 50537",
+      "",
+      "",
+      "30.00",
+      "15,00,000.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "31/12/2024",
+      "31/12/24",
+      "INTEREST",
+      "",
+      "9,144.00",
+      "",
+      "15,09,144.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2025",
+      "01/01/25",
+      "O.S. PRINCIPAL REPATRANSFER FROM 50537PROP ANKESH KUMAR",
+      "",
+      "",
+      "24,100.00",
+      "14,85,044.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "31/01/2025",
+      "31/01/25",
+      "INTEREST",
+      "",
+      "11,225.00",
+      "",
+      "14,96,269.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "01/02/2025",
+      "01/02/25",
+      "O.S. PRINCIPAL REPATRANSFER FROM 50537PROP ANKESH KUMAR",
+      "",
+      "",
+      "24,100.00",
+      "14,72,169.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "10/02/2025",
+      "10/02/25",
+      "RT 8.900 TO 8.65%",
+      "",
+      "",
+      "",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "28/02/2025",
+      "28/02/25",
+      "INTEREST",
+      "",
+      "9,859.00",
+      "",
+      "14,82,028.00Dr",
+      "1",
+      "1"
+    ],
+    [
+      "01/03/2025",
+      "01/03/25",
+      "O.S. PRINCIPAL REPATRANSFER FROM 50537PROP ANKESH KUMAR",
+      "",
+      "",
+      "24,230.00",
+      "14,57,798.00Dr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

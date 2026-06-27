@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T12:43:33Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "UPI-SUBRATO MODAK-7086141358@AXL-SBIN0002015-911091341652-PAYMENT FROM PHONE",
+      "0000911091341652",
+      "02/04/25",
+      "",
+      "3,375.00",
+      "9,488.79",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "UPI-SUMANTH-7892974497@PTAXIS-KARB0000184-509220074697-SENT USING PAYTM U",
+      "0000509220074697",
+      "02/04/25",
+      "",
+      "3,850.00",
+      "13,338.79",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "UPI-VEENA E-8197089490@AXL-UTIB0003408-263634068107-PAYMENT FROM PHONE",
+      "0000263634068107",
+      "04/04/25",
+      "",
+      "650.00",
+      "13,988.79",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "UPI-AVINASH H P-9731955668@YBL-HDFC0003689-433306921370-PAYMENT FROM PHONE",
+      "0000433306921370",
+      "04/04/25",
+      "1,101.00",
+      "",
+      "12,887.79",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-U A PRAVEEN-8431225181@AXL-KARB0000290-802040961521-PAYMENT FROM PHONE",
+      "0000802040961521",
+      "05/04/25",
+      "",
+      "500.00",
+      "13,387.79",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-CHANDAN P B SOBALAK-CHANDANCHANDU63611@YBL-UBIN0921459-961832481473-PAYMENTFROM PHONE",
+      "0000961832481473",
+      "05/04/25",
+      "501.00",
+      "",
+      "12,886.79",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-CHANDAN P B SOBALAK-CHANDANCHANDU63611@AXL-UBIN0921459-689908333494-PAYMENTFROM PHONE",
+      "0000689908333494",
+      "05/04/25",
+      "9.00",
+      "",
+      "12,877.79",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-CBDT-CBDT.PAYU@HDFCBANK-HDFC0MERU100306637198-UPI TRANSACTION",
+      "PI- 0000100306637198",
+      "05/04/25",
+      "10,170.00",
+      "",
+      "2,707.79",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "UPI-KENCHAMBA SERVICEST-PAYTM-8875734@PTYS-YESB0PTMUPI-381101393487-PAYMENT FROM PHONE",
+      "0000381101393487",
+      "08/04/25",
+      "205.26",
+      "",
+      "2,502.53",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "UPI-KRISHNA S-7090649607@AXL-HDFC0001044-552874256989-PAYMENT FROM PHONE",
+      "0000552874256989",
+      "08/04/25",
+      "270.00",
+      "",
+      "2,232.53",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

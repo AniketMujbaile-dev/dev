@@ -1,0 +1,166 @@
+{
+  "bank_name": "Axis Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T10:26:58Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Tran Date",
+    "Chq No",
+    "Particulars",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Init. Br",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|chq no|particulars|debit|credit|balance|init br|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Tran Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "",
+      "IFT/PB0264832192/PHONEPE/F09My0twail7Redemption/",
+      "",
+      "6200.00",
+      "76749.86",
+      "100",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "",
+      "IFT/PB0265261188/PHONEPE/F09My0twail7Redemption/",
+      "",
+      "25000.00",
+      "101749.86",
+      "100",
+      "1",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "",
+      "IMPS/P2A/612211831123/jagroops/FEDERALB/RDARemit/9199999999999049000",
+      "",
+      "68000.11",
+      "169749.97",
+      "1848",
+      "1",
+      "1"
+    ],
+    [
+      "03/05/2026",
+      "",
+      "IFT/PB0265592118/PHONEPE/F09My0twail7Redemption/",
+      "",
+      "20000.00",
+      "189749.97",
+      "100",
+      "1",
+      "1"
+    ],
+    [
+      "03/05/2026",
+      "",
+      "IMPS/P2A/612321571336/REMITLYI/Remitter/RDAVostr/9100000000007139000",
+      "",
+      "45000.36",
+      "234750.33",
+      "1848",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "",
+      "SELF CASH DEP-BNA/DPRH184801/310/080526/PURANPU",
+      "",
+      "93500.00",
+      "328250.33",
+      "1848",
+      "1",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "",
+      "SELF CASH DEP-BNA/DPRH184801/312/080526/PURANPU",
+      "",
+      "25500.00",
+      "353750.33",
+      "1848",
+      "1",
+      "1"
+    ],
+    [
+      "12/05/2026",
+      "",
+      "IFT/PB0269016334/PHONEPE/F09My0twail7Redemption/",
+      "",
+      "3051.00",
+      "356801.33",
+      "100",
+      "1",
+      "1"
+    ],
+    [
+      "13/05/2026",
+      "",
+      "IFT/PB0269456581/PHONEPE/F09My0twail7Redemption/",
+      "",
+      "6000.00",
+      "362801.33",
+      "100",
+      "1",
+      "1"
+    ],
+    [
+      "14/05/2026",
+      "",
+      "IFT/PB0269818486/PHONEPE/F09My0twail7Redemption/",
+      "",
+      "35300.00",
+      "398101.33",
+      "100",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

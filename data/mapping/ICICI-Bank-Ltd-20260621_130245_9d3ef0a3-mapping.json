@@ -1,0 +1,177 @@
+{
+  "bank_name": "ICICI Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-21T11:03:53Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Chq.No.",
+    "Withdrawals",
+    "Deposits",
+    "Autosweep",
+    "Reverse Sweep",
+    "Balance(INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|chq no|withdrawals|deposits|autosweep|reverse sweep|balance inr|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance(INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "CAM/10992OAR/CASH DEP-Other/01-04-25/6962",
+      "",
+      "",
+      "45,500.00",
+      "",
+      "",
+      "18,81,562.65 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "109905015336:Int.Coll:03-03-2025 to 01-04-2025",
+      "",
+      "22,353.00",
+      "",
+      "",
+      "",
+      "19,03,915.65 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "FT-MESPOS SET 10XX063397 020425",
+      "",
+      "",
+      "47,958.60",
+      "",
+      "",
+      "18,55,957.05 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "INF/NEFT/ICICN42025040256594234/HDFC0000359/repayment /SIDDHIPUNE",
+      "",
+      "5,451.00",
+      "",
+      "",
+      "",
+      "18,61,408.05 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "INF/NEFT/ICICN42025040256595871/IDFB0041357/RAJESHENTERP",
+      "",
+      "20,695.00",
+      "",
+      "",
+      "",
+      "18,82,103.05 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "CAM/10992OAR/CASH DEP-Other/02-04-25/7197",
+      "",
+      "",
+      "24,000.00",
+      "",
+      "",
+      "18,58,103.05 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "CLG/MALLIIKARJUN INDUSTRIES/VSB",
+      "3906",
+      "16,212.00",
+      "",
+      "",
+      "",
+      "18,74,315.05 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "CLG/ROHIT MANMATH GUDE/VSB",
+      "3904",
+      "7,320.00",
+      "",
+      "",
+      "",
+      "18,81,635.05 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "CLG/SANJIVANI AGENCIES/VSB",
+      "3896",
+      "1,685.00",
+      "",
+      "",
+      "",
+      "18,83,320.05 Dr",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "CLG/MALLIKARJUN TRADERS/VSB",
+      "3880",
+      "86,880.00",
+      "",
+      "",
+      "",
+      "19,70,200.05 Dr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

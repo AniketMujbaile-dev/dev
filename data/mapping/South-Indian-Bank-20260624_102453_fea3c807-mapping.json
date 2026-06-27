@@ -1,0 +1,155 @@
+{
+  "bank_name": "South Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T08:25:21Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "PARTICULARS",
+    "CHQ.NO.",
+    "WITHDRAWALS",
+    "DEPOSITS",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|chq no|withdrawals|deposits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "PARTICULARS",
+    "debit": "WITHDRAWALS",
+    "credit": "DEPOSITS",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "MOB/RRN-509209379272/Tar Mangalorerefine/IMPS",
+      "",
+      "5,00,000.00",
+      "",
+      "-57,58,873.99Dr",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2025",
+      "MOB/RRN-509209379330/Tar Mangalorerefine/IMPS",
+      "",
+      "4,30,000.00",
+      "",
+      "-61,88,873.99Dr",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "IMPS Charges: 02-04-2025",
+      "",
+      "35.40",
+      "",
+      "-61,88,909.39Dr",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "NACH_DR/SIBL0000000001516427/SUNDARAMFINLTD/A",
+      "",
+      "64,270.00",
+      "",
+      "-62,53,179.39Dr",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "MOB/RRN-509407579337/Emulsion/IMPS",
+      "",
+      "5,00,000.00",
+      "",
+      "-67,53,179.39Dr",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "Charges for NEFT TO Hindustan coals pvt ltd",
+      "",
+      "14.76",
+      "",
+      "-67,53,194.15Dr",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "NEFT TO:SIBLN25094063412:Hindustancoals pvt ltd",
+      "",
+      "4,40,000.00",
+      "",
+      "-71,93,194.15Dr",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "MOB/RRN-509420657608/BPCL TAR/IMPS",
+      "",
+      "50,000.00",
+      "",
+      "-72,43,194.15Dr",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "MOB/RRN-509507693828/BPCL TAR/IMPS",
+      "",
+      "5,00,000.00",
+      "",
+      "-77,43,194.15Dr",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "Charges for NEFT TO BPCL",
+      "",
+      "14.76",
+      "",
+      "-77,43,208.91Dr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

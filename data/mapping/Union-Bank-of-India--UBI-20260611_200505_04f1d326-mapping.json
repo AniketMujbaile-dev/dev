@@ -1,0 +1,144 @@
+{
+  "bank_name": "Union Bank of India (UBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-11T18:05:24Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Transaction Id",
+    "Remarks",
+    "Amount(\u20b9)",
+    "Balance(\u20b9)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|transaction id|remarks|amount|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": null,
+    "credit": null,
+    "amount": 3,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Remarks",
+    "debit": null,
+    "credit": null,
+    "amount": "Amount(\u20b9)",
+    "balance": "Balance(\u20b9)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "03/05/2025",
+      "U23351475",
+      "NEFTO-GST 002040870960",
+      "36000.0(Dr)",
+      "204908.26(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "03/05/2025",
+      "U23351475",
+      "Charges for PORD Customer Payment:UBINJ25123978309",
+      "5.6(Dr)",
+      "204902.65(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "03/05/2025",
+      "U45717120",
+      "MOBFT to: RAJNI/512320467364",
+      "25000.0(Dr)",
+      "179902.65(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "04/05/2025",
+      "U85840990",
+      "IMPSAR/512417328619/Nitin Kumar Patel/33428828593",
+      "5000.0(Dr)",
+      "174902.65(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "05/05/2025",
+      "V35456338",
+      "IMPSAR/512513493249/Chandok Machinerie/30726817913",
+      "8968.0(Dr)",
+      "165934.65(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "05/05/2025",
+      "V35923062",
+      "IMPSAR/512513495393/Chandok Machinerie/30726817913",
+      "28500.0(Dr)",
+      "137434.65(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "06/05/2025",
+      "V85773638",
+      "IMPSAR/512610672292/Nitin Kumar Patel/33428828593",
+      "45000.0(Dr)",
+      "92434.65(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "07/05/2025",
+      "W57843388",
+      "UPIAR/110010174205/DR/ K 20RAV/ /9300322244@pts",
+      "300.0(Dr)",
+      "92134.65(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "09/05/2025",
+      "X81291587",
+      "IMPSAR/512913383628/Sonu Patel/330901500581",
+      "13000.0(Dr)",
+      "79134.65(Cr)",
+      "1",
+      "0"
+    ],
+    [
+      "12/05/2025",
+      "S51841315",
+      "UPIAR/110010353134/DR/Verified/ /BHARATPE.9B0P0",
+      "2050.0(Dr)",
+      "77084.65(Cr)",
+      "1",
+      "0"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

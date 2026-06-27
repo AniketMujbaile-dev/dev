@@ -1,0 +1,166 @@
+{
+  "bank_name": "Axis Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T16:46:49Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Tran Date",
+    "Chq No",
+    "Particulars",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Init. Br",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|chq no|particulars|debit|credit|balance|init br|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Tran Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "20/03/2026",
+      "",
+      "SAK/CASH DEP/SAK475359589/3223/SELF",
+      "",
+      "50000.00",
+      "51600.00",
+      "3223",
+      "1",
+      "1"
+    ],
+    [
+      "20/03/2026",
+      "",
+      "NEFT/MB/AXOMB07902078265/yashika saree/ICICI BANK LIMITED/",
+      "50000.00",
+      "",
+      "1600.00",
+      "3223",
+      "1",
+      "1"
+    ],
+    [
+      "23/03/2026",
+      "",
+      "Monthly Avg Bal Chrgs",
+      "1355.93",
+      "",
+      "244.07",
+      "3223",
+      "1",
+      "1"
+    ],
+    [
+      "23/03/2026",
+      "",
+      "GST @18% on Monthly Avg Bal Chrgs",
+      "244.07",
+      "",
+      ".00",
+      "3223",
+      "1",
+      "1"
+    ],
+    [
+      "13/04/2026",
+      "",
+      "SAK/CASH DEP/SAK477757962/3223/RAJ KUMAR",
+      "",
+      "53000.00",
+      "53000.00",
+      "3223",
+      "1",
+      "1"
+    ],
+    [
+      "13/04/2026",
+      "",
+      "NEFT/MB/AXOMB10302079867/HARLALKA TRADING/HDFC BANK/",
+      "50000.00",
+      "",
+      "3000.00",
+      "3223",
+      "1",
+      "1"
+    ],
+    [
+      "29/04/2026",
+      "",
+      "Monthly Avg Bal Chrgs",
+      "1680.29",
+      "",
+      "1319.71",
+      "3223",
+      "1",
+      "1"
+    ],
+    [
+      "29/04/2026",
+      "",
+      "GST @18% on Monthly Avg Bal Chrgs",
+      "302.45",
+      "",
+      "1017.26",
+      "3223",
+      "1",
+      "1"
+    ],
+    [
+      "29/04/2026",
+      "",
+      "Home Brn Cash Dep Chrgs",
+      "862.08",
+      "",
+      "155.18",
+      "3223",
+      "1",
+      "1"
+    ],
+    [
+      "29/04/2026",
+      "",
+      "GST @18% on Home Brn Cash Dep Chrgs",
+      "155.18",
+      "",
+      ".00",
+      "3223",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

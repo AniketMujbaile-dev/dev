@@ -1,0 +1,166 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-27T07:12:28Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Value Date",
+    "Post Date",
+    "Details",
+    "Ref No/ Cheque No",
+    "\u20b9 Debit",
+    "\u20b9 Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "value date|post date|details|ref no cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Value Date",
+    "description": "Details",
+    "debit": "\u20b9 Debit",
+    "credit": "\u20b9 Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "09/11/2021",
+      "09/11/2021",
+      "CASH DEPOSIT SELF AT 09061PAUD ROAD (PUNE)",
+      "-",
+      "-",
+      "1,000.00",
+      "1,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "25/12/2021",
+      "25/12/2021",
+      "INTEREST CREDIT",
+      "-",
+      "-",
+      "3.00",
+      "1,003.00",
+      "1",
+      "1"
+    ],
+    [
+      "25/03/2022",
+      "25/03/2022",
+      "INTEREST CREDIT",
+      "-",
+      "-",
+      "7.00",
+      "1,010.00",
+      "1",
+      "1"
+    ],
+    [
+      "25/06/2022",
+      "25/06/2022",
+      "INTEREST CREDIT",
+      "-",
+      "-",
+      "7.00",
+      "1,017.00",
+      "1",
+      "1"
+    ],
+    [
+      "25/09/2022",
+      "25/09/2022",
+      "INTEREST CREDIT",
+      "-",
+      "-",
+      "7.00",
+      "1,024.00",
+      "1",
+      "1"
+    ],
+    [
+      "13/12/2022",
+      "13/12/2022",
+      "DEBIT ATMCard AMC652294*6922",
+      "-",
+      "147.50",
+      "-",
+      "876.50",
+      "1",
+      "1"
+    ],
+    [
+      "25/12/2022",
+      "25/12/2022",
+      "INTEREST CREDIT",
+      "-",
+      "-",
+      "7.00",
+      "883.50",
+      "2",
+      "1"
+    ],
+    [
+      "25/03/2023",
+      "25/03/2023",
+      "ATM WDL ATM CASH 3953RAMBAUG COLONY,KOTHRUPUNE",
+      "-",
+      "100.00",
+      "-",
+      "783.50",
+      "2",
+      "1"
+    ],
+    [
+      "25/03/2023",
+      "25/03/2023",
+      "INTEREST CREDIT",
+      "-",
+      "-",
+      "6.00",
+      "789.50",
+      "2",
+      "1"
+    ],
+    [
+      "25/06/2023",
+      "25/06/2023",
+      "INTEREST CREDIT",
+      "-",
+      "-",
+      "5.00",
+      "794.50",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "bank_name": "Union Bank of India (UBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-19T15:49:51Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Transaction Id",
+    "Remarks",
+    "Amount(\u20b9)",
+    "Balance(\u20b9)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|transaction id|remarks|amount|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": null,
+    "credit": null,
+    "amount": 3,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Remarks",
+    "debit": null,
+    "credit": null,
+    "amount": "Amount(\u20b9)",
+    "balance": "Balance(\u20b9)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/01/2026",
+      "S12149836",
+      "UPIAB/520499521969/CR/JAI MAA /UBIN/kamleshp1122@y",
+      "19500.00(Cr)",
+      "75340.29(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2026",
+      "S19486998",
+      "UPIAR/490026642224/DR/RAJU LAL/BARB/8890879284-2@a",
+      "19000.00(Dr)",
+      "56340.29(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2026",
+      "S44230132",
+      "UPIAR/840460576359/DR/RAVEENA /UBIN/8003439152@pth",
+      "8200.00(Dr)",
+      "48140.29(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2026",
+      "S52874029",
+      "UPIAR/827000058219/DR/ Blinkit/YESB/paytm-blinkit@",
+      "314.00(Dr)",
+      "47826.29(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "02/01/2026",
+      "S62309151",
+      "NEFT:PHONEPE LIMITED-PAYMENT AGGREGATOR AXNPN0023",
+      "11000.00(Cr)",
+      "58826.29(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "02/01/2026",
+      "S67638115",
+      "UPIAR/016765954485/DR/ Hexacom/UTIB/AIRTELPREDIREC",
+      "222.00(Dr)",
+      "58604.29(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "02/01/2026",
+      "S73336074",
+      "UPIAR/496772317125/DR/ PhonePe/UTIB/SV251211223834",
+      "27782.00(Dr)",
+      "30822.29(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "02/01/2026",
+      "S87921356",
+      "UPIAR/408421186525/DR/PUSHKAR /YESB/ Q427659269@yb",
+      "110.00(Dr)",
+      "30712.29(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "02/01/2026",
+      "S94184936",
+      "UPIAR/863596174672/DR/Sudesh G/BARB/8769761295@pth",
+      "960.00(Dr)",
+      "29752.29(Cr)",
+      "1",
+      "1"
+    ],
+    [
+      "03/01/2026",
+      "T77441540",
+      "UPIAR/279250840658/DR/NARAYAN /IPOS/9057584374-ud1",
+      "15000.00(Dr)",
+      "14752.29(Cr)",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

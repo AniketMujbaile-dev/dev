@@ -1,0 +1,155 @@
+{
+  "bank_name": "DCB Bank Limited",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-19T09:32:15Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date*",
+    "Transaction Details",
+    "Cheque Number",
+    "Withdrawals",
+    "Deposits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|transaction details|cheque number|withdrawals|deposits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date*",
+    "description": "Transaction Details",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2026",
+      "UPI:PAY:645787060850/FARM SE /Yes Bank L",
+      "",
+      "1,000.00",
+      "",
+      "91,484.83",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2026",
+      "UPI:PAY:609427654991/VIKALP ORGANIC N/Bank of Ba",
+      "",
+      "1,920.00",
+      "",
+      "89,564.83",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2026",
+      "UPI:PAY:609428356389/ZANKHANA MUNJAL DE/Union Bank",
+      "",
+      "1,200.00",
+      "",
+      "88,364.83",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2026",
+      "UPI:PAY:609453252018/ZOMATO LIMITED /Axis Bank",
+      "",
+      "504.00",
+      "",
+      "87,860.83",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2026",
+      "UPI:PAY:646196735667/Blinkit /HDFC BANK",
+      "",
+      "338.00",
+      "",
+      "87,522.83",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2026",
+      "UPI:PAY:609712191844/JUST NUTS /Axis Bank",
+      "",
+      "1,299.00",
+      "",
+      "86,223.83",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2026",
+      "UPI:PAY:646381829853/Amazon Pay on Deli/Yes Bank L",
+      "",
+      "393.72",
+      "",
+      "85,830.11",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2026",
+      "UPI:PAY:646516024587/Swiggy Ltd /Axis Bank",
+      "",
+      "1,729.00",
+      "",
+      "84,101.11",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2026",
+      "UPI:PAY:646561434863/Mr HOSAJI BHAGAJI /Yes Bank L",
+      "",
+      "2,000.00",
+      "",
+      "82,101.11",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2026",
+      "UPI:PAY:646530528189/Mr HOSAJI BHAGAJI /Yes Bank L",
+      "",
+      "1,000.00",
+      "",
+      "81,101.11",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-25T11:13:57Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Deposits",
+    "Withdrawals",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 2,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "21/05/2026",
+      "MB/125003670606/RASHEEDAHMED -SONS/2194101020259/JITENDARSINGH/CANARA//20526249148/21/05/2026 07:29:44Chq: 0",
+      "",
+      "12,000.00",
+      "-49,60,850.29",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2026",
+      "MB/125003670606/RASHEEDAHMED -SONS/2194101017940/GOHARJAHAN/CANARA//20531470090/22/05/2026 11:20:01Chq: 0",
+      "",
+      "4,000.00",
+      "-49,64,850.29",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2026",
+      "MB/125003670606/RASHEEDAHMED -SONS/2194101017940/GOHARJAHAN/CANARA//20537875730/22/05/2026 08:38:42Chq: 0",
+      "",
+      "20,000.00",
+      "-49,84,850.29",
+      "1",
+      "1"
+    ],
+    [
+      "23/05/2026",
+      "MB/125003670606/RASHEEDAHMED -SONS/2194101020259/JITENDARSINGH/CANARA//20543825699/23/05/2026 04:02:03Chq: 0",
+      "",
+      "500.00",
+      "-49,85,350.29",
+      "1",
+      "1"
+    ],
+    [
+      "23/05/2026",
+      "MB-IMPS-DR/MOHDAAHAD/BKID/**2051//23/05/202618:45:50/614318906714Chq: 614318906714",
+      "",
+      "1,000.00",
+      "-49,86,350.29",
+      "1",
+      "1"
+    ],
+    [
+      "23/05/2026",
+      "IMPS SCChq: 614318906714",
+      "",
+      "3.54",
+      "-49,86,353.83",
+      "1",
+      "1"
+    ],
+    [
+      "24/05/2026",
+      "MB/2194101020259/JITENDRASINGH/125003670606/RASHEED AHMAD ANDSON/CANARA//20548839738/24/05/2026 11:04:45Chq: 0",
+      "5,000.00",
+      "",
+      "-49,81,353.83",
+      "1",
+      "1"
+    ],
+    [
+      "24/05/2026",
+      "MB/125003670606/RASHEEDAHMED -SONS/2194101020259/JITENDARSINGH/CANARA//20549613691/24/05/2026 12:52:46Chq: 0",
+      "",
+      "3,000.00",
+      "-49,84,353.83",
+      "1",
+      "1"
+    ],
+    [
+      "24/05/2026",
+      "MB/125003670606/RASHEEDAHMED -SONS/2194101020259/JITENDARSINGH/CANARA//20551186557/24/05/2026 05:19:57Chq: 0",
+      "",
+      "300.00",
+      "-49,84,653.83",
+      "2",
+      "1"
+    ],
+    [
+      "24/05/2026",
+      "MB/125003670606/RASHEEDAHMED -SONS/2194101020259/JITENDARSINGH/CANARA//20551589555/24/05/2026 06:20:29Chq: 0",
+      "",
+      "350.00",
+      "-49,85,003.83",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

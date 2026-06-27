@@ -1,0 +1,166 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-04T12:10:56Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Txn Date",
+    "Value Date",
+    "Description",
+    "Ref No./Cheque No.",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "txn date|value date|description|ref no cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Txn Date",
+    "description": "Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2024",
+      "02/04/2024",
+      "BY TRANSFER- UPI/CR/409358908603/AMIT RAM/HDFC/amitnainan/Payme-",
+      "TRANSFER FROM 4897733162090",
+      "",
+      "1,200.00",
+      "3,370.33",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2024",
+      "02/04/2024",
+      "DEBIT-CMP MANDATE DEBIT Bajaj Finance Ltd - SI-",
+      "",
+      "2,949.00",
+      "",
+      "421.33",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2024",
+      "06/04/2024",
+      "BY TRANSFER- NEFT*YESB0000001*YESB40 975275408*ZERODHA BROKING L-",
+      "TRANSFER FROM 4697231044303",
+      "",
+      "2,85,687.53",
+      "2,86,108.86",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2024",
+      "07/04/2024",
+      "TO TRANSFER-INB Zerodha Broking Limited-",
+      "962792904775327 5IGARCGWUA5 TRANSFER",
+      "2,80,000.00",
+      "",
+      "6,108.86",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2024",
+      "09/04/2024",
+      "BY TRANSFER- UPI/CR/410026111557/AMIT RAM/HDFC/amitnainan/TO SE-",
+      "TRANSFER FROM 4897733162090",
+      "",
+      "15,000.00",
+      "21,108.86",
+      "1",
+      "1"
+    ],
+    [
+      "09/04/2024",
+      "09/04/2024",
+      "TO TRANSFER-INB Zerodha Broking Limited-",
+      "397921857450310 3IGARCLOVW6 TRANSFER",
+      "20,000.00",
+      "",
+      "1,108.86",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2024",
+      "11/04/2024",
+      "BY TRANSFER- UPI/CR/410227423251/AMIT RAM/HDFC/amitnainan/BGR T-",
+      "TRANSFER FROM 4897735162098",
+      "",
+      "5,500.00",
+      "6,608.86",
+      "1",
+      "1"
+    ],
+    [
+      "16/04/2024",
+      "16/04/2024",
+      "TO CLEARING-Chq No. 101046 AXS LIFE INSURANCE CORPORATIO- 101046",
+      "101046",
+      "5,266.00",
+      "",
+      "1,342.86",
+      "1",
+      "1"
+    ],
+    [
+      "22/04/2024",
+      "22/04/2024",
+      "BY TRANSFER- NEFT*HDFC0000240*N113242 998441196*INDIAN CLEARING -",
+      "TRANSFER FROM 4697178044303",
+      "",
+      "13,416.67",
+      "14,759.53",
+      "1",
+      "1"
+    ],
+    [
+      "22/04/2024",
+      "22/04/2024",
+      "BY TRANSFER- NEFT*HDFC0000240*N113242 998441193*INDIAN CLEARING -",
+      "TRANSFER FROM 4697177044304",
+      "",
+      "9,107.36",
+      "23,866.89",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

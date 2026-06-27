@@ -1,0 +1,166 @@
+{
+  "bank_name": "Kotak Mahindra Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T08:24:20Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "#",
+    "Date",
+    "Description",
+    "Chq/Ref. No.",
+    "Withdrawal (Dr.)",
+    "Deposit (Cr.)",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "|date|description|chq ref no|withdrawal dr|deposit cr|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Description",
+    "debit": "Withdrawal (Dr.)",
+    "credit": "Deposit (Cr.)",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "04/04/2025",
+      "UPI/GUDDI DEVI/752864088962/Paymentfrom Ph",
+      "UPI-509402864315",
+      "",
+      "10,000.00",
+      "42,952.11",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "04/04/2025",
+      "UPI/BHAGWANSAHAY/616981762590/Payment from Ph",
+      "UPI-509415809317",
+      "",
+      "6,600.00",
+      "49,552.11",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "04/04/2025",
+      "UPI/DEVESH KUMAR/157879828706/Paymentfrom Ph",
+      "UPI-509416008850",
+      "",
+      "8,400.00",
+      "57,952.11",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "04/04/2025",
+      "UPI/KAMALA JAT/388583310201/Paymentfrom Ph",
+      "UPI-509418821680",
+      "",
+      "3,500.00",
+      "61,452.11",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "04/04/2025",
+      "UPI/CHIRANJI LAL SH/738887848066/Paymentfrom Ph",
+      "UPI-509423546086",
+      "",
+      "3,300.00",
+      "64,752.11",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "07/04/2025",
+      "UPI/MANIKANT/546356660060/April monthadv",
+      "UPI-509796809262",
+      "",
+      "4,500.00",
+      "69,252.11",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "07/04/2025",
+      "UPI/MABULI BABAJAN/770938761371/Payment from Ph",
+      "UPI-509707925239",
+      "",
+      "2,300.00",
+      "71,552.11",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "10/04/2025",
+      "UPI/PHARSA RAM/403792767071/Paymentfrom Ph",
+      "UPI-510002849530",
+      "",
+      "3,900.00",
+      "75,452.11",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "11/04/2025",
+      "UPI/AASHISH JAIN/549075494778/Paymentfrom Ph",
+      "UPI-510163178111",
+      "",
+      "10,000.00",
+      "85,452.11",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "12/04/2025",
+      "UPI/Mr SAMIMANSAR/788534198656/Payment from Ph",
+      "UPI-510226334912",
+      "",
+      "6,500.00",
+      "91,952.11",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

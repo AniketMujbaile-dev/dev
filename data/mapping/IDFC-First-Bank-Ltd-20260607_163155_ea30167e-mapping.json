@@ -1,0 +1,166 @@
+{
+  "bank_name": "IDFC First Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-07T14:32:22Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Particulars",
+    "Cheque No",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|particulars|cheque no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "30/06/2025",
+      "01-Jul-2025",
+      "BB/CHQDEP/000006/25-06-2025/BHARATSHIPPING SERV/",
+      "000006",
+      "",
+      "50,000.00",
+      "50,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "09/07/2025",
+      "09-Jul-2025",
+      "NEFT/IDFBH25190453103/BHARATISHIPPING SERVICES/KKBK0001429",
+      "",
+      "5,000.00",
+      "",
+      "45,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "09/07/2025",
+      "09-Jul-2025",
+      "NEFT/IDFBH25190473709/BHARATISHIPPING SERVICES/KKBK0001429",
+      "",
+      "35,000.00",
+      "",
+      "10,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "29/07/2025",
+      "29-Jul-2025",
+      "NEFT/IDFB521044735562/RAJENDRARAVINDRA SHINDE/HDFC0000830",
+      "",
+      "50.00",
+      "",
+      "9,950.00",
+      "1",
+      "1"
+    ],
+    [
+      "29/07/2025",
+      "29-Jul-2025",
+      "IFT/10182377463/Ms. BharatiRajendra/8665769",
+      "",
+      "50.00",
+      "",
+      "9,900.00",
+      "1",
+      "1"
+    ],
+    [
+      "29/07/2025",
+      "29-Jul-2025",
+      "NEFT/IDFB521044738353/BHARATISHIP MANAGEMENT PRIVATELIM/KKBK0001429",
+      "",
+      "50.00",
+      "",
+      "9,850.00",
+      "1",
+      "1"
+    ],
+    [
+      "29/07/2025",
+      "29-Jul-2025",
+      "NEFT/IDFB521044738763/BHARATISHIPPING SERVICESPROPBHAR/MAHB0001222",
+      "",
+      "50.00",
+      "",
+      "9,800.00",
+      "1",
+      "1"
+    ],
+    [
+      "29/07/2025",
+      "29-Jul-2025",
+      "IFT/10239349434/BHARATISHIPPING SER/10693554",
+      "",
+      "",
+      "50.00",
+      "9,850.00",
+      "1",
+      "1"
+    ],
+    [
+      "30/07/2025",
+      "30-Jul-2025",
+      "NEFT/IDFB521144836343/BHARATISHIPPING SERVICES/HDFC0000830",
+      "",
+      "1,000.00",
+      "",
+      "8,850.00",
+      "1",
+      "1"
+    ],
+    [
+      "31/07/2025",
+      "31-Jul-2025",
+      "IWRM202500112719CRE001",
+      "",
+      "",
+      "3,59,130.32",
+      "3,67,980.32",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

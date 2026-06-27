@@ -1,0 +1,155 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-14T10:09:52Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Value Date",
+    "Post Date",
+    "Credit Amount",
+    "Debit Amount",
+    "Closing Balance",
+    "Description",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "value date|post date|credit amount|debit amount|closing balance|description|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 5,
+    "debit": 3,
+    "credit": 2,
+    "amount": 2,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Value Date",
+    "description": "Description",
+    "debit": "Debit Amount",
+    "credit": "Credit Amount",
+    "amount": "Credit Amount",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/01/2025",
+      "01/01/2025",
+      "268387.47",
+      "",
+      "-145553776.36",
+      "NO BOOK DEPOSIT TRANSFER RTGS/HDFC/HDFCR520250101763 72602/ULTRATEC/",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2025",
+      "01/01/2025",
+      "",
+      "450029.21",
+      "-146003805.57",
+      "WITHDRAWAL TRANSFER NEFT/HDFC/IDIBN52025010140424 957/BPCL ECM/ Txn Amt. 450000.00 Charges. 29.21",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2025",
+      "01/01/2025",
+      "",
+      "200017.41",
+      "-146203822.98",
+      "WITHDRAWAL TRANSFER NEFT/ICIC/IDIBN520250101404251 62/SHREE SH/ Txn Amt. 200000.00 Charges. 17.41",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2025",
+      "01/01/2025",
+      "",
+      "250029.21",
+      "-146453852.19",
+      "WITHDRAWAL TRANSFER NEFT/ICIC/IDIBN520250101404254 26/HPCL Dri/ Txn Amt. 250000.00 Charges. 29.21",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2025",
+      "01/01/2025",
+      "",
+      "1100029.21",
+      "-147553881.4",
+      "WITHDRAWAL TRANSFER NEFT/HDFC/IDIBN52025010140425 589/INDIAN O/ Txn Amt. 1100000.00 Charges. 29.21",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2025",
+      "01/01/2025",
+      "",
+      "40000",
+      "-147593881.4",
+      "WITHDRAWAL TRANSFER NEFT/HDFC/IDIBN52025010140541 127/PRADEEP / Txn Amt. 39994.39 Charges. 5.61",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2025",
+      "01/01/2025",
+      "",
+      "30000",
+      "-147623881.4",
+      "WITHDRAWAL TRANSFER NEFT/UBIN/IDIBN520250101405411 29/RAJU KUS/ Txn Amt. 29994.39 Charges. 5.61",
+      "1",
+      "1"
+    ],
+    [
+      "01/01/2025",
+      "01/01/2025",
+      "",
+      "65000",
+      "-147688881.4",
+      "WITHDRAWAL TRANSFER NEFT/SBIN/IDIBN520250101405424 17/NANDLAL / Txn Amt. 64994.39 Charges. 5.61",
+      "2",
+      "1"
+    ],
+    [
+      "01/01/2025",
+      "01/01/2025",
+      "",
+      "17603",
+      "-147706484.4",
+      "WITHDRAWAL TRANSFER NEFT/UTIB/IDIBN520250101405427 26/THAKUR P/ Txn Amt. 17597.39 Charges. 5.61",
+      "2",
+      "1"
+    ],
+    [
+      "01/01/2025",
+      "01/01/2025",
+      "",
+      "17259",
+      "-147723743.4",
+      "WITHDRAWAL TRANSFER NEFT/ICIC/IDIBN520250101405427 41/SHIV DAY/ Txn Amt. 17253.39 Charges. 5.61",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

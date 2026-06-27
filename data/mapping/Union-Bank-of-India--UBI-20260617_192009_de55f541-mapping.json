@@ -1,0 +1,166 @@
+{
+  "bank_name": "Union Bank of India (UBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-17T17:20:25Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "SI",
+    "Date",
+    "Particulars",
+    "Chq Num",
+    "Withdrawal",
+    "Deposit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "si|date|particulars|chq num|withdrawal|deposit|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawal",
+    "credit": "Deposit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "2",
+      "02/01/2026",
+      "UPIAB/099005573726/CR/CHHAGA N /SBIN/ 9929844405@yb",
+      "",
+      "",
+      "20,000.00",
+      "20,000.00 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "02/01/2026",
+      "Loan Recovery For546706440000057",
+      "",
+      "17,124.57",
+      "",
+      "2,875.43 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "03/01/2026",
+      "POS:TULSI HP FILLIN/UDAIPUR/600307527570",
+      "",
+      "2,500.00",
+      "",
+      "375.43 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "09/01/2026",
+      "BY CASH",
+      "",
+      "",
+      "6,00,000.00",
+      "6,00,375.43 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "10/01/2026",
+      "TRF TO: 546706520078333",
+      "",
+      "20,916.00",
+      "",
+      "5,79,459.43 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "10/01/2026",
+      "TRF TO: 546706520078333",
+      "",
+      "20,916.00",
+      "",
+      "5,58,543.43 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "10/01/2026",
+      "TRF TO: 546706520078333",
+      "",
+      "20,916.00",
+      "",
+      "5,37,627.43 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "13/01/2026",
+      "TO JAI LAXMI TRADING",
+      "35033300",
+      "5,00,000.00",
+      "",
+      "37,627.43 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "13/01/2026",
+      "Loan Payment Reversal For : 546706520078333",
+      "",
+      "",
+      "20,916.00",
+      "58,543.43 Cr",
+      "1",
+      "1"
+    ],
+    [
+      "11",
+      "13/01/2026",
+      "Loan Payment Reversal For : 546706520078333",
+      "",
+      "",
+      "20,916.00",
+      "79,459.43 Cr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

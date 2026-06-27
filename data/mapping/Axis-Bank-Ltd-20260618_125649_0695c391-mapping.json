@@ -1,0 +1,166 @@
+{
+  "bank_name": "Axis Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-18T10:57:20Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Tran Date",
+    "Chq No",
+    "Particulars",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Init. Br",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|chq no|particulars|debit|credit|balance|init br|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Tran Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "",
+      "UPI/P2M/509208014015/Jar Gold/YES BANK /Subscrip//P2V/",
+      "500.00",
+      "",
+      "5045.33",
+      "2859",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "",
+      "UPI/P2M/509300135817/Jar Gold/YES BANK /Subscrip//P2V/",
+      "500.00",
+      "",
+      "4545.33",
+      "2859",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "",
+      "UPI/P2A/509339580220/VIJAYKUMA/ICICI Ban/UPI/",
+      "",
+      "450.00",
+      "4995.33",
+      "2859",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "",
+      "UPI/P2M/509488425600/Jar Gold/YES BANK /Subscrip//P2V/",
+      "500.00",
+      "",
+      "4495.33",
+      "2859",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "",
+      "UPI/P2M/100300104130/APPLE MED/HDFC BANK/UPI Mand//P2V/",
+      "49.00",
+      "",
+      "4446.33",
+      "2859",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "",
+      "UPI/P2M/509554319167/Jar Gold/YES BANK /Subscrip//P2V/",
+      "500.00",
+      "",
+      "3946.33",
+      "2859",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "",
+      "UPI/P2M/509630140237/Jar Gold/YES BANK /Subscrip//P2V/",
+      "500.00",
+      "",
+      "3446.33",
+      "2859",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "",
+      "UPI/P2M/509751662103/Jar Gold/YES BANK /Subscrip//P2V/",
+      "500.00",
+      "",
+      "2946.33",
+      "2859",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "",
+      "UPI/P2M/509843630403/Jar Gold/YES BANK /Subscrip//P2V/",
+      "500.00",
+      "",
+      "2446.33",
+      "2859",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "",
+      "UPI/P2A/546461818742/SCHON MATHEW MENDES /UPI/IDBI BANK",
+      "2250.00",
+      "",
+      "196.33",
+      "2859",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

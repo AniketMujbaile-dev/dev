@@ -1,0 +1,155 @@
+{
+  "bank_name": "Saraswat co-op Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-27T04:59:10Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Instruments",
+    "Dr Amount",
+    "Cr Amount",
+    "Total Amount",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|instruments|dr amount|cr amount|total amount|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": null,
+    "debit": 3,
+    "credit": 4,
+    "amount": 3,
+    "balance": null,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": null,
+    "debit": "Dr Amount",
+    "credit": "Cr Amount",
+    "amount": "Dr Amount",
+    "balance": null,
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "26/04/2021",
+      "BALANCE TRANSFER",
+      "",
+      "",
+      "1.00",
+      "1.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "01/05/2021",
+      "MINIMUM BALANCE CHARGES",
+      "",
+      "1.00",
+      "",
+      "0.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "18/05/2021",
+      "MB/113817529879/O/PANCHWADKAR SHRIHARI PURUSHOTTAM",
+      "",
+      "",
+      "1,000.00",
+      "1,000.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "18/05/2021",
+      "UPI:shilpapanchwadkar@oksbi:mrunmaipanchwadkar@okh",
+      "",
+      "",
+      "1.00",
+      "1,001.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "18/05/2021",
+      "UPI:sppanchwadkar@oksbi:mrunmaipanchwadkar@okhdfcb",
+      "",
+      "",
+      "3,000.00",
+      "4,001.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "18/05/2021",
+      "UPI:sppanchwadkar@oksbi:mrunmaipanchwadkar@okhdfcb",
+      "",
+      "",
+      "100.00",
+      "4,101.00 CR",
+      "1",
+      "1"
+    ],
+    [
+      "21/05/2021",
+      "MINIMUM BALANCE CHARGES",
+      "",
+      "101.83",
+      "",
+      "3,999.17 CR",
+      "1",
+      "1"
+    ],
+    [
+      "28/05/2021",
+      "UPI:9588435712@ybl:mrunmaipanchwadkar@okhdfcbank:0",
+      "",
+      "",
+      "256.00",
+      "4,255.17 CR",
+      "1",
+      "1"
+    ],
+    [
+      "29/05/2021",
+      "UPI:tanksaley2001@oksbi:mrunmaipanchwadkar@okhdfcb",
+      "",
+      "",
+      "256.00",
+      "4,511.17 CR",
+      "1",
+      "1"
+    ],
+    [
+      "30/05/2021",
+      "CARD AMC MAY21 XX1760",
+      "",
+      "177.00",
+      "",
+      "4,334.17 CR",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

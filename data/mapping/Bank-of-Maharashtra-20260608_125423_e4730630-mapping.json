@@ -1,0 +1,177 @@
+{
+  "bank_name": "Bank of Maharashtra",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-08T10:54:46Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Sr No",
+    "Date",
+    "Particulars",
+    "Cheque/Reference No",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Channel",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "sr no|date|particulars|cheque reference no|debit|credit|balance|channel|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "08/05/2026",
+      "NEFT UTIBN62026050829602506 GOOGLE INDIA DIGITAL S UTIB0000553",
+      "",
+      "-",
+      "1,000.00",
+      "-1,69,94,008.37",
+      "9008-NEFT/ RTGS CELL",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "08/05/2026",
+      "NEFT UTIBN62026050829643954 GOOGLE INDIA DIGITAL S UTIB0000553",
+      "",
+      "-",
+      "1,600.00",
+      "-1,69,92,408.37",
+      "9008-NEFT/ RTGS CELL",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "08/05/2026",
+      "NEFT BARBN52026050822936597 CASCON ENGINEERS PRIVA BARB0MORNAX",
+      "",
+      "-",
+      "99,300.00",
+      "-1,68,93,108.37",
+      "9008-NEFT/ RTGS CELL",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "08/05/2026",
+      "IMPS/48/612816827245/**/Yuvraj Agency/Cementpaymen",
+      "612816827245",
+      "1,00,000.00",
+      "-",
+      "-1,69,93,108.37",
+      "IMPS",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "08/05/2026",
+      "IMPS CHG",
+      "",
+      "5.00",
+      "-",
+      "-1,69,93,113.37",
+      "IMPS",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "08/05/2026",
+      "GST",
+      "",
+      "0.90",
+      "-",
+      "-1,69,93,114.27",
+      "IMPS",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "09/05/2026",
+      "NEFT UTIBN62026050941939170 GOOGLE INDIA DIGITAL S UTIB0000553",
+      "",
+      "-",
+      "1,050.00",
+      "-1,69,92,064.27",
+      "9008-NEFT/ RTGS CELL",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "09/05/2026",
+      "NEFT UTIBN62026050941941796 GOOGLE INDIA DIGITAL S UTIB0000553",
+      "",
+      "-",
+      "5,250.00",
+      "-1,69,86,814.27",
+      "9008-NEFT/ RTGS CELL",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "09/05/2026",
+      "NEFT UTIBN62026050942447440 GOOGLE INDIA DIGITAL S UTIB0000553",
+      "",
+      "-",
+      "350.00",
+      "-1,69,86,464.27",
+      "9008-NEFT/ RTGS CELL",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "09/05/2026",
+      "NEFT KKBKN62026050902611015 SWIFT PROCURE SOLUTION KKBK0000958",
+      "",
+      "-",
+      "95,625.00",
+      "-1,68,90,839.27",
+      "9008-NEFT/ RTGS CELL",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

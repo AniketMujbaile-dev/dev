@@ -1,0 +1,155 @@
+{
+  "bank_name": "Ahmednagar Sahar Sahakari Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T09:41:54Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Cheque No",
+    "Debit",
+    "Credit",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|cheque no|debit|credit|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "07/04/2025",
+      "BY TRF 7/25 OM SAI KRUSHISEVA KENDRA (PRO PAWARGITARAM PATILBA)",
+      "",
+      "",
+      "15,000.00",
+      "16,533.50 CR",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "S.I No - 129 Branch - 31-15/22",
+      "",
+      "14,710.00",
+      "",
+      "1,823.50 CR",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "NEFT -HDFCN52025041175019971/OMSAI DUDHSANKALAN VASHITKARAN KE/5020",
+      "",
+      "",
+      "14,710.00",
+      "16,533.50 CR",
+      "1",
+      "1"
+    ],
+    [
+      "06/05/2025",
+      "S.I No - 129 Branch - 31-15/22",
+      "",
+      "14,710.00",
+      "",
+      "1,823.50 CR",
+      "1",
+      "1"
+    ],
+    [
+      "16/05/2025",
+      "IMPS/CR/513610320028/OM SAIDUDHSANK/7139000/P",
+      "513610320028",
+      "",
+      "15,000.00",
+      "16,823.50 CR",
+      "1",
+      "1"
+    ],
+    [
+      "03/06/2025",
+      "TO TRF 15/22",
+      "",
+      "200.00",
+      "",
+      "16,623.50 CR",
+      "1",
+      "1"
+    ],
+    [
+      "06/06/2025",
+      "S.I No - 129 Branch - 31-15/22",
+      "",
+      "14,710.00",
+      "",
+      "1,913.50 CR",
+      "1",
+      "1"
+    ],
+    [
+      "27/06/2025",
+      "SMS CHARGES +18% GST-27/06/2025",
+      "",
+      "35.40",
+      "",
+      "1,878.10 CR",
+      "1",
+      "1"
+    ],
+    [
+      "30/06/2025",
+      "By Int.CR . 01/04/2025-30/06/2025",
+      "",
+      "",
+      "71.00",
+      "1,949.10 CR",
+      "1",
+      "1"
+    ],
+    [
+      "16/09/2025",
+      "CASH DEPOSIT BY CASH",
+      "",
+      "",
+      "1,25,000.00",
+      "1,26,949.10 CR",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

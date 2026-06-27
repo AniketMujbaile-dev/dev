@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-22T11:37:00Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2026",
+      "FT-50200083756213-ADV-SDM ENTERPRISES-FTIMPS417869",
+      "0000FTIMPS417869",
+      "01/04/26",
+      "116,000.00",
+      "",
+      "24,258,696.82",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "IMPS-609142653698-D S CABLES AND SWITCHGEAR-YESB-XXXXXXXXXXX1168-ADVMATETIAL",
+      "0000609142653698",
+      "01/04/26",
+      "387,382.00",
+      "",
+      "23,871,314.82",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "FT-50100337170791-IMPS TRANSACTION-PANKAJ VASANTRAO SALGUDE-FTIMPS440935",
+      "0000FTIMPS440935",
+      "01/04/26",
+      "50,000.00",
+      "",
+      "23,821,314.82",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "IMPS-609142680676-PANKAJ VASANTRAOSALGUDE-KKBK-XXXXXX3941-IMPS TRANSACTION",
+      "0000609142680676",
+      "01/04/26",
+      "50,000.00",
+      "",
+      "23,771,314.82",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "RTGS DR-ICIC0001870-PUNAJ CORP-NETBANK,MUM-HDFCR52026040190461052-NBHZ6KKMSUJRZYZK",
+      "HDFCR52026040190",
+      "01/04/26",
+      "4,200,000.00",
+      "",
+      "19,571,314.82",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "UPI-MSGANGOTRI NAGARISA-GANGOTRIPS2001@ICICI-ICIC0DC0099-323223379741-PAYMENT FROM PHONE",
+      "0000323223379741",
+      "01/04/26",
+      "1,000.00",
+      "",
+      "19,570,314.82",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "UPI-PHONEPE-SV2512112247303517535857@YBL-YESB0YBLUPI-657205591839-PAYMENT FROM PHONE",
+      "0000657205591839",
+      "02/04/26",
+      "11,358.04",
+      "",
+      "19,558,956.78",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "UPI-PHONEPE-SV2512112247303517535857@YBL-YESB0YBLUPI-216030966832-PAYMENT FROM PHONE",
+      "0000216030966832",
+      "02/04/26",
+      "91,134.89",
+      "",
+      "19,467,821.89",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "UPI-PHONEPE-SV2512112256496800871381@YBL-YESB0YBLUPI-639973639156-PAYMENT FROM PHONE",
+      "0000639973639156",
+      "02/04/26",
+      "5,915.00",
+      "",
+      "19,461,906.89",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "IMPS-609243343573-BHARAT SAVLIRAMMAHALE-BARB-XXXXXXXXXX8357-S",
+      "0000609243343573",
+      "02/04/26",
+      "18,000.00",
+      "",
+      "19,443,906.89",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

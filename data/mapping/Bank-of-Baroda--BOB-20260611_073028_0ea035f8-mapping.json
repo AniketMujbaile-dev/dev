@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bank of Baroda (BOB)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-11T05:30:44Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "TRAN DATE",
+    "VALUE DATE",
+    "NARRATION",
+    "CHQ.NO.",
+    "WITHDRAWAL(DR)",
+    "DEPOSIT(CR)",
+    "BALANCE(INR)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|value date|narration|chq no|withdrawal dr|deposit cr|balance inr|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRAN DATE",
+    "description": "NARRATION",
+    "debit": "WITHDRAWAL(DR)",
+    "credit": "DEPOSIT(CR)",
+    "amount": null,
+    "balance": "BALANCE(INR)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2026",
+      "01/04/2026",
+      "ACHDR/KOTAKMAHPRIMELTKKBK/32813 03453/111286870844",
+      "",
+      "59,758.00",
+      "",
+      "13,15,759.62Dr",
+      "4",
+      "1"
+    ],
+    [
+      "04/04/2026",
+      "04/04/2026",
+      "SQ TOOLS-MICR INWARD CLG (CTS)",
+      "001199",
+      "30,000.00",
+      "",
+      "13,45,759.62Dr",
+      "4",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "IMPS/P2A/609614669866/XXXXXXXXXX5 670/0",
+      "",
+      "4,720.00",
+      "",
+      "13,50,479.62Dr",
+      "4",
+      "1"
+    ],
+    [
+      "06/04/2026",
+      "06/04/2026",
+      "CHARGES FOR :IMPS/P2A/609614669866/XXXXXXXX",
+      "",
+      "5.90",
+      "",
+      "13,50,485.52Dr",
+      "4",
+      "1"
+    ],
+    [
+      "09/04/2026",
+      "09/04/2026",
+      "EBANK:WIB/1503327187/",
+      "",
+      "19,838.00",
+      "",
+      "13,70,323.52Dr",
+      "4",
+      "1"
+    ],
+    [
+      "09/04/2026",
+      "09/04/2026",
+      "EBANK:WIB/1503327508/",
+      "",
+      "4,601.00",
+      "",
+      "13,74,924.52Dr",
+      "4",
+      "1"
+    ],
+    [
+      "09/04/2026",
+      "09/04/2026",
+      "Charges for PORD Customer Payment :003573996217",
+      "",
+      "5.60",
+      "",
+      "13,74,930.12Dr",
+      "4",
+      "1"
+    ],
+    [
+      "09/04/2026",
+      "09/04/2026",
+      "NEFT-BARBZ26099589467-LAXMAN NEW-PUNJAB NATIONAL B",
+      "",
+      "11,886.00",
+      "",
+      "13,86,816.12Dr",
+      "4",
+      "1"
+    ],
+    [
+      "09/04/2026",
+      "09/04/2026",
+      "Charges for PORD Customer Payment :003573996294",
+      "",
+      "5.60",
+      "",
+      "13,86,821.72Dr",
+      "4",
+      "1"
+    ],
+    [
+      "09/04/2026",
+      "09/04/2026",
+      "NEFT-BARBZ26099589533-ALOK KUMAR-UNION BANK OF IND",
+      "",
+      "12,525.00",
+      "",
+      "13,99,346.72Dr",
+      "4",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

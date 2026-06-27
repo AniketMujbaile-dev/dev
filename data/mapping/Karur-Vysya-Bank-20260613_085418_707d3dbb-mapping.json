@@ -1,0 +1,177 @@
+{
+  "bank_name": "Karur Vysya Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-13T06:54:38Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Transaction Date",
+    "Value Date",
+    "Branch",
+    "Cheque No",
+    "Description",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "transaction date|value date|branch|cheque no|description|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 4,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Transaction Date",
+    "description": "Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/06/2026",
+      "01-06-2026",
+      "9999",
+      "",
+      "324078980106000002-HINDUSTANTRADERS-1647135000007652-SUPPLIER PAY",
+      "36,28,300.00",
+      "",
+      "-8,77,16,194.21",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-06-2026",
+      "2101",
+      "",
+      "KVBLR52026060166394742-JAAYSTEELS-650014157199-SUPPLIERPAY",
+      "18,71,700.00",
+      "",
+      "-8,95,87,894.21",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-06-2026",
+      "2101",
+      "",
+      "RTGS IB CHARGES",
+      "35.40",
+      "",
+      "-8,95,87,929.61",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-06-2026",
+      "2101",
+      "",
+      "KVBLR52026060166394743-Zoku design and technologies PvtLtd-439011003319-SUPPLIER PAY",
+      "3,80,000.00",
+      "",
+      "-8,99,67,929.61",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-06-2026",
+      "2101",
+      "",
+      "RTGS IB CHARGES",
+      "17.70",
+      "",
+      "-8,99,67,947.31",
+      "1",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-06-2026",
+      "2101",
+      "",
+      "KVBLH00262660618-ADOREENTERPRISES-602005501792-SUPPLIER PAY",
+      "94,000.00",
+      "",
+      "-9,00,61,947.31",
+      "2",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-06-2026",
+      "1170",
+      "000000000174",
+      "FT - CR - 1170135000014074 - VSATHYAMOORTHY AND CO RPPJV - KVB",
+      "",
+      "1,05,00,000.00",
+      "-7,95,61,947.31",
+      "2",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-06-2026",
+      "2101",
+      "",
+      "KVBLR52026060166404948-V.SATHYAMOORTHY CO HDFCOD-50200037130260-self",
+      "26,34,000.00",
+      "",
+      "-8,21,95,947.31",
+      "2",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-06-2026",
+      "2101",
+      "",
+      "RTGS IB CHARGES",
+      "35.40",
+      "",
+      "-8,21,95,982.71",
+      "2",
+      "1"
+    ],
+    [
+      "01/06/2026",
+      "01-06-2026",
+      "2101",
+      "",
+      "KVBLR52026060166407030-Sathyamoorthy V-50200032549032-loan Due",
+      "15,10,250.00",
+      "",
+      "-8,37,06,232.71",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-20T07:46:54Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/03/2026",
+      "NEFT CR-KKBK0000958-BOROSIL LTD-PRIYANKAKHERUKA-CMS0612682083712",
+      "CMS0612682083712",
+      "02/03/26",
+      "0.00",
+      "457,380.00",
+      "896,928.93",
+      "1",
+      "1"
+    ],
+    [
+      "02/03/2026",
+      "UPI-NEHA PRANAY MEHTA-NPMEHTA@OKAXIS-UTIB0000173-119402732781-UPI",
+      "0000119402732781",
+      "02/03/26",
+      "500.00",
+      "0.00",
+      "896,428.93",
+      "1",
+      "1"
+    ],
+    [
+      "03/03/2026",
+      "UPI-ZEPTO-ZEPTONOW.ESBZ@KOTAK-KKBK0000958-119423155760-UPI",
+      "0000119423155760",
+      "03/03/26",
+      "639.00",
+      "0.00",
+      "895,789.93",
+      "1",
+      "1"
+    ],
+    [
+      "03/03/2026",
+      "UPI-ZEPTO MARKETPLACEPR-ZEPTOMARKETPLAC744706.RZP@RXAXIS-UTIB0000RZP-119423798772-UPI",
+      "0000119423798772",
+      "03/03/26",
+      "773.00",
+      "0.00",
+      "895,016.93",
+      "1",
+      "1"
+    ],
+    [
+      "04/03/2026",
+      "UPI-WINNER BOOKCENTRE-BHARATPE09912932046@YESBANKLTD-YESB0YESUPI-119492845744-PAY TOBHARATPE ME",
+      "0000119492845744",
+      "04/03/26",
+      "2,000.00",
+      "0.00",
+      "893,016.93",
+      "1",
+      "1"
+    ],
+    [
+      "04/03/2026",
+      "UPI-WINNER BOOKCENTRE-BHARATPE09912932046@YESBANKLTD-YESB0YESUPI-119492858742-UPI",
+      "0000119492858742",
+      "04/03/26",
+      "1,990.00",
+      "0.00",
+      "891,026.93",
+      "1",
+      "1"
+    ],
+    [
+      "04/03/2026",
+      "UPI-SONAKSHI PRATIK AGA-SONAKSHIKHAITANOKHDFCBANK-KKBK0000634-119503033465-UPI",
+      "0000119503033465",
+      "04/03/26",
+      "1,350.00",
+      "0.00",
+      "889,676.93",
+      "1",
+      "1"
+    ],
+    [
+      "05/03/2026",
+      "UPIRET-20260303-119423155760",
+      "000000000000000",
+      "05/03/26",
+      "0.00",
+      "639.00",
+      "890,315.93",
+      "1",
+      "1"
+    ],
+    [
+      "06/03/2026",
+      "UPI-PIONEER COMMODITY TR-9820612888-1@OKBIZAXIS-UTIB0000553-119595249520-UPI",
+      "0000119595249520",
+      "06/03/26",
+      "3,300.00",
+      "0.00",
+      "887,015.93",
+      "1",
+      "1"
+    ],
+    [
+      "09/03/2026",
+      "CHQ DEP - CTS CLG2 - MUMBAI CLEARING:KHERUKA PROPERTIES LLP :BANK OF BARODA",
+      "0000000000001144",
+      "09/03/26",
+      "0.00",
+      "500,000.00",
+      "1,387,015.93",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

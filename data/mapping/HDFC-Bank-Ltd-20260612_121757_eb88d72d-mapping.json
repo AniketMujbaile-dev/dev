@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-12T10:18:18Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "03/07/2025",
+      "LOKESH RANGRAOJI ZADE - MICR - 24 - HING: ICICI BANK :ICICI BANKING CORPORATIONLTD",
+      "0000000000000093",
+      "04/07/25",
+      "",
+      "550,000.00",
+      "550,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "22/07/2025",
+      "FD THROUGH MOBILE-50301191952878:LOKESHRANGRAOJI ZADE",
+      "MB22165932693T22",
+      "22/07/25",
+      "500,000.00",
+      "",
+      "50,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "22/07/2025",
+      "UPI-VEDIKA SUNILRAOCHAM-VEDIKACHAMBHARE24@OKHDFCBANK-PUNB0020200-108532609649-UPI",
+      "0000108532609649",
+      "22/07/25",
+      "",
+      "25,000.00",
+      "75,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "23/07/2025",
+      "FT -ZADE AGRO WORKS DR - 50200111845253- ZADE AGRO WORKS",
+      "0000000000000001",
+      "23/07/25",
+      "50,000.00",
+      "",
+      "25,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "24/07/2025",
+      "UPI-M S ZADE AGRO WORKS -EAZYPAY.K11IT58EH32RJ33@ICICI-NA-101039744680-P",
+      "0000101039744680",
+      "24/07/25",
+      "1.00",
+      "",
+      "24,999.00",
+      "1",
+      "1"
+    ],
+    [
+      "30/07/2025",
+      "INVESTNOW-HDFCMF SIP-174445320-2003116351 - 4934313678-50200035342317",
+      "0000004934313678",
+      "30/07/25",
+      "2,000.00",
+      "",
+      "22,999.00",
+      "1",
+      "1"
+    ],
+    [
+      "31/07/2025",
+      "IMPS-521216392944-PENNY VERIFY-KKBK-XXXXXX8212-HDFC SECURITIES BANK ACCOUNT V",
+      "0000521216392944",
+      "31/07/25",
+      "",
+      "1.00",
+      "23,000.00",
+      "1",
+      "1"
+    ],
+    [
+      "04/08/2025",
+      "INVESTNOW-MOTILALOSWALMFSIP-174445320-2017101358 - 8850051047-50200035342317",
+      "0000008850051047",
+      "04/08/25",
+      "500.00",
+      "",
+      "22,500.00",
+      "1",
+      "1"
+    ],
+    [
+      "05/08/2025",
+      "INVESTNOW-BANDHANMF-174445320-2022746136- 8320393711-50200035342317",
+      "0000008320393711",
+      "05/08/25",
+      "1,000.00",
+      "",
+      "21,500.00",
+      "1",
+      "1"
+    ],
+    [
+      "05/08/2025",
+      "IMPS-521712853564-TECHNOWARDTECHNOLOG-IDFB-XXXXXXX5972-PENNYACCVERIFICATIONAPB",
+      "0000521712853564",
+      "05/08/25",
+      "",
+      "1.00",
+      "21,501.00",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

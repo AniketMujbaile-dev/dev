@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-23T08:16:23Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2025",
+      "IMPS-509209338143-GOLWAD BABANSHAKU-MAHB-XXXXXXX0586-A",
+      "0000509209338143",
+      "02/04/25",
+      "32,700.00",
+      "",
+      "163,130.34",
+      "1",
+      "1"
+    ],
+    [
+      "04/04/2025",
+      "IMPS-509417324476-GITARAM PATILBA PAWAR-MAHB-XXXXXXX3248-P",
+      "0000509417324476",
+      "04/04/25",
+      "5,000.00",
+      "",
+      "158,130.34",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "FT- OM SAI DSK-50200049015806 - SAINATHDUDH SANKALAN KENDRA -",
+      "0000001015163197",
+      "05/04/25",
+      "",
+      "571,785.00",
+      "729,915.34",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-BHARAT OILAGENCY-BHARATPE90725370578@YESBANKLTD-NA-100305506295-PAY TOBHARATPE ME",
+      "0000100305506295",
+      "05/04/25",
+      "190.00",
+      "",
+      "729,725.34",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "50100557485482-TPT-P-DNYANESHWARBHANUDAS KANGARE",
+      "0000000271424894",
+      "05/04/25",
+      "10,000.00",
+      "",
+      "719,725.34",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "NEFT DR-MAHB0000968-GITARAM PATILBAPAWAR-NETBANK, MUM-HDFCN52025040561125152-P",
+      "HDFCN52025040561",
+      "05/04/25",
+      "10,000.00",
+      "",
+      "709,725.34",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "IMPS-509515300358-KAILAS NARAYANRAUT-MAHB-XXXXXXX0302-A",
+      "0000509515300358",
+      "05/04/25",
+      "50,000.00",
+      "",
+      "659,725.34",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "UPI-SOMNATH RAGHUNATHMA-PAYTMQR28100505010115FS1MH8901M@PAYTM-NA-100306166139-P",
+      "0000100306166139",
+      "05/04/25",
+      "65,000.00",
+      "",
+      "594,725.34",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "UPI-MASTER GANESH SHIVAJ-9545867609@YBL-NA-100311051538-A",
+      "0000100311051538",
+      "06/04/25",
+      "10,000.00",
+      "",
+      "584,725.34",
+      "1",
+      "1"
+    ],
+    [
+      "06/04/2025",
+      "NEFT DR-MAHB0000968-SANJAY SUNDARDASPUND-NETBANK, MUM-HDFCN52025040662622101-A",
+      "HDFCN52025040662",
+      "06/04/25",
+      "50,000.00",
+      "",
+      "534,725.34",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

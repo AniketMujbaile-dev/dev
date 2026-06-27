@@ -1,0 +1,155 @@
+{
+  "bank_name": "Union Bank of India (UBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-06T14:35:23Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Description",
+    "Instrument No",
+    "Withdrawals(Rs.)",
+    "Deposits(Rs.)",
+    "Balance(Rs.)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|description|instrument no|withdrawals rs|deposits rs|balance rs|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Description",
+    "debit": "Withdrawals(Rs.)",
+    "credit": "Deposits(Rs.)",
+    "amount": null,
+    "balance": "Balance(Rs.)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "Opening Balance",
+      "-",
+      "-",
+      "-",
+      "0.00",
+      "1",
+      "2"
+    ],
+    [
+      "30/04/2025",
+      "UPIAB/055393854098/CR/MS",
+      "",
+      "",
+      "100.00",
+      "100.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "30/04/2025",
+      "BY CASH",
+      "",
+      "",
+      "5,000.00",
+      "5,100.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "22/05/2025",
+      "CD MIN BAL CHARGES",
+      "",
+      "1,180.00",
+      "",
+      "3,920.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "26/05/2025",
+      "UPIAB/507457301355/CR/MS",
+      "",
+      "",
+      "46,200.00",
+      "50,120.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "02/06/2025",
+      "VETTING CHARGES OF LALIT",
+      "1",
+      "2,000.00",
+      "",
+      "48,120.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "16/06/2025",
+      "UPIAB/377289700962/CR/MS",
+      "",
+      "",
+      "3,000.00",
+      "51,120.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "20/06/2025",
+      "POS:TP WODL/SAMBALPUR/517",
+      "",
+      "40,000.00",
+      "",
+      "11,120.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "21/06/2025",
+      "CD MIN BAL CHARGES",
+      "",
+      "1,180.00",
+      "",
+      "9,940.00Cr",
+      "1",
+      "1"
+    ],
+    [
+      "24/06/2025",
+      "UPIAB/948496540856/CR/MS",
+      "",
+      "",
+      "40,200.00",
+      "50,140.00Cr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

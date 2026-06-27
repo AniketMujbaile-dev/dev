@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-26T13:44:49Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2024",
+      "INVESTNOWIP_X058574724_69433652",
+      "000000000000000",
+      "01/04/24",
+      "2,000.00",
+      "",
+      "858,384.78",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2024",
+      "INVESTNOWIP_X058574745_69513418",
+      "000000000000000",
+      "01/04/24",
+      "2,000.00",
+      "",
+      "856,384.78",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2024",
+      "INVESTNOWIP_X058574736_69514503",
+      "000000000000000",
+      "01/04/24",
+      "2,000.00",
+      "",
+      "854,384.78",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2024",
+      "INVESTNOWIP_X058574728_69489012",
+      "000000000000000",
+      "01/04/24",
+      "2,000.00",
+      "",
+      "852,384.78",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2024",
+      "INVESTNOWIP_X058574748_69489166",
+      "000000000000000",
+      "01/04/24",
+      "2,000.00",
+      "",
+      "850,384.78",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2024",
+      "INVESTNOWIP_X058574729_69493074",
+      "000000000000000",
+      "01/04/24",
+      "2,000.00",
+      "",
+      "848,384.78",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2024",
+      "INVESTNOWIP_X058574738_69450910",
+      "000000000000000",
+      "01/04/24",
+      "2,000.00",
+      "",
+      "846,384.78",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2024",
+      "POS 416021XXXXXX2719 TRAVEL CLUB LOUN",
+      "0000409304397315",
+      "02/04/24",
+      "2.00",
+      "",
+      "846,382.78",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2024",
+      "EMI 7166279 CHQ S71662790531 04247166279",
+      "000000000000000",
+      "05/04/24",
+      "27,429.00",
+      "",
+      "818,953.78",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2024",
+      "EMI 459932188 CHQ S4599321880061 0424459932188",
+      "000000000000000",
+      "07/04/24",
+      "50,277.00",
+      "",
+      "768,676.78",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

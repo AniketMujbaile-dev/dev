@@ -1,0 +1,166 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-17T09:56:32Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Post Date",
+    "Value Date",
+    "Details",
+    "Chq.No.",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "post date|value date|details|chq no|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Post Date",
+    "description": "Details",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "",
+      "",
+      "Brought Forward",
+      "",
+      "",
+      "",
+      "0.00",
+      "1",
+      "2"
+    ],
+    [
+      "16/09/2025",
+      "16/09/25",
+      "TRANSFER TO 97247040861 CERSAI CHARGES 00000008134612152 /B RANCH : ALLAHABAD KATRA",
+      "",
+      "118.00",
+      "",
+      "-118.00",
+      "1",
+      "1"
+    ],
+    [
+      "16/09/2025",
+      "16/09/25",
+      "TRANSFER TO 97234040866 CIC REPORT CHARG /BRANCH : ALLAHABA D KATRA",
+      "",
+      "929.00",
+      "",
+      "-1047.00",
+      "1",
+      "1"
+    ],
+    [
+      "17/09/2025",
+      "17/09/25",
+      "TRANSFER TO 98906000129 Txn Amt. 3,00,000.00 Charges. 29.00 /RTGS/HDFC/IDIBR52025091747560130/ANUJ TIW/RTGS /BRANCH : A LLAHABAD KATRA",
+      "",
+      "300029.00",
+      "",
+      "-301076.00",
+      "1",
+      "1"
+    ],
+    [
+      "17/09/2025",
+      "17/09/25",
+      "TRANSFER TO 89634040861 Txn Amt. 94,422.00 Charges. 5.61 /N EFT/SBIN/IDIBN52025091708701025/ANSHUMAN/ /BRANCH : ALLAHABA D KATRA",
+      "",
+      "94427.61",
+      "",
+      "-395503.61",
+      "1",
+      "1"
+    ],
+    [
+      "18/09/2025",
+      "18/09/25",
+      "H.NARESH INDUSTRIES OPC PRIVATE LIMITED /TRANSFER TO 813533 8288 SI LOAN OVERDUE AMT TRANSACTION /BRANCH : ALLAHABAD KAT RA",
+      "",
+      "30.00",
+      "",
+      "-395533.61",
+      "1",
+      "1"
+    ],
+    [
+      "20/09/2025",
+      "20/09/25",
+      "ISSUE OF MICR CA",
+      "",
+      "590.00",
+      "",
+      "-396123.61",
+      "2",
+      "1"
+    ],
+    [
+      "20/09/2025",
+      "20/09/25",
+      "BRANCH : ALLAHABAD KATRA",
+      "",
+      "7000000.00",
+      "",
+      "-7396123.61",
+      "2",
+      "1"
+    ],
+    [
+      "23/09/2025",
+      "23/09/25",
+      "BRANCH : ALLAHABAD KATRA",
+      "",
+      "",
+      "7000000.00",
+      "-396123.61",
+      "2",
+      "1"
+    ],
+    [
+      "23/09/2025",
+      "23/09/25",
+      "WITHDRAWAL TRANSFER TRANSFER TO 98906000129 Txn Amt. 3,00,0 00.00 Charges. 29.00 /RTGS/HDFC/IDIBR52025092347659906/ANUJ TIW/ANUJ TIW/BRANCH : ALLAHABAD KATRA",
+      "",
+      "300029.00",
+      "",
+      "-696152.61",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

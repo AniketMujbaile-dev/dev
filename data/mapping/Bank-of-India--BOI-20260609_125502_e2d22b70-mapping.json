@@ -1,0 +1,166 @@
+{
+  "bank_name": "Bank of India (BOI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-09T10:55:19Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "SNO",
+    "TRAN DATE",
+    "INST NO",
+    "DESCRIPTION",
+    "DEBITS",
+    "CREDITS",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "sno|tran date|inst no|description|debits|credits|balance|page number|minus",
+  "mapping": {
+    "date": 1,
+    "description": 3,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "TRAN DATE",
+    "description": "DESCRIPTION",
+    "debit": "DEBITS",
+    "credit": "CREDITS",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "1",
+      "02/05/2026",
+      "",
+      "NEFT/SIDCH00000010711/SIDC/YADAV VA",
+      "0.00",
+      "50000.00",
+      "1306005.02 Dr.",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "02/05/2026",
+      "",
+      "UPI/298997166981/CR/DILAVA/BKID/897",
+      "0.00",
+      "1.00",
+      "1306004.02 Dr.",
+      "1",
+      "1"
+    ],
+    [
+      "3",
+      "02/05/2026",
+      "130284",
+      "GURUKRUPA STEEL TRADERS",
+      "100000.00",
+      "0.00",
+      "1406004.02 Dr.",
+      "1",
+      "1"
+    ],
+    [
+      "4",
+      "05/05/2026",
+      "",
+      "MDR OF RUPAY CREDIT CARD TXN ON QR",
+      "67.11",
+      "0.00",
+      "1406071.13 Dr.",
+      "1",
+      "1"
+    ],
+    [
+      "5",
+      "05/05/2026",
+      "",
+      "BY CLG-SARASWAT-105149",
+      "0.00",
+      "69000.00",
+      "1337071.13 Dr.",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "07/05/2026",
+      "",
+      "RTGS/SIDCR52026050705300053/SIDC/05",
+      "0.00",
+      "435025.00",
+      "902046.13 Dr.",
+      "1",
+      "1"
+    ],
+    [
+      "7",
+      "08/05/2026",
+      "",
+      "Charges:NEFT/BKIDY26128906479",
+      "5.32",
+      "0.00",
+      "902051.45 Dr.",
+      "1",
+      "1"
+    ],
+    [
+      "8",
+      "08/05/2026",
+      "130285",
+      "NEFT/BKIDY26128906479/MAHB/KAMLESH",
+      "100000.00",
+      "0.00",
+      "1002051.45 Dr.",
+      "1",
+      "1"
+    ],
+    [
+      "9",
+      "08/05/2026",
+      "130286",
+      "GURUKRUPA STEEL TRADERS",
+      "100000.00",
+      "0.00",
+      "1102051.45 Dr.",
+      "1",
+      "1"
+    ],
+    [
+      "10",
+      "08/05/2026",
+      "130287",
+      "DATTARAJ ENTREPRISE",
+      "150000.00",
+      "0.00",
+      "1252051.45 Dr.",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

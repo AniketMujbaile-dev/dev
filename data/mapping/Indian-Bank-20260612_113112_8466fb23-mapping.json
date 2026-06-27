@@ -1,0 +1,144 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-12T09:31:38Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Transaction Details",
+    "Debits",
+    "Credits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|transaction details|debits|credits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 2,
+    "credit": 3,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Transaction Details",
+    "debit": "Debits",
+    "credit": "Credits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "RATN000RBLA/DREAM11 /XXXXX /dream11@rblbank/UPI/102 429058223/Paying to Sporta Tec /BRANCH : ATM SERVICE BRANCH",
+      "INR 125.00",
+      "-",
+      "INR 577,948.35",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2025",
+      "UTIB0000553/Google India Digital Services/XXXXX /gpayrecharge@okpayaxis /UPI/102519697593/UPI/BR ANCH : ATM SERVICE BRANCH",
+      "INR 200.90",
+      "-",
+      "INR 577,747.45",
+      "1",
+      "1"
+    ],
+    [
+      "05/04/2025",
+      "AIRP0000001/Riya /XXXXX /9303419868@airtel /UPI/102669776953/Pay money to Riya /BRANCH : ATM SERVICE BRANCH",
+      "INR 135.00",
+      "-",
+      "INR 577,612.45",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "ATM_AMC_Charges000000 00000098014/SERVICE CHARGES",
+      "INR 236.00",
+      "-",
+      "INR 577,376.45",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "HDFC0MERUPI/R K BOOK AND STATIONERS/XXXXX /vyapar.172400956197@hdf cbank /UPI/102764256969/UPI/BR ANCH : ATM SERVICE BRANCH",
+      "INR 20.00",
+      "-",
+      "INR 577,356.45",
+      "1",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "YESB0PTMUPI/MARUTI BACKERS AND I/XXXXX /paytmqr18k50g36sf@payt m /UPI/102764420744/UPI/BR ANCH : ATM SERVICE BRANCH",
+      "INR 80.00",
+      "-",
+      "INR 577,276.45",
+      "2",
+      "1"
+    ],
+    [
+      "07/04/2025",
+      "IDIB000B540/Mrs Satakshi Soni SONI /XXXXX /satakshisoni09@okaxis/UP I/102785718666/UPI/BRAN CH : ATM SERVICE BRANCH",
+      "INR 500.00",
+      "-",
+      "INR 576,776.45",
+      "2",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "YESB0PTMUPI/Paytm Train Tickets /XXXXX90049/paytra1599 @ptybl /UPI/546705986994/expres s /BRANCH : ATM SERVICE BRANCH",
+      "-",
+      "INR 195.00",
+      "INR 576,971.45",
+      "2",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "YESB0PTMUPI/Paytm Train Tickets /XXXXX90049/paytra1599 @ptybl /UPI/546705991136/expres s /BRANCH : ATM SERVICE BRANCH",
+      "-",
+      "INR 195.00",
+      "INR 577,166.45",
+      "2",
+      "1"
+    ],
+    [
+      "13/04/2025",
+      "UTIB0000553/Google India Digital Services/XXXXX /gpayrecharge@okpayaxis /UPI/103096050032/UPI/BR ANCH : ATM SERVICE BRANCH",
+      "INR 210.90",
+      "-",
+      "INR 576,955.55",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

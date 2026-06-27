@@ -1,0 +1,166 @@
+{
+  "bank_name": "HDFC Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-26T04:35:38Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Narration",
+    "Chq./Ref.No.",
+    "Value Dt",
+    "Withdrawal Amt.",
+    "Deposit Amt.",
+    "Closing Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|narration|chq ref no|value dt|withdrawal amt|deposit amt|closing balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 4,
+    "credit": 5,
+    "amount": 4,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Narration",
+    "debit": "Withdrawal Amt.",
+    "credit": "Deposit Amt.",
+    "amount": "Withdrawal Amt.",
+    "balance": "Closing Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "20/06/2026",
+      "UPI-L P KANSAL FILLINGS-PAYTMQR6RC6Y2@PTYS-YESB0PTMUPI-125025605009-DIESEL GENERATOR",
+      "0000125025605009",
+      "20/06/26",
+      "1,200.00",
+      "",
+      "12,541.84",
+      "1",
+      "1"
+    ],
+    [
+      "20/06/2026",
+      "T3OXOJ7XO4UYLG/RAZPHYPERPUREZOMATO",
+      "0002659617100055",
+      "20/06/26",
+      "586.58",
+      "",
+      "11,955.26",
+      "1",
+      "1"
+    ],
+    [
+      "20/06/2026",
+      "50200081328173-TPT-HDFCB883339122C1-AURAINTERNATIONAL",
+      "0000000695025586",
+      "20/06/26",
+      "",
+      "20,000.00",
+      "31,955.26",
+      "1",
+      "1"
+    ],
+    [
+      "20/06/2026",
+      "UPI-XXXXXXXXXX0681-BARB0KAILAS-125043308224-ABHIMANU FOOTWEAR",
+      "0000125043308224",
+      "20/06/26",
+      "15,000.00",
+      "",
+      "16,955.26",
+      "1",
+      "1"
+    ],
+    [
+      "21/06/2026",
+      "IMPS-617235948292-JHOOTU BOHARA COLLECTION-JAKA-XXXXXXXXXXXX0171-JHOTTUBOHARA COLL",
+      "0000617235948292",
+      "21/06/26",
+      "10,000.00",
+      "",
+      "6,955.26",
+      "1",
+      "1"
+    ],
+    [
+      "21/06/2026",
+      "UPI-L P KANSAL FILLINGS-PAYTMQR6RC79X@PTYS-YESB0PTMUPI-125098866473-PETROL KIA",
+      "0000125098866473",
+      "21/06/26",
+      "2,500.00",
+      "",
+      "4,455.26",
+      "1",
+      "1"
+    ],
+    [
+      "22/06/2026",
+      "NEFT CR-DEUT0797BGL-MYNTRA DESIGNSPRIVATE LIMITED-SAI DASS COMPANY-DEUTH02617373594",
+      "DEUTH02617373594",
+      "22/06/26",
+      "",
+      "10,411.27",
+      "14,866.53",
+      "1",
+      "1"
+    ],
+    [
+      "22/06/2026",
+      "NEFT CR-DEUT0797BGL-MYNTRA DESIGNSPRIVATE LIMITED-SAI DASS COMPANY-DEUTH02617370155",
+      "DEUTH02617370155",
+      "22/06/26",
+      "",
+      "7,395.48",
+      "22,262.01",
+      "1",
+      "1"
+    ],
+    [
+      "22/06/2026",
+      "NEFT CR-DEUT0797BGL-FLIPKART INTERNET PRIVATE LIMITED-SAI DASSCOMPANY-DEUTH026173A14YC",
+      "DEUTH026173A14YC",
+      "22/06/26",
+      "",
+      "47,069.55",
+      "69,331.56",
+      "1",
+      "1"
+    ],
+    [
+      "22/06/2026",
+      "NEFT CR-DEUT0797BGL-FLIPKART INTERNET PRIVATE LIMITED-SAI DASSCOMPANY-DEUTH026173A0XVX",
+      "DEUTH026173A0XVX",
+      "22/06/26",
+      "",
+      "29,228.14",
+      "98,559.70",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

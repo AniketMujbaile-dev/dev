@@ -1,0 +1,155 @@
+{
+  "bank_name": "ICICI Bank Ltd",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-24T09:42:56Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "DATE",
+    "MODE",
+    "PARTICULARS",
+    "DEPOSITS",
+    "WITHDRAWALS",
+    "BALANCE",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|mode|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 3,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "DATE",
+    "description": "PARTICULARS",
+    "debit": "WITHDRAWALS",
+    "credit": "DEPOSITS",
+    "amount": null,
+    "balance": "BALANCE",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/05/2026",
+      "",
+      "B/F",
+      "",
+      "",
+      "90,38,785.11",
+      "3",
+      "2"
+    ],
+    [
+      "01/05/2026",
+      "MOBILE BANKING",
+      "SheshnathMMT/IMPS/612112096033/kushalsindirana/Sheshnath/SBIN0010500",
+      "",
+      "9,500.00",
+      "90,29,285.11",
+      "3",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "MOBILE BANKING",
+      "SheshnathMMT/IMPS/612112107820/rollongshutter/Sheshnath/SBIN0010500",
+      "",
+      "25,000.00",
+      "90,04,285.11",
+      "3",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "MOBILE BANKING",
+      "MMT/IMPS/612112114751/Sheshnath/SBIN0010500",
+      "",
+      "24,900.00",
+      "89,79,385.11",
+      "3",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "MOBILE BANKING",
+      "SheshnathMMT/IMPS/612112117309/Indiranagarwork/Sheshnath/SBIN0010500",
+      "",
+      "24,900.00",
+      "89,54,485.11",
+      "3",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "",
+      "SUMESH MUPI/109719582950/stadiumphysio01/sumeshkailass-4//ICIe2d68666bd794244b3e28022f099aceb",
+      "",
+      "8,000.00",
+      "89,46,485.11",
+      "3",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "MOBILE BANKING",
+      "JoshuadeepakMMT/IMPS/612114422795/forrituals/Joshuadeep/SBIN0001731",
+      "",
+      "15,000.00",
+      "89,31,485.11",
+      "3",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "MOBILE BANKING",
+      "GiriIndMMT/IMPS/612115435508/Salary/GiriInd/SBIN0008879",
+      "",
+      "12,000.00",
+      "89,19,485.11",
+      "3",
+      "1"
+    ],
+    [
+      "01/05/2026",
+      "",
+      "DINESH KUMARUPI/109719977515/Stadiumsunboard/dineshkumar.nb-//ICI20f3bad4b66449a6a1527d0495df6660",
+      "",
+      "6,850.00",
+      "89,12,635.11",
+      "3",
+      "1"
+    ],
+    [
+      "02/05/2026",
+      "CMS TRANSACTION",
+      "CMS/001932441381/BAJAJ_AUTO_CD__404DHF65413399",
+      "",
+      "59,758.00",
+      "88,52,877.11",
+      "3",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

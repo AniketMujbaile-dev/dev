@@ -1,0 +1,177 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-03T04:37:09Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Txn Date",
+    "Value Date",
+    "Cheque No.",
+    "Description",
+    "Branch Code",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "txn date|value date|cheque no|description|branch code|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 3,
+    "debit": 5,
+    "credit": 6,
+    "amount": null,
+    "balance": 7,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Txn Date",
+    "description": "Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2026",
+      "31 Mar 2026",
+      "",
+      "NEFT Cr-HDFCH00902739027- HDFC0000001-REBA PHARMACEUTICALS--0001-Wellcris",
+      "33",
+      "",
+      "36,000.00",
+      "41,359.86",
+      "1",
+      "1"
+    ],
+    [
+      "01/04/2026",
+      "01 Apr 2026",
+      "",
+      "NEFT Cr-HDFCH00903212317- HDFC0000001-BLAZE REMEDIES--0001- Payment",
+      "33",
+      "",
+      "73,500.00",
+      "1,14,859.86",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02 Apr 2026",
+      "609200222277",
+      "IB-IMPS-DR//HDFC/**9411//02/04/2026 00:21:34/609200222277",
+      "33",
+      "45,000.00",
+      "",
+      "69,859.86",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02 Apr 2026",
+      "609200222277",
+      "IMPS SC",
+      "33",
+      "9.44",
+      "",
+      "69,850.42",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02 Apr 2026",
+      "",
+      "NEFT Cr-PUNBX26090211443- PUNB0046410-REKIN PHARMA PRIVATE LIMITED--PNB-PNB-PNB",
+      "33",
+      "",
+      "20,000.00",
+      "89,850.42",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02 Apr 2026",
+      "",
+      "NEFT Cr-IN42609256241214- ICIC0SF0002-TVAM HEALTHCARE (OPC) PRIVATE LIMITE--productpurchase",
+      "33",
+      "",
+      "50,000.00",
+      "1,39,850.42",
+      "2",
+      "1"
+    ],
+    [
+      "02/04/2026",
+      "02 Apr 2026",
+      "",
+      "IB IFT 78481200 125000642578 BIOGRACEA MEDICARE PRIVATE LIMITED Online Transaction OTH- Payment",
+      "5135",
+      "1,00,000.00",
+      "",
+      "39,850.42",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "03 Apr 2026",
+      "",
+      "IB NEFT Dr CNRBH00122367499 Kumar Graphics HDFC0000873 50200000732883 Payment",
+      "5135",
+      "20,000.00",
+      "",
+      "19,850.42",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "03 Apr 2026",
+      "",
+      "SC NEFT OTHER THAN SB IMB",
+      "5135",
+      "6.00",
+      "",
+      "19,844.42",
+      "2",
+      "1"
+    ],
+    [
+      "03/04/2026",
+      "03 Apr 2026",
+      "609316657447",
+      "IB-IMPS-DR//UBIN/**0102//03/04/2026 16:50:52/609316657447",
+      "33",
+      "7,080.00",
+      "",
+      "12,764.42",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

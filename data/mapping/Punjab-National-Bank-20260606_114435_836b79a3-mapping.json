@@ -1,0 +1,155 @@
+{
+  "bank_name": "Punjab National Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-06T09:44:58Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Cheque No.",
+    "Withdrawal",
+    "Deposit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|cheque no|withdrawal|deposit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawal",
+    "credit": "Deposit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "03/05/2026",
+      "UPI/CR/612322045325/SATISH/KKBK/9810349634@kota/NA",
+      "",
+      "",
+      "15000.00",
+      "928402.03DR.",
+      "2",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "UPI/CR/649039304448/SUSHIL K/ICIC/skthakurkairali/",
+      "",
+      "",
+      "6784.00",
+      "921618.03DR.",
+      "2",
+      "1"
+    ],
+    [
+      "04/05/2026",
+      "UPI/CR/612419976828/SUSHIL K/ICIC/skthakurkairali/",
+      "",
+      "",
+      "3000.00",
+      "918618.03DR.",
+      "2",
+      "1"
+    ],
+    [
+      "05/05/2026",
+      "O/W CLEARING INST NO:157438 AMOUNT:1256",
+      "",
+      "",
+      "1256.00",
+      "917362.03DR.",
+      "2",
+      "1"
+    ],
+    [
+      "06/05/2026",
+      "UPI/CR/612637252683/Aman/SBIN/8685924449@navi/Navi",
+      "",
+      "",
+      "1000.00",
+      "916362.03DR.",
+      "2",
+      "1"
+    ],
+    [
+      "08/05/2026",
+      "TO GROVER AYURVEDA -484800",
+      "635240",
+      "70000.00",
+      "",
+      "986362.03DR.",
+      "2",
+      "1"
+    ],
+    [
+      "09/05/2026",
+      "UPI/CR/612976994530/USHA AYU/HDFC/9999951383@pthd/",
+      "",
+      "",
+      "13114.00",
+      "973248.03DR.",
+      "2",
+      "1"
+    ],
+    [
+      "09/05/2026",
+      "UPI/CR/428710482682/KRISHNA/PUNB/9015735889@axl/Bi",
+      "",
+      "",
+      "2700.00",
+      "970548.03DR.",
+      "2",
+      "1"
+    ],
+    [
+      "13/05/2026",
+      "BY CASH -074110",
+      "",
+      "",
+      "60000.00",
+      "910548.03DR.",
+      "2",
+      "1"
+    ],
+    [
+      "13/05/2026",
+      "GROVER AYURVED CO -074110",
+      "635241",
+      "60000.00",
+      "",
+      "970548.03DR.",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

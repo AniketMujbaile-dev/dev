@@ -1,0 +1,166 @@
+{
+  "bank_name": "State Bank of India (SBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-08T13:04:20Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Post Date",
+    "Value Date",
+    "Description",
+    "Cheque No/Reference",
+    "Debit",
+    "Credit",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "post date|value date|description|cheque no reference|debit|credit|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 2,
+    "debit": 4,
+    "credit": 5,
+    "amount": null,
+    "balance": 6,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Post Date",
+    "description": "Description",
+    "debit": "Debit",
+    "credit": "Credit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "",
+      "",
+      "BROUGHT FORWARD",
+      "",
+      "",
+      "",
+      "27,46,589.07CR",
+      "1",
+      "2"
+    ],
+    [
+      "01-04-2025",
+      "01/04/2025",
+      "WDL TFRUPI/DR/692714351761/Centre",
+      "",
+      "24,005.00",
+      "",
+      "27,22,584.06CR",
+      "1",
+      "1"
+    ],
+    [
+      "02-04-2025",
+      "02/04/2025",
+      "REMT THRU CHQRTGS UTR NO:",
+      "524270",
+      "23,00,000.00",
+      "",
+      "4,22,584.06CR",
+      "1",
+      "1"
+    ],
+    [
+      "03-04-2025",
+      "03/04/2025",
+      "WDL TFRUPI/DR/858622392511/NETRAN",
+      "",
+      "300.00",
+      "",
+      "4,22,284.06CR",
+      "1",
+      "1"
+    ],
+    [
+      "03-04-2025",
+      "03/04/2025",
+      "WDL TFRUPI/DR/164910107596/AJAY",
+      "",
+      "13,000.00",
+      "",
+      "4,09,284.06CR",
+      "1",
+      "1"
+    ],
+    [
+      "03-04-2025",
+      "03/04/2025",
+      "WDL TFRUPI/DR/328476702260/KHATI",
+      "",
+      "11,000.00",
+      "",
+      "3,98,284.06CR",
+      "1",
+      "1"
+    ],
+    [
+      "03-04-2025",
+      "03/04/2025",
+      "WDL TFRUPI/DR/119692789886/KHATI",
+      "",
+      "1,000.00",
+      "",
+      "3,97,284.06CR",
+      "1",
+      "1"
+    ],
+    [
+      "05-04-2025",
+      "05/04/2025",
+      "WDL TFRUPI/DR/356891981425/SUSANT",
+      "",
+      "5,000.00",
+      "",
+      "3,92,284.06CR",
+      "1",
+      "1"
+    ],
+    [
+      "05-04-2025",
+      "05/04/2025",
+      "WDL TFRUPI/DR/118464594020/RAILTEL",
+      "",
+      "824.82",
+      "",
+      "3,91,459.24CR",
+      "1",
+      "1"
+    ],
+    [
+      "07-04-2025",
+      "07/04/2025",
+      "WDL TFRUPI/DR/602811209910/SUSANT",
+      "",
+      "10,000.00",
+      "",
+      "3,81,459.24CR",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

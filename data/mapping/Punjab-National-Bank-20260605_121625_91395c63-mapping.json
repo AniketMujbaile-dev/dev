@@ -1,0 +1,177 @@
+{
+  "bank_name": "Punjab National Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-05T10:19:19Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Tran Date",
+    "Withdrawal",
+    "Deposit",
+    "Balance",
+    "Alpha",
+    "CHQ. NO.",
+    "Narration",
+    "Additional Info",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "tran date|withdrawal|deposit|balance|alpha|chq no|narration|additional info|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 6,
+    "debit": 1,
+    "credit": 2,
+    "amount": null,
+    "balance": 3,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Tran Date",
+    "description": "Narration",
+    "debit": "Withdrawal",
+    "credit": "Deposit",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "02/04/2022",
+      "",
+      "1000.00",
+      "6763.19 Cr.",
+      "",
+      "",
+      "UPI/209248128133/P2V/nileshthombre29@ybl/HARIHAR S",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2022",
+      "6000.00",
+      "",
+      "763.19 Cr.",
+      "",
+      "",
+      "UPI/209243323948/P2V/rashithombre@ybl/NILESH BABAR",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2022",
+      "",
+      "1.00",
+      "764.19 Cr.",
+      "",
+      "",
+      "UPI/209223755805/P2V/nileshthombre29@ybl/KISHOR MA",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "02/04/2022",
+      "",
+      "12000.00",
+      "12764.19 Cr.",
+      "",
+      "",
+      "UPI/209286531556/P2V/nileshthombre29@ybl/KISHOR MA",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2022",
+      "17.70",
+      "",
+      "12746.49 Cr.",
+      "",
+      "",
+      "SMS CHRG FOR:01-01-2022to31-03-2022",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2022",
+      "2000.00",
+      "",
+      "10746.49 Cr.",
+      "",
+      "",
+      "ATM WDR 2892 PNB \\RAM MANDIR WARD DESH S \\EWARDH",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2022",
+      "1000.00",
+      "",
+      "9746.49 Cr.",
+      "",
+      "",
+      "UPI/209320585207/P2V/bhalerao.utkarsh22-1@okhdfcb/",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2022",
+      "1500.00",
+      "",
+      "8246.49 Cr.",
+      "",
+      "",
+      "UPI/209320578113/P2V/aniketdarwekar450@oksbi/NILES",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2022",
+      "300.00",
+      "",
+      "7946.49 Cr.",
+      "",
+      "",
+      "UPI/209368593082/P2M/BBPSBP@ybl/NILESH BABARAO THO",
+      "",
+      "1",
+      "1"
+    ],
+    [
+      "03/04/2022",
+      "2000.00",
+      "",
+      "5946.49 Cr.",
+      "",
+      "",
+      "UPI/209323440535/P2V/7744889822@axl/NILESH BABARAO",
+      "",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

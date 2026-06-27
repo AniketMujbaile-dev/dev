@@ -1,0 +1,144 @@
+{
+  "bank_name": "Canara Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-17T14:22:20Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Particulars",
+    "Deposits",
+    "Withdrawals",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|particulars|deposits|withdrawals|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 2,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Particulars",
+    "debit": "Withdrawals",
+    "credit": "Deposits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "14/05/2025",
+      "DEBIT CARD ANNUALCHARGES XXXXXXXXXXX0929Chq: 0",
+      "",
+      "236.00",
+      "8,52,895.71",
+      "1",
+      "1"
+    ],
+    [
+      "16/05/2025",
+      "ATM CASH-10180929-CANARABANKPALANITNIN-16/05/25 14:50:03/0929Chq: 8174",
+      "",
+      "10,000.00",
+      "8,42,895.71",
+      "1",
+      "1"
+    ],
+    [
+      "20/05/2025",
+      "GC/1236/0525/6765629INVOICEGST/013/2025-26Chq: 0",
+      "72,424.00",
+      "",
+      "9,15,319.71",
+      "1",
+      "1"
+    ],
+    [
+      "29/05/2025",
+      "NEFT CR-ICIN414951074013-ICIC0SF0002-JAGAN METALMART-Chq: 0",
+      "37,033.00",
+      "",
+      "9,52,352.71",
+      "1",
+      "1"
+    ],
+    [
+      "02/06/2025",
+      "NEFT CR-ICIN415356630409-ICIC0SF0002-JAGAN METALMART-Chq: 0",
+      "37,033.00",
+      "",
+      "9,89,385.71",
+      "1",
+      "1"
+    ],
+    [
+      "04/06/2025",
+      "KUMARESAN S - KUMARESANSIVASAMYChq: 000705510186",
+      "",
+      "4,00,000.00",
+      "5,89,385.71",
+      "1",
+      "1"
+    ],
+    [
+      "04/06/2025",
+      "CH220 PASSHEETCHARGESSECOND TIME SC FORREPORTSChq: 0",
+      "",
+      "118.00",
+      "5,89,267.71",
+      "2",
+      "1"
+    ],
+    [
+      "04/06/2025",
+      "CH220 PASSHEETCHARGESSECOND TIME SC FORREPORTSChq: 0",
+      "",
+      "118.00",
+      "5,89,149.71",
+      "2",
+      "1"
+    ],
+    [
+      "06/06/2025",
+      "MB-IMPS-DR/NITHYANANDAN/INDIANBAN/9282164141/**000/TRIAL/06/06/202519:32:04/515719675087Chq: 515719675087",
+      "",
+      "10.00",
+      "5,89,139.71",
+      "2",
+      "1"
+    ],
+    [
+      "07/06/2025",
+      "UPI/DR/515809616871/NITHYANAN/CNRB/**YAN26@CNRB/UPIL ITE//CAN9858BE594477439E9CD0AA9D4844002E/07/06/202521:37:59Chq: 515809616871",
+      "",
+      "1,000.00",
+      "5,88,139.71",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

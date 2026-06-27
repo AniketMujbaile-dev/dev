@@ -1,0 +1,144 @@
+{
+  "bank_name": "Indian Bank",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-23T11:55:18Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Transaction Details",
+    "Debits",
+    "Credits",
+    "Balance",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|transaction details|debits|credits|balance|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 2,
+    "credit": 3,
+    "amount": null,
+    "balance": 4,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Transaction Details",
+    "debit": "Debits",
+    "credit": "Credits",
+    "amount": null,
+    "balance": "Balance",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "08/04/2025",
+      "CASH DEP THARWAI/Deposit by SELF /BRANCH :THARWAI",
+      "-",
+      "INR 48,500.00",
+      "INR 54,863.14",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "TRANSFER TO 97158048396 06145165970/KKBK/Others /IMPS/P2A/509820258793 BRANCH : ATM SERVICE BRANCH",
+      "INR 50,000.00",
+      "-",
+      "INR 4,863.14",
+      "1",
+      "1"
+    ],
+    [
+      "08/04/2025",
+      "TRANSFER TO 88907048393 /IMPS COMMISSION CHARGES/509820258793 BRANCH : ATM SERVICE BRANCH",
+      "INR 9.00",
+      "-",
+      "INR 4,854.14",
+      "1",
+      "1"
+    ],
+    [
+      "11/04/2025",
+      "CASH DEP THARWAI/Deposit by SELF /BRANCH :THARWAI",
+      "-",
+      "INR 28,900.00",
+      "INR 33,754.14",
+      "1",
+      "1"
+    ],
+    [
+      "15/04/2025",
+      "CASH DEP THARWAI/Deposit by SELF /BRANCH : THARWAI",
+      "-",
+      "INR 91,500.00",
+      "INR 125,254.14",
+      "1",
+      "1"
+    ],
+    [
+      "15/04/2025",
+      "TRANSFER TO 97158048396 03401100002158/PSIB/Oth ers//IMPS/P2A/5105158997 17//BRANCH : ATM SERVICE BRANCH",
+      "INR 110,000.00",
+      "-",
+      "INR 15,254.14",
+      "2",
+      "1"
+    ],
+    [
+      "15/04/2025",
+      "TRANSFER TO 88907048393 /IMPS COMMISSION CHARGES/510515899717 BRANCH : ATM SERVICE BRANCH",
+      "INR 12.00",
+      "-",
+      "INR 15,242.14",
+      "2",
+      "1"
+    ],
+    [
+      "19/04/2025",
+      "CASH DEP THARWAI/Deposit by SELF /BRANCH :THARWAI",
+      "-",
+      "INR 55,500.00",
+      "INR 70,742.14",
+      "2",
+      "1"
+    ],
+    [
+      "20/04/2025",
+      "TRANSFER TO 97158048396 06145165970/KKBK/Others /IMPS/P2A/510922337695 BRANCH : ATM SERVICE BRANCH",
+      "INR 60,000.00",
+      "-",
+      "INR 10,742.14",
+      "2",
+      "1"
+    ],
+    [
+      "20/04/2025",
+      "TRANSFER TO 88907048393 /IMPS COMMISSION CHARGES/510922337695 BRANCH : ATM SERVICE BRANCH",
+      "INR 9.00",
+      "-",
+      "INR 10,733.14",
+      "2",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}

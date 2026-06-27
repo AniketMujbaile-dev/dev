@@ -1,0 +1,155 @@
+{
+  "bank_name": "Union Bank of India (UBI)",
+  "raw_csv": "raw.csv",
+  "created_at": "2026-06-06T14:32:47Z",
+  "normalized_fields": [
+    "date",
+    "description",
+    "voucher_type",
+    "amount",
+    "closing"
+  ],
+  "header": [
+    "Date",
+    "Description",
+    "Instrument No",
+    "Withdrawals(Rs.)",
+    "Deposits(Rs.)",
+    "Balance(Rs.)",
+    "Page Number",
+    "Minus"
+  ],
+  "header_signature": "date|description|instrument no|withdrawals rs|deposits rs|balance rs|page number|minus",
+  "mapping": {
+    "date": 0,
+    "description": 1,
+    "debit": 3,
+    "credit": 4,
+    "amount": null,
+    "balance": 5,
+    "direction": null
+  },
+  "mapping_columns": {
+    "date": "Date",
+    "description": "Description",
+    "debit": "Withdrawals(Rs.)",
+    "credit": "Deposits(Rs.)",
+    "amount": null,
+    "balance": "Balance(Rs.)",
+    "direction": null
+  },
+  "sample_rows": [
+    [
+      "01/04/2025",
+      "Opening Balance",
+      "-",
+      "-",
+      "-",
+      "0.00",
+      "1",
+      "2"
+    ],
+    [
+      "21/08/2025",
+      "New Limit 7000000",
+      "",
+      "28,830.79",
+      "",
+      "28,830.79Dr",
+      "1",
+      "1"
+    ],
+    [
+      "22/08/2025",
+      "TO CA",
+      "1",
+      "4,54,266.95",
+      "",
+      "4,83,097.74Dr",
+      "1",
+      "1"
+    ],
+    [
+      "31/08/2025",
+      "053715010000025:Int.Coll:",
+      "",
+      "7.00",
+      "",
+      "4,83,104.74Dr",
+      "1",
+      "1"
+    ],
+    [
+      "10/09/2025",
+      "INSP CHRG Q2",
+      "",
+      "1,180.00",
+      "",
+      "4,84,284.74Dr",
+      "1",
+      "1"
+    ],
+    [
+      "11/09/2025",
+      "DOCUMENTATION CHRG Q2",
+      "",
+      "5,900.00",
+      "",
+      "4,90,184.74Dr",
+      "1",
+      "1"
+    ],
+    [
+      "11/09/2025",
+      "EM CHRG",
+      "",
+      "11,800.00",
+      "",
+      "5,01,984.74Dr",
+      "1",
+      "1"
+    ],
+    [
+      "18/09/2025",
+      "TR TO CA LALIT ENTERPRISE",
+      "17014852",
+      "5,00,000.00",
+      "",
+      "10,01,984.74Dr",
+      "1",
+      "1"
+    ],
+    [
+      "18/09/2025",
+      "RTGSO-HINDUSTAN PETROLEUM",
+      "17014851",
+      "12,00,000.00",
+      "",
+      "22,01,984.74Dr",
+      "1",
+      "1"
+    ],
+    [
+      "26/09/2025",
+      "TO STOCK INSURANCE",
+      "1",
+      "14,929.00",
+      "",
+      "22,16,913.74Dr",
+      "1",
+      "1"
+    ]
+  ],
+  "rules": [
+    "Reuse exact bank+header mapping before AI.",
+    "Reuse same-bank mapping by column names when possible.",
+    "Detect date, description, debit, credit, amount, balance, and direction columns.",
+    "Use debit/credit columns when separate; use amount+direction when present.",
+    "DR means Payment, CR means Receipt.",
+    "Negative debit/payment reverses to Receipt; negative credit/receipt reverses to Payment.",
+    "Amount output is always positive with two decimals.",
+    "Closing balance ignores page-number and serial-looking cells.",
+    "Wrapped raw CSV lines are merged before normalization.",
+    "Missing transactions are recovered deterministically without AI."
+  ]
+}
