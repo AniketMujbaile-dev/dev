@@ -1,0 +1,71 @@
+Statement of account : 070126900000212
+Statement Type : 10 Dec 2025 - 10 Mar 2026
+Customer Name : V3 TECHRIDER PVT LTD
+Your Branch Details
+Address Line 1 : V3 TECHRIDER PVT LTD
+Branch Name: SECTOR 50, NOIDA
+Address Line 2 : PLOT NO RZ 7 KH NO 26 4 2 F
+F
+Address Line 1: GROUND & FIRST FLOOR,
+Address Line 3 : BABA HARI DASS NAGAR
+NAJAFGARH NEW
+Line 2: PLOT NO B-1/68, SECTOR-50,
+Mobile No : 7011261154
+Line 3: NOIDA - 201301
+Email : info.v3techrider@gmail.com
+Cust ID: 35792494
+IFSC Code: YESB0000701 | MICR Code:
+110532135
+Transaction details for your account number 070126900000212  (CA/SA Product name) (currency INR )
+Primary Holder V3 TECHRIDER PVT LTD
+Nominee Details: Not Registered
+Account status:  Active
+Joint holder’s names:
+Transaction
+Date
+Value Date
+Description
+Reference Number
+Withdrawals
+Deposits
+Running Balance
+2026-03-10
+2026-03-10
+RTGS Dr-SBIN0020108-S
+IAN INFRA AND REALCO
+N LLP-GOMTI NAGAR-YE
+SBR52026031057316229
+10004592120260310
+000200000016          
+2,000,000.00
+2,976,836.50
+2026-03-10
+2026-03-10
+RTGS Dr-CIUB0000122-RAH
+UL NEMANI-GOMTI NAGAR
+-YESBR52026031057316195
+10004592120260310
+000200000015          
+1,100,000.00
+4,976,836.50
+2026-03-10
+2026-03-10
+YIB-RTGS-YESBR12026031
+000018141-sian infra and re
+alcon llp-UBIN0807052-paym
+ent-UNION BANK OF INDIA
+YESME606900078
+1400                     
+2,000,000.00
+6,076,836.50
+2026-03-09
+2026-03-09
+IMPS/NA/XXXX7616/RR
+N:606873970169/PC301
+3502230944088/HDFC B
+ANK/OFFICEZ SPACE S
+OLUTIONS PVT LTD/rent
+YESI6606800898
+3400                     
+70,800.00
+8,076,836.50

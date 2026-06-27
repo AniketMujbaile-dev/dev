@@ -1,0 +1,72 @@
+Account Name                   :EZZY PAINTS AND HARDWARE
+Date                                    :8 Jun 2026
+Account Number                 :00000044645645484
+Account Description            :CA-REGULAR-PUB-OTH-ALL-INR
+Branch                                :HINGANGHAT
+Drawing Power                   :0.00
+Interest Rate(% p.a.)          :0.0
+MOD Balance                     :0.00
+CIF No.                               :92289429208
+IFS Code                            :SBIN0000382
+MICR Code                        :442002868
+Balance as on 1 May 2026  :2,01,735.63
+ 
+Account Statement from 1 May 2026 to 31 May 2026
+ 
+ The number of transactions in this statement  exceeds 150 entries. You can view the remaining
+transactions in the Pending Statement link using this Request ID:6608B4353418564.
+ 
+ Please do not share your ATM, Debit/Credit card number, PIN and OTP with anyone over mail,
+SMS, phone call or any other media. Bank never asks for such information.
+ 
+ **This is a computer generated statement and does not require a signature.
+ 
+Address
+40 NEAR DAGA MILL JAGANATH WARD MAIN ROAD LOHA LINE
+Wardha
+27-442301
+IN
+Txn
+Date
+Value
+Date
+Description
+Ref
+No./Cheque
+No.
+Branch
+Code
+Debit
+Credit
+Balance
+1 May
+2026
+1 May
+2026
+   BULK
+POSTING-
+SBIP_H3004
+260068405-
+UPI
+SB165453-
+ /
+16899
+12,010.00
+2,13,745.63
+1 May
+2026
+1 May
+2026
+   TO
+TRANSFER-
+IMPS/612111
+529772/IPOS
+-xx550-/15
+day-
+TRANSFER
+TO
+46982941620
+96 /
+382
+4,500.00
+2,09,245.63

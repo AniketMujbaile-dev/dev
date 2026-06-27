@@ -1,0 +1,129 @@
+Account Statement from 01-12-2025 to 28-02-2026
+Account Name
+Account Number
+Account Type
+Customer Address
+Branch Name
+IFSC Code
+MICR Code
+Branch Address
+SHAILESHBHAI CHHAGANBHAI PATEL
+24960100005643
+MOTAVARACHHA,GUJARAT
+GRAM PANCHYAT BLDGMOTAVARACHHA
+MOTAVARACHHA,GUJARAT
+Gujarat 394101 GJ
+D 302 GOLDAN CITY OPP UTTRAN POWER STATION
+MOTA VARACHHA
+SURAT GUJARAT,INDIA
+394101
+BARB0MOTSUR
+395012042
+SBA
+Account Details
+Serial
+No
+Transaction
+Date
+Value
+Date
+Description
+Cheque
+Number
+Debit
+Credit
+Balance
+1,00,747.91
+1
+01-12-2025
+Opening Balance
+-
+-
+92,039.91
+2
+01-12-2025
+01-12-2025
+ACHDR/TP ACH ICICI
+BANK/3532276503/111133514809
+8,708.00
+-
+91,039.91
+3
+01-12-2025
+01-12-2025
+UPI/570134914926/10:50:22/UPI/paytm-
+91756877@ptys
+1,000.00
+-
+89,539.91
+4
+02-12-2025
+02-12-2025
+UPI/533672800238/10:32:39/UPI/9784944794@ybl/U
+PI
+1,500.00
+-
+84,679.91
+5
+02-12-2025
+02-12-2025
+UPI/570232798005/10:37:52/UPI/gpay-utility@okpaya
+4,860.00
+-
+94,679.91
+6
+02-12-2025
+02-12-2025
+UPI/488342393709/10:44:51/UPI/9503333034@ybl/Pa
+ym
+-
+10,000.00
+70,679.91
+7
+02-12-2025
+02-12-2025
+UPI/570220789538/11:16:43/UPI/asifbhatti9040@okhd
+24,000.00
+-
+69,679.91
+8
+02-12-2025
+02-12-2025
+UPI/570205399594/13:44:00/UPI/paytmqr6iof5t@ptys/
+1,000.00
+-
+59,679.91
+9
+02-12-2025
+02-12-2025
+UPI/533609957307/20:00:36/UPI/9023792818-
+2@ibl/UP
+10,000.00
+-
+59,679.44
+10
+03-12-2025
+03-12-2025
+SMS Charges for OCT 25
+0.47
+-
+54,679.44
+11
+07-12-2025
+07-12-2025
+UPI/534168346205/17:34:30/UPI/ahir96228-
+1@okaxis/
+5,000.00
+-
+54,179.44
+12
+07-12-2025
+07-12-2025
+UPI/534143820150/17:49:30/UPI/9327310277@okbiz
+axi
+500.00
+-
+This is a computer-generated statement hence does not require signature. Statement is generated on 16/06/2026 12:19:00 PM (through bob World mobile app) from the system
+maintained in the bank containing transactions carried out in normal course of business.
+Page 1 of 8
+Note: In case you find any discrepancy, we advise you to take up with your base branch or raise a complaint using bob World.

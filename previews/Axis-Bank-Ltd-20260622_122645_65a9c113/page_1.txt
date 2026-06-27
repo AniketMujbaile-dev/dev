@@ -1,0 +1,183 @@
+ 
+GURU RAMDAS ENTERPRISES
+Joint Holder:- -
+NEAR PURUSHOTTAM PETROL PUMP
+GHUCHAI CHAURAHA,PURANPUR,PURANPUR
+PILIBHIT
+PILIBHIT
+Customer ID: 889444655
+UTTAR PRADESH-INDIA
+IFSC Code: UTIB0001848
+262122
+MICR Code: 262211402
+Nominee Registered: Y
+Registered Mobile No: XXXXXX1409
+Nominee Name: RAJ KAUR
+Registered Email ID: GUXXXX00@GMAIL.COM
+PAN: KWKPS6834Q
+Scheme: CA - BUSINESS SELECT
+CKYC No: NA
+Currency: INR
+Statement of Axis Account No: 919020021852771 for the period (From: 01-05-2026  To: 31-05-2026)
+Tran Date
+Chq No
+Particulars
+Debit
+Credit
+Balance
+Init.
+Br
+OPENING BALANCE
+           70549.86
+01-05-2026
+IFT/PB0264832192/PHONEPE/F09
+My0twail7Redemption/
+              
+6200.00
+            76749.86
+100
+02-05-2026
+IFT/PB0265261188/PHONEPE/F09
+My0twail7Redemption/
+             
+25000.00
+           101749.86
+100
+02-05-2026
+IMPS/P2A/612211831123/jagroops/FEDERALB/
+RDARemit/9199999999999049000
+             
+68000.11
+           169749.97 1848
+03-05-2026
+IFT/PB0265592118/PHONEPE/F09
+My0twail7Redemption/
+             
+20000.00
+           189749.97
+100
+03-05-2026
+IMPS/P2A/612321571336/REMITLYI/Remitter/R
+DAVostr/9100000000007139000
+             
+45000.36
+           234750.33 1848
+08-05-2026
+SELF CASH DEP-
+BNA/DPRH184801/310/080526/PURANPU
+             
+93500.00
+           328250.33 1848
+08-05-2026
+SELF CASH DEP-
+BNA/DPRH184801/312/080526/PURANPU
+             
+25500.00
+           353750.33 1848
+12-05-2026
+IFT/PB0269016334/PHONEPE/F09
+My0twail7Redemption/
+              
+3051.00
+           356801.33
+100
+13-05-2026
+IFT/PB0269456581/PHONEPE/F09
+My0twail7Redemption/
+              
+6000.00
+           362801.33
+100
+14-05-2026
+IFT/PB0269818486/PHONEPE/F09
+My0twail7Redemption/
+             
+35300.00
+           398101.33
+100
+14-05-2026
+Monthly Service Chrgs APR-26
+               100.00
+           398001.33 1848
+14-05-2026
+GST @18% on Monthly Service Chrgs
+                18.00
+           397983.33 1848
+15-05-2026
+IFT/PB0270269300/PHONEPE/F09
+My0twail7Redemption/
+             
+27000.00
+           424983.33
+100
+16-05-2026
+IFT/PB0270649037/PHONEPE/F09
+My0twail7Redemption/
+              
+1300.00
+           426283.33
+100
+17-05-2026
+IFT/PB0270960867/PHONEPE/F09
+My0twail7Redemption/
+              
+9350.00
+           435633.33
+100
+18-05-2026
+IFT/PB0271348805/PHONEPE/F09
+My0twail7Redemption/
+              
+7500.00
+           443133.33
+100
+19-05-2026
+IFT/PB0271682071/PHONEPE/F09
+My0twail7Redemption/
+              
+2100.00
+           445233.33
+100
+20-05-2026
+IFT/PB0272063834/PHONEPE/F09
+My0twail7Redemption/
+              
+2000.00
+           447233.33
+100
+21-05-2026
+UPI/P2A/274990841416/PHONEPE/UTIB/F09
+My0t/
+               100.00
+           447333.33 1848
+21-05-2026
+RTGS/MB/UTIBR72026052100576905/Dhanjal
+engg works/BANK OF BARODA/
+            
+200000.00
+           247333.33 1848
+23-05-2026
+IFT/PB0273204190/PHONEPE/F09
+My0twail7Redemption/
+            
+100000.00
+           347333.33
+100
+23-05-2026
+MOB/SELFFT/924030064295312/924030064295
+312
+            
+300000.00
+            47333.33 1848
+26-05-2026
+IFT/PB0274392693/PHONEPE/F09
+My0twail7Redemption/
+               200.00
+            47533.33
+100
+26-05-2026
+UPI/P2A/244363039783/MANPREET
+/PSIB/Payment/
+             
+20000.00
+            67533.33 1848

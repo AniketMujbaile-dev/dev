@@ -1,0 +1,114 @@
+Page No:1
+ 
+           
+                      
+                                 
+                                            
+                                                       
+           
+                        STATEMENT OF ACCOUNT from 06/04/2026 to 15/04/2026 for Account Number 50056342120.
+                 
+INDIAN BANK
+UMARI (M.P.)
+IFSC CODE:IDIB000U520
+UMARI RAJENDRA NAGAR , DIST. SATNA , MADHYA PRADESH
+Branch Code :04785
+Account Number : 50056342120
+Product type :  MICRO-SMALL-ENT-OCC-REPO
+GOEL CARGO PVT. LTD.
+HARYANA BHAWAN
+PANNA ROAD
+SATNA
+M.P. - 485001
+Nominee Name :No
+Email : goelgroup.satna@gmail.com
+Statement Date :Tue Jun 09 15:27:29 IST 2026
+Cleared Balance :2319996.45
+Uncleared Amount :0.00
+Drawing Power :00
+Interest Rate : 9.150
+ 
+Value
+Date
+Post
+Date
+Remitter
+Branch
+Description
+Cheque No
+DR
+CR
+Balance
+BALANCE B/F
+147059622.
+50DR
+06/04
+/2026
+06/04
+/2026
+UMARI (M.P.)
+/ONLINE B
+ULULK NEFT TRF
+P011  NEFT HSBC
+IDIBN520260406368
+67441 MONTBLAN
+Txn Amt.
+39,100.00 Charges.
+5.61 TRANSFER TO
+89634047856
+39105.61
+147098728.
+11DR
+06/04
+/2026
+06/04
+/2026
+ONLINE
+TRANSFER
+BY TRANSFER
+Transfer
+50056GOEL CARGO
+PVT Goel Cargo
+TRANSFER FROM
+8145613072
+KALYANI
+MINERALS LLP
+5000000.0
+0
+142098728.
+11DR
+06/04
+/2026
+06/04
+/2026
+UMARI (M.P.)
+/ONLINE B
+ULULK NEFT TRF
+P001  NEFT UBIN
+IDIBN520260406368
+78896 JEETLAL  Txn
+Amt.       1,20,320.00
+Charges.       17.41
+TRANSFER TO
+89634047856
+120337.41
+142219065.
+52DR
+06/04
+/2026
+06/04
+/2026
+UMARI (M.P.)
+/ONLINE B
+ULULK NEFT TRF
+P021  NEFT HDFC
+IDIBN520260406368
+78901 BPCL ECM
+Txn Amt.
+5,00,000.00
+Charges.       29.21
+TRANSFER TO
+89634047856
+500029.21
+142719094.
+73DR

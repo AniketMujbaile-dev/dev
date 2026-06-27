@@ -1,0 +1,194 @@
+Tran Date Value Date
+Particulars
+Location
+Chq.No
+Withdrawals
+Deposits
+Balance (INR)
+09-01-2026 09-01-2026 CLG/APEX ASSOCIATES/SBI
+RPC PANJIM-GOA
+106005
+354.00
+ 
+1,31,152.20 Cr
+10-01-2026 10-01-2026 INF/NEFT/IN42601050329837/SBIN0000573/NILESH
+POR
+15,000.00
+ 
+1,16,152.20 Cr
+10-01-2026 10-01-2026 INF/INFT/042971216371/RAVAL0IL
+POR
+1,12,643.00
+ 
+3,509.20 Cr
+10-01-2026 10-01-2026 INF/NEFT/IN42601050635255/BKID0002609/MAATEMPO
+POR
+3,100.00
+ 
+409.20 Cr
+10-01-2026 10-01-2026 INF/NEFT/IN42601050636570/KKBK0000841/NARENHARDWARE POR
+11,980.00
+ 
+11,570.80 Dr
+11-01-2026 11-01-2026 INF/NEFT/IN42601151501434/IDIB000N158/GARDNERTIWARI
+POR
+7,100.00
+ 
+18,670.80 Dr
+12-01-2026 12-01-2026 CLG/PRAKASH ROLLING SHUTTERS/BOI
+RPC MUMBAI
+106014
+81,370.00
+ 
+1,00,040.80 Dr
+12-01-2026 12-01-2026 CLG/PRAKASH ROLLING SHUTTERS/BOI
+RPC MUMBAI
+106016
+8,247.00
+ 
+1,08,287.80 Dr
+13-01-2026 13-01-2026 RTGS-HDFCR52026011356777755-GUJARATPLUGINDEVICESPV
+TLTD-50200088926390-HDFC0000240
+RPC-NASIK
+11,69,000.00
+10,60,712.20 Cr
+17-01-2026 17-01-2026 CASH PAID:self 4013 PORCHQ,106017
+POR
+106017
+25,000.00
+ 
+10,35,712.20 Cr
+17-01-2026 17-01-2026 INF/NEFT/IN42601755684793/UCBA0002840/PMPCLIMATE
+POR
+21,523.00
+ 
+10,14,189.20 Cr
+20-01-2026 20-01-2026 NEFT-HDFCH00749743537-EMCO ELECTRO DYNE PRIVATE 
+LIMITED-0001-50200063561800-HDFC0000240
+RPC MUMBAI
+1,27,050.00
+11,41,239.20 Cr
+22-01-2026 22-01-2026 INF/NEFT/IN42602258069084/CNRB0003889/HKLAMINATION
+POR
+3,50,000.00
+ 
+7,91,239.20 Cr
+22-01-2026 22-01-2026 INF/NEFT/IN42602258070434/KKBK0000843/SHEETAL
+POR
+4,000.00
+ 
+7,87,239.20 Cr
+22-01-2026 22-01-2026 NEFT-SBIF400007307693-BARODA MOULDS  amp  DIES 
+PRIVATE LI-CMPNEFT/SBIF40000730-00000030055480160-SB
+RPC MUMBAI
+5,782.00
+7,93,021.20 Cr
+22-01-2026 22-01-2026 INF/NEFT/IN42602258190887/YESB0000001/GOLDENPRECISION POR
+8,425.00
+ 
+7,84,596.20 Cr
+22-01-2026 22-01-2026 SGB/2654930/SGBOFT2026012200008744/VOLTAMP 
+TRANSFORMERS LIMITED/PAYMENT
+CASH MANAGEMENT SERVICES
+1,57,500.00
+9,42,096.20 Cr
+23-01-2026 23-01-2026 CLG/VIDYUTH CONTROL SYSTEMS/SBI
+CHENNAI RPC
+106012
+29,500.00
+ 
+9,12,596.20 Cr
+23-01-2026 23-01-2026 NEFT-AXOBR02314885248-NEOTRAFO SOLUTIONS INDIA 
+PRIVATE LIMITED--925020058211678-UTIB0001634
+RPC MUMBAI
+33,95,000.00
+43,07,596.20 Cr
+24-01-2026 24-01-2026 INF/NEFT/IN42602459369205/SBIN0000573/BHARAT
+POR
+1,00,000.00
+ 
+42,07,596.20 Cr
+25-01-2026 25-01-2026 INF/INFT/043122329721/KAMARAJANJ
+POR
+1,00,000.00
+ 
+41,07,596.20 Cr
+25-01-2026 25-01-2026 INF/INFT/043122342111/Purchase       /VITRANSPVTLTD
+POR
+1,00,000.00
+ 
+40,07,596.20 Cr
+27-01-2026 27-01-2026 INF/INFT/043130152401/Purchase       /VITRANSPVTLTD
+POR
+1,18,536.00
+ 
+38,89,060.20 Cr
+27-01-2026 27-01-2026 INF/NEFT/IN42602750365898/KKBK0000843/SHEETAL
+POR
+2,320.00
+ 
+38,86,740.20 Cr
+27-01-2026 27-01-2026 INF/NEFT/IN42602750562928/BARB0PORXXX/SRUTICOPPER
+POR
+3,50,000.00
+ 
+35,36,740.20 Cr
+27-01-2026 27-01-2026 INF/NEFT/IN42602750564399/BARB0PORXXX/SRUTICOPPER
+POR
+2,50,000.00
+ 
+32,86,740.20 Cr
+28-01-2026 28-01-2026 INF/NEFT/IN42602850956672/IOBA0002391/VIJAYTAXI
+POR
+650.00
+ 
+32,86,090.20 Cr
+28-01-2026 28-01-2026 INF/INFT/043150306551/Kamarajan      /KAMARAJANJ
+POR
+1,00,000.00
+ 
+31,86,090.20 Cr
+30-01-2026 30-01-2026 INF/NEFT/IN42603052446276/KKBK0002606/ELECTRIXZONE
+POR
+23,482.00
+ 
+31,62,608.20 Cr
+Total :
+18,23,230.00
+48,54,332.00
+31,62,608.20
+Sincerely,
+Team ICICI Bank
+Legends for transactions in your Account Statement
+VAT/MAT/NFS - Cash withdrawal at other Bank ATM's
+VPS/IPS - Debit Card Transaction
+BCTT - Banking Cash Transaction Tax
+UCCBRN CMS - Upcountry cheque collection
+INF - Internet fund transfer in linked Accounts
+BIL - Internet Bill payment or funds transfer to third party
+LCCBRN CMS - Local cheque collection
+CIN : L65190GJ1994PLC021012
+Corporate Office: ICICI Bank Ltd., ICICI Bank Towers, Bandra-Kurla complex, Mumbai - 400051, India.
+This is a system generated statement. Hence, it does not require any signature.
+Card blocking procedure for Savings Account:
+iMobile: Log in to iMobile > Debit Card > Services > Card Services > Block/Unblock Debit Card
+Personal Banking: Call 1800 1080 > IVR > Voice Assist > Say ‘Card Block’ or press ‘0’.
+Internet Banking: Service Request > Block Debit/ATM Card > Select the Card you want to block > Submit.
+Card blocking procedure for Current Account:
+InstaBIZ: Log in to InstaBIZ > More > Services > Debit Card > Card Block/Unblock
+Corporate Internet Banking > Service Request > Debit Card > Block Debit Card.
+Account blocking procedure for Savings Account:
+SMS: SMS ‘BLOCK’ <last three digits of your Account number> to 9215676766
+There is a revision in the service charge for domestic Savings/Current Accounts w.e.f. July 01, 2025. For details, please visit https://www.icicibank.com/notice-board.page
+W.e.f. July 1, 2023, a monthly limit will be applicable on ATM cash withdrawals using Debit Cards. (Minimum limit of ₹ 2 lakh up to a maximum of ₹7.5 lakh as per the Card type). For details,
+please visit https://www.icicibank.com/notice-board.
+ICICI Bank will follow the Customer Relationship Policy to address the customer risks arising out of unauthorised electronic banking transaction. The policy is already available on the ICICI
+Bank website: Homepage>>Other>>Customer Service Policies>>Customer Relations Policy
+Grievance Redressal / Complaints / Escalations: If you are not satisfied with our services, you may register your grievance by (i) visiting the ‘Complaint Form’ section on www.icicibank.com or
+(ii) by calling our Customer Care on 1800 1080 or (iii) by writing to Mrs. Sharlet Malvankar - The Principal Nodal Officer, ICICI Bank Ltd., Bandra Kurla Complex Mumbai - 400051, Telephone
+No.: 022-39337979 (Monday to Friday, 10.00 a.m. to 5:00 p.m. excluding Bank holidays), E-mail: pno@icicibank.com
+Update nominee details for your Individual and proprietorship current account with ICICI Bank to ensure your family's financial security.
+*** End of Statement ***
+This is an authenticated intimation/statement. Customers must immediately notify the Bank in case of any discrepancy.
+SR245115331
+Page 2 of 2 M-77017684-56851

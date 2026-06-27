@@ -1,0 +1,62 @@
+ The Federal Bank Ltd. Branch: Namakkal, 64 And 66  Rangar Sannathi Street, Sendamangalam Main Road, Namakkal, Tamilnadu - 637001, nmk@federalbank.co.in,
+Ph:04286-232433, 04286-232466  CIN:L65191PLC000386 Website:www.federalbank.co.in
+Page 2 of 2
+Date
+Value Date
+Particulars
+Tran
+Type
+Tran ID
+Cheque Details
+Withdrawals
+Deposits
+Balance
+Dr/
+Cr
+11/06/2026
+11/06/2026
+FT IMPS/IFI/616216033382/WIN
+INFO SYSTEMS/EBGPP606
+TFR
+S66535143
+15000.00
+807709.88
+CR
+12/06/2026
+12/06/2026
+STD INS TO
+17970600015817 /
+KAMALAVENI S
+TFR
+S73759774
+S73759774
+6000.00
+801709.88
+CR
+GRAND TOTAL
+206000.00
+265150.00
+Abbreviations Used:
+CASH
+:
+Cash Transaction
+TFR
+:
+Transfer Transaction
+FT
+:
+Fund Transfer
+CLG
+:
+Clearing Transaction
+SBINT
+:
+Interest on SB Account
+MB
+:
+Mobile Banking
+DISCLAIMER: This computer generated statement contains the particulars of the transaction(s) in the account that have been updated till the time of day end operations of the CBS system of the Bank on the
+previous working day and the same will not reflect the transaction(s) that have occurred in the account, if any, subsequent thereto. The Federal Bank Ltd. shall not be liable/responsible for want of full
+particulars of the transaction(s) at the time of the generation of this statement.
+This is a computer generated statement which need not normally be signed. Contents of this statement will be considered correct if no error is reported within 21 days of the statement date.
+****END OF STATEMENT****

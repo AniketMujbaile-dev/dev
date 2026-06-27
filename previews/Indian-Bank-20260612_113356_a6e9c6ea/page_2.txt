@@ -1,0 +1,114 @@
+Page No:2
+ 
+              
+                            
+                                          
+                                                        
+                                                                      
+        
+                 STATEMENT OF ACCOUNT from 01/04/2025 to 31/03/2026 for Account Number 50056342120.
+       
+Value
+Date
+Post
+Date
+Credit Amount
+Debit Amount
+Closing Balance
+Description
+02/04/
+2025
+02/04/
+2025
+18000
+-118075143.77
+WITHDRAWAL TRANSFER
+ 
+NEFT/HDFC/IDIBN52025040254883
+553/MOHIT HO/
+ Txn Amt.         17994.39 Charges.
+5.61
+02/04/
+2025
+02/04/
+2025
+15550
+-118090693.77
+WITHDRAWAL TRANSFER
+ 
+NEFT/SBIN/IDIBN520250402548835
+54/PRAJAPAT/
+ Txn Amt.         15544.39 Charges.
+5.61
+02/04/
+2025
+02/04/
+2025
+65101
+-118155794.77
+WITHDRAWAL TRANSFER
+ 
+NEFT/ICIC/IDIBN520250402548846
+93/AMIT TIW/
+ Txn Amt.         65095.39 Charges.
+5.61
+02/04/
+2025
+02/04/
+2025
+29620
+-118185414.77
+WITHDRAWAL TRANSFER
+ 
+NEFT/SBIN/IDIBN520250402548842
+70/SUSHMA G/
+ Txn Amt.         29614.39 Charges.
+5.61
+02/04/
+2025
+02/04/
+2025
+32530
+-118217944.77
+WITHDRAWAL TRANSFER
+ 
+NEFT/SBIN/IDIBN520250402548857
+90/BABAN SA/
+ Txn Amt.         32524.39 Charges.
+5.61
+02/04/
+2025
+02/04/
+2025
+29112
+-118247056.77
+WITHDRAWAL TRANSFER
+ 
+NEFT/ICIC/IDIBN520250402548849
+20/SHIV DAY/
+ Txn Amt.         29106.39 Charges.
+5.61
+02/04/
+2025
+02/04/
+2025
+14561
+-118261617.77
+WITHDRAWAL TRANSFER
+ 
+NEFT/PUNB/IDIBN52025040254884
+927/MAHESH S/
+ Txn Amt.         14555.39 Charges.
+5.61
+02/04/
+2025
+02/04/
+2025
+23050
+-118284667.77
+WITHDRAWAL TRANSFER
+ 
+NEFT/AUBL/IDIBN52025040254886
+155/SUNIL JA/
+ Txn Amt.         23044.39 Charges.
+5.61

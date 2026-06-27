@@ -1,0 +1,105 @@
+ The Federal Bank Ltd. Branch: Barshi, Opp.Barshi Textile Mill, Agalgaon Road, Barshi  Solapur, Maharashtra - 413401, bri@federalbank.co.in, Ph:91-2184-220345,  
+CIN:L65191PLC000386 Website:www.federalbank.co.in
+Page 2 of 2
+Date
+Value Date
+Particulars
+Tran
+Type
+Tran ID
+Cheque Details
+Withdrawals
+Deposits
+Balance
+Dr/
+Cr
+12/09/2024
+12/09/2024
+Loan Recovery From
+-16365500001564
+TFR
+S59051216
+53056.00
+1950864.00
+DR
+12/10/2024
+12/10/2024
+16367600001601:Normal
+Int.Coll:12-09-2024 to 11-1
+TFR
+S34154501
+15954.00
+1966818.00
+DR
+12/10/2024
+12/10/2024
+Loan Recovery From
+-16365500001564
+TFR
+S34166658
+53056.00
+1913762.00
+DR
+12/11/2024
+12/11/2024
+16367600001601:Normal
+Int.Coll:12-10-2024 to 11-1
+TFR
+S68301430
+16173.00
+1929935.00
+DR
+12/11/2024
+12/11/2024
+Loan Recovery From
+-16365500001564
+TFR
+S68306969
+53056.00
+1876879.00
+DR
+12/12/2024
+12/12/2024
+16367600001601:Normal
+Int.Coll:12-11-2024 to 11-1
+TFR
+S59117767
+15349.00
+1892228.00
+DR
+12/12/2024
+12/12/2024
+Loan Recovery From
+-16365500001564
+TFR
+S59126989
+53056.00
+1839172.00
+DR
+GRAND TOTAL
+151625.00
+477504.00
+Abbreviations Used:
+CASH
+:
+Cash Transaction
+TFR
+:
+Transfer Transaction
+FT
+:
+Fund Transfer
+CLG
+:
+Clearing Transaction
+SBINT
+:
+Interest on SB Account
+MB
+:
+Mobile Banking
+DISCLAIMER: This computer generated statement contains the particulars of the transaction(s) in the account that have been updated till the time of day end operations of the CBS system of the Bank on the
+previous working day and the same will not reflect the transaction(s) that have occurred in the acount, if any, subsequent thereto. The Federal Bank Ltd. shall not be liable/responsible for want of full particulars
+of the transaction(s) at the time of the genration of this statement.
+This is a computer generated statement which need not normally be signed. Contenets of this statement will be considered correct if no error is reported within 21 days of the statement date.
+****END OF STATEMENT****

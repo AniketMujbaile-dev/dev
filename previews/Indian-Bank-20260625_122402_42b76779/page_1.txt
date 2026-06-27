@@ -1,0 +1,89 @@
+STATEMENT OF ACCOUNT
+K S HOSPITAL
+60 MUTT STREET
+kumbakonam
+KUMBAKONAM
+612001
+Account No : 937589557
+Product: CA-GEN-PUB-METRO/SWEEEP-INR
+Currency: INR
+Int Rate : 14.90 % P.a
+Limit : 0.00
+Drawing Power: 0.00
+Cleared Balance : 1090065.86Cr
+Uncleared Amount : 0.00
+Ckyc ID :
+Nominee Type :
+Nominee Name1 :
+INDIAN BANK
+MUTT STREET (KBM) BRANCH
+88, Mutt Street Kumbakonam
+Thanjavur Dist. Tamil Nadu
+612001
+Branch Code : 01444
+Phone No : 2420217
+Email ID : muttstreet@indianbank.co.in
+IFSC Code : IDIB000M138
+Statement Date :25-Jun-2026
+Statement From :01-Feb-2026
+           To :30-Apr-2026
+Statement Time :01:04:13
+Page No. : 1
+Nominee Name2 :
+Nominee Name3 :
+Nominee Name4 :
+Post Date
+Value
+Date
+Details
+Chq.No.
+Debit
+Credit
+Balance
+Brought Forward
+1045264.85cr
+02/02/26
+02/02/26
+CASH DEP/MUTT STREET (KBM)
+/Deposit by SELF /BRANCH : MUTT
+STREET (KBM)
+10440.00
+1055704.85Cr
+02/02/26
+02/02/26
+CASH DEP/MUTT STREET (KBM)
+/Deposit by SELF /BRANCH : MUTT
+STREET (KBM)
+23950.00
+1079654.85Cr
+02/02/26
+02/02/26
+PoS_Settlement_3237087A_02022026
+/BRANCH : ATM SERVICE BRAN
+CH
+3688.15
+1083343.00Cr
+02/02/26
+02/02/26
+PoS_Settlement_3237087A_01022026
+/BRANCH : ATM SERVICE BRAN
+CH
+5073.83
+1088416.83Cr
+03/02/26
+03/02/26
+PoS_Settlement_3237087A_03022026
+/BRANCH : ATM SERVICE BRAN
+CH
+6553.83
+1094970.66Cr
+Carried Forward
+1094970.66Cr
+Statement
+Summary
+Dr. Count:0
+Cr. Count:5
+0.00
+            49705.81
+In Case Your Account Is Operated By A Letter Of Authority/Power Of Attorney Holder, Please Check The
+Transaction With Extra Care.

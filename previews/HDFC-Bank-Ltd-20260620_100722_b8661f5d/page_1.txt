@@ -1,0 +1,118 @@
+Johnson George 2016-26
+Day Book
+Curr. Period 01/04/2016 to 31/12/2016
+Date
+Particulars
+Voucher Type Voucher No
+Debit
+Credit
+02/04/2016
+   Pantry Expenses Payment
+1
+100.00
+02/04/2016
+   Pantry Expenses
+   Snacks
+Payment
+2
+70.00
+02/04/2016
+   Interest Accrued Receipt
+4599
+376.00
+02/04/2016
+   Hbc Suspense
+   Petrol nano
+Journal
+1
+1,000.00
+02/04/2016
+   DSuspense
+   Amt tfd
+Journal
+4
+344.00
+02/04/2016
+   Security
+Deposits
+   Security deposit
+@Bescom
+MSYEH67069
+Journal
+26
+1,200.00
+02/04/2016
+   EPF Balance
+   Interest on
+employee share
+for the pf year
+2015-16 8.80%
+Journal
+166
+39,294.00
+02/04/2016
+   EPF Balance
+   Interest on pf
+employer share
+for the pf year
+2015-16 8.80%
+Journal
+167
+34,235.00
+02/04/2016
+   Capital JK
+   Diff in premium
+tfd
+Journal
+354
+5,000.00
+02/04/2016
+   HDFC Pension
+   Rev. Bonus
+2015-16
+Journal
+1278
+4,721.00
+02/04/2016
+   PF Balance PJ
+   pf ilkkn000t
+2015.16
+16600+5082
+Journal
+2411
+23,654.00
+03/04/2016
+   Pantry Expenses
+   Nonveg
+Payment
+3
+510.00
+03/04/2016
+   Holy Rosary
+Church
+   Church 08/15 to
+05/16
+Payment
+4
+2,000.00
+03/04/2016
+   Subscription &
+Donation
+   Offering
+Payment
+5
+50.00
+03/04/2016
+   Dress &
+Personal Care
+Expenses
+   Beer 2 nos
+Payment
+6
+300.00
+03/04/2016
+   Pantry Expenses
+   Foodex
+Journal
+2
+8,243.00

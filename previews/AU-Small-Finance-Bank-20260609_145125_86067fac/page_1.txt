@@ -1,0 +1,145 @@
+ACCOUNT STATEMENT
+Transaction
+Date
+Value Date
+Description/Narration
+      Cheque/
+Reference No.
+Debit (₹)
+Credit (₹)
+Balance (₹)
+21 Mar 2026
+21 Mar 2026
+UPI/DR/458998403220/B
+ABULAL
+PRAJAPAT/YESB/0014250
+00000051/KELA AU
+JAGATPURA
+AXLb4ce496f16e24b
+3fbcb2bbd72069da1
+7
+ 90.00
+-
+ 2,37,352.69
+21 Mar 2026
+21 Mar 2026
+UPI/DR/598375266992/RA
+JNEESH
+KUMAWAT/SBIN/000000
+40050007815/FAN AU
+JAGATPURA
+YBL9af56caf8e034d
+aab4347d6dbec755
+c9
+ 3,400.00
+-
+ 2,33,952.69
+21 Mar 2026
+21 Mar 2026
+UPI/CR/688847894459/S
+UJATA
+KUMAWAT/PUNB/167700
+0100155832/PAYMENT
+FROM PHONEPE AU
+JAGATPURA
+YBLa466aa38f2ec4
+ef1bf80c2e18ec385d
+8
+-
+ 200.00
+ 2,34,152.69
+21 Mar 2026
+21 Mar 2026
+UPI/DR/487681584161/MA
+ZID
+KHAN/SBIN/000000611695
+07729/KOMALI AUTO
+KIRAYA AU JAGATPURA
+IBL6348ad7139e349
+9daabab2286eb805
+a1
+ 200.00
+-
+ 2,33,952.69
+21 Mar 2026
+21 Mar 2026
+UPI/DR/517869673898/BH
+IWARAM
+GHASIL/YESB/0022611000
+00025/PAANI MAHESH
+BHAI AU JAGATPURA
+AXLc876db6180424
+52aa9dd60233a769
+61f
+ 300.00
+-
+ 2,33,652.69
+21 Mar 2026
+21 Mar 2026
+UPI/DR/126089386629/MA
+HI JUICE
+CENTER/UTIB/9180201108
+72063/PAYMENT FROM
+PHONEPE AU JAGATPURA
+AXL56d4fc52b5544
+c11a516ec2260c1997
+2
+ 40.00
+-
+ 2,33,612.69
+Customer ID
+Name
+:
+:
+: MAHI SOLAR ENERGY
+25146127
+Customer Type
+Account Type
+Sole Propertary
+:
+:
+Plot No. 44, Jai Bhawani Vihar, Vistar,
+Govindpura, Govindpura,, Jaipur,
+Jaipur Rural, Rajasthan,
+Jaipur - 302012, Rajasthan - India
+Account Number
+Branch
+AU Current Account-
+Maximum
+Kalwar Road Jaipur
+:
+Address
+Statement Period
+Statement Date
+07 Jun 2026
+21 Mar 2026 to 31 Mar 2026
+Closing Balance(₹)
+2021244429857480
+:
+:
+ 2,37,442.69
+ 68,428.05
+:
+:
+:
+Opening Balance(₹)
+AUBL0002444
+Not Registered
+Nominee
+IFSC
+:
+:
+19A, DHULESHWAR GARDEN, AJMER ROAD, JAIPUR - 302001, RAJASTHAN (INDIA) Ph.: +91 141 4110060/61, TOLL-FREE: 1800 1200 1200
+Please review the information provided in the statement. In case of any discrepancy, please inform the Bank immediately
+Call us at
+1800 1200 1200
+Website
+www.aubank.in
+Email
+customercare@aubank.in
+Write to us at
+Reg. ofce address
+Follow us on
+Facebook/Twitter
+Page 1 of 13
+                This is an auto generated statement and requires no signature

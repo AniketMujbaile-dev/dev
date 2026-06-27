@@ -1,0 +1,101 @@
+Account Statement from 01-12-2025 to 28-02-2026
+01-12-2025 से 28-02-2026 तक की खाता
+/ Account Name
+/ Account Number
+/ Account Type
+/ Customer Address
+/ Branch Name
+/ IFSC Code
+/ MICR Code
+/ Branch Address
+PARTH SHAH
+89930100005786
+KRISHNA NAGAR,AHMEDABAD
+NO 1119 F 2                                    AHMEDABAD
+GUJARAT            382345 GJ
+1, JAYANAND SOCIETY, NR. CINE PRIDE CINEMA
+KRISHNANAGAR, AHMEDABAD
+AHMEDABAD GUJARAT,INDIA
+382345
+BARB0VJKNAG
+382012208
+SBA
+गाहक का नाम
+खाता संरया
+खाता पकार
+गाहक का पता
+शाखा का नाम
+एमआईसीआर कोड
+शाखा का पता
+आईएफएससी कोड
+पभाव तारीख
+Sr.No
+Transaction
+Date
+Value
+Date
+Description
+Cheque
+Number
+Debit
+Credit
+Balance
+क.सं
+लेनदेन की
+तारीख
+चेक नंबर
+नामे
+जमा
+शेष
+ववरण
+4,12,243.62
+1
+01-12-2025
+Opening Balance
+-
+-
+3,95,743.62
+2
+01-12-2025
+01-12-2025 ACHDR/KOTAKMAHPRIMELTKKBK/3524707307/111
+133523410
+16,500.00
+-
+3,95,693.62
+3
+01-12-2025
+01-12-2025 UPI/533503099014/10:35:30/UPI/paytmqr625jvv@ptys
+/
+50.00
+-
+3,45,693.62
+4
+02-12-2025
+02-12-2025 UPI/533648550280/11:51:00/UPI/k1morbia@oksbi/lent
+50,000.00
+-
+3,40,693.62
+5
+02-12-2025
+02-12-2025 UPI/533667254529/18:47:33/UPI/8128705085mps@y
+bl/d
+5,000.00
+-
+3,39,544.62
+6
+03-12-2025
+03-12-2025 UPI/533798640469/13:51:40/UPI/payzomato@hdfcba
+nk/
+1,149.00
+-
+5,39,544.62
+7
+04-12-2025
+04-12-2025 IMPS/P2A/533817759950/PARTH
+SHAH/SELFBOBICI917405
+-
+2,00,000.00
+This is a computer-generated statement hence does not require signature. Statement is generated on 11/05/2026 10:11:30 AM (through bob World mobile app) from the system
+maintained in the bank containing transactions carried out in normal course of business.
+Page 1 of 8
+11/05/2026 10:11:30 AM

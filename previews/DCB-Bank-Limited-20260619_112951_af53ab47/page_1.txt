@@ -1,0 +1,146 @@
+ 
+DETAILS OF AUTHORISED SIGNATORY/ IES
+ 
+ * Confirmation for Foreign Accounts Tax Compliance Act(FATCA) / Common Reporting Standards(CRS).
+ ** Centralized KYC.
+ 
+PORTFOLIO SUMMARY
+ 
+All Amounts are in INR 
+ 
+ 
+ACCOUNT DETAILS
+ 
+Branch
+: VEJALPUR
+Customer ID
+: 107002989
+IFSC
+: DCBL0000080
+Customer Name
+: SHAH KANAN SAMIR
+MICR
+: 380072005
+Statement Period
+: 01-04-2025 To 31-03-2026
+Branch Address
+: 1-4,  MEDILINK HOSPITAL
+BUILDING132 FT. RING ROAD,
+SHYMAL CROSS RD  SATELLITE
+VIJALPUR ,380015 ,GUJARAT
+Generation Date
+: 19-06-2026
+Branch Phone Number
+: 26760470/60471/60472
+SHAH KANAN SAMIR
+4, SHISHIR BUNGLOWS, NEAR H.P PETROL PUMP
+JUDGES BUNGLOWS ROAD, BODAKDEV, AHMADABAD
+AHMEDABAD 380015
+GUJARAT INDIA
+Customer ID
+Customer Name
+PAN/Form 60
+Aadhaar Number
+FATCA*
+CKYC**
+CKYC Number**
+107002989
+SHAH KANAN SAMIR (PRIMARY)
+ABXXXXXX5E
+AVAILABLE
+YES
+YES
+40046990156104
+Operative Accounts
+Account Number
+Nominee
+Lien
+Lien Amount
+Opening Balance
+Closing Balance
+NIYOX - INR
+080XXXXXX5746 YES
+NO
+NIL
+        98,046.19
+        92,484.83
+Total
+0.00
+0.00
+0.00
+Account Number 08014600005746 - NIYOX (INR) - SHAH KANAN SAMIR
+Date*
+Transaction Details
+Cheque
+Number
+Withdrawals
+Deposits
+Balance
+Opening Balance
+98,046.19
+30-05-2025
+UPI:PAY:551607180870/Shemaroo Entertain/Yes Bank L
+                   699.00
+97,347.19
+10-06-2025
+UPI:PAY:516108461372/PARSHWANATH MEDICI/Axis Bank
+                 2,547.00
+94,800.19
+10-06-2025
+UPI:PAY:516181954618/PARSHWANATH MEDICI/Axis Bank
+                 2,000.00
+92,800.19
+17-06-2025
+UPI:PAY:516851061135/Vikalp Organic And/Axis Bank
+                   544.00
+92,256.19
+17-06-2025
+UPI:PAY:516825550403/PARSHWANATH MEDICI/Axis Bank
+                   768.00
+91,488.19
+19-06-2025
+UPI:PAY:553609214554/ZEE5              /Yes Bank L
+                 1,949.00
+89,539.19
+27-06-2025
+UPI:PAY:554456026580/PARSHWANATH MEDICI/Axis Bank
+                 2,000.00
+87,539.19
+27-06-2025
+UPI:PAY:554482217176/PARSHWANATH MEDICI/Axis Bank
+                 2,000.00
+85,539.19
+30-06-2025
+UPI:PAY:554783612921/PARSHWANATH MEDICI/Axis Bank
+                 1,612.00
+83,927.19
+30-06-2025
+SB Int.****05746:Pd:01-04-2025 to 30-06-2025
+                   369.00
+84,296.19
+03-07-2025
+UPI:PAY:555082630012/KUNJ CHEMIST      /HDFC BANK
+                   980.00
+83,316.19
+03-07-2025
+UPI:PAY:555002635170/JUST NUTS         /Axis Bank
+                 2,000.00
+81,316.19
+03-07-2025
+UPI:PAY:555057133229/JUST NUTS         /Axis Bank
+                 2,000.00
+79,316.19
+04-07-2025
+UPI:PAY:555161372587/JUST NUTS         /Axis Bank
+                   144.00
+79,172.19
+05-07-2025
+UPI:PAY:518670357075/ABHAYSINGH BHANVAR/Canara Ban
+                 1,400.00
+77,772.19
+   STATEMENT OF ACCOUNT                                             DCB BANK
+DCB Bank Limited
+Registered Office:6th Floor,Tower A, Peninsula Business Park, Senapati Bapat Marg, Lower Parel, Mumbai-400013 CIN:L99999MH1995PLC089008
+For clarification kindly contact DCB - Customer Care on 022 68997777, 040 68157777 or email customercare@dcbbank.com
+Non Resident Indian customers please dial +91-22-61271000 or email nri@dcbbank.com
+Page 1 of 7

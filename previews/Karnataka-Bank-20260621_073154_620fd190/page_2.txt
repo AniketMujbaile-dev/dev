@@ -1,0 +1,98 @@
+14-04-2025         UPI:529829310530:8904953092@axl(Chandrashekhar):P                        200.00     1,81,844.31
+14-04-2025         UPI:510455592418:sanjuhammannavar097@oksbi(Sanju                         350.00     1,82,194.31
+16-04-2025         UPI:348000400979:6362419410@ybl(NAGAPPA VEERABHAD                      3,610.00     1,85,804.31
+18-04-2025         UPI:098551134131:arunabudihal@axl(Arun  Budihal):                      3,600.00     1,89,404.31
+19-04-2025         CASH DEPOSIT-SELF                                                     41,100.00     2,30,504.31
+19-04-2025     705 NEFT-SHRI RAMLINGESHWAR S-HDFC/KARBN25109588659         50,000.00                   1,80,504.31
+19-04-2025     706 NEFT-VEERBHADRESHWAR FERT-CNRB/KARBN25109588804         50,000.00                   1,30,504.31
+19-04-2025     707 NEFT-UNIVERSAL AGRI AND B-UBIN/KARBN25109588889         50,000.00                     80,504.31
+19-04-2025     708 NEFT-OM SOLUTIONS-IBKL/KARBN25109589023                  6,500.00                     74,004.31
+22-04-2025         UPI:511239979411:bibiayeeshamalagali@okaxis(Bibi)                      5,000.00       79,004.31
+23-04-2025         UPI:033198407544:8217279613-2@ybl(MAHADEV SIDDAPP                        200.00       79,204.31
+28-04-2025         UPI:603066151114:8431504874@axl(PRAKASH I TALAWAR                        850.00       80,054.31
+05-05-2025         UPI:083788445641:9739347510-3@axl(PRAKASH):Paymen                      2,000.00       82,054.31
+05-05-2025         UPI:170478616228:9739347510-3@axl(PRAKASH):Paymen                      2,000.00       84,054.31
+05-05-2025         UPI:299916799555:9739347510-3@axl(PRAKASH):Paymen                      2,000.00       86,054.31
+05-05-2025         UPI:353552737175:9739347510-3@axl(PRAKASH):Paymen                      2,000.00       88,054.31
+05-05-2025         UPI:756948673106:9739347510-3@axl(PRAKASH):Paymen                      2,000.00       90,054.31
+05-05-2025         CASH DEPOSIT-SELF                                                   1,80,400.00     2,70,454.31
+05-05-2025     712 NEFT-KISSAN AGRO INDUSTRI-UTIB/KARBN25125592829         55,000.00                   2,15,454.31
+05-05-2025     711 NEFT-M/S SHRI RAMLINGESHW-HDFC/KARBN25125592933         88,400.00                   1,27,054.31
+05-05-2025         UPI:512583140013:manjupatila0-1@oksbi(MANJUNATH B                        100.00     1,27,154.31
+06-05-2025         CHGS-For Cash Deposit at BaseNonBase//05-05-2025            35.40                   1,27,118.91
+08-05-2025         UPI:154602747232:17035059686@ybl(MANJUNATH):Payme                      7,450.00     1,34,568.91
+08-05-2025         CASH DEPOSIT-B M WARAD-KBL-BAILHONGAL                                 96,700.00     2,31,268.91
+10-05-2025         UPI:888123550418:manjunathmoolimani@ybl(MANJUNATH                        850.00     2,32,118.91
+12-05-2025         CASH DEPOSIT-SELF                                                   2,16,200.00     4,48,318.91
+12-05-2025     704 RTGS-S D KALMANI-UTIB/KARBH25132078705                2,00,000.00                   2,48,318.91
+12-05-2025         UPI:850775612430:9964717851@ybl(SHIVANAND B NAGAN                      9,400.00     2,57,718.91
+13-05-2025         CHGS-For Cash Deposit at BaseNonBase//12-05-2025            77.88                   2,57,641.03
+13-05-2025         UPI:983075513276:chandrashekharbudihal@ybl(CHANDR                        150.00     2,57,791.03
+13-05-2025         UPI:781726402144:7483311522-3@ibl(MANIKANT SHRISH                      2,350.00     2,60,141.03
+14-05-2025         UPI:779450999878:7204692188@axl(NAGARAJ):Payment                       2,000.00     2,62,141.03
+15-05-2025         CASH DEPOSIT-SELF                                                     61,200.00     3,23,341.03
+15-05-2025     710 RTGS-S D KALMANI-UTIB/KARBH25135720130                2,00,000.00                   1,23,341.03
+16-05-2025         UPI:051105056530:8904955993@axl(MADIWALAPPA):Paym                        900.00     1,24,241.03
+16-05-2025         UPI:555592056464:7204692188@axl(NAGARAJ):Payment                       5,000.00     1,29,241.03
+16-05-2025         UPI:500583930518:somashakarmugabassv@ybl(SOMASHEK                     20,000.00     1,49,241.03
+16-05-2025         UPI:175282719642:mahantesh.pented@ybl(MAHANTESH M                        200.00     1,49,441.03
+17-05-2025         UPI:099719950420:chetanmudakanagoudar@ybl(CHETAN)                      6,500.00     1,55,941.03
+17-05-2025         UPI:513767063881:bibiayeeshamalagali@okaxis(Bibi)                      5,000.00     1,60,941.03
+17-05-2025     713 NEFT-SRI VENKATESHWAR KRU-BKID/KARBN25137144822       1,50,000.00                     10,941.03
+17-05-2025         CASH DEPOSIT-SELF                                                   1,50,000.00     1,60,941.03
+19-05-2025         UPI:299069563709:7259526491@ybl(MALLIKARJUN SHIVA                        900.00     1,61,841.03
+19-05-2025         UPI:048400254437:8904721135@ibl(ASHIF SHILEDAR):P                      1,900.00     1,63,741.03
+20-05-2025         UPI:810393336286:8767944838@ybl(Abhilash G Kittur                     14,500.00     1,78,241.03
+20-05-2025         UPI:556665522158:8767944838@axl(Abhilash G Kittur                         30.00     1,78,271.03
+20-05-2025         UPI:347524140906:8495012513@ybl(SOMALING):Payment                        200.00     1,78,471.03
+20-05-2025         CASH DEPOSIT-SELF                                                   3,59,000.00     5,37,471.03
+20-05-2025     715 NEFT-M/S SHRI RAMLINGESHW-HDFC/KARBN25140639083       1,00,000.00                   4,37,471.03
+20-05-2025     714 RTGS-SHRI GURU RENUKA TRA-SBIN/KARBH25140640747       3,00,000.00                   1,37,471.03
+20-05-2025     716 NEFT-SHRI VENKATESHWAR KR-BKID/KARBN25140640910       1,00,000.00                     37,471.03
+21-05-2025         CHGS-For Cash Deposit at BaseNonBase//20-05-2025           246.62                     37,224.41
+21-05-2025         CASH DEPOSIT-SELF                                                     72,000.00     1,09,224.41
+22-05-2025         UPI:147298175305:7204692188@ybl(NAGARAJ):Payment                         600.00     1,09,824.41
+23-05-2025         UPI:550991074719:6360150955@naviaxis(MADIWALAPPA                       4,500.00     1,14,324.41
+23-05-2025         UPI:466928897613:9964120488@axl(MALLAPPA  BEVINAK                     12,000.00     1,26,324.41
+23-05-2025         UPI:103107120174:9008948871@ibl(VEERANNA M INGALA                      3,000.00     1,29,324.41
+24-05-2025         UPI:788029465224:somashakarmugabassv@ybl(SOMASHEK                     22,000.00     1,51,324.41
+24-05-2025         UPI:095571876490:8884869145@ybl(MANJUNATH):Paymen                     10,000.00     1,61,324.41
+24-05-2025         UPI:324483266081:7892967688@axl(Mallikarjun  Gumm                     10,700.00     1,72,024.41
+24-05-2025         UPI:714684670257:7483511937-5@ibl(SUSHMITA):Payme                      6,000.00     1,78,024.41
+24-05-2025         UPI:456415239222:7483511937-5@ibl(SUSHMITA):Payme                      1,900.00     1,79,924.41
+26-05-2025         CASH DEPOSIT-SELF                                                   1,77,500.00     3,57,424.41
+26-05-2025     720 RTGS-SHRI GURU RENUKA TRA-SBIN/KARBH25146690976       3,00,000.00                     57,424.41
+27-05-2025         CHGS-For Cash Deposit at BaseNonBase//26-05-2025            33.04                     57,391.37
+27-05-2025         CASH DEPOSIT-B M WARAD-KBL-BAILHONGAL                                 75,000.00     1,32,391.37
+28-05-2025         UPI:908456342689:8767944838@axl(Abhilash G Kittur                        560.00     1,32,951.37
+28-05-2025         UPI:580273300799:7349264133@ybl(Vittal  Hosaval):                        750.00     1,33,701.37
+29-05-2025         UPI:666067057602:paveenb79@ybl(PRAVEENKUMAR DUNDA                      3,900.00     1,37,601.37
+29-05-2025         UPI:603714987967:paveenb79@ybl(PRAVEENKUMAR DUNDA                      1,300.00     1,38,901.37
+29-05-2025         UPI:367911083604:17035059686@axl(MANJUNATH):Payme                      1,000.00     1,39,901.37
+29-05-2025         UPI:216246563526:9019593783@ibl(IRANNA GALI):Paym                      8,000.00     1,47,901.37
+29-05-2025         CASH DEPOSIT-B M WARAD-KBL-BAILHONGAL                               1,50,000.00     2,97,901.37
+29-05-2025  000724 NEFT-SHRI RENUKA TRADERS-SBIN/KARBN25149287386        1,50,000.00                   1,47,901.37
+29-05-2025         UPI:338441530960:7892967688@axl(Mallikarjun  Gumm                      3,000.00     1,50,901.37
+29-05-2025         UPI:299595060594:9611084262@axl(JAMANAL SOMALING                       6,000.00     1,56,901.37
+30-05-2025         UPI:091695719044:6360395889@ybl(Gadigayya  Kalyan                        300.00     1,57,201.37
+30-05-2025         UPI:565557412442:8884869145@ybl(MANJUNATH):Paymen                      5,000.00     1,62,201.37
+31-05-2025         UPI:118138718302:6360851807@ibl(SHRI VEERABHADRES                      1,750.00     1,63,951.37
+31-05-2025         UPI:442296407502:7899272516-2@ybl(MANJUNATH B NAR                     23,150.00     1,87,101.37
+31-05-2025         CASH DEPOSIT-B M WARAD-KBL-BAILHONGAL                                 72,300.00     2,59,401.37
+31-05-2025     721 NEFT-ALAGUNDAGI INDUSTRIE-HDFC/KARBN25151693571         30,000.00                   2,29,401.37
+31-05-2025     723 RTGS-S D KALMANI-UTIB/KARBH25151722696                2,00,000.00                     29,401.37
+31-05-2025         UPI:221337370877:ichalakoppa@axl(IRANNA BASAVANNE                      6,000.00       35,401.37
+31-05-2025         UPI:386265886868:7411860947@ybl(PARAVVA CHANNAPPA                      5,900.00       41,301.37
+02-06-2025         UPI:350917799012:bolettinumesh@axl(UMESH):Payment                      6,000.00       47,301.37
+02-06-2025         UPI:087800737605:bolettinumesh@ybl(UMESH):Payment                      1,200.00       48,501.37
+03-06-2025         UPI:538179232369:9902669679@ybl(NAGAPPA SOMAPPA K                        250.00       48,751.37
+04-06-2025         UPI:730970776545:varadbasu1@axl(GIRIJA MADIWALAPP                   1,00,000.00     1,48,751.37
+04-06-2025         CASH DEPOSIT-CEO-KBL-BAILHONGAL                                       38,300.00     1,87,051.37
+04-06-2025         UPI:590147929830:8217399796-3@ibl(SUNANADA MAHADE                      3,100.00     1,90,151.37
+04-06-2025     725 NEFT-KRISHNA GODAWARI LTD-CNRB/KARBN25155520647       1,50,000.00                     40,151.37
+04-06-2025         UPI:515506304944:shivanandgodi143@okaxis(ASHWINI                       1,900.00       42,051.37
+06-06-2025         UPI:989672624007:7204692188@ybl(NAGARAJ):Payment                       5,400.00       47,451.37
+Page 2 of 4
+Transaction Details
+14-07-2025
+https://f10dr.ktkbank.com:11000/finbranch/arjspmorph/INFENG/tran_rpt.jsp?rtId=1ovm...

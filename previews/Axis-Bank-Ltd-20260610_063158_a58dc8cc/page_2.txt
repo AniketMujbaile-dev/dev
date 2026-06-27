@@ -1,0 +1,166 @@
+  
+         
+16-04-2023
+NEFT/PYTM231062967944/PAYTM
+PAYMENTS SERVICES LIM
+             
+10000.00
+         1347257.52
+248
+17-04-2023
+NEFT/PYTM231074905832/PAYTM
+PAYMENTS SERVICES LIM
+             
+10000.00
+         1357257.52
+248
+17-04-2023
+By Clg 000003 240  Nashik
+              
+9400.00
+         1366657.52 2567
+18-04-2023
+UPI/P2A/310863778614/MILIND
+DA/Corporati/Payment
+             
+12120.00
+         1378777.52
+115
+19-04-2023
+NEFT/PYTM231099034306/PAYTM
+PAYMENTS SERVICES LIM
+             
+19300.00
+1398077.52
+248
+20-04-2023
+NEFT/PYTM231101218249/PAYTM
+PAYMENTS SERVICES LIM
+             
+14300.00
+         1412377.52
+248
+20-04-2023
+UPI/P2A/311074257377/MADHUKAR /State
+Ban/UPI
+              
+7000.00
+         1419377.52
+115
+21-04-2023
+NEFT/PYTM231113312092/PAYTM
+PAYMENTS SERVICES LIM
+             
+10000.00
+         1429377.52
+248
+21-04-2023
+SAK/CASH DEP/SAK340810096/1041/SELF
+             
+33520.00
+         1462897.52 1041
+22-04-2023
+NEFT/PYTM231125587112/PAYTM
+PAYMENTS SERVICES LIM
+             
+10000.00
+         1472897.52
+248
+23-04-2023
+GST @18% on Charge
+                 1.40
+         1472896.12
+115
+23-04-2023
+Consolidated Charges for A/c
+                 7.75
+         1472888.37
+115
+24-04-2023
+By Clg 692401 015  Nashik
+             
+33045.00
+         1505933.37 2567
+24-04-2023
+147452
+TO
+Transfer/04620130211BEN027452/SDMC:16854
+673/64
+64000.00
+         1441933.37
+115
+25-04-2023
+NEFT/PYTM231151797548/PAYTM
+PAYMENTS SERVICES LIM
+             
+10000.00
+         1451933.37
+248
+26-04-2023
+NEFT/PYTM231163525674/PAYTM
+PAYMENTS SERVICES LIM
+              
+1790.00
+         1453723.37
+248
+27-04-2023
+NEFT/PYTM231175754822/PAYTM
+PAYMENTS SERVICES LIM
+              
+8980.00
+         1462703.37
+248
+27-04-2023
+UPI/P2A/311753019397/Mr KARTIK/Central
+B/Payment
+             
+29620.00
+         1492323.37
+115
+28-04-2023
+NEFT/PYTM231187687270/PAYTM
+PAYMENTS SERVICES LIM
+             
+11725.00
+         1504048.37
+248
+29-04-2023
+NEFT/PYTM231199703638/PAYTM
+PAYMENTS SERVICES LIM
+22000.00
+         1526048.37
+248
+30-04-2023
+NEFT/PYTM231201141501/PAYTM
+PAYMENTS SERVICES LIM
+            
+127180.00
+         1653228.37
+248
+TRANSACTION TOTAL
+             
+321075.33
+               
+716600.00
+CLOSING BALANCE
+         1653228.37
+Unless the constituent notifies the bank immediately of any discrepancy found by him/her in this statement of Account, it will be taken that
+he/she has found the account correct.
+The closing balance as shown/displayed includes not only the credit balance and / or overdraft limit, but also funds which are under clearing. It
+excludes the amount marked as lien, if any. Hence the closing balance displayed may not be the effective available balance. For any further
+clarifications, please contact the Branch.
+We would like to reiterate that, as a policy, Axis Bank does not ask you to part with/disclose/revalidate of your iConnect passord,login id and
+debit card number through emails OR phone call Further,we would like to reiterate that Axis Bank shall not be liable for any losses arising
+from you sharing/disclosing of your login id, password and debit card number to anyone. Please co-operate by forwarding all such
+suspicious/spam emails, if received by you, to customer.service@axisbank.com
+With effect from 1st August 2016, the replacement charges for Debit card and ATM card applicable on Current accounts have been revised. To
+know more about the applicable charges,please visit www.axisbank.com
+Deposit Insurance and Credit Guarantee Corporation (DICGC) insurance cover is applicable in all Banks' deposits, such as savings, current,
+fixed, recurring etc* up to maximum amount of Rs 5 Lakh including principal & interest both* (* or exceptions and details please refer
+www.dicgc.org.in )
+In compliance with regulatory guidelines, the non-CTS cheque books attached to the accounts would be destroyed in banks core banking
+System. Thus, Non CTS cheques will not be valid for CASH, Clearing and Transfer transactions
+REGISTERED OFFICE - AXIS BANK LTD,TRISHUL,Opp. Samartheswar Temple, Near Law Garden, Ellisbridge,    Ahmedabad .
+380006.This is a system generated output and requires no signature.
+BRANCH ADDRESS - AXIS BANK LTD, NASHIK [MH], MAZDA TOWERS, TRYAMBAK, NAKA 183, 620/9 GPO RD,  ,  422001,
+NASHIK,  MAHARASHTRA, INDIA, TEL:0253-6627400/6627401  FAX:6627498

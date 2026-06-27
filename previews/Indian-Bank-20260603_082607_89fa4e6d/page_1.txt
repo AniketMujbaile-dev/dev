@@ -1,0 +1,92 @@
+STATEMENT OF ACCOUNT
+PROP ANKESH KUMAR
+G-9 UPSIDC
+NAINI
+ALLAHABAD Allahabad M Corp Allahabad
+211008
+Account No : 50537687466
+Product: CA-IND ASPIRE-PLATINUM-INR
+Currency: INR
+Int Rate : 14.80 % P.a
+Limit : 0.00
+Drawing Power: 0.00
+Cleared Balance : 515341.99Cr
+Uncleared Amount : 0.00
+Ckyc ID :
+Nominee Type :
+Nominee Name1 :
+INDIAN BANK
+ALLAHABAD CIVIL LINES BRANCH
+22 PURSHOTTAM DAS TANDON ROAD
+CIVIL LINES, ALLAHABAD
+211001
+Branch Code : 04085
+Phone No : 2423289
+Email ID :
+civillinesprayagraj@indianbank.co.in
+IFSC Code : IDIB000C629
+Statement Date :08-May-2026
+Statement From :01-Apr-2025
+           To :31-Mar-2026
+Statement Time :06:29:40
+Page No. : 1
+Nominee Name2 :
+Nominee Name3 :
+Nominee Name4 :
+Post Date Value Date
+Details
+Chq.No.
+Debit
+Credit
+Balance
+Brought Forward
+204224.19cr
+01/04/25
+01/04/25
+Ankesh Kumar Shukla /TRANSFER TO
+6701608191 Mobile/17434866
+65/Fund Transfer /BRANCH : CORE
+BANKING DATA CENTRE
+50000.00
+154224.19Cr
+01/04/25
+01/04/25
+Ankesh Kumar Shukla /TRANSFER TO
+6701608191 Mobile/17435171
+41/Fund Transfer /BRANCH : CORE
+BANKING DATA CENTRE
+50000.00
+104224.19Cr
+01/04/25
+01/04/25
+GAURI ENTERPRISES /TRANSFER TO
+7623704249 INT TRF FRM 00000
+050537687466TO 00000007623704249
+/BRANCH : ALLAHABAD CIVIL L
+INES
+24548.00
+79676.19Cr
+01/04/25
+01/04/25
+Ankesh Kumar Shukla /TRANSFER TO
+7928366575 BRANCH : ALLAHA
+BAD HINDI SAHITYA SAMMELAN MARG
+24230.00
+55446.19Cr
+02/04/25
+02/04/25
+SHUKLA IRON STORE /TRANSFER FROM
+7719086449 Transfer 50537
+gayat0275 /BRANCH : CORE BANKING
+DATA CENTRE
+100000.00
+155446.19Cr
+Carried Forward
+155446.19Cr
+Statement
+Summary
+Dr. Count:4
+Cr. Count:1
+148778.00             100000.00
+In Case Your Account Is Operated By A Letter Of Authority/Power Of Attorney Holder, Please Check The Transaction
+With Extra Care.

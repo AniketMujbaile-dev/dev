@@ -1,0 +1,60 @@
+                                   Customer Account Ledger Report from 01-04-2025 to 31-03-2026 
+Service OutLet   : 0960  SIDHAULI SITAPUR 
+Account No       : 09601000008273    INR MEHNGAI SHULK NATIONAL INTER COLLEGE 
+Gl Sub Head Code : 31010                 SAVINGS BANK A/CS 
+Opening Balance  :          7,65,808.82Cr 
+Peg Review date  : 31-12-2099 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+  GL.     Value       Instrmnt         Particulars                                               Transaction          Transaction                Balance   Entry     Verified 
+  Date    Date         Number                                                                   Debit Amount        Credit Amount                          User Id   User Id 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+                                                                                                                Order by GL. Date. 
+07-04-2025  07-04-2025             154 TO_CLG EYEINDIA                                  0             2,500.00                               7,63,308.82Cr S35714    SYSTEM 
+07-04-2025  07-04-2025                 Charges for PORD Customer Payment :POD059525744                    5.90                               7,63,302.92Cr P17850    A20091 
+07-04-2025  07-04-2025             160 NEFT/PSIBN25097340634/INDUS IND BANK                          60,000.00                               7,03,302.92Cr P17850    A20091 
+09-04-2025  09-04-2025             161 TO SALARY MARCH 2025                                        2,01,495.00                               5,01,807.92Cr A20091    S29210 
+09-04-2025  09-04-2025                 Charges for PORD Customer Payment :POD059841320                    2.94                               5,01,804.98Cr P17850    S29210 
+09-04-2025  09-04-2025             163 NEFT/PSIBN25099680742/JASPREET SINGH                           5,500.00                               4,96,304.98Cr P17850    S29210 
+09-04-2025  09-04-2025             162 TO SALARY MARCH 2025                                        4,10,752.00                                 85,552.98Cr A20091    S29210 
+15-04-2025  15-04-2025             146 TO TRANSFER                                                   27,803.00                                 57,749.98Cr A20091    S32713 
+15-04-2025  15-04-2025                 TO TRANSFER                                                    7,032.00                                 50,717.98Cr A20091    S32713 
+16-04-2025  16-04-2025                 BY CASH                                                                            64,420.00          1,15,137.98Cr P17850    A20091 
+16-04-2025  16-04-2025                 BY CASH                                                                            71,470.00          1,86,607.98Cr P17850    A20091 
+16-04-2025  16-04-2025                 Cash Handle Charge 09601000008273                                 80.24                               1,86,527.74Cr S32713    S32713 
+17-04-2025  17-04-2025                 BY CASH                                                                            68,120.00          2,54,647.74Cr P17850    A20091 
+21-04-2025  21-04-2025             166 TO SALARY MARCH 2025                                          18,952.00                               2,35,695.74Cr A20091    S29210 
+22-04-2025  22-04-2025                 BY CASH                                                                            54,210.00          2,89,905.74Cr P17850    A20091 
+24-04-2025  24-04-2025                 UPI/CR/061392652183/PRASHANT KUMAR DIXIT/HDFC/5010                                      1.00          2,89,906.74Cr CDCI      CDCI 
+24-04-2025  24-04-2025                 UPI/CR/103691326674/KANCHAN MISHRA/HDFC/5010076427                                  2,100.00          2,92,006.74Cr CDCI      CDCI 
+24-04-2025  24-04-2025                 BY CASH                                                                            66,400.00          3,58,406.74Cr P17850    A20091 
+26-04-2025  26-04-2025                 UPI/CR/511688357539/MO ADIL/BARB/27340100056976/Me                                  2,000.00          3,60,406.74Cr CDCI      CDCI 
+26-04-2025  26-04-2025                 UPI/CR/511684560250/MO ADIL/BARB/27340100056976/UP                                     50.00          3,60,456.74Cr CDCI      CDCI 
+29-04-2025  29-04-2025                 UPI/CR/511919359675/VISHAL GUPTA/IOBA/319501000011                                  1,700.00          3,62,156.74Cr CDCI      CDCI 
+30-04-2025  30-04-2025                 BY CASH                                                                            43,750.00          4,05,906.74Cr P17850    A20091 
+30-04-2025  30-04-2025                 Charges for PORD Customer Payment :POD062263068                   17.70                               4,05,889.04Cr P17850    A20091 
+30-04-2025  30-04-2025             168 NEFT/PSIBN25120207089/MGS AUTO FAB PV                       1,50,000.00                               2,55,889.04Cr P17850    A20091 
+01-05-2025  01-05-2025                 UPI/CR/152468805483/BEERENDRA KUMAR YADAV/SBIN/000                                  1,750.00          2,57,639.04Cr CDCI      CDCI 
+01-05-2025  01-05-2025                 Charges for PORD Customer Payment :POD062396049                    5.90                               2,57,633.14Cr P17850    A20091 
+01-05-2025  01-05-2025             169 NEFT/PSIBN25121359611/INDUSIND BANK L                         60,000.00                               1,97,633.14Cr P17850    A20091 
+02-05-2025  02-05-2025                 UPI/CR/104120655661/RAMPRSAD/UBIN/593902010015569/                                  4,050.00          2,01,683.14Cr CDCI      CDCI 
+02-05-2025  02-05-2025                 BY CASH                                                                            42,160.00          2,43,843.14Cr P17850    S29210 
+03-05-2025  03-05-2025                 UPI/CR/548921066678/VIVEK   YADAV/KKBK/4445686041/                                  2,000.00          2,45,843.14Cr CDCI      CDCI 
+03-05-2025  03-05-2025             167 TO_CLG GO DIGIT GENERAL INSURAN                  0            46,884.00                               1,98,959.14Cr E00161    SYSTEM 
+03-05-2025  03-05-2025                 BY CASH                                                                            38,650.00          2,37,609.14Cr P17850    A20091 
+05-05-2025  05-05-2025                 UPI/CR/536419991034/AMAR SINGH/IPOS/061011042172/M                                  1,750.00          2,39,359.14Cr CDCI      CDCI 
+05-05-2025  05-05-2025                 UPI/CR/549120223372/Niraj Nag/AIRP/9452400738/Merc                                      1.00          2,39,360.14Cr CDCI      CDCI 
+06-05-2025  06-05-2025                 UPI/CR/512621303880/Niraj Nag/AIRP/9452400738/Merc                                      1.00          2,39,361.14Cr CDCI      CDCI 
+07-05-2025  07-05-2025                 UPI/CR/161757027678/ROHIT MISHRA/PSIB/096010000080                                      1.00          2,39,362.14Cr CDCI      CDCI 
+07-05-2025  07-05-2025                 UPI/CR/548437459096/ROHIT MISHRA/PSIB/096010000080                                      1.00          2,39,363.14Cr CDCI      CDCI 
+07-05-2025  07-05-2025                 UPI/CR/549309742627/HANUMAN PRASAD SO PUTTI LAL/PU                                  2,350.00          2,41,713.14Cr CDCI      CDCI 
+07-05-2025  07-05-2025                 UPI/CR/527746852003/ROHIT MISHRA/PSIB/096010000080                                      1.00          2,41,714.14Cr CDCI      CDCI 
+07-05-2025  07-05-2025                 UPI/CR/549323146914/PRGYA YADAV/IPOS/061010178544/                                  3,000.00          2,44,714.14Cr CDCI      CDCI 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+                           Page Total Credit  :                4,69,936.00 
+                           Page Total Debit   :                9,91,030.68 
+07-04-2026 11:06:45               PUNJAB AND SIND BANK SIDHAULI SITAPUR                                                   Page  3 
+Page 2 of 16
+Transaction Details
+07-04-2026
+https://dcnetplbprd001.psb.org.in/finbranch/arjspmorph/INFENG/tran_rpt.jsp?rtId=mafxz5iv1c75&isPrntReqd=N

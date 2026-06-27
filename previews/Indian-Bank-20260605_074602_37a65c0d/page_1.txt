@@ -1,0 +1,91 @@
+STATEMENT OF ACCOUNT
+TANUSHKA ENTERPRISES
+BABU QUARTER ROAD
+SUBHASH COLONY
+SHIVPURI Shivpuri M Shivpuri Shivpuri
+473551
+Account No : 50105289864
+Product: CA-GEN-PUB-METRO/URBAN-INR
+Currency: INR
+Int Rate : 14.80 % P.a
+Limit : 0.00
+Drawing Power: 0.00
+Cleared Balance : 65488.12Cr
+Uncleared Amount : 0.00
+Ckyc ID :
+Nominee Type :
+Nominee Name1 :
+INDIAN BANK
+SHIVPURI BRANCH
+COURT ROAD,
+DISTT.- SHIVPURI,
+473551
+Branch Code : 04831
+Phone No : 233357
+Email ID : shivpuri@indianbank.co.in
+IFSC Code : IDIB000S669
+Statement Date :06-Apr-2026
+Statement From :01-Apr-2025
+           To :31-Mar-2026
+Statement Time :01:47:37
+Page No. : 1
+Nominee Name2 :
+Nominee Name3 :
+Nominee Name4 :
+Post
+Date
+Value
+Date
+Details
+Chq.No.
+Debit
+Credit
+Balance
+Brought Forward
+1158121.55cr
+02/04/25
+02/04/25
+Txn Amt. 2,10,900.00 Charges.
+29.00 /RTGS/SCBL/IDIBR5202504
+0244625513/HEIDELBE/RTGS /BRANCH
+: SHIVPURI
+170098
+210929.00
+947192.55Cr
+02/04/25
+02/04/25
+TRANSFER FROM 94957000128
+RTGS/HDFC/HDFCR52025040256874644/
+BHAGIRAT/ /BRANCH : MUMBAI FORT
+1000000.00
+1947192.55Cr
+02/04/25
+02/04/25
+BRANCH : SHIVPURI
+1350000.00
+597192.55Cr
+02/04/25
+02/04/25
+SBIN0030309/AMIT KUMAR SHARMA
+/XXXXX /9993228545@ybl /UPI/7
+94828711564/Payment from PhonePe
+/BRANCH : ATM SERVICE BRANC
+H
+5250.00
+591942.55Cr
+02/04/25
+02/04/25
+DATARAM DHAKAD /TRANSFER TO
+7150798335 CAR LOAN TRF /BRANCH
+: SHIVPURI
+15000.00
+576942.55Cr
+Carried Forward
+576942.55Cr
+Statement
+Summary
+Dr. Count:4
+Cr. Count:1
+1581179.00             1000000.00
+In Case Your Account Is Operated By A Letter Of Authority/Power Of Attorney Holder, Please Check The
+Transaction With Extra Care.

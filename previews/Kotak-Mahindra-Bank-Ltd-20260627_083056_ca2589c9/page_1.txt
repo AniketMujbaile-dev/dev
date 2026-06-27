@@ -1,0 +1,191 @@
+Account Statement
+01 Apr 2025 - 31 Mar 2026
+Aadvik Anand
+CRN xxxxxx130
+M-36 36 A And 37 Shyam Park
+Uttam Nagar Nawada Dk Mohan
+Garden 2nd Floor
+New Delhi - 110059
+Delhi - India
+MICR 110485154   IFSC Code KKBK0004660
+Account No. 2646294324
+Account Type  Savings
+Branch Delhi - Uttam Nagar
+Account Status Active
+Nominee Registered No
+Currency INDIAN RUPEE
+Joint A/c Holder(s) Jaya .
+Savings Account Transactions
+#
+Date
+Description
+Chq/Ref. No.
+Withdrawal (Dr.)
+Deposit (Cr.)
+Balance
+-
+-
+Opening Balance
+-
+-
+-
+65,678.15
+1
+11 Apr 2025
+Chrg: Weekly Bal Alerts charges for Mar-25
+TBMS-1676461056
+2.95
+65,675.20
+2
+18 Apr 2025
+UPI/MR INDER KASHYA/510881333167/Sent
+using Payt
+UPI-510801536481
+20,000.00
+45,675.20
+3
+06 May 2025
+MB:SENT MONEY TO OWN 9212175506
+MB-998485473403
+600.00
+45,075.20
+4
+07 May 2025
+MB:SENT MONEY TO OWN 9212175506
+MB-998485019608
+5,000.00
+40,075.20
+5
+07 May 2025
+MB:SENT MONEY TO OWN 9212175506
+MB-998485015487
+5,000.00
+35,075.20
+6
+09 May 2025
+Chrg: Weekly Bal Alerts charges for Apr-25
+TBMS-1693071555
+2.36
+35,072.84
+7
+14 Jun 2025
+Chrg: Weekly Bal Alerts charges for May-25
+TBMS-1709368733
+2.36
+35,070.48
+8
+21 Jun 2025
+Cash Deposit at/BDLOH178/Om Vihar, Uttam
+NagarDelh
+517213754234
+19,000.00
+54,070.48
+9
+21 Jun 2025
+Cash Deposit at/BDLOH178/Om Vihar, Uttam
+NagarDelh
+517213754236
+5,000.00
+59,070.48
+10
+30 Jun 2025
+Int.Pd:2646294324:01-04-2025 to 30-06-2025
+323.00
+59,393.48
+11
+06 Aug 2025
+Chrg: Weekly Bal Alerts charges for Jun-25
+TBMS-1733681516
+2.95
+59,390.53
+12
+23 Sep 2025
+FD MATURITY PROCEEDS :2649391709/23-09-
+25/AADVIK A
+            TO
+53,655.00
+1,13,045.53
+13
+30 Sep 2025
+UPI/SUMIT ANAND/390076118595/Sent from
+Paytm
+UPI-527319806912
+40,000.00
+73,045.53
+14
+30 Sep 2025
+Int.Pd:2646294324:01-07-2025 to 30-09-2025
+404.00
+73,449.53
+15
+01 Oct 2025
+UPI/SUMAN KUMARI/691551659793/Sent
+using Payt
+UPI-527483068364
+250.00
+73,199.53
+16
+15 Oct 2025
+Chrg: Weekly Bal Alerts charges for Jul-25
+TBMS-1756155503
+2.36
+73,197.17
+17
+15 Oct 2025
+Chrg: Weekly Bal Alerts charges for Aug-25
+TBMS-1756303709
+2.95
+73,194.22
+18
+24 Oct 2025
+Chrg: Weekly Bal Alerts charges for Sep-25
+TBMS-1771902828
+2.36
+73,191.86
+19
+28 Nov 2025
+Chrg: Weekly Bal Alerts charges for Oct-25
+TBMS-1846415291
+2.36
+73,189.50
+20
+10 Dec 2025
+MB:SENT MONEY TO OWN 9212175506
+MB-998397778465
+46,000.00
+27,189.50
+21
+17 Dec 2025
+Chrg: Weekly Bal Alerts charges for Nov-25
+TBMS-1851336743
+2.95
+27,186.55
+22
+17 Dec 2025
+UPI/PURAN STORE NAW/695759912495/NA
+UPI-535183731062
+2,104.00
+25,082.55
+23
+20 Dec 2025
+UPI/ANJU RANI/394092322943/Sent using
+Payt
+UPI-535471937842
+500.00
+24,582.55
+24
+30 Dec 2025
+UPI/INDER KASHYAP/394627749172/Sent
+using Payt
+UPI-536465197815
+900.00
+23,682.55
+25
+30 Dec 2025
+UPI/MrSanjeev Kumar/394636408384/Sent
+using Payt
+UPI-536474713429
+3,000.00
+20,682.55
+Statement Generated on 24 Jun 2026, 18:08
+Page 1 of 5

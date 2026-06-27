@@ -1,0 +1,98 @@
+KERALA GRAMEENA
+BANK
+MUNDAKKAYAM
+(40544)
+STATEMENT OF
+ACCOUNT
+-----------------------------------------------------------------------------
+---------------------------------------------------------------
+Account Number
+: CA101 40544110000031 JIJO MATHEW
+KOCHUPURACKAL
+PARATHANAM (PO)
+KOTTAYAM (DT) - 686514
+From Date
+: 01-04-2025
+To Date
+: 31-03-2026
+Based on
+: Transaction Date
+-----------------------------------------------------------------------------
+---------------------------------------------------------------
+Trans Dt Value Dt Transn ID
+Transaction Particulars
+Ins Number
+Debit
+Credit
+Balance
+-----------------------------------------------------------------------------
+---------------------------------------------------------------
+Opening Balance
+4664515.41 Cr
+02-04-25 02-04-25 S7288884/2
+Charges for
+RTGS:KLGBH25092463192/40544110000031
+50.50
+4664464.91 Cr
+02-04-25 02-04-25 S7288884/5
+RTGS/BPCL/KLGBH25092463192/HDFC BANK LTD.
+1295300.00
+3369164.91 Cr
+02-04-25 02-04-25 S7288884/4
+Charges for
+RTGS:KLGBH25092463192/000021710334
+9.50
+3369155.41 Cr
+02-04-25 02-04-25 S7311388/5
+NEFT/HINDUSTAN COLAS/KLGBH25092773805/STATE
+BANK
+142300.00
+3226855.41 Cr
+02-04-25 02-04-25 S7311388/4
+Charges for NEFT Customer
+Payment:000021711179
+3.00
+3226852.41 Cr
+02-04-25 02-04-25 S7311388/2
+Charges for NEFT Customer
+Payment:000021711179
+14.50
+3226837.91 Cr
+02-04-25 02-04-25 S7322801/2
+Charges for
+RTGS:KLGBH25092463267/40544110000031
+25.50
+3226812.41 Cr
+02-04-25 02-04-25 S7322801/4
+Charges for
+RTGS:KLGBH25092463267/000021711249
+5.00
+3226807.41 Cr
+02-04-25 02-04-25 S7322801/5
+RTGS/EXEL/KLGBH25092463267/SOUTH INDIAN BANK
+331485.00
+2895322.41 Cr
+02-04-25 02-04-25 MG108337/1
+SELF
+150000.00
+2745322.41 Cr
+03-04-25 03-04-25 S567388/5
+NEFT/MAHA LINGAM/KLGBH25093858304/STATE BANK
+OF I
+35500.00
+2709822.41 Cr
+03-04-25 03-04-25 S567388/4
+Charges for NEFT Customer
+Payment:000021796058
+1.00
+2709821.41 Cr
+03-04-25 03-04-25 S567388/2
+Charges for NEFT Customer
+Payment:000021796058
+4.50
+2709816.91 Cr
+03-04-25 03-04-25 S569888/2
+Charges for NEFT Customer
+Payment:000021778843
+4.50
+2709812.41 Cr

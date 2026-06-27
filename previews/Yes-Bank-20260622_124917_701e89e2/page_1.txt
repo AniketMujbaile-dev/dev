@@ -1,0 +1,63 @@
+Statement of account : 070126900000212
+Statement Type : 01 Oct 2025 - 29 Dec 2025
+Customer Name : V3 TECHRIDER PVT LTD
+Your Branch Details
+Address Line 1 : V3 TECHRIDER PVT LTD
+Branch Name: SECTOR 50, NOIDA
+Address Line 2 : PLOT NO RZ 7 KH NO 26 4 2 F
+F
+Address Line 1: GROUND & FIRST FLOOR,
+Address Line 3 : BABA HARI DASS NAGAR
+NAJAFGARH NEW
+Line 2: PLOT NO B-1/68, SECTOR-50,
+Mobile No : 7011261154
+Line 3: NOIDA - 201301
+Email : info.v3techrider@gmail.com
+Cust ID: 35792494
+IFSC Code: YESB0000701 | MICR Code:
+110532135
+Transaction details for your account number 070126900000212  (CA/SA Product name) (currency INR )
+Primary Holder V3 TECHRIDER PVT LTD
+Nominee Details: Not Registered
+Account status:  Active
+Joint holder’s names:
+Transaction
+Date
+Value Date
+Description
+Reference Number
+Withdrawals
+Deposits
+Running Balance
+2025-12-29
+2025-12-29
+IMPS/NA/XXXX4482/RRN:
+536395241511/PC2383867
+78299120/BANK OF BARO
+DA/Anurag Bharadwaj/IFB
+YESI6536301142
+8600                     
+20,000.00
+1,125,054.68
+2025-12-29
+2025-12-29
+IMPS/NA/XXXX1983/RRN
+:536395229482/PC23837
+35213037377/KOTAK MA
+HINDRA BANK LIMITED/
+Kahkasha Bano/advance
+YESI6536301123
+9000                     
+5,000.00
+1,145,054.68
+2025-12-29
+2025-12-29
+IMPS/NA/XXXX7984/RRN:53
+6395213254/PC2383484111
+162362/KOTAK MAHINDRA
+ BANK LIMITED/AASK REA
+LTECH pvt ltd/hathras salary
+YESI6536301080
+6300                     
+42,000.00
+1,150,054.68

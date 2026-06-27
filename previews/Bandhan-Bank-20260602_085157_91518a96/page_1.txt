@@ -1,0 +1,177 @@
+Each depositor in our bank is insured up to a maximum of INR 5,00,000 (Rupees Five Lakhs) for both principal and interest amount held in Deposit 
+Account, as per DICGC norms. Details on Deposit Insurance Cover, Terms & Conditions governing your deposit account are incorporated in Most 
+Important Document (MID). MID & Schedule of Charges is available on our website www.bandhanbank.com - A copy of the same may be obtained from 
+Bandhan Bank Branch" Unless the constituent notifies the Bank of any discrepancy in this statement within 15 days from the date of statement, it will be 
+construed that this transaction(s) in the statement are correct. This is a computer generated statement requires no signature.
+Customer Number:
+324890305
+Branch of Ownership:
+Singinala
+Account No:
+10190000793099  
+Branch Phone Number:
+7085012672
+Product Type:
+Current Account Standard Business
+Email Address:
+singinala.branch@bandhanbank.com
+Account Type:
+CURRENT
+Branch ID:
+1267
+MAB/QAB Requirement:
+5000
+Account Branch:
+Singinala
+Account Title:
+D & M MOBILE ELECTRONICS
+IFSC:
+BDBL0001267
+Joint Holder:
+SUBHASHISH DAS
+MICR:
+799750507
+Branch GSTIN:
+16AAGCB1323G1Z6
+Branch Address:
+Vill Singinala, PO- Salema
+Address:
+HALHALI KAMALPUR
+Dist - Dhalai
+DIST DHALAI
+-
+-
+AMBASSA
+Singinala
+Tripura
+Tripura
+IN
+Primary customer's ckyc
+number:
+Nominee Registered:
+Nominee 1:
+Nominee 2:
+Nominee 3:
+Nominee 4:
+INDIA
+799286
+XXXXXXXXXX0604
+YES
+KHAMA DAS/100%
+Shadow Credit: 
+799278
+0
+STATEMENT OF ACCOUNT
+From Date:01-APR-2022
+To  Date:31-MAR-2023
+ Currency Name : 
+Indian 
+Rupee
+TRANS 
+DATE
+VALUE 
+DATE
+CHEQUE / 
+INSTRUMENT
+DESCRIPTION
+DEBITS
+CREDITS 
+BALANCE 
+01-APR-
+2022
+01-APR-
+2022
+B/F ... 
+0.00
+30,821.97
+30,821.97
+01-APR-
+2022
+01-APR-
+2022
+DEPOSIT,DEPOSIT-
+IMPS/209115401714/GO
+OGLEINDIADIGIT
+0.00
+3,000.00
+33,821.97
+01-APR-
+2022
+01-APR-
+2022
+DEPOSIT,
+UPI/CR/209189041394/M
+R BIRESH 
+DEBBARMA/OKH
+0.00
+5,000.00
+38,821.97
+01-APR-
+2022
+01-APR-
+2022
+DEPOSIT,JIO
+0.00
+10,000.00
+48,821.97
+01-APR-
+2022
+01-APR-
+2022
+WTHDRL,AUTOPAT 
+COLLECTION 
+TRANSAFER TO LOAN- 
+69210
+28,922.00
+0.00
+19,899.97
+02-APR-
+2022
+02-APR-
+2022
+DEPOSIT,DEPOSIT-
+IMPS/209210765336/RA
+ZORPAY COMPOSI
+0.00
+10,000.00
+29,899.97
+02-APR-
+2022
+02-APR-
+2022
+NEFT OUT,WTHDRL 
+NEFT/BDBLH226120908
+61/STATE BANK O
+29,500.00
+0.00
+399.97
+02-APR-
+2022
+02-APR-
+2022
+DEPOSIT,DEPOSIT-
+IMPS/209221187989/SU
+BHASHISH DAS/P
+0.00
+32,000.00
+32,399.97
+02-APR-
+2022
+02-APR-
+2022
+DEPOSIT,DEPOSIT-
+IMPS/209221516540/NE
+ARBY TECHNOLOG
+0.00
+31,323.00
+63,722.97
+02-APR-
+2022
+02-APR-
+2022
+WITHDRAWAL,WDL-
+IMPS/209221022721/UM
+A SANKAR SAHA/I
+30,000.00
+0.00
+33,722.97

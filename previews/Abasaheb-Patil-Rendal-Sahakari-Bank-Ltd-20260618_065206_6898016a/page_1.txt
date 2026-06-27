@@ -1,0 +1,122 @@
+THE KARNATAKA RURAL EDUCATION SOCIETY HIDAKAL DAM
+Joint Holder :-  THE KARNATAKA RURAL EDUCATION SOCIETY HIDAKA~L DAM TQ-HUKKERI DIST BELAGAUM~.....~GOKAK~KARNATAKA~591107    
+Scheme : SB-TRUST/SOCIETY/NGO/GOVT     currency : INR      
+Customer No : 944645005     IFSC Code : UTIB0000482     MICR Code : 591211502     CKYC Number:**********3826     
+ 
+Account Statement Report
+Statement of Axis Bank Account No : 922010051370903 for the period ( From : 06-03-2025 To : 06-03-2025 )
+Opening Balance: INR 1422336.82
+S. NO.
+Tran Date
+Value Date
+Transaction Particulars
+Chq No.
+Amount (INR)
+DR/CR
+Balance (INR)
+Branch Name
+1
+06-03-2025
+06-03-2025
+IMPS/P2A/506516217815/THEKARNA/ICICIBAN/
+samebank/9190088170369229349
+50000.00
+CR
+1472336.82
+GOKAK [KT]
+2
+06-03-2025
+06-03-2025
+IMPS/P2A/506516675854/Manjula
+Ishwarakatt/X010000/CANARABANK/
+7205.90
+DR
+1465130.92
+GOKAK [KT]
+3
+06-03-2025
+06-03-2025
+IMPS/P2A/506516680085/Gangubai
+Parasagond/X057677/CANARABANK/
+6917.90
+DR
+1458213.02
+GOKAK [KT]
+4
+06-03-2025
+06-03-2025
+IMPS/P2A/506516683120/Geeta
+Madar/X056825/CANARABANK/
+6917.90
+DR
+1451295.12
+GOKAK [KT]
+5
+06-03-2025
+06-03-2025
+IMPS/P2A/506517686538/Sharada
+Narute/X849851/KarnatakvikasGraminB
+10505.90
+DR
+1440789.22
+GOKAK [KT]
+6
+06-03-2025
+06-03-2025
+IMPS/P2A/506517689513/Shakuntala
+Rathod/X097511/CENTRALBANKOFINDIA/
+10005.90
+DR
+1430783.32
+GOKAK [KT]
+7
+06-03-2025
+06-03-2025
+IMPS/P2A/506517693286/Dhaneshwari
+Rathod/X008910/BANKOFBARODA/
+10005.90
+DR
+1420777.42
+GOKAK [KT]
+8
+06-03-2025
+06-03-2025
+INB/RTGS/UTIBR62025030603259338/KARANA
+TAKA RURA/ICICI BANK LIMITED/
+300000.00
+DR
+1120777.42
+GOKAK [KT]
+9
+TRANSACTION TOTAL
+351559.40
+GOKAK [KT]
+Closing Balance: INR 1120777.42
+Unless the constituent notifies the bank immediately of any discrepancy found by him/her in this statement of Account, it will be taken that he/she has found the
+account correct.
+The closing balance as shown/displayed includes not only the credit balance and / or overdraft limit, but also funds which are under clearing. It excludes the
+amount marked as lien, if any. Hence the closing balance displayed may not be the effective available balance. For any further clarifications, please contact the
+Branch.
+We would like to reiterate that, as a policy, Axis Bank does not ask you to part with/disclose/revalidate of your iConnect passord,login id and debit card number
+through emails OR phone call Further,we would like to reiterate that Axis Bank shall not be liable for any losses arising from you sharing/disclosing of your login
+id, password and debit card number to anyone.
+"Please co-operate by forwarding all such suspicious/spam emails, if received by you, to customer.service@axisbank.com\r\n"
+With effect from 1st August 2016, the replacement charges for Debit card and ATM card applicable on Current accounts have been revised. To
+know more about the applicable charges,please visit www.axisbank.com
+Deposit Insurance and Credit Guarantee Corporation (DICGC) insurance cover is applicable in all Banks' deposits, such as savings, current,
+fixed, recurring etc* up to maximum amount of Rs 5 Lakh including principal & interest both* (* or exceptions and details please refer
+www.dicgc.org.in )
+In compliance with regulatory guidelines, the non-CTS cheque books attached to the accounts would be destroyed in banks core banking
+System. Thus, Non CTS cheques will not be valid for CASH, Clearing and Transfer transactions
+REGISTERED OFFICE - AXIS BANK LTD,TRISHUL,Opp. Samartheswar Temple, Near Law Garden, Ellisbridge, Ahmedabad .380006.This is a system
+generated output and requires no signature.
+BRANCH ADDRESS - AXIS BANK LTD, MAJESTIC, BANGALORE [KT], AXIS BANK LTD., BANGALORE CIRCLE OFFICE, PLOT NO. 41, SHESHADRI
+ROAD, ANAND RAO CIRCLE,
+BENGALURU, 560009, BENGALURU, KARNATAKA, INDIA, TEL:080-22374596 FAX:40914690
+ Legend :
+ICONN - Transaction trough Internet Banking
+BRN -Branch
+AUTOSWEEP - Transfer to linked fixed deposit
+LDG -Lodge
+REV SWEEP - Interest on Linked fixed Deposit
+INB -Internet Banking

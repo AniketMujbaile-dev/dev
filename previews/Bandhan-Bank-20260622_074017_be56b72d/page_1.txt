@@ -1,0 +1,164 @@
+Each depositor in our bank is insured up to a maximum of INR 5,00,000 (Rupees Five Lakhs) for both principal and interest amount held in Deposit 
+Account, as per DICGC norms. Details on Deposit Insurance Cover, Terms & Conditions governing your deposit account are incorporated in Most 
+Important Document (MID). MID & Schedule of Charges is available on our website www.bandhanbank.com - A copy of the same may be obtained from 
+Bandhan Bank Branch" Unless the constituent notifies the Bank of any discrepancy in this statement within 15 days from the date of statement, it will be 
+construed that this transaction(s) in the statement are correct. This is a computer generated statement requires no signature.
+Customer Number:
+404433862
+Branch of Ownership:
+Kuchaikote
+Account No:
+20100036759967  
+Branch Phone Number:
+7462017061
+Product Type:
+Current Account Standard Business
+Email Address:
+kutchaikoat.branch@bandhanbank.com
+Account Type:
+CURRENT
+Branch ID:
+1706
+MAB/QAB Requirement:
+5000
+Account Branch:
+Kuchaikote
+Account Title:
+M/S JAI HANUMAN TRADERS
+IFSC:
+BDBL0001706
+Joint Holder:
+UPENDRA PRASAD
+MICR:
+841750601
+Branch GSTIN:
+10AAGCB1323G1ZI
+Branch Address:
+Jagpati Complex, Ground Floor
+Address:
+GROUND 01 NANDLAL SAH
+VillPO-Kuchaikote, Dist-Gopalganj
+BANAKATA KUCHAIKOT BANAKATA
+Bihar
+-
+GOPALGANJ
+Kuchaikote
+Bihar
+Bihar
+IN
+Primary customer's ckyc
+number:
+Nominee Registered:
+Nominee 1:
+Nominee 2:
+Nominee 3:
+Nominee 4:
+INDIA
+841503
+XXXXXXXXXX0653
+YES
+REKHA DEVI/100%
+Shadow Credit: 
+841501
+0
+STATEMENT OF ACCOUNT
+From Date:01-APR-2025
+To  Date:31-MAR-2026
+ Currency Name : 
+Indian 
+Rupee
+TRANS 
+DATE
+VALUE 
+DATE
+CHEQUE / 
+INSTRUMENT
+DESCRIPTION
+DEBITS
+CREDITS 
+BALANCE 
+01-APR-
+2025
+01-APR-
+2025
+B/F ... 
+0.00
+92,864.00
+92,864.00
+01-APR-
+2025
+01-APR-
+2025
+UPI/CR/C102391156612/
+MR SANJAY 
+/OKHD/SAH38157@OKH
+D
+0.00
+2,830.00
+95,694.00
+01-APR-
+2025
+01-APR-
+2025
+UPI/CR/C509101852722/
+MAYA  
+DEVI/OKAX/PARMOPAR
+EMI8@
+0.00
+100.00
+95,794.00
+01-APR-
+2025
+01-APR-
+2025
+UPI/CR/C127457171513/
+ARMAN  
+ALI/YBL/7461906628-
+2@Y
+0.00
+1,400.00
+97,194.00
+01-APR-
+2025
+01-APR-
+2025
+UPI/CR/C588225202011/
+MASRAF 
+SHA/IBL/8603947104@I
+BL
+0.00
+3,000.00
+1,00,194.00
+01-APR-
+2025
+01-APR-
+2025
+UPI/CR/C387933214781/
+ARMAN  
+ALI/YBL/7461906628-
+2@Y
+0.00
+100.00
+1,00,294.00
+02-APR-
+2025
+02-APR-
+2025
+UPI/CR/C655260183266/
+DIPENDRA 
+K/IBL/DKGUPTA9262@I
+B
+0.00
+10.00
+1,00,304.00
+03-APR-
+2025
+03-APR-
+2025
+UPI/CR/C102502626734/
+MR SANJAY 
+/OKHD/SAH38157@OKH
+D
+0.00
+620.00
+1,00,924.00

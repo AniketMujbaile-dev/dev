@@ -1,0 +1,40 @@
+2
+Sincerly,
+Team ICICI Bank
+RCHG - Recharge
+DTAX - Direct Tax
+BPAY - Bill payment
+IDTX - Indirect Tax
+BBPS - Bharat Bill Payment Service
+INFT - Internal Fund Transfer (Within ICICI Bank)
+BIL - Internet Bill payment or funds transfer to Third party
+ONL - Online Shopping transaction (Payment done on third party
+website)
+NEFT - National Electronics Funds Transfer System (Other Bank
+Fund transfer)
+PAVC - Pay any Visa credit card
+PAC - Personal Accident cover
+LNPY - Linked loan payment
+CCWD - Cardless Cash Withdrawal
+PAYC - Pay to Contact
+IMPS - Immediate Payment Service
+VAT/MAT/NFS - Cash withdrawal at other bank
+ATM
+INF - Internet fund transfer in linked accounts
+EBA - Transaction on ICICI Direct
+Legends for transactions in your Account Statement
+SMO - Smart Money Order
+VPS/IPS - Debit card transaction
+TOP - Mobile Recharge
+BCTT - Banking Cash Transaction Tax
+UCCBRN CMS - Upcountry cheque collection
+LCCBRN CMS - Local cheque collection
+N chg - NEFT Charges
+MMT - Mobile Money Transfer (Insta FT -
+IMPS)
+T Chg - Travel Charges
+SGB - Sovereign gold bond
+Never share your OTP, CVV or passwords with anyone, even if the person claims to be a Bank employee.
+www.icici.bank.in
+Dial your Bank 1800-1080
+Please call from your registered mobile number for faster access

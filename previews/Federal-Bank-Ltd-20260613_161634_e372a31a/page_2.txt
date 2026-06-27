@@ -1,0 +1,191 @@
+ The Federal Bank Ltd. Branch: Namakkal, 64 And 66  Rangar Sannathi Street, Sendamangalam Main Road, Namakkal, Tamilnadu - 637001, nmk@federalbank.co.in,
+Ph:04286-232433, 04286-232466  CIN:L65191PLC000386 Website:www.federalbank.co.in
+Page 2 of 2
+Date
+Value Date
+Particulars
+Tran
+Type
+Tran ID
+Cheque Details
+Withdrawals
+Deposits
+Balance
+Dr/
+Cr
+03/06/2026
+03/06/2026
+NFT/PANDA
+NAYAK/FDRLH26154040024/
+BANK OF IN
+FT
+S35519984
+FDRLH2615404
+0024
+1584.00
+298436.28
+CR
+03/06/2026
+03/06/2026
+NFT/CHANDNI
+KHA/FDRLH26154040027/
+BANK OF
+FT
+S35520467
+FDRLH2615404
+0027
+8316.00
+290120.28
+CR
+03/06/2026
+03/06/2026
+NFT/VEERASAMY/
+FDRLH26154040031/UCO
+BANK
+FT
+S35520994
+FDRLH2615404
+0031
+22750.00
+267370.28
+CR
+03/06/2026
+03/06/2026
+NFT/IKRAL
+ANSAR/FDRLH26154040913/
+PUNJAB
+FT
+S35680486
+1
+2029.00
+265341.28
+CR
+04/06/2026
+04/06/2026
+NFT/DCM
+SHRIRAM/FDRLH26155333675/
+HDFC BANK
+FT
+S51217193
+10264172
+133801.00
+131540.28
+CR
+07/06/2026
+07/06/2026
+MB
+FTO/261588660383/
+ANANDAVADIVEL /
+MB
+S93673622
+500000.00
+631540.28
+CR
+09/06/2026
+09/06/2026
+NFT/CHUNCHUN
+RA/FDRLH26160966233/AXIS
+BANK
+FT
+S33451815
+FDRLH2616096
+6233
+44946.00
+586594.28
+CR
+09/06/2026
+09/06/2026
+NFT/DEVAKI
+M/FDRLH26160967030/INDIAN
+FT
+S33471554
+FDRLH2616096
+7030
+1188.00
+585406.28
+CR
+09/06/2026
+09/06/2026
+NFT/K
+VELMURUGA/
+FDRLH26160967362/INDIAN
+FT
+S33479881
+FDRLH2616096
+7362
+1485.00
+583921.28
+CR
+09/06/2026
+09/06/2026
+NFT/VASUKI/
+FDRLH26160967708/INDIAN
+FT
+S33488954
+FDRLH2616096
+7708
+9801.00
+574120.28
+CR
+09/06/2026
+09/06/2026
+NFT/P
+SANTHI/FDRLH26160968011/
+INDIAN
+FT
+S33496857
+FDRLH2616096
+8011
+8766.00
+565354.28
+CR
+09/06/2026
+09/06/2026
+NFT/MUKUL
+SHAIK/FDRLH26160968345/SBI
+FT
+S33504799
+FDRLH2616096
+8345
+18721.00
+546633.28
+CR
+09/06/2026
+09/06/2026
+NFT/AMBIKA
+PRAS/FDRLH26160968834/
+BANK OF
+FT
+S33516457
+FDRLH2616096
+8834
+12474.00
+534159.28
+CR
+GRAND TOTAL
+1597754.00
+1200000.00
+Abbreviations Used:
+CASH
+:
+Cash Transaction
+TFR
+:
+Transfer Transaction
+FT
+:
+Fund Transfer
+CLG
+:
+Clearing Transaction
+SBINT
+:
+Interest on SB Account
+MB
+:
+Mobile Banking
+DISCLAIMER: This computer generated statement contains the particulars of the transaction(s) in the account that have been updated till the time of day end operations of the CBS system of the Bank on the
+previous working day and the same will not reflect the transaction(s) that have occurred in the account, if any, subsequent thereto. The Federal Bank Ltd. shall not be liable/responsible for want of full
+particulars of the transaction(s) at the time of the generation of this statement.
+This is a computer generated statement which need not normally be signed. Contents of this statement will be considered correct if no error is reported within 21 days of the statement date.
+****END OF STATEMENT****

@@ -1,0 +1,146 @@
+ 
+DETAILS OF AUTHORISED SIGNATORY/ IES
+ 
+ * Confirmation for Foreign Accounts Tax Compliance Act(FATCA) / Common Reporting Standards(CRS).
+ ** Centralized KYC.
+ 
+PORTFOLIO SUMMARY
+ 
+All Amounts are in INR 
+ 
+ 
+ACCOUNT DETAILS
+ 
+Branch
+: VEJALPUR
+Customer ID
+: 107002989
+IFSC
+: DCBL0000080
+Customer Name
+: SHAH KANAN SAMIR
+MICR
+: 380072005
+Statement Period
+: 01-04-2026 To 19-06-2026
+Branch Address
+: 1-4,  MEDILINK HOSPITAL
+BUILDING132 FT. RING ROAD,
+SHYMAL CROSS RD  SATELLITE
+VIJALPUR ,380015 ,GUJARAT
+Generation Date
+: 19-06-2026
+Branch Phone Number
+: 26760470/60471/60472
+SHAH KANAN SAMIR
+4, SHISHIR BUNGLOWS, NEAR H.P PETROL PUMP
+JUDGES BUNGLOWS ROAD, BODAKDEV, AHMADABAD
+AHMEDABAD 380015
+GUJARAT INDIA
+Customer ID
+Customer Name
+PAN/Form 60
+Aadhaar Number
+FATCA*
+CKYC**
+CKYC Number**
+107002989
+SHAH KANAN SAMIR (PRIMARY)
+ABXXXXXX5E
+AVAILABLE
+YES
+YES
+40046990156104
+Operative Accounts
+Account Number
+Nominee
+Lien
+Lien Amount
+Opening Balance
+Closing Balance
+NIYOX - INR
+080XXXXXX5746 YES
+NO
+NIL
+        92,484.83
+        44,864.79
+Total
+0.00
+0.00
+0.00
+Account Number 08014600005746 - NIYOX (INR) - SHAH KANAN SAMIR
+Date*
+Transaction Details
+Cheque
+Number
+Withdrawals
+Deposits
+Balance
+Opening Balance
+92,484.83
+01-04-2026
+UPI:PAY:645787060850/FARM SE           /Yes Bank L
+                 1,000.00
+91,484.83
+04-04-2026
+UPI:PAY:609427654991/VIKALP ORGANIC   N/Bank of Ba
+                 1,920.00
+89,564.83
+04-04-2026
+UPI:PAY:609428356389/ZANKHANA MUNJAL DE/Union Bank
+                 1,200.00
+88,364.83
+04-04-2026
+UPI:PAY:609453252018/ZOMATO LIMITED    /Axis Bank
+                   504.00
+87,860.83
+05-04-2026
+UPI:PAY:646196735667/Blinkit           /HDFC BANK
+                   338.00
+87,522.83
+07-04-2026
+UPI:PAY:609712191844/JUST NUTS         /Axis Bank
+                 1,299.00
+86,223.83
+07-04-2026
+UPI:PAY:646381829853/Amazon Pay on Deli/Yes Bank L
+                   393.72
+85,830.11
+09-04-2026
+UPI:PAY:646516024587/Swiggy Ltd        /Axis Bank
+                 1,729.00
+84,101.11
+09-04-2026
+UPI:PAY:646561434863/Mr HOSAJI BHAGAJI /Yes Bank L
+                 2,000.00
+82,101.11
+09-04-2026
+UPI:PAY:646530528189/Mr HOSAJI BHAGAJI /Yes Bank L
+                 1,000.00
+81,101.11
+11-04-2026
+UPI:PAY:610160691641/BUDS N ROSES      /Yes Bank L
+                 1,200.00
+79,901.11
+15-04-2026
+CASH BACK FRM DT: 01-02-2026 TO: 28-02-2026
+                   150.00
+80,051.11
+15-04-2026
+CASH BACK FRM DT: 01-03-2026 TO: 31-03-2026
+                   150.00
+80,201.11
+15-04-2026
+CASH BACK FRM DT: 01-01-2026 TO: 31-01-2026
+                   150.00
+80,351.11
+16-04-2026
+UPI:PAY:647240726516/SHEKHAR DEVEEDASBH/Bank of In
+                    90.00
+80,261.11
+   STATEMENT OF ACCOUNT                                             DCB BANK
+DCB Bank Limited
+Registered Office:6th Floor,Tower A, Peninsula Business Park, Senapati Bapat Marg, Lower Parel, Mumbai-400013 CIN:L99999MH1995PLC089008
+For clarification kindly contact DCB - Customer Care on 022 68997777, 040 68157777 or email customercare@dcbbank.com
+Non Resident Indian customers please dial +91-22-61271000 or email nri@dcbbank.com
+Page 1 of 4

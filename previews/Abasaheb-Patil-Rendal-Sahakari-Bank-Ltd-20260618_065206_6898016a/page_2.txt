@@ -1,0 +1,28 @@
+SWEEP TRF - Transfer from Linked Fixed Deposit / Account
+RLZ -Realise
+VMT - Visa Money Transfer through ATM
+DLK -Delink
+CWDR - Cash Withdrawal through ATM
+DHR -Dishonour
+PUR - POS purchase
+REC -Recovery
+TIP/ SCG - Surcharge on usage of debit card at pumps/railway ticket purchase or hotel tips
+LN -Loan
+RATE.DIFF - Difference in rates on usage of card internationally
+HCY -Home Currency Advance
+CLG - Cheque Clearing Transaction
+TFR -Transfer
+VMT-ICON - Visa Money Transfer Via Internet Banking
+INT -Interest Run
+EDC - Credit transaction through EDC Machine
+BKNG -Booking
+SETU - Seamless electronic fund transfer through AXIS Bank
+CNCL -Cancellation
+Int.pd - Interest paid to customer ISSUE -Issuance
+ISSUE -Issuance
+Int.Coll - Interest collected from the customer
+AMEND -Amendment
+OW RTN-Outward return
+PUR-Purchase
+In case of any clarification regarding this transaction please get in touch with corporate.ib@axisbank.com
+++++ End of Report ++++

@@ -1,0 +1,139 @@
+1
+STATEMENT OF ACCOUNT
+CANARA BANK                                                                                             
+DATE                             :                  10-06-26   14:34:32 PM                                                                       
+Account Branch
+:
+19446-DURGAKUND VARANASI 221005
+                                            
+IFSC
+:
+CNRB0019446
+MICR
+:
+221015030
+Branch Address               :                 R-36 9C,SANKAT MOCHAN ROAD,LANKA, VARANASI TEHSIL&DIST, UTTAR PRADESH - 221005.
+Email Id                           :                  cb19446@canarabank.com
+Contact Number              :               0
+Bank Toll Free Number   :              18001030
+WhatsApp Banking Num :                18001030
+Account No
+:
+120031731659    
+Product Name
+:
+CURRENT ACCOUNT- GENERAL
+Customer ID
+:
+327885949
+Customer Name
+:
+Messrs  ASHUTOSH  JEWELLERS
+Address
+:
+B 30/25 54
+LANKA
+LANKA
+VARANASI
+UTTAR PRADESH
+IN
+221005
+VPA Id                   
+:                   
+Nominee Reference num:
+99921652230
+Nominee Name
+:
+GAURAV KUMAR
+Account Title
+:
+ASHUTOSH  JEWELLERS
+Joint Holder's/Authorised :
+Person's Name
+CKYC Identifier
+:     80095851158585
+       Period :
+        01-04-2025  To  31-03-2026
+       Name Currency : 
+         
+        INDIAN RUPEES
+       Swift code:
+        
+          CNRBINBBBFD
+TRANS 
+DATE
+VALUE 
+DATE
+BRANCH
+REF/CHQ.NO
+DESCRIPTION
+WITHDRAWS
+DEPOSIT
+BALANCE 
+01-APR-25
+01-APR-25
+0
+B/F ... 
+0.00
+452,388.75
+452,388.75
+01-APR-25
+01-APR-25
+33
+509115897946
+INET-IMPS-CR/KARZA 
+TECH/HSB       
+/006312201002/MSWIP
+ETECH/1111111111/01/
+04/2025 15:12:
+56/509115897946
+0.00
+1.00
+452,389.75
+01-APR-25
+01-APR-25
+33
+509149536107
+UPI/CR/509149536107/
+ANAMIKA/BARB/**0752
+3@PTSBI/SENT 
+USI//PTM5282B45AA9C
+24E13B4E9EAF7A5237
+21C/01/04/2025 19:49:
+58
+0.00
+1,000.00
+453,389.75
+02-APR-25
+02-APR-25
+33
+NEFT CR-
+000433405012-
+RATN0000999-
+MSWIPETECHNOLOGI
+ES--II1QF4RG
+0.00
+13,000.00
+466,389.75
+02-APR-25
+02-APR-25
+33
+NEFT CR-
+000433409102-
+RATN0000999-
+MSWIPETECHNOLOGI
+ES--II1QGF6A
+0.00
+28,900.00
+495,289.75
+02-APR-25
+02-APR-25
+33
+NEFT CR-
+000433412679-
+RATN0000999-
+MSWIPETECHNOLOGI
+ES--II1QGPMI
+0.00
+55,200.00
+550,489.75

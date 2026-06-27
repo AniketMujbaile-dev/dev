@@ -1,0 +1,71 @@
+Statement of account : 070126900000212
+Statement Type : 01 Mar 2026 - 31 Mar 2026
+Customer Name : V3 TECHRIDER PVT LTD
+Your Branch Details
+Address Line 1 : V3 TECHRIDER PVT LTD
+Branch Name: SECTOR 50, NOIDA
+Address Line 2 : PLOT NO RZ 7 KH NO 26 4 2 F
+F
+Address Line 1: GROUND & FIRST FLOOR,
+Address Line 3 : BABA HARI DASS NAGAR
+NAJAFGARH NEW
+Line 2: PLOT NO B-1/68, SECTOR-50,
+Mobile No : 7011261154
+Line 3: NOIDA - 201301
+Email : info.v3techrider@gmail.com
+Cust ID: 35792494
+IFSC Code: YESB0000701 | MICR Code:
+110532135
+Transaction details for your account number 070126900000212  (CA/SA Product name) (currency INR )
+Primary Holder V3 TECHRIDER PVT LTD
+Nominee Details: Not Registered
+Account status:  Active
+Joint holder’s names:
+Transaction
+Date
+Value Date
+Description
+Reference Number
+Withdrawals
+Deposits
+Running Balance
+2026-03-31
+2026-03-31
+IMPS/NA/XXXX3467/RRN:60
+9094023645/PC3216756239
+679283/STATE BANK OF IN
+DIA/Shyam Kumar/SALARY
+YESI6609001169
+4300                     
+7,000.00
+70,968,848.23
+2026-03-31
+2026-03-31
+IMPS/NA/XXXX0813/RRN:
+609094020145/PC3216688
+107700315/BANK OF BAR
+ODA/Rishi kapur/SALARY
+YESI6609001165
+5200                     
+14,000.00
+70,975,848.23
+2026-03-31
+2026-03-31
+IMPS/NA/XXXX2651/RRN:60
+9094017946/PC3216609220
+047976/PUNJAB NATIONAL 
+BANK/pravin kumar/SALARY
+YESI6609001180
+6400                     
+14,000.00
+70,989,848.23
+2026-03-31
+2026-03-31
+IMPS/NA/XXXX4894/RRN:6
+09094016074/PC32165952
+75006241/STATE BANK OF
+ INDIA/shiv kumar/SALARY
+YESI6609001160
+9000                     
+14,000.00
+71,003,848.23

@@ -1,0 +1,100 @@
+Account Statement from 01-03-2026 to 30-04-2026
+01-03-2026 से 30-04-2026 तक की खाता
+/ Account Name
+/ Account Number
+/ Account Type
+/ Customer Address
+/ Branch Name
+/ IFSC Code
+/ MICR Code
+/ Branch Address
+PARTH SHAH
+89930100005786
+KRISHNA NAGAR,AHMEDABAD
+NO 1119 F 2                                    AHMEDABAD
+GUJARAT            382345 GJ
+1, JAYANAND SOCIETY, NR. CINE PRIDE CINEMA
+KRISHNANAGAR, AHMEDABAD
+AHMEDABAD GUJARAT,INDIA
+382345
+BARB0VJKNAG
+382012208
+SBA
+गाहक का नाम
+खाता संरया
+खाता पकार
+गाहक का पता
+शाखा का नाम
+एमआईसीआर कोड
+शाखा का पता
+आईएफएससी कोड
+पभाव तारीख
+Sr.No
+Transaction
+Date
+Value
+Date
+Description
+Cheque
+Number
+Debit
+Credit
+Balance
+क.सं
+लेनदेन की
+तारीख
+चेक नंबर
+नामे
+जमा
+शेष
+ववरण
+2,33,045.36
+1
+02-03-2026
+Opening Balance
+-
+-
+2,33,051.61
+2
+02-03-2026
+02-03-2026 ACHCR/OIL AND NATURAL
+GAS/2957755644/111244444275
+-
+6.25
+2,31,551.61
+3
+03-03-2026
+03-03-2026 UPI/606213249903/13:58:09/UPI/googlebbpsutility@i
+1,500.00
+-
+2,30,714.61
+4
+03-03-2026
+03-03-2026 UPI/606220947594/15:56:13/UPI/swiggy580017.rzp@r
+x
+837.00
+-
+2,30,414.61
+5
+03-03-2026
+03-03-2026 UPI/606221253016/16:00:38/UPI/0790665a0140157.b
+qr
+300.00
+-
+2,30,264.61
+6
+03-03-2026
+03-03-2026 UPI/606228348846/17:42:48/UPI/gpay-utility@okpaya
+150.00
+-
+2,29,403.71
+7
+04-03-2026
+04-03-2026 UPI/606352761266/10:21:05/UPI/gpayrecharge@okpa
+ya
+860.90
+-
+This is a computer-generated statement hence does not require signature. Statement is generated on 11/05/2026 10:12:22 AM (through bob World mobile app) from the system
+maintained in the bank containing transactions carried out in normal course of business.
+Page 1 of 5
+11/05/2026 10:12:22 AM

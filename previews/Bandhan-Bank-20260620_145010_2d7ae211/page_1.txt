@@ -1,0 +1,121 @@
+Date
+Effective Date
+Cheque/Reference No
+Transaction Detail
+Debit
+Credit
+Balance
+01/05/2026 01/05/2026
+IMPS-612111104354-GOOGLEINDIADIGITALSERVICESP
+RIVATELIMITEDNODA-UTIB0003567-***********2063
+-IMPS Head Office
+0.00
+41000.00
+2873585.28
+01/05/2026 01/05/2026
+IMPS-612114519734-GOOGLEINDIADIGITALSERVICESP
+RIVATELIMITEDNODA-UTIB0003567-***********2063
+-IMPS Head Office
+0.00
+1000.00
+2874585.28
+01/05/2026 01/05/2026
+IMPS-612115710309-GOOGLEINDIADIGITALSERVICESP
+RIVATELIMITEDNODA-UTIB0003567-***********2063
+-IMPS Head Office
+0.00
+30000.00
+2904585.28
+01/05/2026 01/05/2026
+IMPS-612116784145-GOOGLEINDIADIGITALSERVICESP
+RIVATELIMITEDNODA-UTIB0003567-***********2063
+-IMPS Head Office
+0.00
+23800.00
+2928385.28
+01/05/2026 01/05/2026
+IMPS-612117905055-GOOGLEINDIADIGITALSERVICESP
+RIVATELIMITEDNODA-UTIB0003567-***********2063
+-IMPS Head Office
+0.00
+4923.00
+2933308.28
+01/05/2026 01/05/2026
+IMPS-612117028604-GOOGLEINDIADIGITALSERVICESP
+RIVATELIMITEDNODA-UTIB0003567-***********2063
+-IMPS Head Office
+0.00
+32000.00
+2965308.28
+01/05/2026 01/05/2026
+IMPS-612118166979-GOOGLEINDIADIGITALSERVICESP
+RIVATELIMITEDNODA-UTIB0003567-***********2063
+-IMPS Head Office
+0.00
+3300.00
+2968608.28
+01/05/2026 01/05/2026
+IMPS-612119283861-GOOGLEINDIADIGITALSERVICESP
+RIVATELIMITEDNODA-UTIB0003567-***********2063
+-IMPS Head Office
+0.00
+1650.00
+2970258.28
+01/05/2026 01/05/2026
+IMPS-612121847675-GOOGLEINDIADIGITALSERVICESP
+RIVATELIMITEDNODA-UTIB0003567-***********2063
+-IMPS Head Office
+0.00
+11000.00
+2981258.28
+01/05/2026 01/05/2026
+IMPS-612121849780-GOOGLEINDIADIGITALSERVICESP
+RIVATELIMITEDNODA-UTIB0003567-***********2063
+-IMPS Head Office
+0.00
+21949.00
+3003207.28
+Statement of Account for the month of May, 2026
+Customer Name:
+ARANYAK
+Customer Address:
+BARDOWALI 21 NO PILLAR
+AGARTALA, AGARTALA DIST WEST
+TRIPURA, A D NAGAR, WEST
+TRIPURA, TR, 799003, IN
+Customer Number:
+322404272
+Account Number:
+10210009088440
+Account Type:
+Current Account Biz-Premium
+Nominee Registration:
+NO
+MAB/QAB Requirement: 100000.00
+CKYC Number:
+XXXXXXXXXX5622
+Branch ID:
+1255
+Branch of Ownership:
+Bardowali
+Branch Phone:
+7085012551
+Branch Email:
+bardowali.branch@bandhanbank.com
+Branch Address:
+Near Bordowali Petrol Pump PO AD Nagar
+Agartala Agartala Tripura, PIN-799003
+IFSC:
+BDBL0001255
+MICR Code:
+799750003
+Branch GSTIN:
+16AAGCB1323G1Z6
+- This is computer generated statement and requires no signature(s).
+- The balance shown in the statement of account includes the uncleared effects and funds under hold, if any, on the date of generation of statement.
+- Unless the constituent notifies the bank within 15 days of its receipt of any discrepancy found, it will be deemed that the statement has been found correct.
+You can reach us at-
+Phone Banking: 1800-258-8181,+91 33 6633 3333, 33 4409 9090
+Email: customercare@bandhanbank.com
+Website: www.bandhan.bank.in
+page 1 of 13

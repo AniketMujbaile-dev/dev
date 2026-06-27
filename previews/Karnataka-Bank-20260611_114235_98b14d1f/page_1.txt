@@ -1,0 +1,104 @@
+----------------------------------------------------------------------------------------------------------------------------------
+                            T H E   K A R N A T A K A   B A N K   L I M I T E D
+                                       M'LORE CAR STREET(P.M.RAO RD)
+Date      : 11-06-2026
+Account no: 0495202400001601                                                          Interest Rate: 0      %
+                                                                                     MICR Code    : 575052013
+                                                                                     IFSC         : KARB0000495
+Name:       SHREE AMBE ELECTRICALS
+           GROUND FLOOR 13 4 515 3 SRI MAHATAS MARKET
+           ROAD SHRI MANGALA JEWELLERS BUNDER
+           MANGALURU
+           KARNATAKA
+           575001
+        OPENING BALANCE                                                                                 13,830.10
+25-05-2026         UPI:123662521520:prasad.d.kinnigoli@okhdfcbank(PR                        175.00       14,005.10
+25-05-2026         UPI:614512326086:noelrebello747@oksbi(NOEL  REBEL                        230.00       14,235.10
+25-05-2026         NEFT-MEDIA HOUSE/SBIN/SBIN226145549270                                10,800.00       25,035.10
+25-05-2026         IMPS/P2A-614513884013-SHREE DAMODAR ENTERP-918217                   3,00,000.00     3,25,035.10
+25-05-2026         IMPS/614560887807-IMPS P2A PANASONIC LIFE SOLUTIO     1,10,535.00                   2,14,500.10
+25-05-2026         BY CLG/000143/25-05-2026/BOB/SHAKTHI                                   5,000.00     2,19,500.10
+25-05-2026  584468 INTERBR-MULTIPLE PAYEE-TO SKY LINE ENTERPRISES-KBL       7,140.00                   2,12,360.10
+25-05-2026         UPI:614561067087:rathorejitusingh81@okicici(HARBA                      5,000.00     2,17,360.10
+25-05-2026         BY CLG/016093/25-05-2026/SBI/DEV ELETRICALS                            5,000.00     2,22,360.10
+26-05-2026         UPI:614615291790:bharath.attavar@okicici(DECCAN E                         15.00     2,22,375.10
+26-05-2026         UPI:056497806641:brr.arun@ybl(VIGNESH ELECTRICALS                      5,000.00     2,27,375.10
+26-05-2026         UPI:614606237205:poonjanithin-1@oksbi(NITHIN POON                        850.00     2,28,225.10
+26-05-2026         IMPS/614661136881-IMPS P2A PANASONIC LIFE SOLUTIO     1,33,428.00                     94,797.10
+27-05-2026         UPI:123765245605:sunarch77@okhdfcbank(ARCHANA SUN                      6,893.00     1,01,690.10
+27-05-2026         NEFT-SRIKRISHNA ELECTRICALS/CNRB/CNRBH00134854637                     18,651.00     1,20,341.10
+27-05-2026         UPI:651338778074:rajeshp.rp50-2@okaxis(RAJESH P):                      5,000.00     1,25,341.10
+27-05-2026         NEFT-S3 ENTERPRISES/SBIN/SBIN526147315385                              2,794.00     1,28,135.10
+27-05-2026         IMPS/614761322992-IMPS P2A SHREE NM ELECTRICALS L       10,277.23                   1,17,857.87
+27-05-2026         IMPS/P2A-614714749108-SHREE DAMODAR ENTERP-918217                   2,07,272.00     3,25,129.87
+27-05-2026         NEFT-RENITA ENTERPRISES/CNRB/CNRBH00135062911                          6,915.00     3,32,044.87
+28-05-2026         NEFT-SHRIKRIPA ENTERPRISES/ICIC/IN42614857255317                       2,988.00     3,35,032.87
+28-05-2026         BY CLG/000174/27-05-2026/BOB/MUNNA                                    16,589.00     3,51,621.87
+28-05-2026         BY CLG/560296/26-05-2026/CAB/LAKSHMI                                  20,000.00     3,71,621.87
+29-05-2026         IMPS/614961638945-IMPS P2A HILLS HABBER ELECTRIC        30,172.00                   3,41,449.87
+29-05-2026         CASH DEPOSIT-SELF                                                     26,500.00     3,67,949.87
+29-05-2026         IMPS/614961693268-IMPS P2A PARMAR ENTERPRISES-BAR       16,500.00                   3,51,449.87
+29-05-2026         IMPS/614961721274-IMPS P2A-SBIN0020803-6221391004       37,500.00                   3,13,949.87
+29-05-2026         IMPS/614961742526-IMPS P2A PANASONIC LIFE SOLUTIO     3,00,000.00                     13,949.87
+30-05-2026         IMPS/P2A-615013117887-SHREE DAMODAR ENTERP-918217                   2,00,000.00     2,13,949.87
+30-05-2026         IMPS/615061907558-IMPS P2A PANASONIC LIFE SOLUTIO       51,391.00                   1,62,558.87
+30-05-2026         BY CLG/560297/30-05-2026/CAB/LAKSHMI                                  20,000.00     1,82,558.87
+31-05-2026         NEFT-BHARGAVI HARDWARES/SBIN/SBIN426151877465                          4,000.00     1,86,558.87
+01-06-2026         IMPS/615262281109-IMPS P2A PANASONIC LIFE SOLUTIO     1,50,000.00                     36,558.87
+01-06-2026  407686 CLEARING-MAHESH ENTERPRISES-SBI BANK                    17,270.00                     19,288.87
+02-06-2026         UPI:615360428232:8722057792@slc(DEEPAK KUMAR):UPI                      2,000.00       21,288.87
+02-06-2026         UPI:124081299015:karthiksnayak8@okhdfcbank(KARTHI                        472.00       21,760.87
+02-06-2026         NEFT-SRIKRISHNA ELECTRICALS/CNRB/CNRBH00136256578                     12,701.00       34,461.87
+02-06-2026         NEFT-HAVELLS INDIA LTD/YESB/YESIG61530129330                           1,670.40       36,132.27
+03-06-2026         IMPS/P2A-615411991778-AMITKUNDER-919019025077-100                     81,835.00     1,17,967.27
+03-06-2026         UPI:652087108417:mohandaskulal720@okicici(Mr MOHA                         40.00     1,18,007.27
+03-06-2026         UPI:652072327362:richardmenezes944@okicici(RICHAR                        500.00     1,18,507.27
+03-06-2026         UPI:615402404859:jayashreethukaram38@okaxis(THUKA                        711.00     1,19,218.27
+03-06-2026         IMPS/615462806225-IMPS P2A KESAR KEWAR WO MAHENDR        8,800.00                   1,10,418.27
+03-06-2026         IMPS/615462810984-IMPS P2A PANASONIC LIFE SOLUTIO       80,054.00                     30,364.27
+03-06-2026         MBS/by CRYSTAL ELECTRONICS /0208218/03-06-2026 18                      5,155.00       35,519.27
+03-06-2026         UPI:652032030616:rathorejitusingh81@okicici(HARBA                      5,000.00       40,519.27
+04-06-2026         BY CLG/768649/03-06-2026/CAB/SHREE VIJAYALAXMI ELE                     8,427.00       48,946.27
+04-06-2026         IMPS/615563032841-IMPS P2A SHREE NM ELECTRICALS L        4,012.00                     44,934.27
+04-06-2026         UPI:615504590918:poonjanithin-1@oksbi(NITHIN POON                      1,300.00       46,234.27
+05-06-2026         UPI:124228838102:yyathishp@okhdfcbank(YATHEESH P)                        525.00       46,759.27
+05-06-2026         NEFT-MANGALORE LIGHTS/MAHB/MAHBH00554593089                            5,000.00       51,759.27
+05-06-2026         UPI:652233576145:nagarajnaik194@okaxis(NAGARAJA D                      1,000.00       52,759.27
+05-06-2026         IMPS/P2A-615616397093-KEEC  I  PRIVATE LIM-917304                      4,956.00       57,715.27
+05-06-2026         UPI:615668783827:chethan.mallyas-1@okicici(CHETHA                         40.00       57,755.27
+05-06-2026  407687 CLEARING-SHEETAL MARKETING-CAB BANK                      7,600.00                     50,155.27
+05-06-2026         UPI:615686491869:rathorejitusingh81@okicici(HARBA                     38,000.00       88,155.27
+06-06-2026         JUN-26-QR Sound Box-00001504QR70B050379                    116.82                     88,038.45
+06-06-2026  407688 CLEARING-MAHALAXMI ENTERPRISES-HDFC BANK                 6,700.00                     81,338.45
+06-06-2026         UPI:615748729388:ranjithkumarranju25@oksbi(RANJIT                      2,115.00       83,453.45
+06-06-2026         UPI:652387669248:harish2k-yahoo.com@okicici(HARIS                      4,400.00       87,853.45
+07-06-2026         UPI:652448364556:kalyanienterprises63-1@okaxis(GI                      3,220.00       91,073.45
+07-06-2026         NEFT-BHARGAVI HARDWARES/SBIN/SBIN326158760052                          4,000.00       95,073.45
+07-06-2026         UPI:615833724371:rathorejitusingh81@okicici(HARBA                      4,900.00       99,973.45
+08-06-2026         MBS/by KALU SINGH/0330286/08-06-2026 10:54:14/MOB                     29,000.00     1,28,973.45
+08-06-2026         TRANSFER-DUNGAR SINGH-BY DUNGAR -KBL-M'LORE CAR S                   1,00,000.00     2,28,973.45
+08-06-2026         IMPS/615963751770-IMPS P2A PANASONIC LIFE SOLUTIO     2,00,000.00                     28,973.45
+08-06-2026         NEFT-GENERAL REFRIGERATION E/CNRB/CNRBH00137892725                    25,000.00       53,973.45
+08-06-2026         UPI:615915013506:biz.shrimaha531@fbl(SHRI MAHALIN                      2,000.00       55,973.45
+08-06-2026         BY CLG/437155/05-06-2026/CAB/OM SUN ELECTRICAL                         4,900.00       60,873.45
+09-06-2026         UPI:124442178447:shripathi90-4@okhdfcbank(SHRIPAT                      5,000.00       65,873.45
+09-06-2026         UPI:124444943059:hameedunais81520@okhdfcbank(ABDU                         90.00       65,963.45
+09-06-2026         UPI:616032348644:8722057792@slc(DEEPAK KUMAR):UPI                         70.00       66,033.45
+09-06-2026         UPI:005753392921:7619488450@ibl(SURAJ SINGH):Paym                        650.00       66,683.45
+09-06-2026         INTERBR-ROHAN CORPORATION INDIA PRIVATE LIMITED-.                     50,494.00     1,17,177.45
+09-06-2026         IMPS/P2A-616022710929-SHREE DAMODAR ENTERP-918217                   1,56,710.00     2,73,887.45
+10-06-2026         NEFT-JAYASHREE ELECTRIC CO/IDIB/IDIBH16145682795                      36,400.00     3,10,287.45
+10-06-2026         INTERBR-ROHAN CORPORATION INDIA PRIVATE LIMITED-B                   1,00,654.00     4,10,941.45
+10-06-2026         IMPS/P2A-616117700490-AMITKUNDER-919019025077-100                     60,230.00     4,71,171.45
+10-06-2026         NEFT-MUKUND MGM REALTY RERA /UBIN/010719474243                        42,749.00     5,13,920.45
+        CLOSING BALANCE                                                                               5,13,920.45
+Unless the constituent notifies the bank
+immediately of any discrepancy found
+by him in this statement of Account,
+it will be  taken  that he has found
+the account correct.                                Date Stamp             Manager
+----------------------------------------------------------------------------------------------------------------------------------
+Page 1 of 1
+Transaction Details
+11-06-2026
+https://f10dr.ktkbank.com:11000/finbranch/arjspmorph/INFENG/tran_rpt.jsp?rtId=f7...

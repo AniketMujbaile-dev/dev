@@ -1,0 +1,118 @@
+Page No:2
+ 
+              
+                            
+                                          
+                                                        
+                                                                      
+        
+                 STATEMENT OF ACCOUNT from 01/05/2026 to 31/05/2026 for Account Number 50056342120.
+       
+Value
+Date
+Post
+Date
+Credit Amount
+Debit Amount
+Closing Balance
+Description
+01/05/
+2026
+01/05/
+2026
+8100
+-157700175.9
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P004 /
+ 
+NEFT/SBIN/IDIBN520260501401659
+50/KAILASH /
+ Txn Amt.          8097.34 Charges.
+2.66
+01/05/
+2026
+01/05/
+2026
+6100
+-157706275.9
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P005 /
+ 
+NEFT/UBIN/IDIBN520260501401659
+51/RAJU KUS/
+ Txn Amt.          6097.34 Charges.
+2.66
+01/05/
+2026
+01/05/
+2026
+16956.61
+-157723232.51
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P003 /
+ 
+NEFT/PUNB/IDIBN52026050140165
+722/SATISH K/
+ Txn Amt.         16951.00 Charges.
+5.61
+01/05/
+2026
+01/05/
+2026
+223657.91
+-157946890.42
+WITHDRAWAL TRANSFER
+ 
+RTGS/SBIN/IDIBR52026050101961
+281/SHIV FIL/ONLINE B
+ Txn Amt.       223629.00 Charges.
+28.91
+02/05/
+2026
+02/05/
+2026
+10000000
+-147946890.42
+NO BOOK DEPOSIT TRANSFER
+ Transfer 50056GOEL CARGO PVT
+gcpl
+ KALYANI MINERALS LLP
+02/05/
+2026
+02/05/
+2026
+1300000
+-149246890.42
+WITHDRAWAL TRANSFER
+ 51049
+ GOEL CARGO PVT LTD (GOEL
+ASHOK LEYLAND)
+02/05/
+2026
+02/05/
+2026
+500028.91
+-149746919.33
+WITHDRAWAL TRANSFER
+ 
+RTGS/ICIC/IDIBR520260502019701
+65/ECT POOL/.
+ Txn Amt.       500000.00 Charges.
+28.91
+02/05/
+2026
+02/05/
+2026
+57182
+-149804101.33
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P011 /
+ 
+NEFT/SBIN/IDIBN520260502402864
+29/HINCHLAL/
+ Txn Amt.         57176.39 Charges.
+5.61

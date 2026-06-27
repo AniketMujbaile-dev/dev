@@ -1,0 +1,124 @@
+Account Name                   :	Mr. KAMAL KISHORE NARENBHAI SHARMA
+Address                        		   :	 10 DHARMBHOOMI BUNGLOWS
+                               		    								NR AMBUJA FACTORY, BH NAROL COURT
+                                         				NAROL-382405
+                                         				Ahmadabad
+Date                                    :	3 Mar 2026
+Account Number                 :	00000031724802344
+Account Description            :	CA-GEN-PUB-IND-NONRURAL-INR
+Branch                                :	ISCON CIRCLE
+Drawing Power                   :	0.00
+Interest Rate(% p.a.)          :	0.0
+MOD Balance                     :	0.00
+CIF No.                               :	85771634415
+CKYCR Number                    :
+IFS Code                            :SBIN0011747
+(Indian Financial System)
+MICR Code                         :	380002100
+(Magnetic Ink Character Recognition)
+Nomination Registered       :	No
+Balance as on 1 Feb 2026  :	1,900.38
+ 
+Account Statement from 1 Feb 2026 to 28 Feb 2026
+ 
+Txn Date
+Value
+Date
+Description
+Ref No./Cheque
+No.
+Debit
+Credit
+Balance
+1 Feb 2026
+1 Feb 2026 BY TRANSFER-
+UPI/CR/102592770431/BFLM2
+P1/HDFC/bflm2p1@hd/260201-
+TRANSFER
+FROM
+4897738162095
+30,000.00
+31,900.38
+1 Feb 2026
+1 Feb 2026 TO TRANSFER-INB Advance-
+IT0ACHGKG6
+TRANSFER TO
+35567663894
+1,500.00
+30,400.38
+1 Feb 2026
+1 Feb 2026 TO TRANSFER-INB NEFT
+UTR NO: SBIN426032341373-
+BRAHMADEO RANA PUNE
+NEFT INB:
+IR00FKDFZ3
+/ BRAHMADEO
+RANA PUNE
+1,000.00
+29,400.38
+1 Feb 2026
+1 Feb 2026 TO TRANSFER-INB Advance-
+IT0ACHGXJ6
+TRANSFER TO
+40299349382
+1,000.00
+28,400.38
+1 Feb 2026
+1 Feb 2026 TO TRANSFER-INB NEFT
+UTR NO: SBIN426032342217-
+NIKHIL KUMAR
+NEFT INB:
+IR00FKDHN3
+/ NIKHIL KUMAR
+500.00
+27,900.38
+1 Feb 2026
+1 Feb 2026 TO TRANSFER-INB NEFT
+UTR NO: SBIN426032343874-
+ASHISH KUMAR  PUNE
+NEFT INB:
+IR00FKDGF7
+/ ASHISH KUMAR
+PUNE
+500.00
+27,400.38
+1 Feb 2026
+1 Feb 2026 TO TRANSFER-INB Advance-
+IT0ACHGYL5
+TRANSFER TO
+35703061874
+500.00
+26,900.38
+1 Feb 2026
+1 Feb 2026 TO TRANSFER-INB Advance
+rajkumar-
+IT0ACHHAO3
+TRANSFER TO
+40299349382
+500.00
+26,400.38
+1 Feb 2026
+1 Feb 2026 TO TRANSFER-INB Kharadi
+khoraki-
+IT0ACHHIE8
+TRANSFER TO
+40299587269
+500.00
+25,900.38
+1 Feb 2026
+1 Feb 2026 TO TRANSFER-INB Hydrabad
+work-
+IT0ACHHMH0
+TRANSFER TO
+40950125340
+1,000.00
+24,900.38
+1 Feb 2026
+1 Feb 2026 TO TRANSFER-INB NEFT
+UTR NO: SBIN426032425895-
+shanu kumar
+NEFT INB:
+IR00FKEKG4
+/ shanu kumar
+7,500.00
+17,400.38

@@ -1,0 +1,92 @@
+Account Name                   :M/S  MAHENDRA ENTERPRISEe,Mr. GANESH  GUPTA
+Date                                    :6 Jun 2026
+Account Number                 :00000065056806115
+Account Description            :EB-MSME-CC-SBF-MUDRA
+Branch                                :KHATIMA
+Drawing Power                   :10,00,000.00
+Interest Rate(% p.a.)          :9.65
+CIF No.                               :75028213239
+IFS Code                            :SBIN0050744
+MICR Code                        :262002305
+Balance as on 1 May 2026  :-8,99,946.56
+ 
+Account Statement from 1 May 2026 to 31 May 2026
+ Please do not share your ATM, Debit/Credit card number, PIN and OTP with anyone over mail,
+SMS, phone call or any other media. Bank never asks for such information.
+ 
+ **This is a computer generated statement and does not require a signature.
+ 
+Address
+WARD NO 4,PANJABI  MOHALLA,KHATIMA,Udham Singh Nagar
+PITHORAGARH
+UTTARAKHAND-262308
+IN
+Txn
+Date
+Value
+Date
+Description
+Ref
+No./Cheque
+No.
+Branch
+Code
+Debit
+Credit
+Balance
+1 May
+2026
+1 May
+2026
+   BY
+TRANSFER-
+NEFT*UTIB0
+000022*AXN
+PM12143322
+910*PAYTM
+PAYMENTS
+S-
+TRANSFER
+FROM
+99509044300
+/
+4430
+491.25
+-8,99,455.31
+1 May
+2026
+1 May
+2026
+   BY
+TRANSFER-
+UPI/CR/6487
+93508220/Ra
+hul
+M/SBIN/rahul
+majum/UPI-
+TRANSFER
+FROM
+48977361620
+97 /
+50744
+15,000.00
+-8,84,455.31
+1 May
+2026
+1 May
+2026
+   BY
+TRANSFER-
+UPI/CR/6121
+47375188/AL
+OK
+MAJ/UBIN/al
+okmajumd/U
+PI-
+TRANSFER
+FROM
+48977361620
+97 /
+50744
+25,000.00
+-8,59,455.31

@@ -1,0 +1,47 @@
+Divishine Foods
+Shop No 1  F 14 11  Part 2  New
+Delhi  Delhi  110009 Model Town
+Near Burger King 110009
+New Delhi
+Delhi
+India
+110009
+Statement as on
+Customer Email
+Customer ID
+Account Relationship Summary
+: 30/04/2026
+: ONLYFORLUCKYA@GMAIL.COM
+: 333578108
+INR
+CURRENT ACCOUNTS
+119205.16
+CR
+0.00
+0.00
+0.00
+119205.16
+Ccy
+Account Type
+Balance
+CR
+DR
+Limit
+Sweep in FD Amt#
+Total Withdrawable**
+Balance
+Hold
+Amount
+** Total Withdrawable Balance does not include Hold Amount and Unclear Amount.
+Total Withdrawable Balance=Balance+Limit+Sweep in FD Amt-Hold Amount.
+# Sweep In FD may have linkages to multiple accounts.
+RM Name
+: Anurag Mehta
+RM Contact No
+: --9811609693
+Page 1 of 12
+Digitally signed by DS HDFC Bank Ltd
+Date: 2026.05.04 18:42:32 +05:30
+Reason: DIGITAL SIGNATURE
+Location: MUMBAI
+Signature Not Verified

@@ -1,0 +1,127 @@
+Page No:1
+ 
+           
+                      
+                                 
+                                            
+                                                       
+           
+                        STATEMENT OF ACCOUNT from 01/04/2026 to 05/04/2026 for Account Number 50056342120.
+                 
+INDIAN BANK
+UMARI (M.P.)
+IFSC CODE:IDIB000U520
+UMARI RAJENDRA NAGAR , DIST. SATNA , MADHYA PRADESH
+Branch Code :04785
+Account Number : 50056342120
+Product type :  MICRO-SMALL-ENT-OCC-REPO
+GOEL CARGO PVT. LTD.
+HARYANA BHAWAN
+PANNA ROAD
+SATNA
+M.P. - 485001
+Nominee Name :No
+Email : goelgroup.satna@gmail.com
+Statement Date :Tue Jun 09 14:43:22 IST 2026
+Cleared Balance :2324507.11
+Uncleared Amount :0.00
+Drawing Power :00
+Interest Rate : 9.150
+ 
+Value
+Date
+Post
+Date
+Remitter
+Branch
+Description
+Cheque No
+DR
+CR
+Balance
+BALANCE B/F
+147477628.
+06DR
+02/04
+/2026
+02/04
+/2026
+ONLINE
+TRANSFER
+WITHDRAWAL
+TRANSFER emi
+TRANSFER TO
+50074951049 GOEL
+CARGO PVT LTD
+(GOEL ASHOK
+LEYLAND)
+1200000.0
+0
+148677628.
+06DR
+02/04
+/2026
+02/04
+/2026
+UMARI (M.P.)
+WITHDRAWAL
+TRANSFER
+RTGS/HDFC/IDIBR5
+2026040201390509/I
+OCXPP  /. Txn Amt.
+17,00,000.00
+Charges.       58.41
+TRANSFER TO
+98906000129
+1700058.4
+1
+150377686.
+47DR
+02/04
+/2026
+02/04
+/2026
+UMARI (M.P.)
+WITHDRAWAL
+TRANSFER
+RTGS/HDFC/IDIBR5
+2026040201390640/
+BPCL CAR/. Txn
+Amt.       5,00,000.00
+Charges.       28.91
+TRANSFER TO
+98906000129
+500028.91
+150877715.
+38DR
+02/04
+/2026
+02/04
+/2026
+UMARI (M.P.)
+WITHDRAWAL
+TRANSFER
+RTGS/ICIC/IDIBR52
+026040201390641/H
+PCL Dri/. Txn Amt.
+4,50,000.00
+Charges.       28.91
+TRANSFER TO
+98906000129
+450028.91
+151327744.
+29DR
+02/04
+/2026
+02/04
+/2026
+MUMBAI FORT BY TRANSFER
+RTGS/HDFC/HDFC
+R520260402907041
+54/BIRLANUL/
+TRANSFER FROM
+94957000128
+2448093.0
+0
+148879651.
+29DR

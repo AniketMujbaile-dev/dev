@@ -1,0 +1,97 @@
+Page No:1
+ 
+              
+                            
+                                          
+                                                        
+                                                                      
+        
+                 STATEMENT OF ACCOUNT from 11/04/2026 to 30/04/2026 for Account Number 50056342120.
+       
+INDIAN BANK
+Branch Code :04785
+Account Number : 50056342120
+GOEL CARGO PVT. LTD.
+HARYANA BHAWAN
+PANNA ROAD
+SATNA
+M.P. 485001
+ 
+Value
+Date
+Post
+Date
+Credit Amount
+Debit Amount
+Closing Balance
+Description
+11/04/
+2026
+11/04/
+2026
+500029.21
+-106800806.65
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P032 /
+ 
+NEFT/ICIC/IDIBN520260411378658
+36/ETC POOL/
+ Txn Amt.       500000.00 Charges.
+29.21
+11/04/
+2026
+11/04/
+2026
+500029.21
+-107300835.86
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P276 /
+ 
+NEFT/ICIC/IDIBN520260411378658
+38/HPCL    /
+ Txn Amt.       500000.00 Charges.
+29.21
+11/04/
+2026
+11/04/
+2026
+36247.61
+-107337083.47
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P248 /
+ 
+NEFT/BARB/IDIBN52026041137865
+841/Gautam a/
+ Txn Amt.         36242.00 Charges.
+5.61
+11/04/
+2026
+11/04/
+2026
+500029.21
+-107837112.68
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P043 /
+ 
+NEFT/HDFC/IDIBN52026041137866
+844/INDIAN O/
+ Txn Amt.       500000.00 Charges.
+29.21
+11/04/
+2026
+11/04/
+2026
+21285.61
+-107858398.29
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - 1 /
+ 
+NEFT/UTIB/IDIBN520260411379039
+14/PRASHANT/
+ Txn Amt.         21280.00 Charges.
+5.61

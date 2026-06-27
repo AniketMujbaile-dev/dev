@@ -1,0 +1,55 @@
+147111610000200
+Statement of Account
+01-05-2026 TO 31-05-2026
+FROM
+TRAN DATE
+DESCRIPTION
+DEBITS
+CREDITS
+BALANCE
+SNO
+INST NO
+126.00
+0.00
+1378.40
+24-05-2026
+UPI/157609994761/DR/NARAYA/YESB/Q05
+16
+Cr.
+10.00
+0.00
+1368.40
+25-05-2026
+UPI/875592845417/DR/KUMAR /YESB/Q02
+17
+Cr.
+40.00
+0.00
+1328.40
+25-05-2026
+UPI/878615904987/DR/RAM LA/YESB/Q49
+18
+Cr.
+40.00
+0.00
+1288.40
+29-05-2026
+UPI/893594115010/DR/Sukhak/UTIB/gpa
+19
+Cr.
+168.00
+0.00
+1120.40
+31-05-2026
+UPI/479632286316/DR/BAMBAR/ICIC/Get
+20
+Cr.
+This is a system generated statement and does not require any signature.
+Any discrepancy in the account statement should be notified to the bank within period of 30 days of generation of statement. It will be treated that the
+entries,contents of this statement are checked and found correct by you, if no such complaint is made within the period stated above.
+Bank of India Helpline No: 022-40919191, Email id of the Complaint Cell: Headoffice.GOD@bankofindia.co.in
+**** Update your MOBILE NUMBER & EMAIL ID for getting SMS & EMAIL from BOI ****
+********* Toll free no. of our call center : 1800 220 229,1800 103 1906. *********
+******************** RELATIONSHIP BEYOND BANKING ********************
+2
+Page:

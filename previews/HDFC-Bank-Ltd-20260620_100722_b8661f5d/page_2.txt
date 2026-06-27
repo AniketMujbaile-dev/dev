@@ -1,0 +1,129 @@
+03/04/2016
+   Dress &
+Personal Care
+Expenses
+   Home and
+personal care
+foodx
+Journal
+3
+2,240.00
+04/04/2016
+   Vehicle
+Expenses Activa
+Payment
+7
+500.00
+04/04/2016
+   Prasad SK
+   Imps recd
+Receipt
+4598
+47,000.00
+05/04/2016
+   Medical
+Expenses
+   band aid
+Payment
+9
+20.00
+05/04/2016
+   Centbank SB
+3261995687
+   Neft to cbi
+Journal
+5
+20,000.00
+05/04/2016
+   Centbank HL
+   Repayment in
+part
+Journal
+6
+25,000.00
+05/04/2016
+   Bescom
+   Autopay bescom
+Journal
+7
+2,608.00
+05/04/2016
+   Hbc Suspense
+   nano petrol
+Journal
+8
+1,002.40
+06/04/2016
+   College
+Expenses
+   ponnu
+Payment
+8
+1,000.00
+07/04/2016
+   Bank Charges
+   Neft charges to
+preethi anilkumat
+Payment
+220
+3.00
+07/04/2016
+   Salaries
+Receivable
+   March16
+Receipt
+4600
+26,709.00
+07/04/2016
+   Salaries
+Receivable
+   March16
+Receipt
+4601
+91,437.00
+07/04/2016
+   Corpbank SB
+607
+   Imps fund tr cbi
+to corpbank
+Journal
+10
+23,000.00
+07/04/2016
+   Ratnamma
+   Neft to preethi
+anilkumar sib
+Journal
+11
+4,000.00
+08/04/2016
+   Pantry Expenses
+   Ammis biryani
+Payment
+10
+630.00
+08/04/2016
+   Hotel, Boarding
+&
+LodgingExpenses
+   Hotel booking
+@cochin on
+08.05.16
+Journal
+12
+3,556.00
+08/04/2016
+   House Maid
+Expenses
+   Train ticket
+omana
+Journal
+16
+222.02
+09/04/2016
+   Centbank SB
+3261995687
+   Cash withdrawn
+Contra
+1
+5,000.00

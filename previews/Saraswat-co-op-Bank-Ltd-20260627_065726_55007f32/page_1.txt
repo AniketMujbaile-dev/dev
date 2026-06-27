@@ -1,0 +1,137 @@
+ STATEMENT OF ACCOUNTS / BILL OF SUPPLY
+Address
+:
+KARVE ROAD PUNE
+Branch
+:
+GST REGISTRATION NO.BR/BANK :
+27AABAT4497Q1ZK
+Branch IFSC Code    :SRCB0000036
+8/3, ERANDVANA,KARVE ROAD
+CITY
+:
+PUNE
+PIN CODE
+:
+411004
+SAC CODE
+:
+997113
+020-69013400/467
+PHONE #1
+:
+BR. EMAIL ID
+:
+karveroad@saraswatbank.com
+RUN DATE
+:
+23/06/2026 11.52.22
+Account No.
+: SB100/036209100000145
+Customer ID
+: 9589906
+Purpose Code :
+Address
+: FLAT NO 1 2 GROUND FLOOR MAYUR
+COLONY DHAMANKAR PATH KOTHRUD PUNE
+CITY PUNE PUN MH IN - 411038
+26/04/2021
+From Date
+CurrentROI%
+Limit Effective Date
+Total Sanction
+Limit
+Branch MICR Code
+0.00 CR
+411088005
+:
+To Date  : 22/06/2026
+Opening Balance As On 26/04/2021
+:
+:
+:
+Expiry Date
+Expiry Date with Grace Period
+2.80
+:
+:
+0.00
+Nomination
+Shrihari Panchwadkar
+:
+GST NUMBER
+:
+Name
+: PANCHWADKAR MRUNMAI SHRIHARI
+Joint Holder 1
+Joint Holder 2
+Joint Holder 3
+Joint Holder 4
+:
+:
+:
+:
+:
+:
+:
+:
+Rs.
+Date
+Dr Amount
+Cr Amount
+Total Amount
+Particulars
+Instruments
+0.00 CR
+26-04-2021
+1.00
+1.00 CR
+BALANCE TRANSFER
+01-05-2021
+1.00
+0.00 CR
+MINIMUM BALANCE CHARGES
+18-05-2021
+1,000.00
+1,000.00 CR
+MB/113817529879/O/PANCHWAD
+KAR SHRIHARI PURUSHOTTAM
+18-05-2021
+1.00
+1,001.00 CR
+UPI:shilpapanchwadkar@oksbi:mru
+nmaipanchwadkar@okh
+18-05-2021
+3,000.00
+4,001.00 CR
+UPI:sppanchwadkar@oksbi:mrunm
+aipanchwadkar@okhdfcb
+18-05-2021
+100.00
+4,101.00 CR
+UPI:sppanchwadkar@oksbi:mrunm
+aipanchwadkar@okhdfcb
+21-05-2021
+101.83
+3,999.17 CR
+MINIMUM BALANCE CHARGES
+28-05-2021
+256.00
+4,255.17 CR
+UPI:9588435712@ybl:mrunmaipan
+chwadkar@okhdfcbank:0
+29-05-2021
+256.00
+4,511.17 CR
+UPI:tanksaley2001@oksbi:mrunma
+ipanchwadkar@okhdfcb
+30-05-2021
+177.00
+4,334.17 CR
+CARD AMC MAY21 XX1760
+31-05-2021
+1.00
+4,333.17 CR
+MB/115115731702/OTHER/PANC
+HWADKAR SHRIHARI PU
+PAGE   :1 Of 203

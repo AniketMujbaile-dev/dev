@@ -1,0 +1,100 @@
+Current and Savings Account Statement
+CHANDAN KUMAR SAH
+S/O KRISHNA SAH BANKATA, ,
+GOPALGANJ, Bihar
+841503, INDIA
+Account Statement as on May02, 2026
+Customer Account Details
+Account Number
+20100052658860
+Account Type
+Current Account
+Branch Details
+Kuchaikote, 1706, Jagpati Complex, Ground FloorVillPO-Kuchaikote, Dist-
+GopalganjKuchaikote, INDIA
+Customer ID / CIF
+405943172
+IFSC
+BDBL0001706
+MICR Code
+841750601
+Nomination Registered
+YES
+Joint Holder Names
+JAI MAA LAXMI TRADERS
+Statement period
+From 01 Apr 2025 to 31 Mar 2026
+Statement Details
+Transaction Date
+Value Date
+Description
+Amount
+Dr / Cr
+Balance
+April01, 2026
+April01, 2026
+UPI/DR/D172741919924/
+KUNDAN  KU/
+axl/7667183282@axl/
+Payment fr/
+AXL26d01ca3f25b45b0a5a673d7e72dd0bb
+INR400.00
+Dr
+INR268,955.39
+April01, 2026
+April01, 2026
+UPI/DR/D355593113239/
+ARUN  KUMA/
+ybl/8002104482@ybl/
+Payment fr/
+YBL19ecaca168604bb4a896aa6d24e1ebda
+INR10,040.00
+Dr
+INR269,355.39
+April01, 2026
+April01, 2026
+GST
+INR2.30
+Dr
+INR279,395.39
+April01, 2026
+April01, 2026
+IMPS Outward Payment - CA
+101
+INR12.70
+Dr
+INR279,397.69
+April01, 2026
+April01, 2026
+IMPS-609111466182-
+Pappu sah-HDFC0002773-
+**********0481-Guhu
+INR54,150.00
+Dr
+INR279,410.39
+April01, 2026
+April01, 2026
+IMPS-609111465755-
+KUNDAN KUMAR -
+STCB0000065-**********7284-
+Guhu
+INR48,440.00
+Dr
+INR333,560.39
+April01, 2026
+April01, 2026
+IMPS-609111465329-
+RAGHAW PRASAD -
+BKID0005778-***********8402-
+Gehu
+INR70,620.00
+Dr
+INR382,000.39
+April01, 2026
+April01, 2026
+IMPS-609111465177-Durga
+enterprises -IBKL0001376-
+************0161-Gehu
+INR112,900.00
+Dr
+INR452,620.39

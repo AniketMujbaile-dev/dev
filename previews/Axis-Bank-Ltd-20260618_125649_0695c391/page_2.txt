@@ -1,0 +1,183 @@
+19-04-2025
+UPI/P2M/510977165934/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+            17343.33 2859
+19-04-2025
+UPI/P2M/510926449038/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+            16843.33 2859
+19-04-2025
+UPI/P2M/510900523134/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+            16343.33 2859
+19-04-2025
+UPI/P2A/510968493074/HIREN INDRAVADAN
+PATE/UPI/Punjab National Bank
+              
+5000.00
+            11343.33 2859
+19-04-2025
+UPI/P2M/510959192717/Google India Digital
+/UPI/AXIS BANK
+              
+1040.64
+            10302.69 2859
+19-04-2025
+GST @18% on Monthly Service Ch
+                27.00
+            10275.69 2859
+19-04-2025
+Monthly Avg Bal Chrgs
+               700.00
+             9575.69 2859
+19-04-2025
+GST @18% on Monthly Avg Bal Ch
+               126.00
+             9449.69 2859
+19-04-2025
+Monthly Service Chrgs
+               150.00
+             9299.69 2859
+20-04-2025
+UPI/P2M/511026217118/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             8799.69 2859
+20-04-2025
+UPI/P2M/511062636223/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             8299.69 2859
+20-04-2025
+UPI/P2M/511081033388/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             7799.69 2859
+20-04-2025
+UPI/P2M/547601880983/AMAZON SELLER
+SERVICE/UPI/HDFC BANK LTD
+              
+1433.35
+             6366.34 2859
+21-04-2025
+UPI/P2M/511153847411/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             5866.34 2859
+21-04-2025
+UPI/P2M/511155285461/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             5366.34 2859
+21-04-2025
+UPI/P2A/511188903784/ABHINAY  VERMA
+/UPI/State Bank Of India
+              
+5000.00
+              366.34 2859
+22-04-2025
+UPI/P2M/283635835316/GSRTC Bus booking
+/Oid251/YES BANK LIMITED YBS
+               328.65
+               37.69 2859
+23-04-2025
+UPI/P2A/511355031525/SRUSHTI J/BANK OF
+B/towards/
+              
+3000.00
+             3037.69 2859
+23-04-2025
+UPI/P2M/511348725560/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             2537.69 2859
+23-04-2025
+UPI/P2M/511335620096/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             2037.69 2859
+24-04-2025
+UPI/P2M/511455050982/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             1537.69 2859
+24-04-2025
+UPI/P2M/511477461696/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             1037.69 2859
+25-04-2025
+UPI/P2M/511577097389/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+              537.69 2859
+25-04-2025
+UPI/P2M/511513994139/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+               37.69 2859
+25-04-2025
+UPI/P2A/548155116835/Mr
+RONAKS/CENTRAL B/UPI/
+               280.00
+              317.69 2859
+26-04-2025
+UPI/P2M/100429460619/APPLE MED/HDFC
+BANK/UPI Mand//P2V/
+                49.00
+              268.69 2859
+26-04-2025
+UPI/P2A/150852296927/SONAVANE /YES
+BANK /Payment/
+              
+5000.00
+             5268.69 2859
+26-04-2025
+UPI/P2M/511657740189/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             4768.69 2859
+26-04-2025
+UPI/P2M/511662909271/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             4268.69 2859
+27-04-2025
+UPI/P2M/511708937190/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             3768.69 2859
+27-04-2025
+UPI/P2M/511737931630/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             3268.69 2859
+27-04-2025
+UPI/P2A/511705126062/PALAK JAY/UNION
+BAN/UPI/
+               450.00
+             3718.69 2859
+28-04-2025
+UPI/P2M/511868561955/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             3218.69 2859
+28-04-2025
+UPI/P2M/511863812939/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+             2718.69 2859
+28-04-2025
+UPI/P2A/548437085884/MINI KUMA/ICICI
+Ban/UPI/
+              
+8500.00
+            11218.69 2859
+29-04-2025
+UPI/P2M/511905963986/Jar Gold/YES BANK
+/Subscrip//P2V/
+               500.00
+            10718.69 2859

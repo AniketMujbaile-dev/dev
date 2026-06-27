@@ -1,0 +1,143 @@
+1
+STATEMENT OF ACCOUNT
+CANARA BANK                                                                                             
+DATE                             :                  02-05-26   10:13:41 AM                                                                       
+Account Branch
+:
+10257-SUBRAMANYA 574238
+                                            
+IFSC
+:
+CNRB0010257
+MICR
+:
+574015310
+Branch Address               :                 MAIN ROAD,NEAR TEMPLE SUBRAMANYA  574238 DAKSHINA KANNADA DIST , KARNATAKA
+Email Id                           :                  cb10257@canarabank.com
+Contact Number              :               0
+Bank Toll Free Number   :              18001030
+WhatsApp Banking Num :                18001030
+Account No
+:
+120001022609    
+Product Name
+:
+CURRENT ACCOUNT- GENERAL
+Customer ID
+:
+309451437
+Customer Name
+:
+HOTEL VISHNU VAIBHAVA
+Address
+:
+DDOR NO 2 160
+VISHNU THEERHA SANKEERNA
+SUBRAMANYA
+SUBRAMANYA
+KARNATAKA
+IN
+574238
+VPA Id                   
+:                   
+Nominee Reference num:
+Nominee Name
+:
+Account Title
+:
+HOTEL VISHNU VAIBHAVA
+Joint Holder's/Authorised :
+ASHOK KUMAR SHETY
+Person's Name
+CKYC Identifier
+:     80064447386761
+       Period :
+        01-04-2026  To  01-05-2026
+       Name Currency : 
+         
+        INDIAN RUPEES
+       Swift code:
+        
+          CNRBINBBBFD
+TRANS 
+DATE
+VALUE 
+DATE
+BRANCH
+REF/CHQ.NO
+DESCRIPTION
+WITHDRAWS
+DEPOSIT
+BALANCE 
+01-APR-26
+01-APR-26
+0
+B/F ... 
+0.00
+2,020,979.53
+2,020,979.53
+01-APR-26
+31-MAR-26
+33
+NEFT CR-
+YESAP60913559736-
+YESB0000001-PAYTM 
+PAYMENTS SERVICES
+LIMITED PA --
+AWSPG2026033100012
+16820000833742603 
+175
+0.00
+156,836.10
+2,177,815.63
+02-APR-26
+02-APR-26
+33
+NEFT CR-
+YESAP60922511748-
+YESB0000001-PAYTM 
+PAYMENTS SERVICES
+LIMITED PA --
+AWSPG2026040100012
+16820000833742603 
+175
+0.00
+109,167.03
+2,286,982.66
+02-APR-26
+02-APR-26
+10257
+003033698970
+AMBIKA D SHETTY - 
+AMBIKA D SHETTY  
+48,000.00
+0.00
+2,238,982.66
+02-APR-26
+02-APR-26
+10257
+003033698969
+MANJUNATHA R - 
+MANJUNATHA R  
+74,000.00
+0.00
+2,164,982.66
+02-APR-26
+02-APR-26
+10257
+003033698971
+NEFT DR-
+CNRBH00121921730-
+IOBA0000185-
+SUBRAHMANYA 
+ENTERPRISES-
+73,593.00
+0.00
+2,091,389.66
+02-APR-26
+02-APR-26
+10257
+NEFT SC
+6.00
+0.00
+2,091,383.66

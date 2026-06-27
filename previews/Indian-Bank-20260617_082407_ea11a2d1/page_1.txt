@@ -1,0 +1,91 @@
+STATEMENT OF ACCOUNT
+SHRISHTI FOODS AND BEVERAGES
+ARZ NO 447 BABA VISHWANATH COLONY
+DABHAON
+PRAYAGRAJ
+211007
+Account No : 7990693824
+Product: MICRO-SMALL-ENT-OCC-REPO
+Currency: INR
+Int Rate : 11.40 % P.a
+Limit : 1,50,00,000.00
+Drawing Power: 1,50,00,000.00
+Cleared Balance : 11871233.93Dr
+Uncleared Amount : 0.00
+Ckyc ID : XXXXXXXX943840
+Nominee Type :
+Nominee Name1 :
+INDIAN BANK
+ALLAHABAD KATRA BRANCH
+64, MASTER ZAHURUL HASAN ROAD
+KATRA
+211002
+Branch Code : 04086
+Phone No : 2642842
+Email ID : katra.prayagraj@indianbank.co.in
+IFSC Code : IDIB000A583
+Statement Date :16-Jun-2026
+Statement From :01-Apr-2025
+           To :31-Mar-2026
+Statement Time :04:15:32
+Page No. : 1
+Nominee Name2 :
+Nominee Name3 :
+Nominee Name4 :
+Post Date
+Value Date
+Details
+Chq.No.
+Debit
+Credit
+Balance
+Brought Forward
+9009272.00Dr
+03/04/25
+03/04/25
+HDFC0008591/SANJEEV MISHRA
+/XXXXX42156/8423542156@ptaxis /U
+PI/509371270946/Sent using Paytm UPI
+/BRANCH : ATM SERVICE B
+RANCH
+60000.00
+8949272.00Dr
+29/04/25
+29/04/25
+UNIVERSAL SOMPO GENERAL INSURANCE
+COMPANY LIMITED/TRANSFER
+TO 50006087382 STOCK INSURANCE
+KATRA(4086) /BRANCH : ALLAHAB
+AD KATRA
+22650.00
+8971922.00Dr
+30/04/25
+30/04/25
+DEBIT INTEREST
+87831.00
+9059753.00Dr
+30/04/25
+30/04/25
+OD PENAL CHARGES
+1.00
+9059754.00Dr
+05/05/25
+05/05/25
+TRANSFER FROM 94958000127
+NEFT/BKID/BKIDN62025050511823147/
+H NARESH I/ /BRANCH : MUMBAI FORT
+65000.00
+8994754.00Dr
+Carried Forward
+8994754.00Dr
+Statement
+Summary
+Dr. Count:3
+Cr. Count:2
+110482.00             125000.00
+In Case Your Account Is Operated By A Letter Of Authority/Power Of Attorney Holder, Please Check The Transaction With Extra
+Care.
+6/16/26, 4:15 PM
+about:blank
+about:blank
+1/11

@@ -1,0 +1,165 @@
+ The Federal Bank Ltd. Branch: Barshi, Opp.Barshi Textile Mill, Agalgaon Road, Barshi  Solapur, Maharashtra - 413401, bri@federalbank.co.in, Ph:91-2184-220345,  
+CIN:L65191PLC000386 Website:www.federalbank.co.in
+Page 1 of 2
+Name
+: KALLAPPA SUPER BAZAAR
+Communication Address
+: 2382 83 Tilak Chowk, Barshi,,
+Barshi, Maharashtra, India-413401
+Address Last Updated On
+: 16/09/2022
+Regd. Mobile Number
+: 918975955566
+Email ID
+: ashay1180@gmail.com
+Type of Account
+: Laa
+Scheme
+: EI -ASSET PRIME
+IFSC
+: FDRL0001636
+MICR Code
+: 413049202
+SWIFT Code
+: FDRLINBBIBD
+Available Balance
+: 0
+Branch Name
+: Barshi
+Branch Sol ID
+: 1636
+Account Number
+: 16367600001601
+Customer ID
+: 140010478
+Account Open Date
+: 12/05/2023
+Account Status
+: Active
+Mode of Operation
+: Single
+Joint Holders
+: ANUJA ASHAY AWATE, PUSHPA
+BHAGWAN AWATE
+Nomination
+: Not Registered
+Currency
+: INR
+Date of Issue
+: 04/03/2025
+Statement of Account for the period 01-APR-2024 to 31-DEC-2024
+Date
+Value Date
+Particulars
+Tran
+Type
+Tran ID
+Cheque Details
+Withdrawals
+Deposits
+Balance
+Dr/
+Cr
+Opening Balance
+OPNBAL
+2165051.00
+DR
+12/04/2024
+12/04/2024
+16367600001601:Normal
+Int.Coll:12-03-2024 to 11-0
+TFR
+S85583681
+18296.00
+2183347.00
+DR
+12/04/2024
+12/04/2024
+Loan Recovery From
+-16365500001564
+TFR
+S85592899
+53056.00
+2130291.00
+DR
+12/05/2024
+12/05/2024
+16367600001601:Normal
+Int.Coll:12-04-2024 to 11-0
+TFR
+S45944396
+17422.00
+2147713.00
+DR
+12/05/2024
+12/05/2024
+Loan Recovery From
+-16365500001564
+TFR
+S45950558
+53056.00
+2094657.00
+DR
+12/06/2024
+12/06/2024
+16367600001601:Normal
+Int.Coll:12-05-2024 to 11-0
+TFR
+S17298746
+17701.00
+2112358.00
+DR
+12/06/2024
+12/06/2024
+Loan Recovery From
+-16365500001564
+TFR
+S17307664
+53056.00
+2059302.00
+DR
+12/07/2024
+12/07/2024
+16367600001601:Normal
+Int.Coll:12-06-2024 to 11-0
+TFR
+S78056364
+16841.00
+2076143.00
+DR
+12/07/2024
+12/07/2024
+Loan Recovery From
+-16365500001564
+TFR
+S78063391
+53056.00
+2023087.00
+DR
+12/08/2024
+12/08/2024
+16367600001601:Normal
+Int.Coll:12-07-2024 to 11-0
+TFR
+S56322809
+17096.00
+2040183.00
+DR
+12/08/2024
+12/08/2024
+Loan Recovery From
+-16365500001564
+TFR
+S56330021
+53056.00
+1987127.00
+DR
+12/09/2024
+12/09/2024
+16367600001601:Normal
+Int.Coll:12-08-2024 to 11-0
+TFR
+S59045608
+16793.00
+2003920.00
+DR

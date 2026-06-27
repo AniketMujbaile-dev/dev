@@ -1,0 +1,143 @@
+1
+STATEMENT OF ACCOUNT
+CANARA BANK                                                                                             
+DATE                             :                  12-06-26   12:02:54 PM                                                                       
+Account Branch
+:
+3066-SHIVAMOGGA A P M C 577204
+                                            
+IFSC
+:
+CNRB0003066
+MICR
+:
+577015203
+Branch Address               :                 APMC SHIMOGA KARNATAKA
+Email Id                           :                  cb3066@canarabank.com
+Contact Number              :               9449867359
+Bank Toll Free Number   :              18001030
+WhatsApp Banking Num :                18001030
+Account No
+:
+120002805151    
+Product Name
+:
+CURRENT ACCOUNT- GENERAL
+Customer ID
+:
+315927413
+Customer Name
+:
+CHANDAN  CERAMICS
+Address
+:
+OPP NANJAPPA LIFE CARE HOSPITAL
+SARVEY NO 51
+HONNAVAR ROAD,ALKOLA,
+SHIVAMOGGA
+KARNATAKA
+IN
+577204
+VPA Id                   
+:                   
+Nominee Reference num:
+99907364905
+Nominee Name
+:
+LATHA M
+Account Title
+:
+CHANDAN  CERAMICS
+Joint Holder's/Authorised :
+PREETHAM  M
+Person's Name
+CKYC Identifier
+:     80016145428261
+       Period :
+        01-04-2025  To  31-03-2026
+       Name Currency : 
+         
+        INDIAN RUPEES
+       Swift code:
+        
+          CNRBINBBBFD
+TRANS 
+DATE
+VALUE 
+DATE
+BRANCH
+REF/CHQ.NO
+DESCRIPTION
+WITHDRAWS
+DEPOSIT
+BALANCE 
+01-APR-25
+01-APR-25
+0
+B/F ... 
+0.00
+173,342.90
+173,342.90
+01-APR-25
+01-APR-25
+33
+118051368443
+UPI/CR/118051368443/
+MUJAHID  
+/BARB/**82592@YBL/P
+AY TO 
+M//YBL7BE910C0F17B
+477E8D633D2A5BA4FF
+4B/01/04/2025 12:39:14
+0.00
+1,400.00
+174,742.90
+01-APR-25
+01-APR-25
+33
+509115794643
+MB-IMPS-
+DR/PREETHAM 
+SHETTY/UBIN/**3594/I
+NVOICE /01/04/2025 
+15:25:45/509115794643
+5,000.00
+0.00
+169,742.90
+01-APR-25
+01-APR-25
+33
+509115794643
+ATM / IMPS 
+TRANSACTION 
+CHARGES
+3.54
+0.00
+169,739.36
+01-APR-25
+01-APR-25
+33
+421436846668
+UPI/CR/421436846668/
+MAHESWARA/PUNB/**
+50738@YBL/PAY TO 
+M//YBL13B8AE0ADBC7
+4836AD1C2C1B83F60F
+2F/01/04/2025 15:35:05
+0.00
+1,840.00
+171,579.36
+01-APR-25
+01-APR-25
+33
+682748115124
+UPI/CR/682748115124/
+BHARATH 
+M/KARB/**43135@AXL/
+PAY TO 
+M//AXLA3B2ED8870C2
+4AC3B4DF9EB8EF1755
+3A/01/04/2025 16:01:39
+0.00
+13,200.00
+184,779.36

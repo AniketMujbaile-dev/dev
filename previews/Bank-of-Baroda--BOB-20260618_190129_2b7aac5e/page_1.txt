@@ -1,0 +1,93 @@
+ 
+Account statement
+ 
+  
+ 
+Statement of transactions from 01 May '25 - 31 May '26
+ 
+Account details
+Account name:
+TIRUPATI AUTOMOBILES
+Account number:
+133705004214
+Communication
+address:
+WARD NO 06
+BAIRGANIA,DUMARWANA,SMH,8433
+13
+Customer ID:
+579949938
+Account type:
+Current Account
+Account currency: INR
+IFSC code:
+ICIC0001337
+Balance
+Total effective
+available:
+₹ 260594.08
+Available balance: ₹ 260594.08
+S.no
+Transaction
+ID
+Transaction
+date
+Cheque No
+Description
+Withdrawal
+(Dr)
+Deposit
+(Cr)
+Available
+Balance
+1
+S3532904
+01-May-
+2025
+MMT/IMPS/5
+121096260
+36/mn2rFpi
+MyMQgJS0B
+/SAVITA OIL
+150.00
+39880.47
+2
+S3534224
+01-May-
+2025
+UPI/msgulf
+@sc/WS-
+174607159
+266/Standar
+d
+Charte/5121
+50.00
+39930.47
+3
+S3617636
+01-May-
+2025
+NEFT-
+UTIBN6202
+505016655
+7705-
+GOOGLE
+INDIA
+DIGITAL S
+950.00
+40880.47
+4
+S3625436
+01-May-
+2025
+NEFT-
+UTIBN6202
+505016665
+0859-
+GOOGLE
+INDIA
+DIGITAL S
+4200.00
+45080.47
+Generated on : 18 Jun’26 (12:20 PM)
+Page 1 of 284

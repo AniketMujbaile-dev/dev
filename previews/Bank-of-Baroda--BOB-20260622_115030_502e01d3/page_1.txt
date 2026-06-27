@@ -1,0 +1,133 @@
+Account Statement from 01-10-2025 to 31-12-2025
+Account Name
+Account Number
+Account Type
+Customer Address
+Branch Name
+IFSC Code
+MICR Code
+Branch Address
+SHAILESHBHAI CHHAGANBHAI PATEL
+24960100005643
+MOTAVARACHHA,GUJARAT
+GRAM PANCHYAT BLDGMOTAVARACHHA
+MOTAVARACHHA,GUJARAT
+Gujarat 394101 GJ
+D 302 GOLDAN CITY OPP UTTRAN POWER STATION
+MOTA VARACHHA
+SURAT GUJARAT,INDIA
+394101
+BARB0MOTSUR
+395012042
+SBA
+Account Details
+Serial
+No
+Transaction
+Date
+Value
+Date
+Description
+Cheque
+Number
+Debit
+Credit
+Balance
+2,180.46
+1
+01-10-2025
+Opening Balance
+-
+-
+1,885.46
+2
+01-10-2025
+01-10-2025
+ACHRE/BARB7020202230013421/HRETCHARGE/11
+1048250168
+295.00
+-
+10,685.46
+3
+01-10-2025
+01-10-2025
+UPI/384246691512/17:06:42/UPI/9960667108-
+3@axl/Pa
+-
+8,800.00
+17,165.46
+4
+01-10-2025
+01-10-2025
+UPI/766932944323/18:59:24/UPI/7487019538@ybl/Pa
+ym
+-
+6,480.00
+37,165.46
+5
+01-10-2025
+01-10-2025
+UPI/112035928962/19:15:08/UPI/inudodhiya20-
+3@okhd
+-
+20,000.00
+2,165.46
+6
+01-10-2025
+01-10-2025
+UPI/564016641336/19:17:42/UPI/9904374047@axl/U
+PI
+35,000.00
+-
+51,165.46
+7
+01-10-2025
+01-10-2025
+UPI/193509596320/19:19:27/UPI/9766434975@ybl/Pa
+ym
+-
+49,000.00
+11,165.46
+8
+01-10-2025
+01-10-2025
+UPI/564021356679/19:22:20/UPI/9904374047@axl/U
+PI
+40,000.00
+-
+16,165.46
+9
+01-10-2025
+01-10-2025
+UPI/192012704992/20:55:20/UPI/7487019538@axl/Pa
+ym
+-
+5,000.00
+18,665.46
+10
+02-10-2025
+02-10-2025
+UPI/564112709344/06:47:47/UPI/9978977860@yescr
+ed/
+-
+2,500.00
+18,645.46
+11
+02-10-2025
+02-10-2025
+UPI/564150587001/10:23:25/UPI/9429382631-
+1@okbiza
+20.00
+-
+21,565.46
+12
+02-10-2025
+02-10-2025
+UPI/527554446395/14:58:59/UPI/harshgandhi402@ok
+ax
+-
+2,920.00
+This is a computer-generated statement hence does not require signature. Statement is generated on 08/04/2026 11:34:27 AM (through bob World mobile app) from the system
+maintained in the bank containing transactions carried out in normal course of business.
+Page 1 of 17
+Note: In case you find any discrepancy, we advise you to take up with your base branch or raise a complaint using bob World.

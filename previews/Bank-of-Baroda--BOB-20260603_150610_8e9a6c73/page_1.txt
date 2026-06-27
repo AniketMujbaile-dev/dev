@@ -1,0 +1,131 @@
+Account Statement from 01-04-2025 to 30-06-2025
+Account Name
+Account Number
+Account Type
+Customer Address
+Branch Name
+IFSC Code
+MICR Code
+Branch Address
+SAGAR PIPE CORPORATION
+09660200001070
+JOGESHWARI (EAST), MUMBAI
+PLOT K/4364, CAVES ROAJOGESHWARI, MUMBAI
+JOGESHWARI (EAST), MUMBAI
+Maharashtra 400060 MH
+E7 2ND FLOOR PARAS NAGAR MAJAS RD
+JOGESHWARI EAST MUMBAI
+MUMBAI MAHARASHTRA,INDIA
+400060
+BARB0JOGESH
+400012034
+CAA
+Account Details
+Serial
+No
+Transaction
+Date
+Value
+Date
+Description
+Cheque
+Number
+Debit
+Credit
+Balance
+3,76,099.98
+1
+04-04-2025
+Opening Balance
+-
+-
+4,26,099.98
+2
+04-04-2025
+04-04-2025
+NEFT-PJSBH25094585090-NAMRATA AGRO PIPE
+PRODUCT
+-
+50,000.00
+4,31,162.98
+3
+04-04-2025
+04-04-2025
+BY INST 53988 : MICR CLG (CTS)
+-
+5,063.00
+4,31,145.58
+4
+04-04-2025
+04-04-2025
+Charges for PORD Customer Payment
+:002707395965
+17.40
+-
+2,81,145.58
+5
+04-04-2025
+04-04-2025
+NEFT-BARBP25094239566-KRISHNAIND-YES BANK
+LIMITED
+1,50,000.00
+-
+2,81,128.18
+6
+04-04-2025
+04-04-2025
+Charges for PORD Customer Payment
+:002707626095
+17.40
+-
+1,59,517.18
+7
+04-04-2025
+04-04-2025
+NEFT-BARBP25094465229-
+SHREENATHJIPOLYTECH-CENTRAL
+1,21,611.00
+-
+3,81,206.18
+8
+07-04-2025
+07-04-2025
+EBANK:WIB/1449968278/Pymt for inv 108
+-
+2,21,689.00
+3,81,188.78
+9
+07-04-2025
+07-04-2025
+Charges for PORD Customer Payment
+:002713364051
+17.40
+-
+2,30,399.78
+10
+07-04-2025
+07-04-2025
+NEFT-BARBT25097612527-
+SHANTANUPOLYPLASTPVTLTD-JALG
+1,50,789.00
+-
+3,90,399.78
+11
+07-04-2025
+07-04-2025
+NEFT-HDFCH00167561914-SAGAR PIPE
+CORPORATION
+-
+1,60,000.00
+2,95,088.78
+12
+07-04-2025
+07-04-2025
+IMPS/P2A/509713722127/XXXXXXXXXX9222/ambica
+agency
+95,311.00
+-
+This is a computer-generated statement hence does not require signature. Statement is generated on 16/05/2026 09:18:22 AM (through bob World mobile app) from the system
+maintained in the bank containing transactions carried out in normal course of business.
+Page 1 of 15
+Note: In case you find any discrepancy, we advise you to take up with your base branch or raise a complaint using bob World.

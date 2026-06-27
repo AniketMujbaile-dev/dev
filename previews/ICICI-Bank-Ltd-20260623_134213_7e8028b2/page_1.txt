@@ -1,0 +1,101 @@
+ 
+Account statement
+ 
+  
+ 
+Statement of transactions from 01 Apr '25 - 18 Jun '26
+ 
+Account details
+Account name:
+PUNAJ CORP
+Account number:
+187005002256
+Communication
+address:
+S NO 242 1/2/2/2 PLOT NO,36 SHREE
+GURUMAULI,OPP BALI
+MANDIR,PANCHAYAT
+NASHIK,NAS,422003
+Customer ID:
+597116575
+Account type:
+Current Account
+Account currency: INR
+IFSC code:
+ICIC0001870
+Balance
+Total effective
+available:
+₹ 4502308.24
+Available balance: ₹ 4502308.24
+S.no
+Transaction
+ID
+Transaction
+date
+Cheque No
+Description
+Withdrawal
+(Dr)
+Deposit
+(Cr)
+Available
+Balance
+1
+S6916834
+02-Apr-
+2025
+187005002
+256:Int.Coll:
+03-03-2025
+to 01-04-
+2025
+37404.00
+-
+4683271.02
+2
+S8514917
+03-Apr-
+2025
+RTGS-
+HDFCR5202
+504035734
+9821-
+PUNAJ
+CORP-
+999977777
+77
+3500000.00
+-
+1183271.02
+3
+S1696172
+06-Apr-
+2025
+penal
+charges
+0.28
+-
+1183271.30
+4
+S2232281
+30-Apr-
+2025
+RENEWAL
+FEE_SR269
+219435
+5000.00
+-
+1188271.30
+5
+S2232281
+30-Apr-
+2025
+SGST20250
+430608817
+6954
+450.00
+-
+1188721.30
+Generated on : 18 Jun’26 (03:04 PM)
+Page 1 of 33

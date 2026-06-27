@@ -1,0 +1,71 @@
+Statement of account : 070126900000212
+Statement Type : 01 Oct 2025 - 29 Dec 2025
+Customer Name : V3 TECHRIDER PVT LTD
+Your Branch Details
+Address Line 1 : V3 TECHRIDER PVT LTD
+Branch Name: SECTOR 50, NOIDA
+Address Line 2 : PLOT NO RZ 7 KH NO 26 4 2 F
+F
+Address Line 1: GROUND & FIRST FLOOR,
+Address Line 3 : BABA HARI DASS NAGAR
+NAJAFGARH NEW
+Line 2: PLOT NO B-1/68, SECTOR-50,
+Mobile No : 7011261154
+Line 3: NOIDA - 201301
+Email : info.v3techrider@gmail.com
+Cust ID: 35792494
+IFSC Code: YESB0000701 | MICR Code:
+110532135
+Transaction details for your account number 070126900000212  (CA/SA Product name) (currency INR )
+Primary Holder V3 TECHRIDER PVT LTD
+Nominee Details: Not Registered
+Account status:  Active
+Joint holder’s names:
+Transaction
+Date
+Value Date
+Description
+Reference Number
+Withdrawals
+Deposits
+Running Balance
+2025-12-29
+2025-12-29
+IMPS/NA/XXXX1452/RRN:53
+6395054428/PC2381138207
+029243/AIRTEL PAYMENTS 
+BANK LIMITED/DEEPAK/IFB
+YESI6536300663
+2200                     
+10,000.00
+1,192,054.68
+2025-12-28
+2025-12-28
+IMPS/NA/XXXX4482/RRN:
+536294653328/PC2377459
+124787200/BANK OF BAR
+ODA/Anurag Bharadwaj/IFB
+YESI6536200789
+7800                     
+15,000.00
+1,202,054.68
+2025-12-28
+2025-12-28
+IMPS/NA/XXXX6376/RR
+N:536294476014/PC237
+6515114584405/INDIAN 
+BANK/Priyanshi soni/IFB
+YESI6536200492
+5200                     
+1,000.00
+1,217,054.68
+2025-12-26
+2025-12-26
+IMPS/NA/XXXX4482/RRN:
+536093191362/PC2363532
+196819941/BANK OF BAR
+ODA/Anurag Bharadwaj/IFB
+YESI6536000460
+0900                     
+50,000.00
+1,218,054.68

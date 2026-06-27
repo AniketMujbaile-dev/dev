@@ -1,0 +1,69 @@
+Statement of account : 070126900000212
+Statement Type : 10 Dec 2025 - 10 Mar 2026
+Customer Name : V3 TECHRIDER PVT LTD
+Your Branch Details
+Address Line 1 : V3 TECHRIDER PVT LTD
+Branch Name: SECTOR 50, NOIDA
+Address Line 2 : PLOT NO RZ 7 KH NO 26 4 2 F
+F
+Address Line 1: GROUND & FIRST FLOOR,
+Address Line 3 : BABA HARI DASS NAGAR
+NAJAFGARH NEW
+Line 2: PLOT NO B-1/68, SECTOR-50,
+Mobile No : 7011261154
+Line 3: NOIDA - 201301
+Email : info.v3techrider@gmail.com
+Cust ID: 35792494
+IFSC Code: YESB0000701 | MICR Code:
+110532135
+Transaction details for your account number 070126900000212  (CA/SA Product name) (currency INR )
+Primary Holder V3 TECHRIDER PVT LTD
+Nominee Details: Not Registered
+Account status:  Active
+Joint holder’s names:
+Transaction
+Date
+Value Date
+Description
+Reference Number
+Withdrawals
+Deposits
+Running Balance
+2026-03-09
+2026-03-09
+IMPS/NA/XXXX6376/RRN
+:606873947585/PC30131
+39210739201/INDIAN BA
+NK/Priyanshi soni/advance
+YESI6606800881
+0100                     
+20,000.00
+8,147,636.50
+2026-03-09
+2026-03-09
+YIB-RTGS-YESBR12026030
+900037477-sian infra and re
+alcon llp-UBIN0807052-paym
+ent-UNION BANK OF INDIA
+YESME606800334
+5400                     
+2,000,000.00
+8,167,636.50
+2026-03-07
+2026-03-07
+CTS CLG NUN TOTAL FR
+ESH FOOD PRODUCT P
+UNJAB NATIONAL BANK
+000000800813
+200,000.00
+10,167,636.50
+2026-03-06
+2026-03-06
+IMPS/NA/XXXX6376/RR
+N:606571659377/PC298
+612317155353/INDIAN 
+BANK/Priyanshi soni/IFB
+YESI6606500815
+9000                     
+32,000.00
+10,367,636.50

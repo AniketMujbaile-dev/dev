@@ -1,0 +1,146 @@
+ 
+DETAILS OF AUTHORISED SIGNATORY/ IES
+ 
+ * Confirmation for Foreign Accounts Tax Compliance Act(FATCA) / Common Reporting Standards(CRS).
+ ** Centralized KYC.
+ 
+PORTFOLIO SUMMARY
+ 
+All Amounts are in INR 
+ 
+ 
+ACCOUNT DETAILS
+ 
+Branch
+: VEJALPUR
+Customer ID
+: 107002989
+IFSC
+: DCBL0000080
+Customer Name
+: SHAH KANAN SAMIR
+MICR
+: 380072005
+Statement Period
+: 01-04-2024 To 31-03-2025
+Branch Address
+: 1-4,  MEDILINK HOSPITAL
+BUILDING132 FT. RING ROAD,
+SHYMAL CROSS RD  SATELLITE
+VIJALPUR ,380015 ,GUJARAT
+Generation Date
+: 19-06-2026
+Branch Phone Number
+: 26760470/60471/60472
+SHAH KANAN SAMIR
+4, SHISHIR BUNGLOWS, NEAR H.P PETROL PUMP
+JUDGES BUNGLOWS ROAD, BODAKDEV, AHMADABAD
+AHMEDABAD 380015
+GUJARAT INDIA
+Customer ID
+Customer Name
+PAN/Form 60
+Aadhaar Number
+FATCA*
+CKYC**
+CKYC Number**
+107002989
+SHAH KANAN SAMIR (PRIMARY)
+ABXXXXXX5E
+AVAILABLE
+YES
+YES
+40046990156104
+Operative Accounts
+Account Number
+Nominee
+Lien
+Lien Amount
+Opening Balance
+Closing Balance
+NIYOX - INR
+080XXXXXX5746 YES
+NO
+NIL
+NIL
+        98,046.19
+Total
+0.00
+0.00
+0.00
+Account Number 08014600005746 - NIYOX (INR) - SHAH KANAN SAMIR
+Date*
+Transaction Details
+Cheque
+Number
+Withdrawals
+Deposits
+Balance
+Opening Balance
+0.00
+17-09-2024
+INRTGS:BKIDR52024091700302069/SAMIR RAMESHCHANDRA
+              2,50,000.00
+2,50,000.00
+18-09-2024
+POS VS/426202995586/08:27:10/RAZ*FINNEW /OLUTIONS
+                    93.55
+2,49,906.45
+20-09-2024
+190924 Cr. VCHR  RAZ*FINNEW SO
+                    93.55
+2,50,000.00
+23-09-2024
+POS VS/426703273414/08:45:44/% ARABICA  /
+                 2,983.80
+2,47,016.20
+23-09-2024
+POS VS/426703273306/08:46:37/% ARABICA  /
+                   455.54
+2,46,560.66
+23-09-2024
+POS VS/426704088614/09:39:35/WHSMITH    /
+                   227.77
+2,46,332.89
+23-09-2024
+POS VS/426718798342/16:18:05/IYZICO*APSH/vaalaniBa
+                    86.18
+2,46,246.71
+23-09-2024
+POS VS/426718807568/16:19:02/IYZICO*APSH/vaalaniBa
+                    86.18
+2,46,160.53
+23-09-2024
+VISACWD ATM GE000005/426714733001/16:31:23/BAGAJ-4
+                 2,708.49
+2,43,452.04
+23-09-2024
+POS VS/426720041198/22:50:24/DESTERECI F/RINI 194
+                 1,940.26
+2,41,511.78
+24-09-2024
+CGST FOR DT:23-09-2024 INTERNATION
+                    38.25
+2,41,473.53
+24-09-2024
+SGST FOR DT:23-09-2024 INTERNATION
+                    38.25
+2,41,435.28
+24-09-2024
+DT:23-09-2024 INTERNATIONAL ATM CASH WTHDRWL
+                   425.00
+2,41,010.28
+24-09-2024
+POS VS/426808640262/11:06:20/LAVITA     /
+                 2,153.40
+2,38,856.88
+24-09-2024
+POS VS/426813609632/15:51:54/PINAR GIDA /
+                22,834.45
+2,16,022.43
+   STATEMENT OF ACCOUNT                                             DCB BANK
+DCB Bank Limited
+Registered Office:6th Floor,Tower A, Peninsula Business Park, Senapati Bapat Marg, Lower Parel, Mumbai-400013 CIN:L99999MH1995PLC089008
+For clarification kindly contact DCB - Customer Care on 022 68997777, 040 68157777 or email customercare@dcbbank.com
+Non Resident Indian customers please dial +91-22-61271000 or email nri@dcbbank.com
+Page 1 of 4

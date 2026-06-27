@@ -1,0 +1,141 @@
+1
+STATEMENT OF ACCOUNT
+CANARA BANK                                                                                             
+DATE                             :                  02-06-26   15:33:36 PM                                                                       
+Account Branch
+:
+15375-KASAL 416603
+                                            
+IFSC
+:
+CNRB0015375
+MICR
+:
+416015511
+Branch Address               :                 PAWASKAS BLDG GOA MUMBAI HIGHWAY ROAD, KASAL KUDAL DIST 416 002 (MAHARASHTRA)
+Email Id                           :                  cb15375@canarabank.com
+Contact Number              :               
+Bank Toll Free Number   :              18001030
+WhatsApp Banking Num :                18001030
+Account No
+:
+53751400000169  
+Product Name
+:
+SOD SyndMSE
+Customer ID
+:
+228713030
+Customer Name
+:
+Messrs  SHREE STONE INDUSTRI
+Address
+:
+AT 142/2 POST HEDUL
+TAL MALVAN
+MALVAN
+SINDHUDURGA
+MAHARASHTRA
+IN
+416603
+VPA Id                   
+:                   
+Nominee Reference num:
+1537500004594
+Nominee Name
+:
+SNEHAL SANTOSH BAVKAR
+Account Title
+:
+SHREE STONE INDUSTRIES
+Joint Holder's/Authorised :
+Person's Name
+CKYC Identifier
+:     
+       Period :
+        01-05-2026  To  31-05-2026
+       Name Currency : 
+         
+        INDIAN RUPEES
+       Swift code:
+        
+          CNRBINBBBFD
+TRANS 
+DATE
+VALUE 
+DATE
+BRANCH
+REF/CHQ.NO
+DESCRIPTION
+WITHDRAWS
+DEPOSIT
+BALANCE 
+01-MAY-26
+01-MAY-26
+0
+B/F ... 
+3,739,642.48
+0.00
+-3,739,642.48
+01-MAY-26
+30-APR-26
+33
+NEFT CR-
+R001261209957719-
+SRCB0000001-ZANTYE
+AGRO INDUSTRIES--
+NA-NA-NA
+0.00
+118,650.00
+-3,620,992.48
+01-MAY-26
+01-MAY-26
+33
+122409302201
+UPI/CR/122409302201/
+VILAS 
+VAS/BKID/**I3132@OK
+HDFCBANK/UPI//HDFA
+95E9B762B2649FC8A8
+AFD57094C946F/01/05/
+2026 06:22:59
+0.00
+6,000.00
+-3,614,992.48
+01-MAY-26
+01-MAY-26
+33
+648798592548
+UPI/CR/648798592548/
+ABHISHEK 
+/HDFC/**AVADE@OKA
+XIS/UPI//AXI3CB158338
+2614132BB8A4F708596
+6FED/01/05/2026 06:51:
+52
+0.00
+5,400.00
+-3,609,592.48
+01-MAY-26
+01-MAY-26
+33
+612132955112
+UPI/CR/612132955112/
+SACHIN 
+SI/HDFC/**999-
+2@OKICICI/UPI//ICI0B7
+E296A443B46DD9002A
+8EBB5E98A8F/01/05/20
+26 08:28:05
+0.00
+6,000.00
+-3,603,592.48
+01-MAY-26
+01-MAY-26
+33
+612165143710
+UPI/CR/612165143710/
+SAWANT 
+0.00
+2,000.00
+-3,601,592.48

@@ -1,0 +1,103 @@
+Page No:1
+ 
+              
+                            
+                                          
+                                                        
+                                                                      
+        
+                 STATEMENT OF ACCOUNT from 01/05/2026 to 31/05/2026 for Account Number 50056342120.
+       
+INDIAN BANK
+Branch Code :04785
+Account Number : 50056342120
+GOEL CARGO PVT. LTD.
+HARYANA BHAWAN
+PANNA ROAD
+SATNA
+M.P. 485001
+ 
+Value
+Date
+Post
+Date
+Credit Amount
+Debit Amount
+Closing Balance
+Description
+01/05/
+2026
+01/05/
+2026
+127704
+-156640639.81
+WITHDRAWAL TRANSFER
+ SI LOAN OVERDUE AMT
+TRANSACTION
+ GOEL CARGO PVT. LTD.
+01/05/
+2026
+01/05/
+2026
+500028.91
+-157140668.72
+WITHDRAWAL TRANSFER
+ 
+RTGS/ICIC/IDIBR520260501019602
+68/ECT POOL/.
+ Txn Amt.       500000.00 Charges.
+28.91
+01/05/
+2026
+01/05/
+2026
+500028.91
+-157640697.63
+WITHDRAWAL TRANSFER
+ 
+RTGS/ICIC/IDIBR520260501019602
+71/HPCL Dri/.
+ Txn Amt.       500000.00 Charges.
+28.91
+01/05/
+2026
+01/05/
+2026
+36281.61
+-157676979.24
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P001 /
+ 
+NEFT/BARB/IDIBN52026050140165
+278/KAMDA SH/
+ Txn Amt.         36276.00 Charges.
+5.61
+01/05/
+2026
+01/05/
+2026
+9996.66
+-157686975.9
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P002 /
+ 
+NEFT/UBIN/IDIBN520260501401659
+49/SURAJ KU/
+ Txn Amt.          9994.00 Charges.
+2.66
+01/05/
+2026
+01/05/
+2026
+5100
+-157692075.9
+WITHDRAWAL TRANSFER
+ ONLINE B               ULULK NEFT
+TRF - P006 /
+ 
+NEFT/SBIN/IDIBN520260501401652
+84/ABDUL KA/
+ Txn Amt.          5097.34 Charges.
+2.66
