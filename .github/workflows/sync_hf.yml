@@ -1,4 +1,4 @@
-name: Sync Hugging Face Bucket
+name: Render PDF Previews
 
 on:
   workflow_dispatch:
@@ -7,46 +7,48 @@ permissions:
   contents: write
 
 jobs:
-  sync:
+  render:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install Hugging Face CLI
-        run: |
-          pip install -U huggingface_hub
+      - run: pip install pymupdf
 
-      - name: Login to Hugging Face
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      - name: Render previews
         run: |
-          test -n "$HF_TOKEN" || (echo "HF_TOKEN secret missing" && exit 1)
-          hf auth login --token "$HF_TOKEN"
+          mkdir -p previews
+          python - << 'PY'
+          import fitz
+          from pathlib import Path
 
-      - name: Download Bucket
-        run: |
-          mkdir -p data
-          hf sync hf://buckets/ANIKET5555555/repotic-storage ./data
-          echo "Downloaded files:"
-          find data -maxdepth 4 -type f | head -100
+          for pdf in Path("data/pdf").glob("*.pdf"):
+              try:
+                  doc = fitz.open(pdf)
+                  outdir = Path("previews") / pdf.stem
+                  outdir.mkdir(parents=True, exist_ok=True)
 
-      - name: Commit Files
+                  for i in range(min(2, len(doc))):
+                      page = doc[i]
+                      pix = page.get_pixmap(matrix=fitz.Matrix(2, 2))
+                      pix.save(outdir / f"page_{i+1}.png")
+
+                      text = page.get_text("text")
+                      (outdir / f"page_{i+1}.txt").write_text(text, encoding="utf-8")
+
+                  print("OK", pdf.name)
+              except Exception as e:
+                  print("ERR", pdf.name, e)
+          PY
+
+      - name: Commit previews
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-
-          git add data
-
-          if git diff --cached --quiet; then
-            echo "No changes."
-          else
-            git commit -m "Sync Hugging Face bucket"
-            git push
-          fi
+          git add previews
+          git commit -m "Render PDF previews" || echo "No changes"
+          git push
