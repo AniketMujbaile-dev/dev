@@ -1,0 +1,46 @@
+name: Sync Hugging Face Bucket
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Hugging Face CLI
+        run: |
+          pip install -U huggingface_hub
+
+      - name: Login to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          hf auth login --token "$HF_TOKEN"
+
+      - name: Download Bucket
+        run: |
+          mkdir -p data
+          hf sync ./data hf://buckets/ANIKET5555555/repotic-storage
+
+      - name: Commit Files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+
+          git add data
+
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Sync Hugging Face bucket"
+            git push
+          fi
